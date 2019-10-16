@@ -457,20 +457,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 
 
 <!-- 메인 비주얼 슬라이드 시작-->
-<div id="visual-slider" class="slick-initialized slick-slider slick-dotted"><div class="slick-list"><div class="slick-track" style="opacity: 1; width: 7440px; transform: translate3d(-1488px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 1488px;"><div><div class="item bg02" style="width: 100%; display: inline-block;">
-		<div class="inner">
-			<div class="object">
-				<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0201.png" alt=""></div>
-				<div class="obj txt02"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0202.png" alt=""></div>
-				<div class="obj txt03">
-					<a href="/497/?pCode=497" class="more" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0103.png" alt=""></a>
-				</div>
-			</div>
-			<div class="obj media">
-				<button class="pop" rel="media-popup06" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/media0101.jpg" alt=""></button>
-			</div>
-		</div>
-	</div></div></div><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" role="tabpanel" id="slick-slide00" style="width: 1488px;" aria-describedby="slick-slide-control00"><div><div class="item bg01" style="width: 100%; display: inline-block;">
+<div id="visual-slider">
+
+	<div class="item bg01" style="width: 100%; display: inline-block;">
 		<div class="inner">
 			<div class="object">
 				<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0101.png" alt=""></div>
@@ -483,7 +472,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 				<button class="pop" rel="media-popup06" tabindex="0"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/media0101.jpg" alt=""></button>
 			</div>
 		</div>
-	</div></div></div><div class="slick-slide" data-slick-index="1" aria-hidden="true" role="tabpanel" id="slick-slide01" style="width: 1488px;" aria-describedby="slick-slide-control01" tabindex="-1"><div><div class="item bg02" style="width: 100%; display: inline-block;">
+	</div><!-- .item end -->
+
+	<div class="item bg02" style="width: 100%; display: inline-block;">
 		<div class="inner">
 			<div class="object">
 				<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0201.png" alt=""></div>
@@ -496,33 +487,8 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 				<button class="pop" rel="media-popup06" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/media0101.jpg" alt=""></button>
 			</div>
 		</div>
-	</div></div></div><div class="slick-slide slick-cloned" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 1488px;"><div><div class="item bg01" style="width: 100%; display: inline-block;">
-		<div class="inner">
-			<div class="object">
-				<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0101.png" alt=""></div>
-				<div class="obj txt02"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0102.png" alt=""></div>
-				<div class="obj txt03">
-					<a href="/494/?pCode=494" class="more" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0103.png" alt=""></a>
-				</div>
-			</div>
-			<div class="obj media">
-				<button class="pop" rel="media-popup06" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/media0101.jpg" alt=""></button>
-			</div>
-		</div>
-	</div></div></div><div class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 1488px;"><div><div class="item bg02" style="width: 100%; display: inline-block;">
-		<div class="inner">
-			<div class="object">
-				<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0201.png" alt=""></div>
-				<div class="obj txt02"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0202.png" alt=""></div>
-				<div class="obj txt03">
-					<a href="/497/?pCode=497" class="more" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0103.png" alt=""></a>
-				</div>
-			</div>
-			<div class="obj media">
-				<button class="pop" rel="media-popup06" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/media0101.jpg" alt=""></button>
-			</div>
-		</div>
-	</div></div></div></div></div><ul class="slick-dots" style="display: block;" role="tablist"><li class="slick-active" role="presentation"><button role="tab" id="slick-slide-control00" aria-controls="slick-slide00" aria-label="1 of 2" tabindex="0" aria-selected="true"><em>1</em></button></li><li role="presentation" class=""><button role="tab" id="slick-slide-control01" aria-controls="slick-slide01" aria-label="2 of 2" tabindex="-1"><em>2</em></button></li></ul></div>
+	</div><!-- .item end -->
+</div>	
 <!-- 메인 비주얼 슬라이드 끝-->
 
 

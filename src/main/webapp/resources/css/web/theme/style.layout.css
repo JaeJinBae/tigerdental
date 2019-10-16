@@ -68,7 +68,7 @@ a:hover{text-decoration:none;}
 /* 온라인상담, 커뮤니티 퀵버튼 */
 #header .header-group-quick{position:absolute; right:0; top:-1px; width:90px; height:90px;}
 #header .header-group-quick li button{display:inline-block; width:90px; height:90px; line-height:90px; text-align:center; color:#fff; box-sizing:border-box; background-repeat:no-repeat; background-position:center 15px; font-size:14px; cursor:pointer;}
-#header .header-group-quick li.gnb-all button{background-color:#005d99;);}
+#header .header-group-quick li.gnb-all button{background-color:#005d99;}
 #header .header-group-quick li.gnb-all button:hover{background-color:#005388;}
 
 /* GNB */
