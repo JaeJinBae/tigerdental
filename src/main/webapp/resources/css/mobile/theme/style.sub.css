@@ -18,7 +18,7 @@
  /* --------------------------------------------------------------------------
    메인 -> 비주얼 슬라이드
    -------------------------------------------------------------------------- */
-#main-visual{position:relative; width:100%; height:350px; background:url(/assets/img/web/main/theme/visual_bg.jpg) no-repeat center center; background-size:cover; overflow:hidden;}
+#main-visual{position:relative; width:100%; height:350px; background:url("../../../img/web/main/theme/visual_bg.jpg") no-repeat center center; background-size:cover; overflow:hidden;}
 #main-visual::after{position:absolute; display:inline-block; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.5);}
 #main-visual video{position:absolute; min-width:100%; min-height:100%; right:0; top:50%; transform:translate(0, -50%);}
 #main-visual .txt-group{position:absolute; display:inline-block; width:90%; left:50%; top:50%; text-align:center; transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); z-index:1;}
@@ -45,7 +45,7 @@
 
 /* 퀵 디지털 교정 */
 .pcode51703{}
-.pcode51703 .inner{height:100%; box-sizing:border-box; padding:35px; background:url(/assets/img/mobile/sub/theme/517_img_03.png) no-repeat left bottom; background-size:cover;}
+.pcode51703 .inner{height:100%; box-sizing:border-box; padding:35px; background:url("../../../img/mobile/sub/theme/517_img_03.png") no-repeat left bottom; background-size:cover;}
 .pcode51703 video{width:100%; background:#000;} 
 
 .pcode50401{}

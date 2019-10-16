@@ -181,7 +181,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 
 <div id="wrap">
 	<!-- 해더 시작  -->
-	<jsp:include page="../include/pcHeader.jsp"></jsp:include>
+	<jsp:include page="include/pcHeader.jsp"></jsp:include>
 	<!-- 해더 끝  -->
 	
 	<!-- 콘텐츠 영역 시작 (메인일 경우 #main-container / 서브일 경우 #sub-container) -->
@@ -312,19 +312,19 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		
 		<!-- 공통(이미지, 진료시간, 고객센터, 오시는길) 시작 -->
-		<jsp:include page="../include/pcBottom.jsp"></jsp:include>
+		<jsp:include page="include/pcBottom.jsp"></jsp:include>
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
 
 	</div> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 
 	<!-- 풋터 시작 (style.layout.css) -->
-	<jsp:include page="../include/pcFooter.jsp"></jsp:include>
+	<jsp:include page="include/pcFooter.jsp"></jsp:include>
 	<!-- 풋터 끝 (style.layout.css) -->
 
 </div> <!-- #wrap 닫기 -->
 
 <!-- 빠른상담 신청하기 퀵버튼 시작 -->
-<jsp:include page="../include/pcQuick.jsp"></jsp:include>
+<jsp:include page="include/pcQuick.jsp"></jsp:include>
 <!-- 빠른상담 신청하기 퀵버튼 끝 -->
 
 

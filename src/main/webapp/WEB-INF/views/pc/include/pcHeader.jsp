@@ -21,7 +21,7 @@
 			</li>
 		</ul>
 
-		<div id="logo"><a href="/html"><img src="${pageContext.request.contextPath}/resources/img/common/theme/logo.png" alt=""></a></div>
+		<div id="logo"><a href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/img/common/theme/logo.png" alt=""></a></div>
 
 		<ul class="header-group-quick">
 			<li class="gnb-all">
