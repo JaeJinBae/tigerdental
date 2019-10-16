@@ -19,7 +19,7 @@
 /**********************************************************************
 * Descript : IE 낮은 버전(IE 9이하)에서 브라우저 업그레이드 공지 안내 스타일
 ***********************************************************************/
-#old-browser-popup{position:fixed; width:100%; height:100%; left:0; top:0; background:url("../../img/common/bg.png") repeat; z-index:9999; font-family: '맑은 고딕', 'Malgun Gothic', 'Noto Sans', sans-serif;}
+#old-browser-popup{position:fixed; width:100%; height:100%; left:0; top:0; background:url("../../../img/common/bg.png") repeat; z-index:9999; font-family: '맑은 고딕', 'Malgun Gothic', 'Noto Sans', sans-serif;}
 .old-browser-container{width:100%; margin:0 auto; text-align:center;}
 .old-browser-container div{color:#fff; font-size:13px; line-height:22px;}
 .old-browser-container div b{color:#fc0; font-weight:700;}
@@ -567,7 +567,7 @@ html, body {width:100%; height:100%; font-family: 'Nanum Gothic', '나눔고딕'
 /**********************************************************************
 * Descript : 프로젝트 HTML 로딩 Jquery Function과 함께 사용합니다.
 ***********************************************************************/
-#loader-wrapper {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; background:rgba(255,255,255,1) url("../../img/landing/logo.png") no-repeat center center;}
+#loader-wrapper {position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000; background:rgba(255,255,255,1) url("../../../img/landing/logo.png") no-repeat center center;}
 #loading {position:absolute; left:50%; top:50%; margin:-100px 0 0 -25px; display: inline-block; width: 50px; height: 50px; border: 3px solid rgba(0,0,0,0.3); border-radius: 50%; border-top-color: #003054; animation: spin 1s ease-in-out infinite;}
 @-webkit-keyframes spin {to {transform: rotate(360deg);}}
 @-moz-keyframes spin {to {transform: rotate(360deg);}}
