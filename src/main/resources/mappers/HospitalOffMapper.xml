@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webaid.mappers.HospitalOffMapper">
+	<select id="selectOne" resultType="HospitalOffVO">
+		select * from hospital_off where no=#{no}
+	</select>
+	
+	<select id="listSearch" resultType="HospitalOffVO">
+		select * from hospital_off where use_state='o' <include refid="search"></include> order by off_date desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<select id="listSearchAll" resultType="HospitalOffVO">
+		select * from hospital_off where no>0 <include refid="search"></include> order by off_date desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<sql id="search">
+		<if test="searchType=='c'.toString()">
+			and content like concat('%',#{keyword},'%')
+		</if>
+		<if test="searchType=='t'.toString()">
+			and title like concat('%',#{keyword},'%') 
+		</if>
+		<if test="searchType=='no'.toString()">
+			and no=#{keyword}
+		</if>
+	</sql>
+	
+	<select id="listSearchCount" resultType="int">
+		select count(no) from hospital_off where use_state='o' <include refid="search"></include>
+	</select>
+	
+	<select id="listSearchCountAll" resultType="int">
+		select count(no) from hospital_off where no>0 <include refid="search"></include>
+	</select>
+	<insert id="insert">
+		insert into hospital_off values(0, #{title}, #{off_date}, #{use_state})
+	</insert>
+	
+	<update id="update">
+		update hospital_off set title=#{title}, off_date=#{off_date}, use_state=#{use_state} where no=#{no}
+	</update>
+	
+	<update id="updateUseState">
+		update hospital_off set use_state=#{use_state} where no=#{no}
+	</update>
+	
+	<delete id="delete">
+		delete from hospital_off where no=#{no}
+	</delete>
+	
+</mapper>

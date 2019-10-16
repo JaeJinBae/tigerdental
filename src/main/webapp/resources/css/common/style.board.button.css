@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+/*
+ * --------------------------------------------------------------------------
+ * descript : 버튼 CSS
+ * --------------------------------------------------------------------------
+ * version	: 2.0.0
+ * author	: Yoodaekyung
+ * update	: 2018.08.17
+ * email	: eorud0818@naver.com
+ * --------------------------------------------------------------------------
+ */
+
+/* --------------------------------------------------------------------------
+   1.0 버튼 테마 1
+   -------------------------------------------------------------------------- */
+
+/* 버튼(기본, 중앙, 왼쪽, 우측 정렬) */
+.btn-group{display:inline-block; width:100%; height:35px; line-height:35px; margin:25px 0;}
+.btn-group-center{display:inline-block; width:100%; height:35px; line-height:35px; margin:25px 0; text-align:center;}
+.btn-group-center .btn{margin:0 1px;}
+.btn-group-left{display:inline-block; width:100%; height:35px; line-height:35px; margin:25px 0; text-align:left;}
+.btn-group-left .btn{margin-right:2px;}
+.btn-group-right{display:inline-block; width:100%; height:35px; line-height:35px; margin:25px 0; text-align:right;}
+.btn-group-right .btn{margin-left:2px;}
+
+.brick{display:inline-block;}
+/* 버튼 초기화 */
+button.btn, a.btn{float:left; display:inline-block; min-width:100px; height:inherit; line-height:inherit; vertical-align:middle; font-size:14px; font-weight:500; text-align:center; padding:0 15px; cursor:pointer;}
+button.btn:hover, a.btn:hover{text-decoration:none;}
+
+/* 버튼 종류 */
+.btn-list{background:#005d99; color:#fff;}
+.btn-submit{background:#005d99; color:#fff;}
+.btn-my-list{background:#333; color:#fff;}
+.btn-del{background:#aaa; color:#fff;}
+.btn-update{background:#aaa; color:#fff;}
+.btn-view-list{background:#858585; color:#fff;}
+.btn-cancel{background:#cbcbcb; color:#fff;}

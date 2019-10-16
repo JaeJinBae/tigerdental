@@ -1,0 +1,48 @@
+@charset 'UTF-8';
+/* Slider */
+
+/* Arrows */
+.slick-prev{position:absolute; padding:25px; background:rgba(0,0,0,0.2); top: 50%; left:0; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-prev:hover{background:rgba(0,0,0,0.5);}
+.slick-next{position:absolute; padding:25px; background:rgba(0,0,0,0.2); top: 50%; right:0; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-next:hover{background:rgba(0,0,0,0.5);}
+
+.slick-prev02{width:4em; position:absolute; top: 50%; left:10px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-next02{width:4em; position:absolute; top: 50%; right:10px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+
+.slick-prev04{width:4em; position:absolute; top: 50%; left:10px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+.slick-next04{width:4em; position:absolute; top: 50%; right:10px; transform: translate(0, -50%); z-index:2; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor: pointer;}
+
+
+
+/* Dots */
+
+.slick-dots{position:absolute; left:50%; top:0; margin-left:calc(-550px); width:50px; height:100%; box-sizing:border-box; padding-top:200px;}
+.slick-dots::before{position:absolute; display:inline-block; width:1px; height:100%; left:0; top:0; background:rgba(255,255,255,0.2);}
+.slick-dots li{position: relative;}
+.slick-dots li button{width:5px; height:30px; margin-bottom:5px; background:rgba(255,255,255,0.3); transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor:pointer;}
+.slick-dots li button em{display:none;}
+
+.slick-dots li.slick-active button{width:30px; background:rgba(255,255,255,0.9);}
+.slick-dots li.slick-active button em{display:block; color:#bbb;}
+
+
+.slick-dots02{position:absolute; left:20px; top:0; width:50px; height:100%; box-sizing:border-box; padding-top:200px;}
+.slick-dots02::before{position:absolute; display:inline-block; width:1px; height:100%; left:0; top:0; background:rgba(255,255,255,0.2);}
+.slick-dots02 li{position: relative;}
+.slick-dots02 li button{width:5px; height:30px; margin-bottom:5px; background:rgba(255,255,255,0.3); transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease; cursor:pointer;}
+.slick-dots02 li button em{display:none;}
+
+.slick-dots02 li.slick-active button{width:30px; background:rgba(255,255,255,0.9);}
+.slick-dots02 li.slick-active button em{display:block; color:#bbb;}
+
+
+
+/* 슬라이드 프로그래스 바 시작 */
+.progress-bar{position:absolute; width:100%; height:5px; bottom:0px;  left:0px; padding:0px; margin:0px; background:rgba(255,255,255,.20);}
+.progress-bar p{position:absolute; float:left; width:0px; height:5px; background:#00b0ff; left:0px; bottom:0px;}
+.slick-active .progress-bar p{width:100%; animation:progress-bar 11s both;}
+
+@-webkit-keyframes progress-bar{from{width:0px;}to{width:100%;}}
+@keyframes progress-bar{from{width:0px;}to{width:100%;}}
+/* 슬라이드 프로그래스 바 끝 */

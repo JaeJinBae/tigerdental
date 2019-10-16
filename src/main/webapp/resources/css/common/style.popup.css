@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/*
+ * --------------------------------------------------------------------------
+ * descript : 레이어팝업
+ * --------------------------------------------------------------------------
+ * version	: 2.0.0
+ * author	: Yoodaekyung
+ * update	: 2018.08.17
+ * email	: eorud0818@naver.com
+ * --------------------------------------------------------------------------
+ */
+
+#pop-wrap{}
+#pop-wrap .pop-inner{}
+#pop-wrap .pop-controller{position:relative; box-sizing:border-box; height:35px; line-height:35px; padding:0 10px; background:rgba(0,0,0,0.7); text-align:right;}
+#pop-wrap .pop-controller label{position:absolute; text-align:left; display:block; color:#fff; font-size:13px; height:inherit; line-height:inherit; cursor:pointer;}
+#pop-wrap .pop-controller label input[type="checkbox"]{display:none;}
+#pop-wrap .pop-controller a{display:inline-block; color:#fff; font-size:15px; height:inherit; line-height:inherit; cursor:pointer;}

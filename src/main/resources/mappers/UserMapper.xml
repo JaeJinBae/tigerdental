@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webaid.mappers.UserMapper">
+	
+	<select id="selectOne" resultType="UserVO">
+		select * from user where no=#{no}
+	</select>
+	
+	<select id="selectById" resultType="UserVO">
+		select * from user where id=#{id}
+	</select>
+	
+	<select id="selectByNameEmail" resultType="UserVO">
+		select * from user where name=#{name} and email=#{email}
+	</select>
+	
+	<select id="selectByIdNameEmail" resultType="UserVO">
+		select * from user where id=#{id} and name=#{name} and email=#{email}
+	</select>
+	
+	<insert id="insert">
+		insert into user values(0, #{id}, #{name}, #{lv}, #{pw}, #{phone}, #{birth}, #{gender}, #{addr}, #{email}, #{regdate}, #{login_cnt}, 'x', 'o')
+	</insert>
+	
+	<update id="update">
+		update user set name=#{name}, pw=#{pw}, phone=#{phone}, birth=#{birth}, gender=#{gender}, email=#{email} where no=#{no}
+	</update>
+	
+	<update id="updatePwChangeState">
+		update user set pw=#{pw}, pw_change_state=#{pw_change_state} where no=#{no}
+	</update>
+	
+	<update id="updateWithdraw">
+		update user set withdraw=#{withdraw} where no=#{no}
+	</update>
+	
+	<update id="updateLoginCnt">
+		update user set login_cnt=login_cnt+1 where no=#{no}
+	</update>
+	
+	<delete id="delete">
+		delete from user where no=#{no}
+	</delete>
+	
+	<select id="listSearchAll" resultType="UserVO">
+		select * from user where withdraw='x' <include refid="search"></include> order by no desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<select id="listSearchWithdrawAll" resultType="UserVO">
+		select * from user where withdraw='o' <include refid="search"></include> order by no desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<sql id="search">
+		<if test="searchType=='i'.toString()">
+			and id like concat('%',#{keyword},'%')
+		</if>
+		<if test="searchType=='n'.toString()">
+			and name like concat('%',#{keyword},'%') 
+		</if>
+	</sql>
+
+	<select id="listSearchCountAll" resultType="int">
+		select count(no) from user where withdraw='x' <include refid="search"></include>
+	</select>
+	
+	<select id="listSearchWithdrawCountAll" resultType="int">
+		select count(no) from user where withdraw='o' <include refid="search"></include>
+	</select>
+	
+</mapper>

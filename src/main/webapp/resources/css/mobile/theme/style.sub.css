@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/*
+ * --------------------------------------------------------------------------
+ * descript : 서브 콘텐츠
+ * --------------------------------------------------------------------------
+ * version	: 2.0.0
+ * author	: Yoodaekyung
+ * update	: 2018.08.17
+ * email	: eorud0818@naver.com
+ * --------------------------------------------------------------------------
+ */
+
+ .agree,
+ .privacy{font-size:1em; line-height:1.8em;}
+
+
+ /* --------------------------------------------------------------------------
+   메인 -> 비주얼 슬라이드
+   -------------------------------------------------------------------------- */
+#main-visual{position:relative; width:100%; height:350px; background:url(/assets/img/web/main/theme/visual_bg.jpg) no-repeat center center; background-size:cover; overflow:hidden;}
+#main-visual::after{position:absolute; display:inline-block; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.5);}
+#main-visual video{position:absolute; min-width:100%; min-height:100%; right:0; top:50%; transform:translate(0, -50%);}
+#main-visual .txt-group{position:absolute; display:inline-block; width:90%; left:50%; top:50%; text-align:center; transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); z-index:1;}
+#main-visual .txt-group .txt01{font-size:3em; color:#ff7835; font-weight:700; line-height:1.2em;}
+#main-visual .txt-group .txt02{font-size:2em; color:#fff; font-weight:400; line-height:1.2em; margin:15px 0;}
+#main-visual .txt-group .txt03{font-size:1.2em; color:#fff; line-height:1.2em; border-top:1px solid #fff; display:block; padding:15px 0; width:130px; margin:0 auto; margin-bottom:30px;}
+#main-visual .txt-group .main-visual-play{display:inline-block; width:100px; height:100px; background:rgba(0,0,0,0.1); border-radius:100%; border:1px solid #fff; color:#fff; font-size:40px; text-align:center; cursor:pointer;  -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+#main-visual .txt-group .main-visual-play:hover{background:rgba(0,0,0,0.3);}
+
+
+
+.pcode49301{margin-top:50px;}
+
+.pcode48306 video{width:100%;}
+
+.pcode48904{padding: 30px 0 50px 0;}
+.pcode49506 video{width:100%;}
+.pcode49509{padding: 0px 0 70px 0;}
+
+/* 자외선 임플란트 */
+.pcode49604{position:relative; z-index:1;}
+.pcode49604 .object iframe{float:left; height:350px;}
+
+
+/* 퀵 디지털 교정 */
+.pcode51703{}
+.pcode51703 .inner{height:100%; box-sizing:border-box; padding:35px; background:url(/assets/img/mobile/sub/theme/517_img_03.png) no-repeat left bottom; background-size:cover;}
+.pcode51703 video{width:100%; background:#000;} 
+
+.pcode50401{}
+.pcode50401 video{width:100%; background:#000;}
+
+.pcode50501{}
+.pcode50501 video{width:100%; background:#000;}
+
+.pcode48906 video{width:100%; background:#000;}
+.pcode49700{padding:20px 0 0 0; background:#ececee;}
+.pcode49701{background:#ececee;}

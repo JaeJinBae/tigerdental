@@ -1,0 +1,130 @@
+@charset "utf-8"; 
+/**********************************************************************
+* Descript : 전체 페이지에 적용되는 레이아웃 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.04.23
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : ★★★★★★★★★★★★주의 #wrap .inner 클래스 (전체 페이지에 적용됩며, 모든 하위메뉴의 레이아웃사이즈가 변경될 수 있습니다.)★★★★★★★★★★★★★★★★★★
+***********************************************************************/
+#wrap{position:relative; width:100%; min-height:100%;}
+#main-container{}
+#sub-container{}
+
+.inner{position:relative; max-width:1200px; margin:0 auto; box-sizing:border-box;}
+@media (min-width:0) and (max-width:980px){.inner{padding:0 10px;}}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : Header 스타일(로고, GNB, 로그인/로그아웃)
+***********************************************************************/
+#header{position:relative; width:100%; z-index:1;}
+
+#header .logo{width:inherit; height:120px; text-align:center;}
+#header .logo a{position:absolute; top:50%; right:50%; transform: translate(-50%, -50%);}
+
+#header #gnb{width:100%; height:70px; background:#333;}
+
+/* 1차 카테고리 */
+#header #gnb ul{}
+#header #gnb ul li.gnb{position:relative; float:left; width:calc(100%/6);}
+#header #gnb ul li.gnb::before{position:absolute; left:0; top:0; content:''; width:1px; height:70px; background:#555;}
+#header #gnb ul li:first-child.gnb::before{visibility:hidden;}
+#header #gnb ul li.gnb a{display:block; font-size:1.2em; color:#fff; font-weight:700; height:inherit; line-height:70px; text-align:center;}
+#header #gnb ul li.gnb.active{}
+#header #gnb ul li.gnb.active > a{color:#fc0}
+
+/* 2차 카테고리 */
+#header #gnb ul li.gnb a + ul.lnb-wrap{position:absolute; width:100%; left:0; top:70px; display:none; background:#333;}
+#header #gnb ul li.gnb:hover ul.lnb-wrap{display:block;}
+#header #gnb ul li.gnb a + ul.lnb-wrap li.lnb{}
+#header #gnb ul li.gnb a + ul.lnb-wrap li.lnb a{font-size:1em;}
+#header #gnb ul li.gnb a + ul.lnb-wrap li.lnb.active{}
+#header #gnb ul li.gnb a + ul.lnb-wrap li.lnb.active a{color:#fc0;}
+
+/* 로그인, 로그아웃, 회원가입, 마이페이지 */
+#header .header-login{position:absolute; top: 50%; right: 0; transform: translate(0, -50%);}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 메인, 서브 레이아웃
+***********************************************************************/
+#wrap #main-container{position:relative; width:100%;}
+#wrap #sub-container{position:relative; width:100%;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 페이지 비주얼 스타일(페이지 타이틀, 이전페이지, 다음페이지)
+***********************************************************************/
+#sub-visual{width:100%; background:#ddd;}
+#sub-visual .inner{height:300px;}
+#sub-visual[data-menu="엘치과 소개"]{} /* #sub-visual의 attr 속성 값으로 스타일 지정 할 경우 사용합니다. */
+#sub-visual .sub-visual-prev, #sub-visual .sub-visual-next{position:absolute; top:50%;}
+#sub-visual .sub-visual-prev a, #sub-visual .sub-visual-next a{}
+#sub-visual .sub-visual-prev a span, #sub-visual .sub-visual-next a span{}
+#sub-visual .sub-visual-prev{ left: 0; transform: translate(0, -50%);}
+#sub-visual .sub-visual-next{ right:0; transform: translate(0, -50%);}
+#sub-visual h2{position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 페이지 네비게이션(Bread Crumb)
+***********************************************************************/
+#breadcrumb{width:100%; background:#aaa; height:35px; text-align:right;}
+#breadcrumb span{position:relative; display:inline-block; margin-left:35px; line-height:35px;}
+#breadcrumb span::before{position:absolute; display:inline-block; content:'>'; right:-23px; top:0; font-size:10px;}
+#breadcrumb span:last-child::before{visibility:hidden;}
+#breadcrumb span.active{color:#fc0;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 4차 카테고리 스타일
+***********************************************************************/
+#cnb{}
+#cnb ul{}
+#cnb ul li{}
+#cnb ul li a{}
+#cnb ul li.active{}
+#cnb ul li.active a{}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 풋터 스타일
+***********************************************************************/
+#footer{width:100%; background:#333; padding:50px 0;}
+
+#footer ul.fnb{width:inherit; display:block; height:35px; line-height:35px; margin-bottom:15px;}
+#footer ul.fnb li{float:left;}
+#footer ul.fnb li a{position:relative; display:block; height:inherit; line-height:inherit; margin-right:50px; color:#ddd; font-weight:700;}
+#footer ul.fnb li a::before{position:absolute; content:''; width:1px; height:10px; background:#777; right:-25px; top:13px;}
+#footer ul.fnb li:last-child a::before{visibility:hidden;}
+
+#footer ul.footer-info{width:inherit; display:block;}
+#footer ul.footer-info p{height:25px; line-height:25px; color:#888;}
+#footer ul.footer-info p span{display:inline-block; margin-right:25px;}
+#footer ul.footer-info p.copyright{margin-top:15px; font-size:0.85em; color:#555;}
+#footer ul.footer-info p.copyright a{color:#aaa;}
+
+#footer div.sns{position:absolute; top:0; right:0;}
+#footer div.sns a{display:inline-block; padding:5px; background:#aaa; color:#333; font-size:1em;}
+#footer div.sns a[data-menu="블로그"]{}
+#footer div.sns a[data-menu="인스타그램"]{}
+#footer div.sns a[data-menu="페이스북"]{}
+/**********************************************************************/
+

@@ -1,0 +1,37 @@
+@charset "utf-8"; 
+
+/*
+ * --------------------------------------------------------------------------
+ * descript : 메인 콘텐츠
+ * --------------------------------------------------------------------------
+ * version	: 2.0.0
+ * author	: Yoodaekyung
+ * update	: 2018.08.17
+ * email	: eorud0818@naver.com
+ * --------------------------------------------------------------------------
+ */
+
+/* 메인 비주얼 슬라이드 시작 */
+#visual-slider{position:relative; width:100%; display:inline-block;}
+
+#visual-slider .slick-list{}
+
+#visual-slider .item{position:relative; width:100%; float:left;}
+#visual-slider .item > img{float:left;}
+
+#visual-slider .item .object{position:absolute; width:100%; left:0; top:0; z-index:10;}
+#visual-slider .item .object img{width:100%;}
+#visual-slider .item .obj{}
+#visual-slider .item .txt01{animation:fadeOutUp 0.5s both;}
+#visual-slider .item .txt02{animation:fadeOutDown 0.5s both;}
+#visual-slider .item .txt03{animation:fadeOutDown 0.5s both;}
+
+#visual-slider .slick-active{}
+#visual-slider .slick-active .txt01{animation:fadeInDown 0.5s both 0.5s;}
+#visual-slider .slick-active .txt02{animation:fadeInUp 0.5s both 0.8s;}
+#visual-slider .slick-active .txt03{animation:fadeInUp 0.5s both 1.3s;}
+#visual-slider .slick-active .media{animation:fadeInUp 0.5s both 1.6s;}
+/* 메인 비주얼 슬라이드 끝 */
+
+
+.section01{margin-top:-3px;}

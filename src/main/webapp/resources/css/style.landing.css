@@ -1,0 +1,206 @@
+@charset "utf-8"; 
+/**********************************************************************
+* Descript : 랜딩 사이트의 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.04.23
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 전체영역 레이아웃 관리
+***********************************************************************/
+body{padding-top:100px; min-width:1200px; overflow-x:hidden;}
+.inner{position:relative; width:1220px; margin:0 auto;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 해더 스타일(로고, GNB)
+***********************************************************************/
+.header{position:fixed; left:0; top:0; width:100%; height:100px; line-height:100px; background:#fff; z-index:11; border-top:3px solid #005f9f; -webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; text-align:center; border-bottom: 1px solid #cecece;}
+.header .inner{text-align:right;}
+.header a.logo{display:inline-block; height:inherit; line-height:inherit; position:absolute; left:0; top:0;}
+.header a.logo img{vertical-align:middle;}
+.header ul.gnb{display:inline-block;}
+.header ul.gnb li{float:left;}
+.header ul.gnb li a{position:relative; display:inline-block; color:#222; height:inherit; line-height:inherit; font-size:1.2em; margin-left:50px;  transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease;}
+.header ul.gnb li a::before{content:''; display:inline-block; position:absolute; left:-35px; bottom:40px; width:7px; height:20px; background:#005f9f; opacity:0; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease;}
+.header ul.gnb li a:hover{text-decoration:none; color:#005f9f;}
+.header ul.gnb li a:hover::before{left:-15px; opacity:1;}
+.header ul.gnb li.active a{color:#005f9f; font-weight:700;}
+.header ul.gnb li.active a::before{left:-15px; opacity:1;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 우측하단 최상단으로 가기 버튼(jquery.landing.js)
+***********************************************************************/
+#top{position:fixed; opacity:0; right:20px; bottom:50px; z-index:99;-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
+#top.fadeIn{opacity:1;}
+#top.fadeOut{opacity:0;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 메인 슬라이드 스타일(slick.js / slick.theme.css)
+***********************************************************************/
+.main-slide{position:relative; width:100%; background:#222; padding:0;}
+.main-slide .inner{width:100%;}
+.main-slide .item{position:relative; height:930px;}
+.main-slide .item.bg01{background:url("../../../img/landing/slid_bg_01.jpg") no-repeat left top; background-size:cover;}
+.main-slide .item.bg01 .obj0101{position:absolute; left:50%; top:0; margin-left:-600px;} /* 슬라이드 내 동적 엘리먼트 */
+
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 랜딩 콘텐츠영역 공통 레이아웃
+***********************************************************************/
+section{text-align:center; padding:100px 0;}
+section h3{margin-bottom:70px;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 임플란트 섹션
+***********************************************************************/
+section#implant{position:relative; background:#ebeff5; }
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 교정 섹션
+***********************************************************************/
+section#braces{position:relative; background:url("../../../img/landing/con_bg_03.png") no-repeat center center; background-size:cover; }
+/**********************************************************************/
+
+/**********************************************************************
+* Descript : 타이거 치과의 특별함 섹션
+***********************************************************************/
+section#special{position:relative; background:url("../../../img/landing/con_bg_04.png") no-repeat center center; background-size:cover; padding:0;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 이벤트 섹션
+***********************************************************************/
+section#event{position:relative; padding:0; text-align:center;}
+section#event img{display:inline-block;}
+section#event .bg01{background:url("../../../img/landing/con_bg_05.png") no-repeat center center; background-size:cover;}
+section#event .bg02{background:url("../../../img/landing/con_bg_0502.png") no-repeat center center; background-size:cover;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 진료안내 섹션
+***********************************************************************/
+section#information{position:relative; background:#555d68; padding:0;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 오시는길 섹션
+***********************************************************************/
+.wrap_controllers{display:none !important;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 둘러보기 슬라이드(slick.js)
+***********************************************************************/
+.oasis-slider{width:1120px; height:650px; margin:0 auto;}
+.oasis-slider .slick-slide{position:relative; height:650px;}
+.oasis-slider .slick-slide span{position:absolute; display:inline-block; right:25px; bottom:25px; min-width:168px; height:58px; line-height:54px; text-align:center; color:#fff; background:rgba(0,0,0,0.6); padding:0 25px; font-size:1.2em; font-weight:700;}
+
+.thumb-slider{height:120px; margin:15px 40px;}
+.thumb-slider .slick-list{margin-left:-5px;}
+.thumb-slider .slick-slide{margin-left:5px; background:#000; outline:none; cursor:pointer; height:120px;}
+.thumb-slider .slick-slide img{width:100%; opacity:0.4;  transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease;}
+.thumb-slider .slick-slide img:hover{opacity:1;}
+
+.thumb-slider .slick-slide.slick-current img {opacity:1;}
+.thumb-slider .slick-slide.slick-current{position:relative;}
+.thumb-slider .slick-slide.slick-current::before{position:absolute; left:0; top:0; content:''; display:inline-block; width:100%; height:100%; z-index:9; border:5px solid #3ad0c0; box-sizing:border-box;}
+/**********************************************************************/
+
+
+.quick-counsel-button button.toggle-button{position:fixed; left:50%; bottom:0; transform:translate(-50% , 0); display:inline-block; width:300px; height:60px; line-height:60px; text-align:center; font-size:1.4em; color:#fff; background:#005c99; z-index:10;}
+.quick-counsel-button button.toggle-button.active{bottom:250px;}
+
+
+/**********************************************************************
+* Descript : 빠른상담 폼 레이아웃 및 스타일
+***********************************************************************/
+section#quick-counsel{position:fixed; left:0; bottom:-250px; width:100%; background:#005c99; padding:0; height:250px; z-index:10;}
+section#quick-counsel.active{bottom:0;}
+
+section#quick-counsel .inner{position:relative; background:url("../../../img/landing/f_logo.png") no-repeat left center; text-align:right; padding:50px 0;}
+section#quick-counsel .inner::before{position:absolute; display:inline-block; content:''; width:200%; height:100%; left:330px; top:0; background:#3d4754;}
+ul.quick-counsel-form{display:inline-block; width:850px;}
+ul.quick-counsel-form li{position:relative; float:left; box-sizing:border-box; text-align:left;}
+
+ul.quick-counsel-form li:nth-child(1){width:40%;}
+ul.quick-counsel-form li:nth-child(1) div{position:relative; padding-left:80px;  height:45px; line-height:45px; margin-bottom:5px;}
+ul.quick-counsel-form li:nth-child(1) input[type="text"]{background:#fff; height:45px; line-height:45px; box-sizing:border-box; padding:0 5px; float:left;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="고객명"]{width:100%;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="연락처1"]{width:32%;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="연락처2"]{width:32%; margin:0 2%;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="연락처3"]{width:32%;}
+ul.quick-counsel-form li:nth-child(1) select{width:100%; background:#fff url("../../../img/landing/arrow.png") no-repeat 95% center; height:45px; line-height:45px; float:left; box-sizing:border-box; padding:0 5px; cursor:pointer;}
+ul.quick-counsel-form li:nth-child(1) label{position:absolute; display:inline-block; height:45px; line-height:45px; left:0; top:0; font-weight:700; color:#fff;}
+
+ul.quick-counsel-form li:nth-child(2){width:40%; padding:0 10px;}
+ul.quick-counsel-form li:nth-child(2) div{position:relative;}
+ul.quick-counsel-form li:nth-child(2) label[element-name="상담내용"]{display:none;}
+ul.quick-counsel-form li:nth-child(2) textarea{width:100%; background:#fff; padding:5px; box-sizing:border-box; min-height:95px; max-height:95px; min-width:100%; max-width:100%; font-size:11px; line-height:15px; margin-bottom:5px;}
+ul.quick-counsel-form li:nth-child(2) button{display:inline-block; background:#fdc280; min-width:150px; font-weight:700; color:#3d4754; height:45px; line-height:45px; float:left;}
+ul.quick-counsel-form li:nth-child(2) span.private{position:absolute; right:0; top:0; height:45px; line-height:45px; color:#fff; font-weight:700;}
+
+ul.quick-counsel-form li:nth-child(3){width:20%;}
+ul.quick-counsel-form li:nth-child(3) button{display:inline-block; font-size:1em; font-weight:700; color:#fff; background:#005c99; width:100%; height:145px; line-height:100%; text-align:center;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 빠른상담 자세히보기 Dim 팝업 스타일
+***********************************************************************/
+.pop-private{display:none; position:fixed; left:0; top:0; z-index:105; width:100%; height:100%; background:rgba(0,0,0,0.9);}
+.pop-private .pop-inner{width:90%; max-width:640px; margin:100px auto 0 auto; background:#fff; border:5px solid #005c99; border-radius:5px;}
+.pop-private .pop-inner h3{text-align:center; padding:20px 0; background:#005c99; color:#fff; font-size:17px; font-weight:700;}
+.pop-private .pop-inner p{padding:15px; font-size:14px; line-height:24px; height:350px; overflow:auto;}
+.pop-private .pop-inner p b{display:block; font-weight:700; color:#222;}
+.pop-private .pop-inner button{display:block; width:100%; text-align:center; padding:10px 0; font-size:15px; cursor:pointer;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 풋터 스타일
+***********************************************************************/
+section#footer{padding:0 0 70px 0;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 체크박스 및 라디오버튼 스타일
+***********************************************************************/
+ul.quick-counsel-form{text-align:right;}
+ul.quick-counsel-form input[type="radio"],
+ul.quick-counsel-form input[type="checkbox"]{display:none;}
+
+ul.quick-counsel-form input[type="radio"] + label,
+ul.quick-counsel-form input[type="checkbox"] + label{font-size:14px; position:relative; cursor:pointer;}
+
+ul.quick-counsel-form input[type="radio"] + label::before,
+ul.quick-counsel-form input[type="checkbox"] + label::before{position:absolute; content:""; display:inline-block; left:-30px; top:-3px; border:1px solid #ddd; width:23px; height:23px; margin-right:10px; box-sizing: border-box; cursor:pointer; vertical-align:middle;}
+
+ul.quick-counsel-form input[type="radio"]:checked + label:after,
+ul.quick-counsel-form input[type="checkbox"]:checked + label::after{position:absolute; content:""; display:inline-block; width:15px; height:15px; left:-26px; top:1px; background:#fff}
+/**********************************************************************/
+

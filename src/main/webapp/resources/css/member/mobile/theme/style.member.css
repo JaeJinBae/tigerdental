@@ -1,0 +1,166 @@
+@charset "utf-8";
+
+/*
+ * --------------------------------------------------------------------------
+ * descript : 맴버
+ * --------------------------------------------------------------------------
+ * version	: 2.0.0
+ * author	: Yoodaekyung
+ * update	: 2018.08.17
+ * email	: eorud0818@naver.com
+ * --------------------------------------------------------------------------
+ */
+
+/* --------------------------------------------------------------------------
+   타이틀
+   -------------------------------------------------------------------------- */
+.member-title{width:100%; padding:4em 0 2em 0; text-align:center;}
+.member-title h5{font-size:2em; font-weight:700; color:#111;}
+
+/* --------------------------------------------------------------------------
+   로그인
+   -------------------------------------------------------------------------- */
+#login-form{max-width:640px; margin:0 auto; text-align:center; padding:50px 10px; box-sizing:border-box; background:#fafafa; border-top:2px solid #333;}
+#login-form p.cap{font-size:15px; line-height:25px;}
+#login-form ul.login-inner{width:100%; max-width:500px; display:inline-block; text-align:left;}
+#login-form li.login{}
+#login-form li.login p{position:relative; padding-left:80px; margin:10px 0;}
+#login-form li.login label{position:absolute; left:0; top; display:inline-block; width:80px; height:35px; line-height:35px;}
+#login-form li.login input[type="text"],#login-form li.login input[type="password"]{width:100%; height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px;}
+#login-form li.login button[type="submit"]{width:100%; height:50px; line-height:50px; background:#005b98; font-size:15px; color:#fff; font-weight:700;}
+#login-form li.login button[type="button"]{width:100%; height:50px; line-height:50px; background:#005b98; font-size:15px; color:#fff; font-weight:700;}
+
+#login-form li.member{padding:15px 0; height:35px; line-height:35px;}
+#login-form li.member p{position:relative; margin:5px 0; padding-left:13px; font-size:13px;}
+#login-form li.member p::before{position:absolute; display:inline-block; content:''; width:5px; height:5px; background:#333; border-radius:5px; left:0; top:15px;}
+#login-form li.member p a{position:absolute; height:35px; line-height:35px; right:0; top:0; width:115px; text-align:center; border:1px solid #eee; font-size:11px; background:#fff; color:#222;}
+#login-form li.member p a.btn-join{background:#005b98; border:1px solid #005b98; color:#fff;}
+
+/* --------------------------------------------------------------------------
+   회원가입
+   -------------------------------------------------------------------------- */
+#join-form li.private{text-align:right; margin-bottom:35px;}
+#join-form li.private p{text-align:left; box-sizing:border-box; background:#eee; border:1px solid #ccc; color:#222; font-size:13px; line-height:18px; padding:5px; margin-bottom:10px; height:200px; overflow-y:auto;}
+#join-form p.info{padding:10px 0; font-size:0.9em; color:#b18c4c; font-size:0.9em;}
+
+/* --------------------------------------------------------------------------
+   회원가입 폼
+   -------------------------------------------------------------------------- */
+.join-form{border-top:2px solid #222;}
+.join-form li{position:relative; padding:15px 0; border-bottom:1px solid #eee;}
+.join-form li i.star{color:#b18c4c;}
+.join-form li input[type="text"], .join-form li input[type="password"], .join-form li select{height:35px; line-height:35px; background:#fff; border:1px solid #ddd; padding:0 15px; box-sizing:border-box;}
+.join-form li.join-insert-info{border-bottom:2px solid #222;}
+.join-form li.join-insert-info h6.tit{font-size:1.2em; font-weight:700; margin-bottom:10px;}
+.join-form li.join-insert-info p.check{font-size:11px; color:#b18c4c; padding:10px 0 0 0;}
+.join-form li p.check{font-size:11px; color:#b18c4c; padding:10px 0 0 130px;}
+.join-form li p.radio{display:inline-block;}
+.join-form li div.check{display:inline-block;}
+.join-form li > label{display:inline-block; width:130px; color:#222; font-weight:700; padding:0 15px; font-size:1em;}
+.join-form li select{width:25%; max-width:100px; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:#fff url(/assets/img/common/theme/btn_down.png) no-repeat 98% center;}
+.join-form li button{height:35px; line-height:35px; background:#545869; color:#fff; padding:0 15px; font-weight:700;}
+.join-form li input[element-name="휴대전화"], .join-form li input[element-name="이메일"]{width:100px;}
+.join-form li input[element-name="우편번호"]{width:100px;}
+.join-form li input[element-name="기본주소"], .join-form li input[element-name="상세주소"]{width:calc(100% - 133px); margin:5px 0 0 133px;}
+@media (max-width:640px){
+	.join-form{}
+	.join-form li > label{display:block; width:100%; color:#222; font-weight:700; padding:0 0 10px 0;}
+	.join-form li p.check{padding:10px 0 0 0; line-height:1.6em;}
+	.join-form li select[element-name="이메일"]{width:35%;}
+	.join-form li input[type="text"], .join-form li input[type="password"]{width:100%;}
+	.join-form li input[element-name="아이디"]{width:130px;}
+	.join-form li input[element-name="휴대전화"], .join-form li input[element-name="이메일"]{width:25%;}
+	.join-form li input[element-name="우편번호"]{width:100px;}
+	.join-form li input[element-name="기본주소"], .join-form li input[element-name="상세주소"]{width:calc(100%); margin:5px 0 0 0;}
+}
+
+/* --------------------------------------------------------------------------
+   라디오 및 체크박스
+   -------------------------------------------------------------------------- */
+#join-form li.private input[type="checkbox"]{display:none;}
+#join-form li.private input[type="checkbox"] + label{font-size:14px; position:relative;}
+#join-form li.private input[type="checkbox"] + label::before{position:absolute; content:""; display:inline-block; left:-25px; top:-3px; border:1px solid #ddd; width:23px; height:23px; margin-right:10px; box-sizing: border-box; cursor:pointer; vertical-align:middle;}
+#join-form li.private input[type="checkbox"]:checked + label::after{position:absolute; content:""; display:inline-block; width:15px; height:15px; left:-21px; top:1px; background:#005b98}
+
+#join-form .join-form input[type="radio"]{display:none;}
+#join-form .join-form input[type="radio"] + label{font-size:14px; position:relative; cursor:pointer; margin-left:23px;}
+#join-form .join-form input[type="radio"] + label::before{position:absolute; content:""; display:inline-block; left:-25px; top:-3px; border:1px solid #ddd; width:23px; height:23px; border-radius:23px; margin-right:10px; box-sizing: border-box; cursor:pointer; vertical-align:middle;}
+#join-form .join-form input[type="radio"]:checked + label:after{position:absolute; content:""; display:inline-block; width:15px; height:15px; border-radius:15px; left:-21px; top:1px; background:#005b98}
+
+/* --------------------------------------------------------------------------
+   회원가입 완료
+   -------------------------------------------------------------------------- */
+#join-finish-form{}
+#join-finish-form .celebration{font-size:20px; margin-bottom:15px;}
+#join-finish-form li.join-finish-cap{text-align:center;}
+#join-finish-form li.join-finish-cap p{font-size:13px; line-height:20px; color:#222;}
+#join-finish-form li.join-finish-cap p b{font-weight:700;}
+
+#join-finish-form li.join-finish-info{padding:25px 0;}
+#join-finish-form li.join-finish-info p{padding:5px 0; font-size:12px; color:#22;}
+#join-finish-form li.join-finish-info p b{color:#cc0000;}
+#join-finish-form li.join-finish-info table.join-finish-form{width:100%; border-top:2px solid #005b98; font-size:13px;}
+#join-finish-form li.join-finish-info table.join-finish-form th{width:85px; padding:10px; background:#f1f1f1; border-bottom:1px solid #ddd; font-weight:700;}
+#join-finish-form li.join-finish-info table.join-finish-form td{padding:20px 15px; background:#fff; border-bottom:1px solid #eee}
+
+/* --------------------------------------------------------------------------
+   아이디 및 비밀번호 찾기
+   -------------------------------------------------------------------------- */
+#find-account{max-width:640px; margin:0 auto 100px auto; text-align:center; background:#fafafa; box-sizing:border-box;}
+#find-account .find-account-nav{width:100%; border-top:2px solid #333;}
+#find-account .find-account-nav a{display:inline-block; width:50%; float:left; height:50px; line-height:50px; text-align:center; font-size:15px; background:#fff; color:#222;}
+#find-account .find-account-nav a.active{background:#005b98; color:#fff; font-weight:700;}
+
+#find-account .find-account-inner{width:100%; max-width:600px; display:inline-block; box-sizing:border-box; padding:25px 0 50px 0;}
+#find-account .find-account-inner .find-account-form{width:100%; text-align:left;}
+#find-account .find-account-inner .find-account-form th{width:60px; padding:10px; font-weight:700;}
+#find-account .find-account-inner .find-account-form td{padding:10px 0;}
+#find-account .find-account-inner .find-account-form td i{display:inline-block; width:20px; text-align:center;}
+#find-account .find-account-inner .find-account-form td input[type="text"]{width:25%; height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px;}
+#find-account .find-account-inner .find-account-form td input[element-name='이름'],#find-account .find-account-inner .find-account-form td input[element-name='아이디']{width:100%;}
+#find-account .find-account-inner .find-account-form td select{height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px; min-width:25%; background:#fff url(/assets/img/common/theme/btn_down.png) no-repeat 95% center;;}
+#find-account .find-account-inner button{width:100%; height:50px; line-height:50px; background:#005b98; font-size:15px; color:#fff; font-weight:700;}
+
+/* --------------------------------------------------------------------------
+   아이디 및 비밀번호 확인
+   -------------------------------------------------------------------------- */
+#find-account-check{margin-bottom:100px;}
+#find-account-check .inner{max-width:480px;}
+#find-account-check li.join-finish-cap{text-align:center;}
+#find-account-check li.join-finish-cap p{font-size:13px; color:#222; line-height:20px;}
+#find-account-check li.join-finish-cap p b{font-weight:700;}
+
+#find-account-check li.join-finish-info{padding:10px 0;}
+#find-account-check li.join-finish-info p{padding:5px 0; font-size:12px; color:#22;}
+#find-account-check li.join-finish-info p b{color:#cc0000;}
+#find-account-check li.join-finish-info table.join-finish-form{width:100%; border-top:2px solid #005b98; font-size:13px;}
+#find-account-check li.join-finish-info table.join-finish-form th{width:125px; padding:10px; background:#f1f1f1; border-bottom:1px solid #ddd; font-weight:700;}
+#find-account-check li.join-finish-info table.join-finish-form td{padding:20px 15px; background:#fff; border-bottom:1px solid #eee}
+
+#find-account-check li.member{}
+#find-account-check li.member p{position:relative; margin:5px 0; padding-left:13px; font-size:13px; height:35px; line-height:35px;}
+#find-account-check li.member p::before{position:absolute; display:inline-block; content:''; width:5px; height:5px; background:#333; border-radius:5px; left:0; top:15px;}
+#find-account-check li.member p a{position:absolute; height:35px; line-height:35px; right:0; top:0; width:135px; text-align:center; border:1px solid #eee; font-size:12px; background:#fff; color:#222;}
+#find-account-check li.member p a.btn-join{background:#005b98; border:1px solid #005b98; color:#fff;}
+
+/* --------------------------------------------------------------------------
+   6.0 회원탈퇴
+   -------------------------------------------------------------------------- */
+#member-form{width:100%;}
+
+#member-form .inner{padding:50px; box-sizing:border-box; background:#fafafa; border-top:2px solid #333;}
+#member-form .member-leave-info{text-align:center; font-size:15px; line-height:30px; margin-bottom:25px;}
+#member-form .member-leave-info strong{color:#005d99; font-weight:500; font-size:20px;}
+#member-form ul{}
+#member-form ul li{padding:10px 0;}
+#member-form textarea{background:#fff; border:1px solid #ccc; width:100%; max-width:100%; height:100px;}
+
+#member-form input[type="checkbox"]{display:none;}
+#member-form input[type="checkbox"] + label{font-size:14px; position:relative; padding-left:30px; cursor:pointer; height:23px; line-height:23px;}
+#member-form input[type="checkbox"] + label::before{content:""; display:inline-block; left:0; top:0; border:1px solid #ddd; width:23px; height:23px; box-sizing: border-box;}
+#member-form input[type="checkbox"]:checked + label::after{content:""; display:inline-block; width:15px; height:15px; left:4px; top:4px; background:#fdc280}
+
+#member-form input[type="radio"]{display:none;}
+#member-form input[type="radio"] + label{font-size:14px; position:relative; padding-left:30px; cursor:pointer; height:23px; line-height:23px;}
+#member-form input[type="radio"] + label::before{content:""; display:inline-block; left:0; top:0; border:1px solid #ddd; width:23px; height:23px; border-radius:23px; box-sizing: border-box;}
+#member-form input[type="radio"]:checked + label::after{content:""; display:inline-block; width:15px; height:15px; border-radius:15px; left:4px; top:4px; background:#fdc280}

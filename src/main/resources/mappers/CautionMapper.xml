@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webaid.mappers.CautionMapper">
+
+	<select id="selectAll" resultType="CautionVO">
+		select * from caution where use_state='o' order by no desc
+	</select>
+	
+	<select id="selectOne" resultType="CautionVO">
+		select * from caution where no=#{no}
+	</select>
+	
+	<select id="selectBefore" resultType="CautionVO">
+		select * from caution where no=(select min(no) from caution where no<![CDATA[>]]>#{no}) and use_state='o'
+	</select>
+	
+	<select id="selectAfter" resultType="CautionVO">
+		select * from caution where no=(select max(no) from caution where no<![CDATA[<]]>#{no}) and use_state='o'
+	</select>
+	
+	<insert id="insert">
+		insert into caution values(0, #{clinic_type}, #{writer}, #{regdate}, #{cnt}, #{title}, #{content}, #{use_state}, #{thumb_origin}, #{thumb_stored})
+	</insert>
+	
+	<update id="update">
+		update caution set clinic_type=#{clinic_type}, writer=#{writer}, regdate=#{regdate}, cnt=#{cnt}, title=#{title}, content=#{content}, thumb_origin=#{thumb_origin}, thumb_stored=#{thumb_stored} where no=#{no}
+	</update>
+	
+	<update id="updateThumb">
+		update caution set thumb_origin=#{thumb_origin}, thumb_stored=#{thumb_stored} where no=#{no}
+	</update>
+	
+	<update id="updateCnt">
+		update caution set cnt=cnt+1 where no=#{no}
+	</update>
+	
+	<update id="updateUseState">
+		update caution set useState=#{use_state} where no=#{no}
+	</update>
+	
+	<delete id="delete">
+		delete from caution where no=#{no}
+	</delete>
+	
+	<select id="listSearch" resultType="CautionVO">
+		select * from caution where use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<select id="listSearch12" resultType="CautionVO">
+		select * from caution where use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<select id="listSearchAll" resultType="CautionVO">
+		select * from caution where no>0 <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}
+	</select>
+	
+	<sql id="search">
+		<if test="searchType=='t'.toString()">
+			and title like concat('%',#{keyword},'%')
+		</if>
+		<if test="searchType=='c'.toString()">
+			and content like concat('%',#{keyword},'%') 
+		</if>
+		<if test="searchType=='w'.toString()">
+			and writer=#{keyword}
+		</if>
+		<if test="searchType=='ct'.toString()">
+			and clinic_type=#{keyword}
+		</if>
+	</sql>
+	
+	<select id="listSearchCount" resultType="int">
+		select count(no) from caution where use_state='o' <include refid="search"></include>
+	</select>
+	
+	<select id="listSearchCount12" resultType="int">
+		select count(no) from caution where use_state='o' <include refid="search"></include>
+	</select>
+	
+	<select id="listSearchCountAll" resultType="int">
+		select count(no) from caution where no>0 <include refid="search"></include>
+	</select>
+	
+</mapper>

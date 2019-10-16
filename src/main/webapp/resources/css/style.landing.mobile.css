@@ -1,0 +1,251 @@
+@charset "utf-8"; 
+/**********************************************************************
+* Descript : 랜딩 사이트의 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.04.23
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 전체영역 레이아웃 관리
+***********************************************************************/
+body{padding-top:70px;}
+.inner{position:relative; margin:0 auto; max-width:640px;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 해더 스타(로고, GNB)
+***********************************************************************/
+.header{position:fixed; left:0; top:0; width:100%; padding:20px 0; background:rgba(255,255,255,1); border-bottom:1px solid #cecece; z-index:999; -webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; text-align:center;}
+.header .inner{position:relative; max-width:640px;}
+.header a.btn-call{position:absolute; right:20px; top:0;}
+.header a.btn-call img{width:2.4em;}
+.header a.logo{display:inline-block; height:inherit; line-height:inherit;}
+.header a.logo img{vertical-align:middle; height:2.4em;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : GNB
+***********************************************************************/
+nav{position:absolute; top:70px; width:100%; background:#005c99; display:none; padding:0 40px; box-sizing:border-box;}
+nav.gnb ul li{width:100%;}
+nav.gnb ul li.gnb-reserve{padding:30px 0; box-sizing:border-box;}
+nav.gnb ul li a{position:relative; line-height:3.6em; display:block; color:#fff; font-size:1.3em; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease;}
+nav.gnb ul li a::before{content:''; display:inline-block; width:100%; position:absolute; left:50%; margin-left:-50%; bottom:0; height:1px; background:rgba(255,255,255,0.1); transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease;}
+nav.gnb ul li:last-child a::before{display:none;}
+nav.gnb ul li a:hover{text-decoration:none; color:#fdc280;}
+nav.gnb ul li a:hover::before{width:100%;}
+nav.gnb ul li.active a{color:#fdc280; font-weight:700;}
+nav.gnb ul li.active a::before{width:100%; height:1px;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 우측하단 최상단으로 가기 버튼(jquery.landing.js)
+***********************************************************************/
+#top{position:fixed; opacity:0; width:50px; right:15px; bottom:75px; z-index:99;-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
+#top.fadeIn{opacity:1;}
+#top.fadeOut{opacity:0;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 메인 슬라이드 스타일(slick.js / slick.theme.css)
+***********************************************************************/
+.main-slide{position:relative; width:100%; max-width:640px; margin:0 auto; background:#222; padding:0; z-index:10;}
+.main-slide .inner{width:100%;}
+.main-slide .item{position:relative;}
+.main-slide .item.bg01 .obj0101{position:absolute; width:100%; left:0; top:20%;}
+.main-slide .item.bg01 .obj0102{position:absolute; width:100%; left:0; bottom:0;}
+
+
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 랜딩 콘텐츠영역 공통 레이아웃
+***********************************************************************/
+section{text-align:center; padding:50px 0;}
+section h3{margin-bottom:30px;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 타이거치과 의료진 소개 섹션
+***********************************************************************/
+section#doctor{}
+section#doctor .doctor{margin:0 25px; box-shadow:0 0 40px rgba(0,0,0,0.1);}
+section#doctor .doctor img{background:#fff; border:1px solid #eee;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 임플란트 섹션
+***********************************************************************/
+section#implant{position:relative; background:#ebeff5; }
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 교정 섹션
+***********************************************************************/
+section#braces{position:relative; background:url("../../../img/landing/m/con_bg_03.png") no-repeat center top; background-size:cover; }
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 타이거 치과의 특별함 섹션
+***********************************************************************/
+section#special{padding:0;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 이벤트 섹션
+***********************************************************************/
+section#event{padding:0;}
+/**********************************************************************/
+
+/**********************************************************************
+* Descript : 진료안내 섹션
+***********************************************************************/
+section#information{position:relative; background:#555d68; padding:0;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 오시는길 섹션
+***********************************************************************/
+.wrap_controllers{display:none !important;}
+/**********************************************************************/
+
+
+
+
+
+/**********************************************************************
+* Descript : 빠른상담 자세히보기 Dim 팝업 스타일
+***********************************************************************/
+.pop-private{display:none; position:fixed; left:0; top:0; z-index:9999; width:100%; height:100%; background:rgba(0,0,0,0.9);}
+.pop-private .pop-inner{width:90%; max-width:640px; margin:50px auto 0 auto; background:#fff; border:5px solid #005c99; border-radius:5px;}
+.pop-private .pop-inner h3{text-align:center; padding:20px 0; background:#005c99; color:#fff; font-size:17px; font-weight:700;}
+.pop-private .pop-inner p{padding:15px; font-size:14px; line-height:24px; height:350px; overflow:auto;}
+.pop-private .pop-inner p b{display:block; font-weight:700; color:#222;}
+.pop-private .pop-inner button{display:block; width:100%; text-align:center; padding:10px 0; font-size:15px; cursor:pointer;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 풋터 스타일
+***********************************************************************/
+section#footer{padding:50px 0 100px 0;}
+/**********************************************************************/
+
+
+
+.quick-counsel-button button.toggle-button{position:fixed; left:50%; bottom:0; transform:translate(-50% , 0); display:inline-block; width:100%; height:60px; line-height:60px; text-align:center; font-size:1.4em; color:#fff; background:#005c99; z-index:10;}
+.quick-counsel-button button.toggle-button.active{bottom:475px;}
+.quick-counsel-button button.toggle-button b{color:rgba(255,255,255,0.3); font-weight:700; font-size:1em;}
+
+
+
+/**********************************************************************
+* Descript : 빠른상담 폼 레이아웃 및 스타일
+***********************************************************************/
+section#quick-counsel{position:fixed; left:0; bottom:-475px; width:100%; background:#3d4754; padding:0; height:475px; padding:50px 0; box-sizing:border-box; z-index:10;}
+section#quick-counsel.active{bottom:0;}
+
+ul.quick-counsel-form{margin:0 10px;}
+ul.quick-counsel-form li{position:relative; box-sizing:border-box; text-align:left;}
+
+ul.quick-counsel-form li:nth-child(1){width:100%;}
+ul.quick-counsel-form li:nth-child(1) div{position:relative; padding-left:80px;  height:45px; line-height:45px; margin-bottom:5px;}
+ul.quick-counsel-form li:nth-child(1) input[type="text"]{background:#fff; height:45px; line-height:45px; box-sizing:border-box; padding:0 5px; float:left;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="고객명"]{width:100%;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="연락처1"]{width:33%;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="연락처2"]{width:calc(34% - 10px); margin:0 5px;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="연락처3"]{width:33%;}
+ul.quick-counsel-form li:nth-child(1) select{width:100%; background:#fff url("../../../img/landing/arrow.png") no-repeat 98% center; height:45px; line-height:45px; float:left; box-sizing:border-box; padding:0 5px; cursor:pointer;}
+ul.quick-counsel-form li:nth-child(1) label{position:absolute; display:inline-block; height:45px; line-height:45px; left:0; top:0; font-weight:700; color:#fff;}
+
+ul.quick-counsel-form li:nth-child(2){width:100%; height:145px; margin-bottom:5px;}
+ul.quick-counsel-form li:nth-child(2) div{position:relative;}
+ul.quick-counsel-form li:nth-child(2) label[element-name="상담내용"]{display:none;}
+ul.quick-counsel-form li:nth-child(2) textarea{width:100%; background:#fff; padding:5px; box-sizing:border-box; min-height:95px; max-height:95px; min-width:100%; max-width:100%; font-size:11px; line-height:15px; margin-bottom:5px;}
+ul.quick-counsel-form li:nth-child(2) button{display:inline-block; background:#fdc280; min-width:150px; font-weight:700; color:#3d4754; height:45px; line-height:45px; float:left;}
+ul.quick-counsel-form li:nth-child(2) span.private{position:absolute; right:0; top:0; height:45px; line-height:45px; color:#fff; font-weight:700;}
+
+ul.quick-counsel-form li:nth-child(3){width:100%;}
+ul.quick-counsel-form li:nth-child(3) button{display:block; font-size:1.4em; font-weight:700; color:#fff; background:#005c99; width:100%; height:75px; line-height:75px; text-align:center; box-shadow:0 0 2px rgba(0,0,0,0.4);}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 체크박스 및 라디오버튼 스타일
+***********************************************************************/
+ul.quick-counsel-form{text-align:right;}
+ul.quick-counsel-form input[type="radio"],
+ul.quick-counsel-form input[type="checkbox"]{display:none;}
+
+ul.quick-counsel-form input[type="radio"] + label,
+ul.quick-counsel-form input[type="checkbox"] + label{font-size:14px; position:relative; cursor:pointer;}
+
+ul.quick-counsel-form input[type="radio"] + label::before,
+ul.quick-counsel-form input[type="checkbox"] + label::before{position:absolute; content:""; display:inline-block; left:-30px; top:-3px; border:1px solid #ddd; width:23px; height:23px; margin-right:10px; box-sizing: border-box; cursor:pointer; vertical-align:middle;}
+
+ul.quick-counsel-form input[type="radio"]:checked + label:after,
+ul.quick-counsel-form input[type="checkbox"]:checked + label::after{position:absolute; content:""; display:inline-block; width:15px; height:15px; left:-26px; top:1px; background:#fff}
+/**********************************************************************/
+
+
+
+
+/**********************************************************************
+* Descript : GNB Hamburger 바 에니메이션
+***********************************************************************/
+.hamburger{width:2.4em; position:absolute; left:25px; top:-8px;}
+
+.hamburger .line{
+  width: 2.4em;
+  height: 2px;
+  border-radius:0;
+  background-color: #005d99;
+  display: block;
+  margin: 10px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger:hover{
+  cursor: pointer;
+}
+
+#hamburger-1.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1){
+  -webkit-transform: translateY(12px) rotate(45deg);
+  -ms-transform: translateY(12px) rotate(45deg);
+  -o-transform: translateY(12px) rotate(45deg);
+  transform: translateY(12px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3){
+  -webkit-transform: translateY(-12px) rotate(-45deg);
+  -ms-transform: translateY(-12px) rotate(-45deg);
+  -o-transform: translateY(-12px) rotate(-45deg);
+  transform: translateY(-12px) rotate(-45deg);
+}
+/**********************************************************************/

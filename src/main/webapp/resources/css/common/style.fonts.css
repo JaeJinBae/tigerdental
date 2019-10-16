@@ -1,0 +1,41 @@
+@charset "utf-8"; 
+
+/*
+ * --------------------------------------------------------------------------
+ * descript : 폰트 가져오기
+ * --------------------------------------------------------------------------
+ * version	: 2.0.0
+ * author	: Yoodaekyung
+ * update	: 2018.08.17
+ * email	: eorud0818@naver.com
+ * --------------------------------------------------------------------------
+ */
+
+ /*
+ * ==========================================================================
+ * Table of Contents 
+ * ==========================================================================
+ * 1.0 - 구글폰트
+ * 2.0 - 로컬 폰트
+ * 3.0 - 웹 폰트
+ * --------------------------------------------------------------------------
+ */
+
+/* --------------------------------------------------------------------------
+   1.0 https://fonts.google.com/
+   -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   2.0 로컬 폰트 가져오기
+   -------------------------------------------------------------------------- */
+   @import url("../../fonts/nanumsquare/nanumsquare.css");								/* 나눔 스퀘어	font-family: 'NanumSquare', sans-serif;		*/
+
+/* --------------------------------------------------------------------------
+   3.0 웹 폰트 가져오기
+   -------------------------------------------------------------------------- */
+   @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800');			/* 나눔 고딕		font-family: 'Nanum Gothic', sans-serif;	*/
+   @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700,800');		/* 나눔 명조		font-family: 'Nanum Myeongjo', sans-serif;	*/
+   @import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script');					/* 나눔 펜		font-family: 'Nanum Pen', sans-serif;		*/
+   @import url('https://fonts.googleapis.com/css?family=Nanum+Brush+Script');				/* 나눔 브러쉬	font-family: 'Nanum Brush', sans-serif;		*/
+   @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding:400,700');		/* 나눔 코딩		font-family: 'Nanum Coding', sans-serif;	*/
+   @import url("https://fonts.googleapis.com/earlyaccess/notosanskr.css");					/* 본고딕		font-family: 'Noto Sans KR ', sans-serif;	*/

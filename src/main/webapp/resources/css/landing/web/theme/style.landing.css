@@ -1,0 +1,66 @@
+@charset "utf-8"; 
+/**********************************************************************
+* Descript : 랜딩 사이트의 스타일 정의
+-----------------------------------------------------------------------
+* 최초작성일 : 2018.04.04
+* 최초작성자 : 더웹 유대경
+***********************************************************************/
+
+body{padding-top:140px;}
+
+
+.header{position:fixed; left:0; top:0; width:100%; background:#f4f4f4; z-index:9;}
+.header .inner{height:90px; line-height:90px;}
+.header .inner a.call{position:absolute; top: 50%; left: 0; transform: translate(0, -50%); display:inline-block; height:inherit; line-height:inherit;}
+.header .inner a.logo{position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height:inherit; line-height:inherit;}
+.header .inner a.blog{position:absolute; top: 50%; right:0; transform: translate(0, -50%); display:inline-block; height:inherit; line-height:inherit;}
+
+.header .full{width:100%; height:50px; line-height:50px; background:#fff; text-align:center; border-bottom:1px solid #c8c8c8;}
+.header ul.gnb{position:relative; display:inline-block;}
+.header ul.gnb li{float:left;}
+.header ul.gnb li:nth-child(even){margin:0 173px;}
+.header ul.gnb li a{position:relative; display:inline-block; color:#222; font-weight:400; height:inherit; line-height:inherit; font-size:17px; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease;}
+.header ul.gnb li a::before{content:''; display:inline-block; position:absolute; left:50%; bottom:-1px; transform: translate(-50%, 0); width:0; height:5px; background:#c9da1d; transition: all .3s ease; -webkit-transition: all .3s ease; -ms-transition: all .3s ease;}
+.header ul.gnb li a:hover{text-decoration:none; color:#222; font-weight:700;}
+.header ul.gnb li a:hover::before{width:100%;}
+.header ul.gnb li.active a{text-decoration:none; color:#222; font-weight:700;}
+.header ul.gnb li.active a::before{content:''; display:inline-block; position:absolute; left:50%; bottom:-1px; transform: translate(-50%, 0); width:100%; height:5px; background:#c9da1d;}
+
+#top{position:fixed; opacity:0; right:20px; bottom:50px; z-index:99;-webkit-transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out;}
+#top.fadeIn{opacity:1;}
+#top.fadeOut{opacity:0;}
+
+
+section#home{position:relative; height:800px; background:url(/assets/img/landing/con_bg_01.jpg) no-repeat center center;}
+section#home .obj0101{position:absolute; top:150px; left:0;}
+
+section#hospital{position:relative; height:800px; background:url(/assets/img/landing/con_bg_02.jpg) no-repeat center center;}
+section#hospital .obj0101{position:absolute; top:150px; left:-50px;}
+section#hospital .obj0102{position:absolute; top:500px; left:50px;}
+section#hospital .obj0103{position:absolute; top:150px; right:-50px;}
+
+section#special{position:relative; height:800px; background:url(/assets/img/landing/con_bg_03.jpg) no-repeat center center;}
+section#special .obj0101{position:absolute; width:100%; left:0; top:250px; text-align:center;}
+
+
+section#doctor{position:relative; padding:100px 0; background:#f2f2f2; text-align:center;}
+section#doctor ul.doctor-list{margin-top:35px;}
+section#doctor ul.doctor-list li.item{margin-right:100px !important;}
+section#doctor ul.doctor-list .slick-slide{margin: 0 25px;}
+section#doctor ul.doctor-list .slick-list{margin: 0 -25px;}
+
+
+
+
+section#location{position:relative; padding:100px 0; background:#fff; text-align:center;}
+section#location .wrap_controllers{display:none !important;}
+section#location .obj0101{}
+section#location .obj0102{margin:35px 0;}
+section#location .obj0103{}
+
+
+section#subject{position:relative; background:#555d68; text-align:center;}
+section#subject .obj0101{}
+
+section#landing-footer{position:relative; background:#fff; text-align:center;}
+section#landing-footer .obj0101{}

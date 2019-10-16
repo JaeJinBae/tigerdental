@@ -1,0 +1,287 @@
+@charset "utf-8"; 
+
+/*
+ * --------------------------------------------------------------------------
+ * descript : 게시판 테마
+ * --------------------------------------------------------------------------
+ * version	: 2.0.0
+ * author	: Yoodaekyung
+ * update	: 2018.08.17
+ * email	: eorud0818@naver.com
+ * --------------------------------------------------------------------------
+ */
+
+/* --------------------------------------------------------------------------
+   타이틀
+   -------------------------------------------------------------------------- */
+.board-title{width:100%; padding:4em 0 2em 0; text-align:center;}
+.board-title h5{font-size:2em; font-weight:700; color:#111;}
+
+
+
+/**********************************************************************
+* Descript : NEWS 게시판 스타일
+***********************************************************************/
+.board-tit{text-align:center; padding:25px 0;}
+
+.board-notice-list{width:100%;}
+.board-notice-list ul.full{border-top:2px solid #858585;}
+.board-notice-list ul li{}
+.board-notice-list ul li a{display:block; padding:15px; border-bottom:1px solid #cfd1d4; color:#222; }
+.board-notice-list ul li a:hover{text-decoration:none;}
+.board-notice-list ul li a b{position:relative; display:block;  padding:5px 0px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.board-notice-list ul li a b i.notice{left:0; top:0; display:inline-block; padding:5px 10px; background:#2ab3bc; color:#fff; font-size:11px; font-weight:700;}
+.board-notice-list ul li a i.name{font-size:12px; color:#aaa;}
+.board-notice-list ul li a i.date{font-size:12px; color:#aaa;}
+.board-notice-list ul li a span.line{display:inline-block; font-size:11px; color:#ccc; padding:0 10px;}
+
+
+
+
+.board-notice-view{width:100%; }
+.board-notice-view ul.full{border-top:2px solid #858585;}
+.board-notice-view ul li{}
+.board-notice-view ul li div.title{padding:15px; border-bottom:1px solid #cfd1d4; color:#222; background:#eee; font-size:1em; line-height:1.5em; font-weight:700;}
+.board-notice-view ul li p.info{position:relative;  padding:15px; border-bottom:1px solid #cfd1d4;}
+.board-notice-view ul li p.info i.notice{left:0; top:0; display:inline-block; padding:5px 10px; background:#2ab3bc; color:#fff; font-size:11px; font-weight:700;}
+.board-notice-view ul li p.info i.name{font-size:12px; color:#777;}
+.board-notice-view ul li p.info i.date{font-size:12px; color:#777;}
+.board-notice-view ul li p.info i.hit{font-size:12px; color:#777;}
+.board-notice-view ul li p.info span.line{display:inline-block; font-size:11px; color:#ccc; padding:0 10px;}
+.board-notice-view ul li.con{padding:15px; border-bottom:1px solid #cfd1d4; font-size:1em; line-height:1.5em;}
+.board-notice-view ul li iframe{width:100% !important;}
+.board-notice-view .con img {height:auto !important; width:auto !important;}
+
+.prev-next-list{width:100%;}
+.prev-next-list ul{}
+.prev-next-list ul li{background:#fff;  border-bottom:1px solid #cfd1d4; text-align:left; padding:20px 0; font-size:13px; line-height:13px;}
+.prev-next-list ul li span{display:inline-block; float:left; width:70px; font-weight:700; text-align:center;}
+.prev-next-list ul li a{display:inline-block; width:calc(100% - 100px); box-sizing:border-box; color:#222; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+/**********************************************************************/
+
+
+
+#before-and-after{}
+#before-and-after ul{border-top:2px solid #222;}
+#before-and-after ul li{position:relative; padding:25px 0; border-bottom:1px solid #ddd;}
+#before-and-after ul li .before-and-after{position:relative; width:100%;}
+#before-and-after ul li .before-and-after img{width:100%; height:300px;}
+@media (max-width:640px){
+	#before-and-after ul li .before-and-after img{width:100%; height:auto !important;}
+}
+#before-and-after ul li a{position:relative; display:inline-block;}
+#before-and-after ul li a:hover{text-decoration:none;}
+#before-and-after ul li a span{display:block;}
+#before-and-after ul li a span:first-child{font-size:1.2em; font-weight:700; color:#222; line-height:1em; margin:20px 0 10px 0;}
+#before-and-after ul li a span:last-child{font-size:1em; font-weight:300; color:#aaa; line-height:1em;}
+
+#before-and-after ul li .before-and-after::before{position:absolute; display:inline-block; z-index:99; content:'Before'; width:90px; height:50px; border-radius:3px; line-height:50px; text-align:center; color:#fff; background:rgba(0,0,0,0.3); left:20px; top:20px;}
+#before-and-after ul li .before-and-after::after{position:absolute; display:inline-block; z-index:99; content:'After'; width:90px; height:50px; border-radius:3px; line-height:50px; text-align:center; color:#fff; background:rgba(0,0,0,0.3); right:20px; top:20px;}
+
+
+
+/**********************************************************************
+* Descript : 타이거치과 -> 내부시설
+***********************************************************************/v 
+.preview-slider{margin:25px 0 10px 0; width:100%;}
+.preview-slider li{position:relative;}
+.preview-slider span{position:absolute; right:0; bottom:0; display:inline-block; padding:10px 30px; font-size:13px; font-weight:700; color:#fff; background:rgba(0,60,99,0.8); border-top:2px solid #ff6d26; z-index:1;}
+.preview-slider img{width:100%;}
+
+.preview-thumb{width:100%; overflow:hidden; margin-bottom:25px;}
+.preview-thumb .slick-slide{margin:0 5px; outline: none !important; cursor:pointer;}
+.preview-thumb .slick-list{margin:0 -4px;}
+.preview-thumb .slick-current img{border:4px solid #ff6d26; box-sizing:border-box;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************************
+* Descript : 페이징 스타일
+***********************************************************************/
+#board-pagenation{width:100%;}
+#board-pagenation{width:100%; max-width:1200px; margin:30px auto; text-align:center;}
+#board-pagenation a{position:relative; display:inline-block; width:35px; height:35px; line-height:35px; font-size:1em; color:#333; margin:0 2px; box-sizing:border-box; border:1px solid #eee;}
+#board-pagenation a:hover{text-decoration:underline;}
+#board-pagenation a.on{color:#fff; font-weight:700; background:#222; border:1px solid #222;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 검색 폼 스타일
+***********************************************************************/
+.search-box{width:100%; max-width:640px; height:35px; margin:0 auto 25px auto;}
+.search-box select, .search-box input, .search-box button{float:left; box-sizing:border-box; display:inline-block; height:35px; line-height:35px; font-size:13px;}
+.search-box input[type="text"]{width:58%; margin:0 1%; border:1px solid #cfd1d4; text-align:left; padding:0 10px; background:url(/assets/img/board/search.png) no-repeat 98% center; background-size:20px;}
+.search-box button{width:15%; background:#555; color:#fff; font-weight:700; cursor:pointer;}
+.search-box select{width:25%; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:url(/assets/img/common/theme/btn_down.png) no-repeat 95% center;}
+/**********************************************************************/
+
+
+ /**********************************************************************
+* Descript : 온라인상담 게시판 스타일
+***********************************************************************/
+
+.board-counsel-list{width:100%;}
+.board-counsel-list ul.full{border-top:2px solid #858585; border-bottom:1px solid #eee;}
+.board-counsel-list ul li{position:relative;}
+.board-counsel-list ul li.empty{text-align:center; padding:50px 0;}
+.board-counsel-list ul li a{display:block; padding:15px; border-bottom:1px solid #cfd1d4; color:#222; }
+.board-counsel-list ul li a:hover{text-decoration:none;}
+.board-counsel-list ul li a b{position:relative; display:block;  padding:5px 100px 5px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.board-counsel-list ul li a b i.notice{left:0; top:0; display:inline-block; padding:5px 10px; background:#2ab3bc; color:#fff; font-size:11px; font-weight:700;}
+.board-counsel-list ul li a i.name{font-size:12px; color:#aaa;}
+.board-counsel-list ul li a i.date{font-size:12px; color:#aaa;}
+.board-counsel-list ul li a span.line{display:inline-block; font-size:11px; color:#ccc; padding:0 10px;}
+.board-counsel-list ul li div.answer{ position:absolute; top:50%; right:10px; transform:translate(0, -50%);}
+.board-counsel-list ul li div.answer i.state{display:inline-block; padding:10px 20px; color:#fff; font-size:12px; font-weight:700;}
+.board-counsel-list ul li div.answer i.com{background:#005d99; }
+.board-counsel-list ul li div.answer i.ready{background:#cbcbcb; }
+
+
+.board-counsel-view{width:100%; }
+.board-counsel-view ul.full{border-top:2px solid #858585;}
+.board-counsel-view ul li{position:relative;}
+
+.board-counsel-view ul li div.title{padding:15px; border-bottom:1px solid #cfd1d4; color:#222; background:#eee; font-size:1em; line-height:1.5em; font-weight:700;}
+.board-counsel-view ul li p.info{position:relative;  padding:15px; border-bottom:1px solid #cfd1d4;}
+
+.board-counsel-view ul li p.info span.answer{position:absolute; display:inline-block; top:50%; right:10px; transform:translate(0, -50%);}
+.board-counsel-view ul li p.info i.state{display:inline-block; padding:10px 20px; color:#fff; font-size:12px; font-weight:700;}
+.board-counsel-view ul li p.info i.com{background:#005d99; }
+.board-counsel-view ul li p.info i.ready{background:#cbcbcb; }
+
+.board-counsel-view ul li p.info i.notice{left:0; top:0; display:inline-block; padding:5px 10px; background:#005d99; color:#fff; font-size:11px; font-weight:700;}
+.board-counsel-view ul li p.info i.name{font-size:12px; color:#777;}
+.board-counsel-view ul li p.info i.date{font-size:12px; color:#777;}
+.board-counsel-view ul li p.info i.hit{font-size:12px; color:#777;}
+.board-counsel-view ul li p.info span.line{display:inline-block; font-size:11px; color:#ccc; padding:0 10px;}
+
+
+.board-counsel-view ul li.con{padding:15px; border-bottom:1px solid #cfd1d4; font-size:1em; line-height:1.5em;}
+
+
+
+.board-counsel-content{padding:15px; font-size:1em; line-height:1.5em; border-bottom:1px solid #eee;}
+
+.board-counsel-reply{padding:25px; background:#f4f4f4; border-top:1px solid #cfd1d4; border-bottom:1px solid #cfd1d4;}
+.board-counsel-reply .reply-title{position:relative; display:inline-block; width:100%; height:30px; line-height:30px;  padding-left:100px; box-sizing:border-box; font-weight:700; margin-bottom:25px;}
+.board-counsel-reply .reply-title i{position:absolute; left:0; top:0; display:inline-block; width:80px; height:30px; line-height:30px; text-align:center; color:#fff; background:#005d99; font-size:13px;}
+.board-counsel-reply .reply-txt{font-size:13px; line-height:20px;}
+/**********************************************************************/
+
+
+
+/**********************************************************************
+* Descript : 온라인상담 글쓰기 폼 스타일
+***********************************************************************/
+.board-cousel-form{width:100%; border-top:2px solid #858585; border-collapse: separate;}
+.board-cousel-form input[type="text"],
+.board-cousel-form input[type="password"],
+.board-cousel-form select{height:35px; line-height:35px; box-sizing:border-box; border:1px solid #cacaca; padding:0 5px;}
+.board-cousel-form select{min-width:80px;background:url(/assets/img/common/theme/btn_down.png) no-repeat 90% center;}
+.board-cousel-form textarea{width:100%; max-width:100%; min-width:100%; height:150px; bbox-sizing:border-box; padding:5px; border:1px solid #cacaca; color:#222; font-size:12px; line-height:20px;}
+.board-cousel-form input[element-name="제목"]{width:100%;}
+.board-cousel-form input[element-name="연락처"]{width:25%;}
+
+.board-cousel-form tbody{}
+.board-cousel-form tbody th{width:70px; padding:10px 20px; text-align:left; background:#f8f8f8; border-bottom:1px solid #cfd1d4; font-size:13px; font-weight:700;}
+.board-cousel-form tbody td{padding:10px; text-align:left; border-bottom:1px solid #cfd1d4;}
+.board-cousel-form tbody td .addFile > label,
+.board-cousel-form tbody td .addFile > input{display:none;}
+
+.private-agree textarea{width:100%; max-width:100%; min-width:100%; height:150px; background:#f4f4f4; box-sizing:border-box; padding:25px; color:#222; font-size:12px; line-height:20px; margin:15px 0;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 체크박스 및 라디오버튼 스타일
+***********************************************************************/
+.private-agree{text-align:center; margin-top:20px;}
+.private-agree button[type="button"]{letter-spacing:-1px; color:#ff722d; cursor:pointer;}
+
+.private-agree input[type="checkbox"]{display:none;}
+.private-agree input[type="checkbox"] + label{font-size:14px; position:relative; padding-left:30px; cursor:pointer; height:23px; line-height:23px;}
+.private-agree input[type="checkbox"] + label::before{content:""; display:inline-block; left:0; top:0; border:1px solid #ddd; width:23px; height:23px; box-sizing: border-box;}
+.private-agree input[type="checkbox"]:checked + label::after{content:""; display:inline-block; width:15px; height:15px; left:4px; top:4px; background:#005d99}
+
+.private-agree input[type="radio"]{display:none;}
+.private-agree input[type="radio"] + label{font-size:14px; position:relative; padding-left:30px; cursor:pointer; height:23px; line-height:23px;}
+.private-agree input[type="radio"] + label::before{content:""; display:inline-block; left:0; top:0; border:1px solid #ddd; width:23px; height:23px; border-radius:23px; box-sizing: border-box;}
+.private-agree input[type="radio"]:checked + label::after{content:""; display:inline-block; width:15px; height:15px; border-radius:15px; left:4px; top:4px; background:#005d99}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 온라인상담하기 비밀번호 입력폼 스타일
+***********************************************************************/
+.check-password{width:90%; max-width:640px; background:#eee; margin:50px auto; border:1px solid #333; text-align:center;}
+.check-password h3{background:#333; color:#fff; padding:20px; font-size:15px; font-weight:700;}
+.check-password p{font-size:13px; color:#777; padding:25px 0 10px 0; line-height:20px;}
+.check-password input[type="password"]{width:50%; border:1px solid #ccc; box-size:border-box; padding:7px; background:#fff;}
+/**********************************************************************/
+{padding:10px; text-align:left; border-bottom:1px solid #cfd1d4;}
+
+.private-agree textarea{width:100%; max-width:100%; min-width:100%; height:150px; background:#f4f4f4; box-sizing:border-box; padding:25px; color:#222; font-size:12px; line-height:20px; margin:15px 0;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 체크박스 및 라디오버튼 스타일
+***********************************************************************/
+.private-agree{text-align:center; margin-top:20px;}
+.private-agree button[type="button"]{letter-spacing:-1px; color:#ff722d; cursor:pointer;}
+
+.private-agree input[type="checkbox"]{display:none;}
+.private-agree input[type="checkbox"] + label{font-size:14px; position:relative; padding-left:30px; cursor:pointer; height:23px; line-height:23px;}
+.private-agree input[type="checkbox"] + label::before{content:""; display:inline-block; left:0; top:0; border:1px solid #ddd; width:23px; height:23px; box-sizing: border-box;}
+.private-agree input[type="checkbox"]:checked + label::after{content:""; display:inline-block; width:15px; height:15px; left:4px; top:4px; background:#005d99}
+
+.private-agree input[type="radio"]{display:none;}
+.private-agree input[type="radio"] + label{font-size:14px; position:relative; padding-left:30px; cursor:pointer; height:23px; line-height:23px;}
+.private-agree input[type="radio"] + label::before{content:""; display:inline-block; left:0; top:0; border:1px solid #ddd; width:23px; height:23px; border-radius:23px; box-sizing: border-box;}
+.private-agree input[type="radio"]:checked + label::after{content:""; display:inline-block; width:15px; height:15px; border-radius:15px; left:4px; top:4px; background:#005d99}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 온라인상담하기 비밀번호 입력폼 스타일
+***********************************************************************/
+.check-password{width:90%; max-width:640px; background:#eee; margin:50px auto; border:1px solid #333; text-align:center;}
+.check-password h3{background:#333; color:#fff; padding:20px; font-size:15px; font-weight:700;}
+.check-password p{font-size:13px; color:#777; padding:25px 0 10px 0; line-height:20px;}
+.check-password input[type="password"]{width:50%; border:1px solid #ccc; box-size:border-box; padding:7px; background:#fff;}
+/**********************************************************************/
+
+
+/**********************************************************************
+* Descript : 리얼스토리 게시판 스타일
+***********************************************************************/
+.board-gallery{width:100%; display:inline-block; margin-top:50px;}
+.board-gallery li.item{position:relative; float:left; width:50%; height:350px; margin-bottom:30px; cursor:pointer;}
+@media all and (max-width:630px) {
+	.board-gallery li.item {width:auto; float:none; max-width:300px; margin:0 auto 30px;}
+}
+.board-gallery li.item a{position:relative; display:block; margin:0 10px; height:100%; border:1px solid #e3e3e3; border-top:3px solid #005d99; overflow:hidden;}
+.board-gallery li.item a em {display:block; position:absolute; top:0; left:0; width:280px; height:284px; background:url('/assets/img/common/gallery_no_image.png') no-repeat 50% 50%; background-size:cover;}
+.board-gallery li.item a::before{opacity:0; position:absolute; display:inline-block; content:''; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.7); z-index:2; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.board-gallery li.item a::after{opacity:0; position:absolute; display:inline-block; content:'자세히 보기'; padding:10px 20px; top:50%; left:50%; transform: translate(-50%, -50%); background:#b9975e; color:#fff; font-weight:700; font-size:15px; z-index:3; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+.board-gallery li.item a:hover::before,
+.board-gallery li.item a:hover::after{opacity:1;}
+.board-gallery li.item a b{position:absolute; left:0; right:0; bottom:0; height:60px; padding: 0 10px; line-height:60px; background:#f1f1f1; font-size:15px; color:#222; text-align:center; font-weight:700; z-index:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border-top:1px solid #da8528;}
+/**********************************************************************/

@@ -1,0 +1,342 @@
+@charset "utf-8"; 
+
+/*
+ * --------------------------------------------------------------------------
+ * descript : 레이아웃
+ * --------------------------------------------------------------------------
+ * version	: 2.0.0
+ * author	: Yoodaekyung
+ * update	: 2018.08.17
+ * email	: eorud0818@naver.com
+ * --------------------------------------------------------------------------
+ */
+
+ /*
+ * ==========================================================================
+ * Table of Contents 
+ * ==========================================================================
+ * 1.0 - 전체 프로젝트에 필요한 클래스(#wrap, .inner, .full, #main-container, #sub-container 등)
+ * 2.0 - 해더
+ * 3.0 - 서브 비주얼
+ * 4.0 - 페이지 네비게이션
+ * 5.0 - 풋터
+ * 6.0 - 공통(진료시간, 고객센터, 오시는길)
+ * --------------------------------------------------------------------------
+ */
+
+/* --------------------------------------------------------------------------
+   1.0 전체 프로젝트에 필요한 클래스(#wrap, .inner, .full, #main-container, #sub-container 등)
+   -------------------------------------------------------------------------- */
+html, body{width:100%; height:100%;}
+body{font-family: 'Nanum Gothic', sans-serif;}
+
+#wrap{position:relative; width:100%;  min-height:100%; min-width:1280px; font-size:1em; line-height:1em; letter-spacing:0.7px; overflow-x:hidden;}
+
+#main-container{}
+#sub-container{}
+
+.full{position:relative; width:100%; height:inherit; box-sizing:border-box;}
+.inner{position:relative; width:100%; max-width:1200px; height:inherit; margin:0 auto;  box-sizing:border-box;}
+.automation{position:relative; width:100%; height:inherit; box-sizing:border-box; text-align:center;}
+
+@media (max-width:980px){
+	.inner{padding:0 10px;}
+}
+
+a:hover{text-decoration:none;}
+*::before{position:absolute; display:none; content:'';}
+*::after{position:absolute; display:none; content:'';}
+
+/* --------------------------------------------------------------------------
+   2.0 해더
+   -------------------------------------------------------------------------- */
+#header{position:relative; width:100%; left:0; top:0; z-index:10; background:#fff; border-top:2px solid #005d99;  -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+#header.fixed{position:fixed; left:0; top:0;}
+
+/* 로고 */
+#header #logo{position:absolute; display:inline-block; left:50%; top:0; line-height:inherit; transform:translate(-50%, 0);}
+
+#header .header-group{height:90px; line-height:90px;}
+
+#header .header-group-call{position:absolute; display:inline-block; left:10px; top:0; line-height:inherit;}
+
+#header .header-group-member{position:absolute; display:inline-block; right:120px; top:0; line-height:inherit;}
+#header .header-group-member li a{display:inline-block; font-size:13px; color:#222; padding:5px 10px;}
+#header .header-group-member li a[target] {padding:5px;}
+#header .header-group-member li a:hover{color:#005d99;}
+
+/* 온라인상담, 커뮤니티 퀵버튼 */
+#header .header-group-quick{position:absolute; right:0; top:-1px; width:90px; height:90px;}
+#header .header-group-quick li button{display:inline-block; width:90px; height:90px; line-height:90px; text-align:center; color:#fff; box-sizing:border-box; background-repeat:no-repeat; background-position:center 15px; font-size:14px; cursor:pointer;}
+#header .header-group-quick li.gnb-all button{background-color:#005d99;);}
+#header .header-group-quick li.gnb-all button:hover{background-color:#005388;}
+
+/* GNB */
+#gnb{position:relative; width:100%; height:60px; text-align:center; border-top:1px solid #eee; font-family: 'NanumSquare', sans-serif;}
+#gnb::before{visibility:hidden; opacity:0; display:inline-block; width:100%; height:170px; left:0; top:100px; background:#f3f3f3 url("../../../img/common/theme/lnb_bg.png") no-repeat 25% 15px; z-index:6; box-sizing:border-box; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+#gnb.active::before{visibility:visible; opacity:1; top:60px;}
+
+/* 1차 */
+#gnb ul{display:inline-block;}
+#gnb ul li.gnb{float:left;}
+#gnb ul li.gnb::before{position:absolute; left:0; top:0; content:''; width:1px; height:70px;}
+#gnb ul li:first-child.gnb::before{visibility:hidden;}
+#gnb ul li.gnb > a{position:relative; display:block; font-size:19px; color:#58585a; font-weight:500; height:inherit; line-height:60px; text-align:center; padding:0 50px; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+#gnb ul li.gnb:hover > a{color:#005d99;}
+#gnb ul li.gnb.active{}
+#gnb ul li.gnb.active > a{color:#005d99;}
+
+/* 2차 */
+#gnb ul li.gnb a + ul.lnb-wrap{position:absolute; visibility:hidden; opacity:0; width:100%; max-width:1200px; height:170px; padding:50px 0 0 370px; margin:0 auto; left:50%; top:90px; z-index:6; transform:translate(-50%, 0); box-sizing:border-box; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+
+#gnb ul li.gnb:hover ul.lnb-wrap{visibility:visible; opacity:1; top:60px;}
+#gnb ul li.gnb:hover ul.lnb-wrap::before{position:absolute; display:inline-block; content:'TIGER DENTAL'; left:0; top:0; font-size:15px; font-weight:300; color:#959595; left:170px; top:calc(50% - 30px); transform:translate(0, -50%);}
+#gnb ul li.gnb:hover ul.lnb-wrap::after{position:absolute; display:inline-block; left:0; top:0; font-size:28px; font-weight:700; color:#222; left:170px; top:50%; transform:translate(0, -50%);}
+
+#gnb ul li.gnb:nth-child(1) a + ul.lnb-wrap::after{content:'타이거치과';}
+#gnb ul li.gnb:nth-child(2) a + ul.lnb-wrap::after{content:'임플란트';}
+#gnb ul li.gnb:nth-child(3) a + ul.lnb-wrap::after{content:'치아교정';}
+#gnb ul li.gnb:nth-child(4) a + ul.lnb-wrap::after{content:'심미치료';}
+#gnb ul li.gnb:nth-child(5) a + ul.lnb-wrap::after{content:'예방·일반진료';}
+#gnb ul li.gnb:nth-child(6) a + ul.lnb-wrap::after{content:'커뮤니티';}
+
+#gnb ul li.gnb a + ul.lnb-wrap li.lnb{float:left; margin-bottom:30px; margin-right:50px; text-align:left;}
+#gnb ul li.gnb a + ul.lnb-wrap li.lnb a{position:relative; font-size:16px; line-height:16px; color:#222; font-weight:500; padding-left:17px;}
+#gnb ul li.gnb a + ul.lnb-wrap li.lnb a::before{position:absolute; display:inline-block; width:5px; height:5px; background:#222; left:0; top:7px;}
+#gnb ul li.gnb a + ul.lnb-wrap li.lnb:hover a{color:#005388;}
+#gnb ul li.gnb a + ul.lnb-wrap li.lnb.active a{color:#005388; font-weight:500;}
+
+/* 전체카테고리 */
+#anb{position:absolute; visibility:hidden; opacity:0; z-index:5; left:0; top:200px; width:100%; background:#f2f2f2; border-top:1px solid #ddd; display:inline-block; padding:50px 0; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+#anb.active{visibility:visible; opacity:1; top:150px;}
+#anb > ul{position:absolute; left:50%; top:0; transform:translate(-50%, 0); display:inline-block; width:100%;}
+#anb ul li.gnb{position:relative; float:left; width:calc(100% / 6);}
+
+#anb ul li.gnb > a{position:relative; display:block; font-size:17px; color:#222; font-weight:700; height:inherit; padding:0 0 25px 20px; margin-bottom:20px; color:#005d99; border-bottom:1px solid #005d99}
+
+#anb ul li.gnb a + ul.lnb-wrap{position:relative; width:100%;}
+
+#anb ul li.gnb:hover ul.lnb-wrap{}
+#anb ul li.gnb a + ul.lnb-wrap li.lnb{margin-bottom:15px;}
+#anb ul li.gnb a + ul.lnb-wrap li.lnb a{display:inline-block; width:100%; padding:0 20px; color:#747474; line-height:20px; height:20px; box-sizing:border-box; font-size:13px;}
+#anb ul li.gnb a + ul.lnb-wrap li.lnb a:hover{color:#222;}
+#anb ul li.gnb a + ul.lnb-wrap li.lnb.active a{background:#f3f3f3; color:#222; font-weight:700;}
+
+/* --------------------------------------------------------------------------
+   3.0 서브 비주얼
+   -------------------------------------------------------------------------- */
+#sub-visual{position:relative; height:240px; background-position:center center; background-size:cover; background-repeat:no-repeat; z-index:2;}
+#sub-visual::before{position:absolute; display:inline-block; left:50%; top:70px; transform:translate(-50%, 0); color:#fff; font-size:18px;}
+#sub-visual .inner{height:100%;}
+#sub-visual a{position:absolute; display:inline-block; width:53px; height:100%; opacity:0.5;  -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;}
+#sub-visual a:hover{opacity:1;}
+#sub-visual a.prev-page{background:url("../../../img/common/theme/prev_page.png") no-repeat center center; left:0; top:0;}
+#sub-visual a.next-page{background:url("../../../img/common/theme/next_page.png") no-repeat center center; right:0; top:0;}
+#sub-visual h2{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); text-align:center; font-size:40px; line-height:1em; color:#fff; font-weigth:500; font-family: 'NanumSquare', sans-serif;}
+
+/*#sub-visual[data-menu="타이거치과"]{background-image:url(../../../img/web/sub/theme/sub_visual0101.jpg);}*/
+
+#sub-visual{background-image:url("../../../img/web/sub/theme/sub_visual0101.jpg");}
+
+#sub-visual[data-menu="임플란트"]{background-image:url("../../../img/web/sub/theme/sub_visual0201.jpg");}
+#sub-visual[data-menu="치아교정"]{background-image:url("../../../img/web/sub/theme/sub_visual0201.jpg");}
+#sub-visual[data-menu="심미치료"]{background-image:url("../../../img/web/sub/theme/sub_visual0201.jpg");}
+#sub-visual[data-menu="예방·일반진료"]{background-image:url("../../../img/web/sub/theme/sub_visual0201.jpg");}
+
+
+#sub-visual[data-menu="타이거치과"]::before{content:'타이거치과';}
+#sub-visual[data-menu="임플란트"]::before{content:'임플란트';}
+#sub-visual[data-menu="치아교정"]::before{content:'치아교정';}
+#sub-visual[data-menu="심미치료"]::before{content:'심미치료';}
+#sub-visual[data-menu="예방·일반진료"]::before{content:'예방·일반진료';}
+#sub-visual[data-menu="커뮤니티"]::before{content:'커뮤니티';}
+
+/* --------------------------------------------------------------------------
+   4.0 페이지 네비게이션
+   -------------------------------------------------------------------------- */
+#breadcrumb{position:relative; width:100%; background:#f2f2f2; z-index:3; border-bottom:1px solid #ccc; height:50px;}
+#breadcrumb .inner > ul > li{position:relative; float:left;}
+#breadcrumb .inner > ul > li a{float:left; display:inline-block; background:url("../../../img/common/theme/home.png") no-repeat center center; width:50px; height:50px; margin-right:20px;}
+#breadcrumb .inner > ul > li i{float:left; display:inline-block; background:url("../../../img/common/theme/arrow_right.png") no-repeat center center; width:50px; height:50px;}
+#breadcrumb .inner > ul > li button{float:left; display:inline-block; height:50px; line-height:50px; font-size:16px;}
+#breadcrumb .inner > ul > li:last-child button{color:#004877;}
+
+/* --------------------------------------------------------------------------
+   5.0 풋터
+   -------------------------------------------------------------------------- */
+#footer{width:100%; text-align:center; padding:50px 0;}
+
+#footer .fnb{display:inline-block; height:50px; line-height:50px; margin-bottom:15px;}
+#footer .fnb li{float:left;}
+#footer .fnb li a{position:relative; display:block; height:inherit; line-height:inherit; margin-right:50px; color:#222;}
+#footer .fnb li a::before{display:inline-block; width:1px; height:17px; background:#777; right:-27px; top:17px;}
+#footer .fnb li:last-child a::before{display:none;}
+
+
+#footer .footer-info{display:block; padding:20px 0 50px 0;}
+#footer .footer-info p{height:25px; line-height:25px; color:#595959; font-size:15px;}
+#footer .footer-info p i{display:inline-block; width:1px; height:12px; background:#aaa; margin:0 15px;}
+#footer .footer-info p span{display:inline-block;}
+#footer .footer-info p.copyright{margin-top:15px; font-size:0.85em; color:#555;}
+#footer .footer-info p.copyright a{color:#9f9f9f;}
+
+#footer div.sns{position:absolute; top:-50px; right:-300px;}
+#footer div.sns a{display:inline-block; float:left; width:44px; height:44px; border-radius:44px; background-color:#b2b2b2; background-repeat:no-repeat; background-position:center center; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -ms-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;}
+#footer div.sns a[data-menu="블로그"]{background-image:url("../../../img/common/theme/btn_blog.png");}
+#footer div.sns a[data-menu="인스타그램"]{background-image:url("../../../img/common/theme/btn_instagram.png"); margin:0 10px;}
+#footer div.sns a[data-menu="페이스북"]{background-image:url("../../../img/common/theme/btn_facebook.png");}
+
+#footer div.sns a:hover{background-color:#005b98;}
+
+
+/* --------------------------------------------------------------------------
+   6.0 공통(진료시간, 고객센터, 오시는길)
+   -------------------------------------------------------------------------- */
+#tiger-section06{width:100%; padding:100px 0; background:#f9f9f9; text-align:center;}
+#tiger-section06 .inner{display:inline-block;}
+#tiger-section06 .timetable,
+#tiger-section06 .customer,
+#tiger-section06 .location{float:left; width:30%; height:190px; box-sizing:border-box; text-align:left;}
+
+#tiger-section06 h5{font-size:24px; font-weight:500; color:#222; margin-bottom:20px;}
+
+#tiger-section06 .timetable{background:url("../../../img/web/main/theme/pattern_bg.png") repeat-y right top;}
+#tiger-section06 .timetable ul{}
+#tiger-section06 .timetable ul li{font-size:18px; line-height:1.8em; font-weight:300;}
+#tiger-section06 .timetable ul li b{display:inline-block; width:100px; text-align:justify; text-justify:distribute-all-lines;}
+#tiger-section06 .timetable p{margin-top:20px; color:#005b98;}
+
+#tiger-section06 .customer{position:relative; width:40%; padding:0 50px; background:url("../../../img/web/main/theme/pattern_bg.png") repeat-y right top;}
+#tiger-section06 .customer ul{}
+#tiger-section06 .customer ul li{font-size:19px; line-height:1.3em; font-weight:300;}
+#tiger-section06 .customer ul li:nth-child(1){margin-bottom:50px;}
+#tiger-section06 .customer ul li b{font-size:24px; font-weight:700; display:block;}
+
+#tiger-section06 .customer .customer-btn{position:absolute; right:50px; bottom:15px;}
+#tiger-section06 .customer .customer-btn a{display:inline-block; width:77px; height:77px; border-radius:77px; box-sizing:border-box; float:left;}
+#tiger-section06 .customer .customer-btn a.btn-kakao{background:#222 url("../../../img/web/main/theme/btn_kakao.png") no-repeat center center; margin-right:10px;}
+#tiger-section06 .customer .customer-btn a.btn-counsel{background:#005b98; color:#fff; text-align:center; padding-top:15px; font-size:16px; line-height:1.4em;}
+
+#tiger-section06 .location{padding-left:50px;}
+#tiger-section06 .location ul{margin-bottom:30px;}
+#tiger-section06 .location ul li{font-size:19px; line-height:1.3em; font-weight:300;}
+#tiger-section06 .location a.more{display:inline-block; background:#222; color:#fff; font-size:16px; padding:15px 30px;}
+
+
+
+
+
+/* 메인 비주얼 영역 시작 */
+#visual-media{position:relative; width:100%; height:100%;}
+
+#visual-media .visual-media{position:absolute; min-width:100%; min-height:100%; left:50%; top:50%; transform:translate(-50%, -50%);}
+#visual-media video{width:100%; height:100%; background:url("../../../img/common/theme/visual_media.jpg") no-repeat center center; background-size:cover;}
+
+#visual-media .visual-media-slogan{position:absolute; text-align:center; left:50%; top:50%; transform:translate(-50%, -50%); color:#fff; line-height:1em; font-size:56px;font-family: 'Noto Sans KR ', sans-serif; font-weight:100; letter-spacing:-1px; z-index:1;}
+#visual-media .visual-media-slogan p{animation:fadeInUp 0.5s both 3.2s;}
+#visual-media .visual-media-slogan em{font-weight:700; display:block; width:100%; font-size:46px; margin-bottom:15px;}
+#visual-media .visual-media-slogan button{display:inline-block; margin-top:50px; cursor:pointer;  animation:fadeInUp 0.5s both 3.4s;}
+
+#visual-media .visual-media-sns{position:absolute; z-index:1; height:100%;}
+#visual-media .visual-media-sns::before{position:absolute; display:inline-block; width:1px; height:0; max-height:500px; background:rgba(255,255,255,0.3); left:50px; top:130px; animation:progress-bar 3s both 1.2s;}
+
+#visual-media .visual-media-sns a{width:100px; position:absolute; display:inline-block;}
+#visual-media .visual-media-sns a.visual-media-simbol{left:33px; top:30px; animation:fadeInDown 0.5s both 1s;}
+#visual-media .visual-media-sns a.visual-media-facebook{display:inline-block; width:35px; height:35px; border-radius:35px; left:33px; top:650px; background:rgba(255,255,255,0.3) url("../../../img/common/theme/media_facebook.png") no-repeat center center; animation:fadeInLeft 0.5s both 2.2s;}
+#visual-media .visual-media-sns a.visual-media-instagram{display:inline-block; width:35px; height:35px; border-radius:35px; left:33px; top:700px; background:rgba(255,255,255,0.3) url("../../../img/common/theme/media_instagram.png") no-repeat center center; animation:fadeInLeft 0.5s both 2.4s;}
+#visual-media .visual-media-sns a.visual-media-blog{display:inline-block; width:35px; height:35px; border-radius:35px; left:33px; top:750px; background:rgba(255,255,255,0.3) url("../../../img/common/theme/media_blog.png") no-repeat center center; animation:fadeInLeft 0.5s both 2.6s;}
+
+@-webkit-keyframes progress-bar{from{height:0px;}to{height:100%;}}
+@keyframes progress-bar{from{height:0px;}to{height:100%;}}
+
+
+#visual-media .visual-media-footer{position:absolute; width:100%; height:90px; background:rgba(10,60,97,0.9); left:0; bottom:0; animation:fadeInUp 0.5s both 3s;}
+#visual-media .visual-media-footer .brick{position:relative; width:inherit; height:inherit;}
+#visual-media .visual-media-footer .visual-media-footer-call{position:absolute; left:10px; top:50%; transform:translate(0, -50%);}
+#visual-media .visual-media-footer .visual-media-footer-logo{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%);}
+#visual-media .visual-media-footer .visual-media-footer-location{position:absolute; right:20px; top:50%; transform:translate(0, -50%); font-size:14px; color:#fff;}
+#visual-media .visual-media-footer .visual-media-footer-location em{display:block; font-size:15px; color:#fdc280; font-weight:700; margin-bottom:5px;}
+/* 메인 비주얼 영역 끝 */
+
+
+#media-popup{display:none; position:fixed; width:100%; height:100%; left:0; top:0; background:rgba(0,0,0,0.9); z-index:100;}
+#media-popup > div{display:none;}
+#media-popup .media-popup{position:absolute; width:100%; max-width:1200px; height:600px; left:50%; top:50%; transform:translate(-50%, -50%);}
+#media-popup .media-popup video{width:100%; height:100%;}
+#media-popup .media-popup-close{position:absolute; right:20px; top:20px; z-index:1; color:#fff; font-size:40px; cursor:pointer;}
+
+
+map area{cursor:pointer;}
+
+
+
+
+
+.quick-counsel-button button.toggle-button{position:fixed; left:50%; bottom:0; transform:translate(-50% , 0); display:inline-block; width:300px; height:60px; line-height:60px; text-align:center; font-size:1.4em; color:#fff; background:#005c99; z-index:10;}
+.quick-counsel-button button.toggle-button.active{bottom:250px;}
+
+
+/**********************************************************************
+* Descript : 빠른상담 폼 레이아웃 및 스타일
+***********************************************************************/
+section#quick-counsel{position:fixed; left:0; bottom:-250px; width:100%; background:#005c99; padding:0; height:250px; z-index:10;}
+section#quick-counsel.active{bottom:0;}
+
+section#quick-counsel .inner{position:relative; background:url("../../../img/landing/f_logo.png") no-repeat left center; text-align:right; padding:50px 0;}
+section#quick-counsel .inner::before{position:absolute; display:inline-block; content:''; width:200%; height:100%; left:330px; top:0; background:#3d4754;}
+ul.quick-counsel-form{display:inline-block; width:850px;}
+ul.quick-counsel-form li{position:relative; float:left; box-sizing:border-box; text-align:left;}
+
+ul.quick-counsel-form li:nth-child(1){width:40%;}
+ul.quick-counsel-form li:nth-child(1) div{position:relative; padding-left:80px;  height:45px; line-height:45px; margin-bottom:5px;}
+ul.quick-counsel-form li:nth-child(1) input[type="text"]{background:#fff; height:45px; line-height:45px; box-sizing:border-box; padding:0 5px; float:left;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="고객명"]{width:100%;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="연락처1"]{width:32%;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="연락처2"]{width:32%; margin:0 2%;}
+ul.quick-counsel-form li:nth-child(1) input[element-name="연락처3"]{width:32%;}
+ul.quick-counsel-form li:nth-child(1) select{width:100%; background:#fff url("../../../img/landing/arrow.png") no-repeat 95% center; height:45px; line-height:45px; float:left; box-sizing:border-box; padding:0 5px; cursor:pointer;}
+ul.quick-counsel-form li:nth-child(1) label{position:absolute; display:inline-block; height:45px; line-height:45px; left:0; top:0; font-weight:700; color:#fff;}
+
+ul.quick-counsel-form li:nth-child(2){width:40%; padding:0 10px;}
+ul.quick-counsel-form li:nth-child(2) div{position:relative;}
+ul.quick-counsel-form li:nth-child(2) label[element-name="상담내용"]{display:none;}
+ul.quick-counsel-form li:nth-child(2) textarea{width:100%; background:#fff; padding:5px; box-sizing:border-box; min-height:95px; max-height:95px; min-width:100%; max-width:100%; font-size:11px; line-height:15px; margin-bottom:5px;}
+ul.quick-counsel-form li:nth-child(2) button{display:inline-block; background:#fdc280; min-width:150px; font-weight:700; color:#3d4754; height:45px; line-height:45px; float:left;}
+ul.quick-counsel-form li:nth-child(2) span.private{position:absolute; right:0; top:0; height:45px; line-height:45px; color:#fff; font-weight:700;}
+
+ul.quick-counsel-form li:nth-child(3){width:20%;}
+ul.quick-counsel-form li:nth-child(3) button{display:inline-block; font-size:1em; font-weight:700; color:#fff; background:#005c99; width:100%; height:145px; line-height:100%; text-align:center;}
+/**********************************************************************/
+
+/**********************************************************************
+* Descript : 체크박스 및 라디오버튼 스타일
+***********************************************************************/
+ul.quick-counsel-form{text-align:right;}
+ul.quick-counsel-form input[type="radio"],
+ul.quick-counsel-form input[type="checkbox"]{display:none;}
+
+ul.quick-counsel-form input[type="radio"] + label,
+ul.quick-counsel-form input[type="checkbox"] + label{font-size:14px; position:relative; cursor:pointer;}
+
+ul.quick-counsel-form input[type="radio"] + label::before,
+ul.quick-counsel-form input[type="checkbox"] + label::before{position:absolute; content:""; display:inline-block; left:-30px; top:-3px; border:1px solid #ddd; width:23px; height:23px; margin-right:10px; box-sizing: border-box; cursor:pointer; vertical-align:middle;}
+
+ul.quick-counsel-form input[type="radio"]:checked + label:after,
+ul.quick-counsel-form input[type="checkbox"]:checked + label::after{position:absolute; content:""; display:inline-block; width:15px; height:15px; left:-26px; top:1px; background:#fff}
+/**********************************************************************/
+
+
+
+
+/**********************************************************************
+* Descript : 빠른상담 자세히보기 Dim 팝업 스타일
+***********************************************************************/
+.pop-private{display:none; position:fixed; left:0; top:0; z-index:105; width:100%; height:100%; background:rgba(0,0,0,0.9);}
+.pop-private .pop-inner{width:90%; max-width:640px; margin:100px auto 0 auto; background:#fff; border:5px solid #005c99; border-radius:5px;}
+.pop-private .pop-inner h3{text-align:center; padding:20px 0; background:#005c99; color:#fff; font-size:17px; font-weight:700;}
+.pop-private .pop-inner p{padding:15px; font-size:14px; line-height:24px; height:350px; overflow:auto;}
+.pop-private .pop-inner p b{display:block; font-weight:700; color:#222;}
+.pop-private .pop-inner button{display:block; width:100%; text-align:center; padding:10px 0; font-size:15px; cursor:pointer;}
+/**********************************************************************/
+
+
