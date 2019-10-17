@@ -8,13 +8,13 @@
 		<!-- fnb 시작 -->
 		<ul class="inner">
 			<li>
-				<a href="/489/?pCode=489">타이거치과 소개</a>
+				<a href="${pageContext.request.contextPath}/menu01_01">타이거치과 소개</a>
 			</li>
 			<li>
-				<a href="/personal">개인정보취급방침</a>
+				<a href="${pageContext.request.contextPath}/personal">개인정보취급방침</a>
 			</li>
 			<li>
-				<a href="/agree">이용약관</a>
+				<a href="${pageContext.request.contextPath}/agree">이용약관</a>
 			</li>
 		</ul>
 		<!-- fnb 끝 -->
@@ -42,7 +42,7 @@
 				<span>사업자번호 : 784-08-01078</span><i></i>
 				<span>개인정보관리책임자 : 서인석(tigerdental@naver.com)</span>
 			</p>
-			<p class="copyright">Copyright @ 타이거치과의원 all rights reserved. Designed by <a href="http://wetheweb.net" target="_blank">TheWEB</a></p>
+			<p class="copyright">Copyright @ 타이거치과의원 all rights reserved.</p>
 		</div>
 	</div>
 </footer>

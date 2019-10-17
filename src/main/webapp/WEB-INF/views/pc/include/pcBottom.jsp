@@ -35,7 +35,7 @@
 
 			<div class="customer-btn">
 				<!--<a href="#" class="btn-kakao"></a>-->
-				<a href="/516/?pCode=516" class="btn-counsel">온라인<br>상담 +</a>
+				<a href="${pageContext.request.contextPath}/menu06_05" class="btn-counsel">온라인<br>상담 +</a>
 			</div>
 		</div>
 		<div class="location">
@@ -44,7 +44,7 @@
 				<li>서울특별시 강남구 도산대로 134,</li>
 				<li>페이토빌딩 B1</li>
 			</ul>
-			<a href="/493/?pCode=493" class="more">자세히보기 +</a>
+			<a href="${pageContext.request.contextPath}/menu01_05" class="more">자세히보기 +</a>
 		</div>
 	</div>
 </div>

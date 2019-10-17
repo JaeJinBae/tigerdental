@@ -199,7 +199,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 						<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0101.png" alt=""></div>
 						<div class="obj txt02"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0102.png" alt=""></div>
 						<div class="obj txt03">
-							<a href="/494/?pCode=494" class="more" tabindex="0"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0103.png" alt=""></a>
+							<a href="${pageContext.request.contextPath}/menu02_02" class="more" tabindex="0"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0103.png" alt=""></a>
 						</div>
 					</div>
 					<div class="obj media">
@@ -214,7 +214,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 						<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0201.png" alt=""></div>
 						<div class="obj txt02"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0202.png" alt=""></div>
 						<div class="obj txt03">
-							<a href="/497/?pCode=497" class="more" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0103.png" alt=""></a>
+							<a href="${pageContext.request.contextPath}/menu02_03" class="more" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0103.png" alt=""></a>
 						</div>
 					</div>
 					<div class="obj media">
@@ -229,7 +229,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<!-- 메인 비주얼 배너 시작 -->
 		<div id="visual-banner">
 			<div class="inner">
-				<div class="bg01" onclick="location.href='/483/?pCode=483'">
+				<div class="bg01" onclick="location.href='${pageContext.request.contextPath}/menu02_01'">
 					<div class="brick">
 						<span><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/quick.png" width="51" height="16" alt=""></span>
 						<em>퀵 임플란트</em>
@@ -239,7 +239,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 						</p>
 					</div>
 				</div>
-				<div class="bg02" onclick="location.href='/504/?pCode=504'">
+				<div class="bg02" onclick="location.href='${pageContext.request.contextPath}/menu03_01'">
 					<div class="brick">
 						<span><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/quick.png" width="51" height="16" alt=""></span>
 						<em>퀵 치아성형</em>
@@ -249,7 +249,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 						</p>
 					</div>
 				</div>
-				<div class="bg03" onclick="location.href='/519/?pCode=519'">
+				<div class="bg03" onclick="location.href='${pageContext.request.contextPath}/menu04_01'">
 					<div class="brick">
 						<span><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/quick.png" width="51" height="16" alt=""></span>
 						<em>퀵 디지털 교정</em>
@@ -259,7 +259,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 						</p>
 					</div>
 				</div>
-				<div class="bg04" onclick="location.href='/509/?pCode=509'">
+				<div class="bg04" onclick="location.href='${pageContext.request.contextPath}/menu05_01'">
 					<div class="brick">
 						<span><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/quick.png" width="51" height="16" alt=""></span>
 						<em>예방·일반진료</em>
@@ -297,7 +297,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 				<img src="${pageContext.request.contextPath}/resources/img/web/main/theme/special.png" usemap="#special" alt="">
 			</div>
 			<map name="special">
-			  <area shape="rect" coords="546,375,918,514" href="/489/?pCode=489">
+			  <area shape="rect" coords="546,375,918,514" href="${pageContext.request.contextPath}/menu01_01">
 			</map>
 		</div>
 		<!-- 자체기공소 및 세균ZERO 끝 -->
@@ -305,7 +305,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<!-- 자체기공소 및 세균ZERO 시작 -->
 		<div id="before_after">
 			<div class="inner">
-				<a href="/515/?pCode=515" class="detail"></a>
+				<a href="${pageContext.request.contextPath}/menu06_03" class="detail"></a>
 			</div>
 		</div>
 		<!-- 자체기공소 및 세균ZERO 끝 -->
