@@ -16,25 +16,31 @@
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="imagetoolbar" content="no">
+<!-- [ 문서정보 ]**************************************************************************************	-->
+<meta name="title" content="타이거치과의원">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="TheWeb">
+<meta name="robots" content="index,follow">
 <!-- [ Facebook OpenGraph ]***************************************************************************	-->
 <meta property="og:type" content="website">
 <meta property="fb:app_id" content="369427140237541">
-<meta property="og:url" content="http://tigerdental.co.kr/html">
+<meta property="og:url" content="http://www.tigerdental.co.kr/html">
 <meta property="og:title" content="타이거치과의원">
 <meta property="og:description" content="">
-<meta property="og:image" content="http://tigerdental.co.kr/resources/img/common/logo.png">
+<meta property="og:image" content="http://www.tigerdental.co.kr/resources/img/common/logo.png">
 <meta property="og:image:alt" content="">
 <!-- [ Twitter Card Type ]****************************************************************************	-->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:domain" content="http://tigerdental.co.kr">
+<meta name="twitter:domain" content="http://www.tigerdental.co.kr">
 <meta name="twitter:title" content="타이거치과의원">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="http://tigerdental.co.kr/resources/img/common/logo.png">
+<meta name="twitter:image" content="http://www.tigerdental.co.kr/resources/img/common/logo.png">
 <!-- [ 네이버 웹마스터도구 인증 ]************************************************************************	-->
 <meta name="naver-site-verification" content="#">
 <!-- [ 표준 페이지 및 문서 파비콘 설정 ]*****************************************************************	-->
-<link rel="canonical" href="http://tigerdental.co.kr">
 <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/common/favicon.ico">
+<link rel="canonical" href="http://www.tigerdental.co.kr">
 <!-- [ 공통 CSS | 분류 : @ = 스타일, # = 자바스크립트]***************************************************	-->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/style.reset.css"><!-- @1	 CSS 초기화			**삭제/수정금지** -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/style.common.css"><!-- @2  CSS 공통	 			**삭제금지/수정금지** -->
@@ -48,12 +54,15 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/web/theme/style.layout.css"><!-- @10 CSS 레이아웃(header, footer, snb, visual, sub, inner)	**삭제금지** -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/twentytwenty/twentytwenty.css"><!-- @9  CSS 플러그인  -->
 <!-- [ 메인 CSS ]*************************************************************************************	-->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/web/theme/style.main.css"><!-- @ CSS 메인 -->
-<!-- [ 서브 CSS ]*************************************************************************************	-->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/web/theme/style.layout.css"><!-- @ CSS 서브 -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/web/theme/style.board.css"><!-- @ CSS 서브 -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/web/theme/style.support.css"><!-- @ CSS 서포트 -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/web/theme/style.sub.css"><!-- @ CSS 서브 -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/js/filestyle/jquery.filestyle.css"><!-- @ CSS 플러그인 파일첨부 -->
 <!-- [ 맴버쉽 CSS | 회원가입, 로그인, 계정정보 찾기, 약관동의, 개인정보 취급방침  ]**************************	-->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/member/web/theme/style.member.css"><!-- @ CSS 맴버쉽 -->
 <!-- [ 플러그인 ]*************************************************************************************	-->
-<script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AR6T42597717931&amp;py=0&amp;gd=dgc12&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1571206402836"></script>
+<script src="http://cr.acecounter.com/Web/AceCounter_CW.js?gc=AR6T42597717931&amp;py=0&amp;gd=dgc12&amp;gp=8080&amp;up=NaPm_Ncisy&amp;rd=1571284548655"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.1.12.0.min.js"></script><!-- #1 JS Jquery 1.12.0  -->
 <script src="${pageContext.request.contextPath}/resources/js/jquery-ui-1.11.1.js"></script><!-- #2 JS 플러그인 Jquery UI  -->
 <script src="${pageContext.request.contextPath}/resources/js/fontawesome/js/fontawesome-all.min.js"></script><!-- #3 JS 플러그인 fontawesome -->
@@ -64,7 +73,15 @@
 
 <script src="${pageContext.request.contextPath}/resources/js/jquery.modernizr.js"></script><!-- #8 JS 플러그인 modernizr -->
 <!-- [ 메인 JS ]*************************************************************************************	-->
-<script src="${pageContext.request.contextPath}/resources/js/web/jquery.main.js"></script><!-- # JS 메인 -->
+<!-- [ 서브 JS ]*************************************************************************************	-->
+<script src="${pageContext.request.contextPath}/resources/js/web/jquery.sub.js"></script><!-- # JS 서브  -->
+<script src="${pageContext.request.contextPath}/resources/js/function.admin.js"></script><!-- # JS 필수 -->
+<script src="${pageContext.request.contextPath}/resources/js/function.calendar.js"></script><!-- # JS 필수 -->
+<script src="${pageContext.request.contextPath}/resources/js/function.date.js"></script><!-- # JS 필수 -->
+<script src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # JS 필수 -->
+<script src="${pageContext.request.contextPath}/resources/js/function.user.js"></script><!-- # JS 필수 -->
+<script src="${pageContext.request.contextPath}/resources/js/function.validate.js"></script><!-- # JS 필수 -->
+<script src="${pageContext.request.contextPath}/resources/js/filestyle/jquery.filestyle.js"></script><!-- # JS 플러그인 파일첨부 -->
 <!-- [ 공통 JS ]*************************************************************************************	-->
 <script src="${pageContext.request.contextPath}/resources/js/function.default.js"></script><!-- # JS 필수 -->
 <script src="${pageContext.request.contextPath}/resources/js/function.layer.js"></script><!-- # JS 필수 -->
@@ -141,177 +158,118 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 <!-- SkipNavigation 시작 -->
 <div id="skipnavigation">
 	<ul>
-		<li><a href="#main-container">본문 바로가기 <svg class="svg-inline--fa fa-arrow-circle-right fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="arrow-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"></path></svg><!-- <i class="fas fa-arrow-circle-right"></i> --></a></li>
+		<li><a href="#sub-container">본문 바로가기 <svg class="svg-inline--fa fa-arrow-circle-right fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="arrow-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"></path></svg><!-- <i class="fas fa-arrow-circle-right"></i> --></a></li>
 	</ul>
 </div>
 <!-- SkipNavigation 끝 -->
 
-<div id="visual-media">
 
-	<div class="visual-media-slogan">
-		<p><em>쉽고, 빠르고, 간단하게</em></p>
-		<p>나에게 딱 맞는 치과 진료</p>
-		<button class="pop visual-media-play" rel="media-popup05"><img src="${pageContext.request.contextPath}/resources/img/common/theme/btn-play.png" alt=""></button>
-	</div>
-
-	<div class="visual-media">
-		<video autoplay="" loop="" muted="">
-			<source src="${pageContext.request.contextPath}/resources/video/visual_media.mp4" type="video/mp4">
-		</video>
-	</div>
-
-	<div class="visual-media-sns">
-		<a href="#" class="visual-media-simbol"><img src="${pageContext.request.contextPath}/resources/img/common/theme/simbol.png" alt=""></a>
-		<a href="#" class="visual-media-facebook"></a>
-		<a href="#" class="visual-media-instagram"></a>
-		<a href="#" class="visual-media-blog"></a>
-	</div>
-
-	<div class="visual-media-footer">
-		<div class="brick">
-			<div class="visual-media-footer-call"><img src="${pageContext.request.contextPath}/resources/img/common/theme/call_white.png" alt=""></div>
-			<a href="/html" class="visual-media-footer-logo"><img src="${pageContext.request.contextPath}/resources/img/common/theme/logo_white.png" alt=""></a>
-			<div class="visual-media-footer-location">
-				<em>오시는길</em>
-				서울특별시 강남구 도산대로 134, 페이토빌딩 B1
-			</div>
-		</div>
-	</div>
-</div>
 
 <div id="wrap">
 	<!-- 해더 시작  -->
 	<jsp:include page="include/pcHeader.jsp"></jsp:include>
 	<!-- 해더 끝  -->
-	
+
 	<!-- 콘텐츠 영역 시작 (메인일 경우 #main-container / 서브일 경우 #sub-container) -->
-	<div id="main-container">
+	<div id="sub-container">
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
-	
-	
-		<!-- 메인 비주얼 슬라이드 시작-->
-		<div id="visual-slider">
-		
-			<div class="item bg01" style="width: 100%; display: inline-block;">
-				<div class="inner">
-					<div class="object">
-						<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0101.png" alt=""></div>
-						<div class="obj txt02"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0102.png" alt=""></div>
-						<div class="obj txt03">
-							<a href="/494/?pCode=494" class="more" tabindex="0"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0103.png" alt=""></a>
-						</div>
-					</div>
-					<div class="obj media">
-						<button class="pop" rel="media-popup06" tabindex="0"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/media0101.jpg" alt=""></button>
-					</div>
-				</div>
-			</div><!-- .item end -->
-		
-			<div class="item bg02" style="width: 100%; display: inline-block;">
-				<div class="inner">
-					<div class="object">
-						<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0201.png" alt=""></div>
-						<div class="obj txt02"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0202.png" alt=""></div>
-						<div class="obj txt03">
-							<a href="/497/?pCode=497" class="more" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/txt0103.png" alt=""></a>
-						</div>
-					</div>
-					<div class="obj media">
-						<button class="pop" rel="media-popup06" tabindex="-1"><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/media0101.jpg" alt=""></button>
-					</div>
-				</div>
-			</div><!-- .item end -->
-		</div>	
-		<!-- 메인 비주얼 슬라이드 끝-->
-		
-		
-		<!-- 메인 비주얼 배너 시작 -->
-		<div id="visual-banner">
+		<!-- 서브 비주얼 시작-->
+		<div id="sub-visual" data-menu="타이거치과" data-menu-second="타이거의 특별함">
 			<div class="inner">
-				<div class="bg01" onclick="location.href='/483/?pCode=483'">
-					<div class="brick">
-						<span><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/quick.png" width="51" height="16" alt=""></span>
-						<em>퀵 임플란트</em>
-						<p>
-							구강구조에 꼭 맞는 보철물을<br>
-							1시간30분안에 제작합니다
-						</p>
-					</div>
-				</div>
-				<div class="bg02" onclick="location.href='/504/?pCode=504'">
-					<div class="brick">
-						<span><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/quick.png" width="51" height="16" alt=""></span>
-						<em>퀵 치아성형</em>
-						<p>
-							1시간 30분안에<br>
-							치료가 끝납니다
-						</p>
-					</div>
-				</div>
-				<div class="bg03" onclick="location.href='/519/?pCode=519'">
-					<div class="brick">
-						<span><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/quick.png" width="51" height="16" alt=""></span>
-						<em>퀵 디지털 교정</em>
-						<p>
-							단 한번의 교정으로<br>
-							정확하고 아름답게!
-						</p>
-					</div>
-				</div>
-				<div class="bg04" onclick="location.href='/509/?pCode=509'">
-					<div class="brick">
-						<span><img src="${pageContext.request.contextPath}/resources/img/web/main/theme/quick.png" width="51" height="16" alt=""></span>
-						<em>예방·일반진료</em>
-						<p>
-							아프기 전에<br>
-							미리 대비하세요!
-						</p>
-					</div>
-				</div>
+				<a href="/493/?pCode=493" class="prev-page">
+				</a>
+					<h2>타이거의 특별함</h2>
+					<a href="/490/?pCode=490" class="next-page">
+				</a>
 			</div>
 		</div>
-		<!-- 메인 비주얼 배너 끝 -->
+		<!-- 서브 비주얼 끝 -->
 		
-		<!-- 1과1/2 세렉 시작 -->
-		<div id="cerec">
+		<!-- BreadCrumb 시작 -->
+		<div id="breadcrumb">
 			<div class="inner">
-				<img src="${pageContext.request.contextPath}/resources/img/web/main/theme/cerec.png" alt="" usemap="#cerec">
-				<map name="cerec">
-				  <area shape="rect" coords="286,292,525,348" href="javascript:void(0);" class="pop" rel="media-popup03" title="새창으로 세렉 밀링영상보기">
-				  <area shape="rect" coords="774,419,861,505" href="javascript:void(0);" class="pop" rel="media-popup03" title="새창으로 세렉 밀링영상보기">
+				<ul>
+					<!-- HOME -->
+					<li class="home">
+						<a href="/"></a>
+					</li>
+					<!-- 1차 -->
+					<li>
+						<button>타이거치과</button><i></i>
+					</li>
+					<!-- 2차 -->
+					<li>
+						<button>타이거의 특별함</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- BreadCrumb 끝 -->
+		<div class="pcode48901">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_01.png" alt="">
+			</div>
+		</div>
+		
+		<div class="pcode48902">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_02.png" alt="">
+			</div>
+		</div>
+		
+		<div class="pcode48909">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_09.png" alt="">
+			</div>
+		</div>
+		
+		<div class="pcode48903">
+			<div class="full">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_03.png" alt="" usemap="#pcode48903">
+				<map name="pcode48903">
+				  <area shape="rect" coords="593,196,767,236" href="javascript:void(0);" class="pop" rel="media-popup04">
+				  <area shape="rect" coords="887,95,979,187" href="javascript:void(0);" class="pop" rel="media-popup04">
 				</map>
 			</div>
 		</div>
-		<!-- 1과1/2 세렉 끝 -->
 		
-		<div>
+		<div class="pcode48904">
 			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/483_img_06.png" alt="">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_04.png" alt="">
 			</div>
 		</div>
 		
-		<!-- 자체기공소 및 세균ZERO 시작 -->
-		<div id="special">
-			<div class="inner">
-				<img src="${pageContext.request.contextPath}/resources/img/web/main/theme/special.png" usemap="#special" alt="">
-			</div>
-			<map name="special">
-			  <area shape="rect" coords="546,375,918,514" href="/489/?pCode=489">
-			</map>
-		</div>
-		<!-- 자체기공소 및 세균ZERO 끝 -->
 		
-		<!-- 자체기공소 및 세균ZERO 시작 -->
-		<div id="before_after">
-			<div class="inner">
-				<a href="/515/?pCode=515" class="detail"></a>
+		<div class="pcode48905">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_05.png" alt="">
 			</div>
 		</div>
-		<!-- 자체기공소 및 세균ZERO 끝 -->
 		
+		<div class="pcode48906">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_06.png" alt="">
+			</div>
+		</div>
+		<div class="pcode48910">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_10.png" alt="">
+			</div>
+		</div>
+		<div class="pcode48907">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_07.png" alt="">
+			</div>
+		</div>
 		
-		<!-- 공통(이미지, 진료시간, 고객센터, 오시는길) 시작 -->
+		<div class="pcode48908">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_08.png" alt="">
+			</div>
+		</div>
+
+		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
 		<jsp:include page="include/pcBottom.jsp"></jsp:include>
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
 
@@ -323,12 +281,11 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 
 </div> <!-- #wrap 닫기 -->
 
-<!-- 빠른상담 신청하기 퀵버튼 시작 -->
-<jsp:include page="include/pcQuick.jsp"></jsp:include>
-<!-- 빠른상담 신청하기 퀵버튼 끝 -->
 
 
-
+	<!-- 빠른상담 신청하기 퀵버튼 시작 -->
+	<jsp:include page="include/pcQuick.jsp"></jsp:include>
+	<!-- 빠른상담 신청하기 퀵버튼 끝 -->
 
 
 </body>
