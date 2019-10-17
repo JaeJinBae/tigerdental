@@ -177,9 +177,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<!-- 서브 비주얼 시작-->
 		<div id="sub-visual" data-menu="예방·일반진료" data-menu-second="아프지 않은 스케일링">
 			<div class="inner">
-				<a href="/513/?pCode=513" class="prev-page"></a>
+				<a href="${pageContext.request.contextPath}/menu05_05" class="prev-page"></a>
 				<h2>아프지 않은 스케일링</h2>
-				<a href="/510/?pCode=510" class="next-page"></a>
+				<a href="${pageContext.request.contextPath}/menu05_02" class="next-page"></a>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->

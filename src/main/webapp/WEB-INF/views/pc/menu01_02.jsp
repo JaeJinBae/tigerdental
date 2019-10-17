@@ -177,9 +177,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<!-- 서브 비주얼 시작-->
 		<div id="sub-visual" data-menu="타이거치과" data-menu-second="의료진 소개">
 			<div class="inner">
-				<a href="/489/?pCode=489" class="prev-page"></a>
+				<a href="${pageContext.request.contextPath}/menu01_01" class="prev-page"></a>
 				<h2>의료진 소개</h2>
-				<a href="/491/?pCode=491" class="next-page"></a>
+				<a href="${pageContext.request.contextPath}/menu01_03" class="next-page"></a>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->

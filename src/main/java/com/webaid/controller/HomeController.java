@@ -209,11 +209,25 @@ public class HomeController {
 		return "pc/menu06_01";
 	}
 	
+	@RequestMapping(value="/menu06_01read", method=RequestMethod.GET)
+	public String menu06_01readGet(){
+		logger.info("menu06_01read get");
+		
+		return "pc/menu06_01Read";
+	}
+	
 	@RequestMapping(value="/menu06_02", method=RequestMethod.GET)
 	public String menu06_02Get(){
 		logger.info("menu06_02 get");
 		
 		return "pc/menu06_02";
+	}
+	
+	@RequestMapping(value="/menu06_02read", method=RequestMethod.GET)
+	public String menu06_02readGet(){
+		logger.info("menu06_02read get");
+		
+		return "pc/menu06_02Read";
 	}
 	
 	@RequestMapping(value="/menu06_03", method=RequestMethod.GET)
@@ -230,10 +244,31 @@ public class HomeController {
 		return "pc/menu06_04";
 	}
 	
+	@RequestMapping(value="/menu06_04read", method=RequestMethod.GET)
+	public String menu06_04readGet(){
+		logger.info("menu06_04read get");
+		
+		return "pc/menu06_04Read";
+	}
+	
 	@RequestMapping(value="/menu06_05", method=RequestMethod.GET)
 	public String menu06_05Get(){
 		logger.info("menu06_05 get");
 		
 		return "pc/menu06_05";
+	}
+	
+	@RequestMapping(value="/menu06_05read", method=RequestMethod.GET)
+	public String menu06_05read(){
+		logger.info("menu06_05read get");
+		
+		return "pc/menu06_05Read";
+	}
+	
+	@RequestMapping(value="/menu06_05write", method=RequestMethod.GET)
+	public String menu06_05writeGet(){
+		logger.info("menu06_05write get");
+		
+		return "pc/menu06_05Write";
 	}
 }

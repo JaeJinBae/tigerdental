@@ -177,9 +177,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<!-- 서브 비주얼 시작-->
 		<div id="sub-visual" data-menu="퀵 치아성형" data-menu-second="타라미 1.5">
 			<div class="inner">
-				<a href="/504/?pCode=504" class="prev-page"></a>
+				<a href="${pageContext.request.contextPath}/menu03_01" class="prev-page"></a>
 				<h2>타라미 1.5</h2>
-				<a href="/506/?pCode=506" class="next-page"></a>
+				<a href="${pageContext.request.contextPath}/menu03_03" class="next-page"></a>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
