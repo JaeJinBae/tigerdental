@@ -175,11 +175,11 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="퀵 치아성형" data-menu-second="타지르 1.5">
+		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="치료사례">
 			<div class="inner">
-				<a href="/506/?pCode=506" class="prev-page"></a>
-				<h2>타지르 1.5</h2>
-				<a href="/508/?pCode=508" class="next-page"></a>
+				<a href="/527/?pCode=527" class="prev-page"></a>
+				<h2>치료사례</h2>
+				<a href="/528/?pCode=528" class="next-page"></a>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -194,65 +194,59 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</li>
 					<!-- 1차 -->
 					<li>
-						<button>퀵 치아성형</button><i></i>
+						<button>커뮤니티</button><i></i>
 					</li>
 					<!-- 2차 -->
 					<li>
-						<button>타지르 1.5</button>
+						<button>치료사례</button>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<!-- BreadCrumb 끝 -->
-		<div class="pcode50701">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_01.png" alt="">
+		
+		<div class="member-title">
+			치료사례</div>
+		
+		<div id="jack-board">
+			<div id="before-and-after">
+				<ul class="inner">
+					<li>
+						<div class="twentytwenty-wrapper twentytwenty-horizontal">
+							<div class="before-and-after twentytwenty-container" style="height: 280px;">
+								<img src="${pageContext.request.contextPath}/resources/uploadAfterBefore/b.jpg" class="twentytwenty-before" style="clip: rect(0px, 298px, 280px, 0px);">
+								<img src="${pageContext.request.contextPath}/resources/uploadAfterBefore/a.jpg" class="twentytwenty-after" style="clip: rect(0px, 596px, 280px, 298px);">
+								<div class="twentytwenty-handle" style="left: 298px;">
+									<span class="twentytwenty-left-arrow"></span>
+									<span class="twentytwenty-right-arrow"></span>
+								</div>
+							</div>
+						</div>
+	
+						<!--<a href="?&mode=view&perm=Y&select_key=&input_key=&Scod=BRD02&pCode=515&btap=&page=1&seq=250">-->
+						<a>
+							<div class="subject">
+								<span> 구치부 임플란트, 크라운 치료사례(53세...</span>
+								<span>임플란트 치료사례</span>
+							</div>
+						</a>
+					</li>
+				</ul>
 			</div>
+		
+			<!-- 페이징 시작 -->
+				<div id="board-pagenation">	<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?select_key=&amp;input_key=&amp;Scod=BRD02&amp;pCode=515&amp;btap=&amp;page=2 ">2</a><a href="?select_key=&amp;input_key=&amp;Scod=BRD02&amp;pCode=515&amp;btap=&amp;page=3 ">3</a><a href="?select_key=&amp;input_key=&amp;Scod=BRD02&amp;pCode=515&amp;btap=&amp;page=4 ">4</a><a href="?select_key=&amp;input_key=&amp;Scod=BRD02&amp;pCode=515&amp;btap=&amp;page=5 ">5</a><a href="?select_key=&amp;input_key=&amp;Scod=BRD02&amp;pCode=515&amp;btap=&amp;page=6 "><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?select_key=&amp;input_key=&amp;Scod=BRD02&amp;pCode=515&amp;btap=&amp;page=17 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>	</div></div>	<!-- 페이징 끝 -->
 		</div>
 		
-		<div class="pcode50702">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_02.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode50703">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_03.png" alt="">
-			</div>
-		</div>
-		<div class="pcode50704">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_04.png" alt="">
-			</div>
-		</div>
-		<!-- <div class='pcode50705'>
-			<div class='automation'>
-				<img src='${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_05.png' alt='' />
-			</div>
-		</div> -->
 		
 		
-		<div class="pcode50406">
-			<ul class="inner">
-				<li>
-					<a href="/505/?pCode=505"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_01.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/506/?pCode=506"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_02.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/507/?pCode=507"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_03.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/508/?pCode=508"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_04.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-			</ul>
-		</div>
+		<script src="${pageContext.request.contextPath}/resources/js/twentytwenty/jquery.event.move.js"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/twentytwenty/jquery.twentytwenty.js"></script>
+		<script>
+		$(function(){
+			$(".before-and-after[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
+		});
+		</script>
 
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
 		<jsp:include page="include/pcBottom.jsp"></jsp:include>

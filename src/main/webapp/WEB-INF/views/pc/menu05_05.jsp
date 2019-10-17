@@ -174,7 +174,74 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<div id="sub-container">
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
+		<!-- 서브 비주얼 시작-->
+		<div id="sub-visual" data-menu="예방·일반진료" data-menu-second="사랑니 발치">
+			<div class="inner">
+				<a href="/512/?pCode=512" class="prev-page"></a>
+				<h2>사랑니 발치</h2>
+				<a href="/509/?pCode=509" class="next-page"></a>
+			</div>
+		</div>
+		<!-- 서브 비주얼 끝 -->
 		
+		<!-- BreadCrumb 시작 -->
+		<div id="breadcrumb">
+			<div class="inner">
+				<ul>
+					<!-- HOME -->
+					<li class="home">
+						<a href="/"></a>
+					</li>
+					<!-- 1차 -->
+					<li>
+						<button>예방·일반진료</button><i></i>
+					</li>
+					<!-- 2차 -->
+					<li>
+						<button>사랑니 발치</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- BreadCrumb 끝 -->
+		
+		
+		
+		<div class="pcode51301">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/513_img_01.png" alt="">
+			</div>
+		</div>
+		
+		<div class="pcode51302">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/513_img_02.png" alt="">
+			</div>
+		</div>
+		
+		<div class="pcode51303">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/513_img_03.png" alt="">
+			</div>
+		</div>
+		
+		<div class="pcode51304">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/513_img_04.png" alt="">
+			</div>
+		</div>
+		
+		<div class="pcode51305">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/513_img_05.png" alt="">
+			</div>
+		</div>
+		
+		<div class="pcode51306">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/513_img_06.png" alt="">
+			</div>
+		</div>
 
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
 		<jsp:include page="include/pcBottom.jsp"></jsp:include>

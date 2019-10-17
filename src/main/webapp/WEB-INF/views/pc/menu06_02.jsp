@@ -175,11 +175,11 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="퀵 치아성형" data-menu-second="타지르 1.5">
+		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="언론보도">
 			<div class="inner">
-				<a href="/506/?pCode=506" class="prev-page"></a>
-				<h2>타지르 1.5</h2>
-				<a href="/508/?pCode=508" class="next-page"></a>
+				<a href="/514/?pCode=514" class="prev-page"></a>
+				<h2>언론보도</h2>
+				<a href="/515/?pCode=515" class="next-page"></a>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -194,64 +194,131 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</li>
 					<!-- 1차 -->
 					<li>
-						<button>퀵 치아성형</button><i></i>
+						<button>커뮤니티</button><i></i>
 					</li>
 					<!-- 2차 -->
 					<li>
-						<button>타지르 1.5</button>
+						<button>언론보도</button>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<!-- BreadCrumb 끝 -->
-		<div class="pcode50701">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_01.png" alt="">
-			</div>
-		</div>
+		<div class="member-title">
+			언론보도</div>
 		
-		<div class="pcode50702">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_02.png" alt="">
-			</div>
-		</div>
+		<div id="jack-board">
+			<div class="inner">
+				<!-- 공지사항 게시판 시작 -->
+				<table class="board-notice-list">
+					<caption>공지사항 게시판</caption>
+					<colgroup>
+						<col style="width: 100px;">
+						<col>
+						<col style="width: 120px;">
+						<col style="width: 120px;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>등록일</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tr>
+						<td class="notice-item"><i class="notice">공지</i></td>
+						<td class="subject">
+							<a href=""> MBC 라디오 이윤석 신아영의 좋은주말에 서인석 원장님 출연</a>
+						</td>
+						<td class="date">2019-02-11</td>
+						<td class="hit">530</td>
+					</tr>
+					<tr>
+						<td class="notice-item"><i class="notice">공지</i></td>
+						<td class="subject">
+							<a href=""> &lt;매일경제TV&gt; 건강백세 스마일, 서인석 대표 원장님 출연</a>
+						</td>
+						<td class="date">2019-01-16</td>
+						<td class="hit">242</td>
+					</tr>
+					<tr>
+						<td class="">13</td>
+						<td class="subject">
+							<a href=""> &lt;조세금융신문&gt; 단기간에 끝내는 퀵(Quick) 치아교정, 빠른만큼 바르게 진행돼야...</a>
+						</td>
+						<td class="date">2019-04-23</td>
+						<td class="hit">61</td>
+					</tr>
+					<tr>
+						<td class="">12</td>
+						<td class="subject">
+							<a href=""> &lt;M Report - 칼럼&gt; "노인 위한 전악 임플란트, 환자 상태 파악 정확하고 사후관리 확실한 병원 찾을 것 "</a>
+						</td>
+						<td class="date">2019-04-17</td>
+						<td class="hit">47</td>
+					</tr>
+					<tr>
+						<td class="">11</td>
+						<td class="subject">
+							<a href=""> &lt;조세금융신문 - 기사&gt; 단기간에 교정효과 보는 치아성형, 잘 알아보고 선택해야</a>
+						</td>
+						<td class="date">2019-04-17</td>
+						<td class="hit">50</td>
+					</tr>
+					<tr>
+						<td class="">10</td>
+						<td class="subject">
+							<a href=""> &lt;정신의학신문 - 기사&gt;  틀니 단점 보완한 전악 임플란트, 무치악 환자에게 수요 늘어나</a>
+						</td>
+						<td class="date">2019-04-17</td>
+						<td class="hit">48</td>
+					</tr>
+					<tr>
+						<td class="">9</td>
+						<td class="subject">
+							<a href=""> &lt;공무원저널 - 기사&gt; 임플란트, 시술 전 전문의와 충분한 상담 필요</a>
+						</td>
+						<td class="date">2019-01-22</td>
+						<td class="hit">86</td>
+					</tr>
+					<tr>
+						<td class="">8</td>
+						<td class="subject">
+							<a href=""> &lt;정신의학신문 - 기사&gt; 임플란트, 식립만큼 사후관리 더 중요해</a>
+						</td>
+						<td class="date">2019-01-11</td>
+						<td class="hit">58</td>
+					</tr>
+					<tr>
+						<td class="">7</td>
+						<td class="subject">
+							<a href=""> &lt;금강일보 - 기사&gt; 임플란트도 쉽고 빠른 시대, 의료 기관 선택에 있어 현명해야...</a>
+						</td>
+						<td class="date">2018-12-28</td>
+						<td class="hit">92</td>
+					</tr>
+					<tr>
+						<td class="">6</td>
+						<td class="subject">
+							<a href=""> &lt;중앙일보 - 기사&gt; 하루면 끝나는 원데이 임플란트, 장비와 의료진 숙련도 중요해</a>
+						</td>
+						<td class="date">2018-12-19</td>
+						<td class="hit">98</td>
+					</tr>
+				</table>
+				<!-- 공지사항 게시판 끝 -->
 		
-		<div class="pcode50703">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_03.png" alt="">
-			</div>
-		</div>
-		<div class="pcode50704">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_04.png" alt="">
-			</div>
-		</div>
-		<!-- <div class='pcode50705'>
-			<div class='automation'>
-				<img src='${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_05.png' alt='' />
-			</div>
-		</div> -->
+				<!-- 페이징 시작 -->
+				<div id="board-pagenation">	<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?select_key=&amp;input_key=&amp;Scod=BRD04&amp;pCode=527&amp;btap=&amp;page=2 ">2</a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?select_key=&amp;input_key=&amp;Scod=BRD04&amp;pCode=527&amp;btap=&amp;page=2 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>	</div></div>		<!-- 페이징 끝 -->
 		
-		
-		<div class="pcode50406">
-			<ul class="inner">
-				<li>
-					<a href="/505/?pCode=505"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_01.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/506/?pCode=506"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_02.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/507/?pCode=507"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_03.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/508/?pCode=508"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_04.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-			</ul>
+				<div class="search-box">
+					<form name="board_search" method="post" action="" onsubmit="return board_search_it(this)">
+						<select name="select_key" id="select_key"><option value="b_title|b_content|m_id|m_name">전체</option><option value="b_title">제목</option><option value="b_content">내용</option><option value="m_id">아이디</option><option value="m_name">작성자</option></select>		<input type="text" title="검색어" name="input_key" value="">
+						<button type="submit">검색</button>
+					</form>
+				</div>
+			</div>
 		</div>
 
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->

@@ -175,11 +175,11 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="퀵 치아성형" data-menu-second="타지르 1.5">
+		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="공지사항">
 			<div class="inner">
-				<a href="/506/?pCode=506" class="prev-page"></a>
-				<h2>타지르 1.5</h2>
-				<a href="/508/?pCode=508" class="next-page"></a>
+				<a href="/516/?pCode=516" class="prev-page"></a>
+				<h2>공지사항</h2>
+				<a href="/527/?pCode=527" class="next-page"></a>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -194,64 +194,77 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</li>
 					<!-- 1차 -->
 					<li>
-						<button>퀵 치아성형</button><i></i>
+						<button>커뮤니티</button><i></i>
 					</li>
 					<!-- 2차 -->
 					<li>
-						<button>타지르 1.5</button>
+						<button>공지사항</button>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<!-- BreadCrumb 끝 -->
-		<div class="pcode50701">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_01.png" alt="">
-			</div>
-		</div>
 		
-		<div class="pcode50702">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_02.png" alt="">
-			</div>
-		</div>
+		<div class="member-title">
+			공지사항</div>
 		
-		<div class="pcode50703">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_03.png" alt="">
+		<div id="jack-board">
+			<div class="inner">
+				<!-- 공지사항 게시판 뷰 시작 -->
+				<table class="board-notice-view">
+					<caption>공지사항 게시판 뷰</caption>
+					<colgroup>
+						<col style="width: 100px;">
+						<col>
+						<col style="width: 120px;">
+						<col style="width: 120px;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>등록일</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>262</td>
+						<td class="subject"> 타이거 청정 지역 (9월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</td>
+						<td>2019-09-30</td>
+						<td>26</td>
+					</tr>
+					<tr>
+						<td colspan="4" class="con">
+							<div><img alt="" src="/filedata/ckeditor/20191005_E7103575A1F2D4E2.png" style="width: 660px; height: 780px;"></div>
+						</td>
+					</tr>
+				</table>
+				<!-- 공지사항 게시판 뷰 끝 -->
 			</div>
-		</div>
-		<div class="pcode50704">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_04.png" alt="">
-			</div>
-		</div>
-		<!-- <div class='pcode50705'>
-			<div class='automation'>
-				<img src='${pageContext.request.contextPath}/resources/img/web/sub/theme/507_img_05.png' alt='' />
-			</div>
-		</div> -->
 		
 		
-		<div class="pcode50406">
-			<ul class="inner">
-				<li>
-					<a href="/505/?pCode=505"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_01.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/506/?pCode=506"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_02.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/507/?pCode=507"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_03.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/508/?pCode=508"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_04.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-			</ul>
+		
+			<div class="prev-next-list">
+				<ul class="inner">
+					<li>
+						<span>이전글</span><a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;seq=227"> 타이거 청정 지역 (8월 수질검사서) - 세균 ZERO- ...</a>			</li>
+					<li>
+						<span>다음글</span><a href="javascript:alert('다음글이 없습니다');">다음글이 없습니다</a>			</li>
+				</ul>
+			</div>
+		
+		
+			<!-- 게시판 버튼 시작 -->
+			<div class="btn-group-right">
+				<div class="inner">
+					<a href="/514/?pCode=514&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
+				</div>
+			</div>
+			<!-- 게시판 버튼 끝 -->
+		
+			<form name="board" method="post" action="/html/board/board_proc.php">
+				<input type="hidden" name="fparam">
+			</form>
 		</div>
 
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
