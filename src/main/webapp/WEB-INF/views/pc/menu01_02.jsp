@@ -175,11 +175,11 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="타이거치과" data-menu-second="타이거의 특별함">
+		<div id="sub-visual" data-menu="타이거치과" data-menu-second="의료진 소개">
 			<div class="inner">
-				<a href="/493/?pCode=493" class="prev-page"></a>
-				<h2>타이거의 특별함</h2>
-				<a href="/490/?pCode=490" class="next-page"></a>
+				<a href="/489/?pCode=489" class="prev-page"></a>
+				<h2>의료진 소개</h2>
+				<a href="/491/?pCode=491" class="next-page"></a>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -198,72 +198,24 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</li>
 					<!-- 2차 -->
 					<li>
-						<button>타이거의 특별함</button>
+						<button>의료진 소개</button>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<!-- BreadCrumb 끝 -->
-		<div class="pcode48901">
+		<div class="pcode49001">
 			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_01.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode48902">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_02.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode48909">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_09.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode48903">
-			<div class="full">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_03.png" alt="" usemap="#pcode48903">
-				<map name="pcode48903">
-				  <area shape="rect" coords="593,196,767,236" href="javascript:void(0);" class="pop" rel="media-popup04">
-				  <area shape="rect" coords="887,95,979,187" href="javascript:void(0);" class="pop" rel="media-popup04">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/490_bg_01.png" alt="" usemap="#pcode49001">
+				<map name="pcode49001">
+				  <area shape="rect" coords="256,371,784,687" href="javascript:void(0);" class="pop" rel="media-popup01">
 				</map>
 			</div>
 		</div>
 		
-		<div class="pcode48904">
+		<div class="pcode49002">
 			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_04.png" alt="">
-			</div>
-		</div>
-		
-		
-		<div class="pcode48905">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_05.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode48906">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_06.png" alt="">
-			</div>
-		</div>
-		<div class="pcode48910">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_10.png" alt="">
-			</div>
-		</div>
-		<div class="pcode48907">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_07.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode48908">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_08.png" alt="">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/490_img_02.png" alt="">
 			</div>
 		</div>
 

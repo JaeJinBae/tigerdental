@@ -175,11 +175,11 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="타이거치과" data-menu-second="타이거의 특별함">
+		<div id="sub-visual" data-menu="타이거치과" data-menu-second="찾아오시는 길">
 			<div class="inner">
-				<a href="/493/?pCode=493" class="prev-page"></a>
-				<h2>타이거의 특별함</h2>
-				<a href="/490/?pCode=490" class="next-page"></a>
+				<a href="/492/?pCode=492" class="prev-page"></a>
+				<h2>찾아오시는 길</h2>
+				<a href="/489/?pCode=489" class="next-page"></a>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -198,72 +198,47 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</li>
 					<!-- 2차 -->
 					<li>
-						<button>타이거의 특별함</button>
+						<button>찾아오시는 길</button>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<!-- BreadCrumb 끝 -->
-		<div class="pcode48901">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_01.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode48902">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_02.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode48909">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_09.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode48903">
-			<div class="full">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_03.png" alt="" usemap="#pcode48903">
-				<map name="pcode48903">
-				  <area shape="rect" coords="593,196,767,236" href="javascript:void(0);" class="pop" rel="media-popup04">
-				  <area shape="rect" coords="887,95,979,187" href="javascript:void(0);" class="pop" rel="media-popup04">
-				</map>
-			</div>
-		</div>
-		
-		<div class="pcode48904">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_04.png" alt="">
-			</div>
-		</div>
 		
 		
-		<div class="pcode48905">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_05.png" alt="">
-			</div>
-		</div>
+		<div class="pcode49301">
+			<div class="inner">
+				<div class="tiger-map">
+					<!-- * Daum 지도 - 지도퍼가기 -->
+					<!-- 1. 지도 노드 -->
+					<div id="daumRoughmapContainer1536200261467" class="root_daum_roughmap root_daum_roughmap_landing" style="width:100%;"></div>
 		
-		<div class="pcode48906">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_06.png" alt="">
-			</div>
-		</div>
-		<div class="pcode48910">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_10.png" alt="">
-			</div>
-		</div>
-		<div class="pcode48907">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_07.png" alt="">
-			</div>
-		</div>
+					<!--
+						2. 설치 스크립트
+						* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+					-->
+					<script charset="UTF-8" class="daum_roughmap_loader_script" src="http://dmaps.daum.net/map_js_init/roughmapLoader.js"></script>
 		
-		<div class="pcode48908">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_08.png" alt="">
+					<!-- 3. 실행 스크립트 -->
+					<script charset="UTF-8">
+						new daum.roughmap.Lander({
+							"timestamp" : "1536200261467",
+							"key" : "pv2z",
+							"mapHeight" : "600"
+						}).render();
+					</script>
+		
+					<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/493_img_01.png" alt="" usemap="#tiger-map"/>
+		
+		
+					<map name="tiger-map">
+						<area shape="rect" coords="26,488,197,544" href="http://naver.me/xy9QyLaQ" target="_blnak">
+						<area shape="rect" coords="209,488,381,544" href="http://map.daum.net/?urlX=505176&urlY=1116068&itemId=889359777" target="_blnak">
+					</map>
+				</div>
+				<div class="tiger-location">
+					<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/493_img_02.png" alt=""/>
+				</div>
 			</div>
 		</div>
 

@@ -175,11 +175,11 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="타이거치과" data-menu-second="타이거의 특별함">
+		<div id="sub-visual" data-menu="타이거치과" data-menu-second="진료안내">
 			<div class="inner">
-				<a href="/493/?pCode=493" class="prev-page"></a>
-				<h2>타이거의 특별함</h2>
-				<a href="/490/?pCode=490" class="next-page"></a>
+				<a href="/490/?pCode=490" class="prev-page"></a>
+				<h2>진료안내</h2>
+				<a href="/492/?pCode=492" class="next-page"></a>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -198,74 +198,62 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</li>
 					<!-- 2차 -->
 					<li>
-						<button>타이거의 특별함</button>
+						<button>진료안내</button>
 					</li>
 				</ul>
 			</div>
 		</div>
 		<!-- BreadCrumb 끝 -->
-		<div class="pcode48901">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_01.png" alt="">
+		
+		<!--
+		.full	: padding :0;
+		.inner	: padding : 0 10px;
+		
+		서브페이지 url이 http://siwonhang.com/html/?pCode=499면,
+		1. class는 pCode-499-01, pCode-499-02, pCode-499-03 ..... 순서로 시작됩니다.
+		2. 이미지또한 499_img_01.png, 499_img_02.png, 499_img_03.png 순서로 이미지가 없을때까지 for문을 돌립니다.
+		3. 이미지의 alt 속성은 상단에 배열에 저장하시면 순서대로 출력됩니다.
+		4. map 사용시 usemap 또한 class명과 일치합니다.
+		
+		-->
+		<div class="pcode49101">
+			<div class="inner">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/491_img_01.png" alt="분야별 외과 전문의가 진료하는" usemap="#pcode49101">
+			</div>
+		</div>
+		<div class="pcode49102">
+			<div class="inner">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/491_img_02.png" alt="" usemap="#pcode49102">
 			</div>
 		</div>
 		
-		<div class="pcode48902">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_02.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode48909">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_09.png" alt="">
-			</div>
-		</div>
-		
-		<div class="pcode48903">
-			<div class="full">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_03.png" alt="" usemap="#pcode48903">
-				<map name="pcode48903">
-				  <area shape="rect" coords="593,196,767,236" href="javascript:void(0);" class="pop" rel="media-popup04">
-				  <area shape="rect" coords="887,95,979,187" href="javascript:void(0);" class="pop" rel="media-popup04">
-				</map>
-			</div>
-		</div>
-		
-		<div class="pcode48904">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_04.png" alt="">
-			</div>
-		</div>
+		<map name="pcode49101">
+		  <area shape="rect" coords="652,272,1093,332" href="/516/?pCode=516">						<!-- 카카오톡상담 -->		
+		</map>
 		
 		
-		<div class="pcode48905">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_05.png" alt="">
-			</div>
-		</div>
+		<map name="pcode49102">
+			<!-- 임플란트 -->
+			<area shape="rect" coords="74,287,177,304" href="/494/?pCode=494" title="HERI 임플란트">
+			<area shape="rect" coords="74,316,180,334" href="/495/?pCode=495" title="1DAY 임플란트">
+			<area shape="rect" coords="73,345,192,366" href="/496/?pCode=496" title="자외선 임플란트">
+			<area shape="rect" coords="73,376,249,396" href="/497/?pCode=497" title="3D 네비게이션 임플란트">
 		
-		<div class="pcode48906">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_06.png" alt="">
-			</div>
-		</div>
-		<div class="pcode48910">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_10.png" alt="">
-			</div>
-		</div>
-		<div class="pcode48907">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_07.png" alt="">
-			</div>
-		</div>
+			<!-- 치아교정 -->
+			<area shape="rect" coords="404,284,509,305" href="/html/?pCode=517" title="퀵 디지털 교정">
+			
+			<!-- 심미치료 -->
+			<area shape="rect" coords="764,286,837,306" href="/505/?pCode=505" title="티라미 1.5">
+			<area shape="rect" coords="764,317,837,336" href="/506/?pCode=506" title="티세라 1.5">
+			<area shape="rect" coords="764,346,837,364" href="/507/?pCode=507" title="타지르 1.5">
+			<area shape="rect" coords="764,376,880,398" href="/508/?pCode=508" title="오스템 치아미백">
 		
-		<div class="pcode48908">
-			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/489_img_08.png" alt="">
-			</div>
-		</div>
+			<!-- 예방 및 일반진료 -->
+			<area shape="rect" coords="1104,287,1229,326" href="/510/?pCode=510" title="OBD진단(치주질환세균분석)">
+			<area shape="rect" coords="1105,338,1217,379" href="/511/?pCode=511" title="OBT치료(박테리아 테라피)">
+			<area shape="rect" coords="1106,390,1171,409" href="/512/?pCode=512" title="충치치료">
+			<area shape="rect" coords="1106,420,1187,439" href="/513/?pCode=513" title="사랑니발치">
+		</map>
 
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
 		<jsp:include page="include/pcBottom.jsp"></jsp:include>
