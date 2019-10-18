@@ -170,7 +170,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<div class="visual-media-footer">
 		<div class="brick">
 			<div class="visual-media-footer-call"><img src="${pageContext.request.contextPath}/resources/img/common/theme/call_white.png" alt=""></div>
-			<a href="/html" class="visual-media-footer-logo"><img src="${pageContext.request.contextPath}/resources/img/common/theme/logo_white.png" alt=""></a>
+			<a href="${pageContext.request.contextPath}/" class="visual-media-footer-logo"><img src="${pageContext.request.contextPath}/resources/img/common/theme/logo_white.png" alt=""></a>
 			<div class="visual-media-footer-location">
 				<em>오시는길</em>
 				서울특별시 강남구 도산대로 134, 페이토빌딩 B1

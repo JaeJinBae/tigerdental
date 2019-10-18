@@ -175,7 +175,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 
 	<div class="visual-media-footer">
 		<div class="full">
-			<a href="/m" class="visual-media-footer-logo"><img src="${pageContext.request.contextPath}/resources/img/common/theme/m_logo_white.png" alt=""></a>
+			<a href="${pageContext.request.contextPath}/" class="visual-media-footer-logo"><img src="${pageContext.request.contextPath}/resources/img/common/theme/m_logo_white.png" alt=""></a>
 		</div>
 	</div><!-- visual-media-footer end -->
 	
@@ -201,7 +201,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/visual_slider_bg01.jpg" alt="">
 					<div class="object">
 						<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/txt0101.png" alt=""></div>
-						<div class="obj txt02"><a href="/m/494/?pCode=494" class="more"><img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/txt0102.png" alt=""></a></div>
+						<div class="obj txt02"><a href="${pageContext.request.contextPath}/m/menu02_01" class="more"><img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/txt0102.png" alt=""></a></div>
 						<div class="obj txt03 pop" rel="media-popup06">
 							<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/txt0103.png" alt="">
 						</div>
@@ -213,7 +213,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/visual_slider_bg02.jpg" alt="">
 					<div class="object">
 						<div class="obj txt01"><img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/txt0201.png" alt=""></div>
-						<div class="obj txt02"><a href="/m/?pCode=497" class="more"><img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/txt0202.png" alt=""></a></div>
+						<div class="obj txt02"><a href="${pageContext.request.contextPath}/m/menu02_03" class="more"><img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/txt0202.png" alt=""></a></div>
 						<div class="obj txt03 pop" rel="media-popup06">
 							<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/txt0103.png" alt="">
 						</div>
@@ -228,10 +228,10 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="full">
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/section01.png" alt="" usemap="#section01">
 				<map name="section01">
-				  <area shape="rect" coords="0,0,208,278" href="/m/?pCode=483">
-				  <area shape="rect" coords="207,0,412,278" href="/m/?pCode=522">
-				  <area shape="rect" coords="0,278,208,555" href="/m/?pCode=498">
-				  <area shape="rect" coords="207,278,412,554" href="/m/?pCode=510">
+				  <area shape="rect" coords="0,0,208,278" href="${pageContext.request.contextPath}/m/menu02_01">
+				  <area shape="rect" coords="207,0,412,278" href="${pageContext.request.contextPath}/m/menu03_01">
+				  <area shape="rect" coords="0,278,208,555" href="${pageContext.request.contextPath}/m/menu04_01">
+				  <area shape="rect" coords="207,278,412,554" href="${pageContext.request.contextPath}/m/menu05_02">
 				</map>
 			</div>
 		</div>
@@ -256,7 +256,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="full">
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/section03.png" alt="" usemap="#section03">
 				<map name="section03">
-				  <area shape="rect" coords="77,64,336,161" href="/m/?pCode=489">
+				  <area shape="rect" coords="77,64,336,161" href="${pageContext.request.contextPath}/m/menu01_01">
 				</map>
 			</div>
 		</div>
@@ -281,7 +281,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div class="section06">
 			<div class="full">
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/section07.jpg" alt="">
-				<a href="/m/515/?pCode=515"><img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/section07_link.jpg" alt=""></a>
+				<a href="${pageContext.request.contextPath}/m/menu06_03"><img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/section07_link.jpg" alt=""></a>
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/section07_blank.jpg" alt="">
 			</div>
 		</div>
@@ -302,27 +302,6 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<!-- 풋터 끝 (style.layout.css) -->
 
 </div> <!-- #wrap 닫기 -->
-
-<!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
-<script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script>
-<script type="text/javascript">
-if (!wcs_add) var wcs_add={};
-wcs_add["wa"] = "s_256dd9b01b54";
-if (!_nasa) var _nasa={};
-wcs.inflow();
-wcs_do(_nasa);
-</script>
-
-
-<!-- AceCounter Log Gathering Script V.7.5.2017020801 -->
-<script language="javascript">
-	var _AceGID=(function(){var Inf=['dgc12.acecounter.com','8080','AR6T42597717931','CW','0','NaPm,Ncisy','ALL','0']; var _CI=(!_AceGID)?[]:_AceGID.val;var _N=0;var _T=new Image(0,0);if(_CI.join('.').indexOf(Inf[3])<0){ _T.src =( location.protocol=="https:"?"https://"+Inf[0]:"http://"+Inf[0]+":"+Inf[1]) +'/?cookie'; _CI.push(Inf);  _N=_CI.length; } return {o: _N,val:_CI}; })();
-	var _AceCounter=(function(){var G=_AceGID;var _sc=document.createElement('script');var _sm=document.getElementsByTagName('script')[0];if(G.o!=0){var _A=G.val[G.o-1];var _G=(_A[0]).substr(0,_A[0].indexOf('.'));var _C=(_A[7]!='0')?(_A[2]):_A[3];var _U=(_A[5]).replace(/\,/g,'_');_sc.src=(location.protocol.indexOf('http')==0?location.protocol:'http:')+'//cr.acecounter.com/Web/AceCounter_'+_C+'.js?gc='+_A[2]+'&py='+_A[4]+'&gd='+_G+'&gp='+_A[1]+'&up='+_U+'&rd='+(new Date().getTime());_sm.parentNode.insertBefore(_sc,_sm);return _sc.src;}})();
-</script>
-<noscript><img src='http://dgc12.acecounter.com:8080/?uid=AR6T42597717931&je=n&' border='0' width='0' height='0' alt=''></noscript>
-<!-- AceCounter Log Gathering Script End -->
-
-
 
 </body>
 </html>
