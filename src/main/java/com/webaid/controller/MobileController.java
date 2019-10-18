@@ -1,56 +1,11 @@
 package com.webaid.controller;
 
-import java.io.File;
-import java.util.GregorianCalendar;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import com.webaid.domain.AdviceVO;
-import com.webaid.domain.BeforeAfterVO;
-import com.webaid.domain.CautionVO;
-import com.webaid.domain.EventVO;
-import com.webaid.domain.NoticeVO;
-import com.webaid.domain.PageMaker;
-import com.webaid.domain.PageMaker5;
-import com.webaid.domain.PageMakerWith12;
-import com.webaid.domain.PageMakerWith8;
-import com.webaid.domain.RealStoryVO;
-import com.webaid.domain.ReviewVO;
-import com.webaid.domain.SearchCriteria;
-import com.webaid.domain.SearchCriteria12;
-import com.webaid.domain.SearchCriteria8;
-import com.webaid.domain.UserVO;
-import com.webaid.service.AdviceService;
-import com.webaid.service.BeforeAfterService;
-import com.webaid.service.CautionService;
-import com.webaid.service.ClinicListService;
-import com.webaid.service.ClinicResListService;
-import com.webaid.service.EventService;
-import com.webaid.service.NoticeService;
-import com.webaid.service.RealStoryService;
-import com.webaid.service.ReviewService;
-import com.webaid.service.UserService;
-import com.webaid.util.FileDelete;
-import com.webaid.util.SmsSendUtil;
 
 /**
  * Handles requests for the application home page.
@@ -61,42 +16,194 @@ public class MobileController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MobileController.class);
 	
-	@Autowired
-	private NoticeService nService;
 	
-	@Autowired
-	private UserService uService;
 	
-	@Autowired
-	private AdviceService aService;
-	
-	@Autowired
-	private BeforeAfterService baService;
-	
-	@Autowired
-	private RealStoryService rsService;
-	
-	@Autowired
-	private ReviewService rService;
-	
-	@Autowired
-	private EventService eService;
-	
-	@Autowired
-	private CautionService cService;
-	
-	@Autowired
-	private ClinicListService clService;
-	
-	@Autowired
-	private ClinicResListService crlService;
-	
-	/*@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) {
-		logger.info("index GET");
+	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
+	public String menu01_01(Model model) {
+		logger.info("menu01_01 GET");
 		
-		return "main/mIndex";
-	}*/
+		return "mobile/mMenu01_01";
+	}
 	
+	@RequestMapping(value = "/menu01_02", method = RequestMethod.GET)
+	public String menu01_02(Model model) {
+		logger.info("menu01_02 GET");
+		
+		return "mobile/mMenu01_02";
+	}
 	
+	@RequestMapping(value = "/menu01_03", method = RequestMethod.GET)
+	public String menu01_03(Model model) {
+		logger.info("menu01_03 GET");
+		
+		return "mobile/mMenu01_03";
+	}
+	
+	@RequestMapping(value = "/menu01_04", method = RequestMethod.GET)
+	public String menu01_04(Model model) {
+		logger.info("menu01_04 GET");
+		
+		return "mobile/mMenu01_04";
+	}
+	
+	@RequestMapping(value = "/menu01_05", method = RequestMethod.GET)
+	public String menu01_05(Model model) {
+		logger.info("menu01_05 GET");
+		
+		return "mobile/mMenu01_05";
+	}
+	
+	@RequestMapping(value = "/menu02_01", method = RequestMethod.GET)
+	public String menu02_01(Model model) {
+		logger.info("menu02_01 GET");
+		
+		return "mobile/mMenu02_01";
+	}
+	
+	@RequestMapping(value = "/menu02_02", method = RequestMethod.GET)
+	public String menu02_02(Model model) {
+		logger.info("menu02_02 GET");
+		
+		return "mobile/mMenu02_02";
+	}
+	
+	@RequestMapping(value = "/menu02_03", method = RequestMethod.GET)
+	public String menu02_03(Model model) {
+		logger.info("menu02_03 GET");
+		
+		return "mobile/mMenu02_03";
+	}
+	
+	@RequestMapping(value = "/menu02_04", method = RequestMethod.GET)
+	public String menu02_04(Model model) {
+		logger.info("menu02_04 GET");
+		
+		return "mobile/mMenu02_04";
+	}
+	
+	@RequestMapping(value = "/menu02_05", method = RequestMethod.GET)
+	public String menu02_05(Model model) {
+		logger.info("menu02_05 GET");
+		
+		return "mobile/mMenu02_05";
+	}
+	
+	@RequestMapping(value = "/menu03_01", method = RequestMethod.GET)
+	public String menu03_01(Model model) {
+		logger.info("menu03_01 GET");
+		
+		return "mobile/mMenu03_01";
+	}
+	
+	@RequestMapping(value = "/menu03_02", method = RequestMethod.GET)
+	public String menu03_02(Model model) {
+		logger.info("menu03_02 GET");
+		
+		return "mobile/mMenu03_02";
+	}
+	
+	@RequestMapping(value = "/menu03_03", method = RequestMethod.GET)
+	public String menu03_03(Model model) {
+		logger.info("menu03_03 GET");
+		
+		return "mobile/mMenu03_03";
+	}
+	
+	@RequestMapping(value = "/menu03_04", method = RequestMethod.GET)
+	public String menu03_04(Model model) {
+		logger.info("menu03_04 GET");
+		
+		return "mobile/mMenu03_04";
+	}
+	
+	@RequestMapping(value = "/menu03_05", method = RequestMethod.GET)
+	public String menu03_05(Model model) {
+		logger.info("menu03_05 GET");
+		
+		return "mobile/mMenu03_05";
+	}
+	
+	@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
+	public String menu04_01(Model model) {
+		logger.info("menu04_01 GET");
+		
+		return "mobile/mMenu04_01";
+	}
+	
+	@RequestMapping(value = "/menu04_02", method = RequestMethod.GET)
+	public String menu04_02(Model model) {
+		logger.info("menu04_02 GET");
+		
+		return "mobile/mMenu04_02";
+	}
+	
+	@RequestMapping(value = "/menu05_01", method = RequestMethod.GET)
+	public String menu05_01(Model model) {
+		logger.info("menu05_01 GET");
+		
+		return "mobile/mMenu05_01";
+	}
+	
+	@RequestMapping(value = "/menu05_02", method = RequestMethod.GET)
+	public String menu05_02(Model model) {
+		logger.info("menu05_02 GET");
+		
+		return "mobile/mMenu05_02";
+	}
+	
+	@RequestMapping(value = "/menu05_03", method = RequestMethod.GET)
+	public String menu05_03(Model model) {
+		logger.info("menu05_03 GET");
+		
+		return "mobile/mMenu05_03";
+	}
+	
+	@RequestMapping(value = "/menu05_04", method = RequestMethod.GET)
+	public String menu05_04(Model model) {
+		logger.info("menu05_04 GET");
+		
+		return "mobile/mMenu05_04";
+	}
+	
+	@RequestMapping(value = "/menu05_05", method = RequestMethod.GET)
+	public String menu05_05(Model model) {
+		logger.info("menu05_05 GET");
+		
+		return "mobile/mMenu05_05";
+	}
+	
+	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
+	public String menu06_01(Model model) {
+		logger.info("menu06_01 GET");
+		
+		return "mobile/mMenu06_01";
+	}
+	
+	@RequestMapping(value = "/menu06_02", method = RequestMethod.GET)
+	public String menu06_02(Model model) {
+		logger.info("menu06_02 GET");
+		
+		return "mobile/mMenu06_02";
+	}
+	
+	@RequestMapping(value = "/menu06_03", method = RequestMethod.GET)
+	public String menu06_03(Model model) {
+		logger.info("menu06_03 GET");
+		
+		return "mobile/mMenu06_03";
+	}
+	
+	@RequestMapping(value = "/menu06_04", method = RequestMethod.GET)
+	public String menu06_04(Model model) {
+		logger.info("menu06_04 GET");
+		
+		return "mobile/mMenu06_04";
+	}
+	
+	@RequestMapping(value = "/menu06_05", method = RequestMethod.GET)
+	public String menu06_05(Model model) {
+		logger.info("menu06_05 GET");
+		
+		return "mobile/mMenu06_05";
+	}
 }
