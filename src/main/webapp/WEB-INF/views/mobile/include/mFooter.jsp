@@ -14,13 +14,13 @@
 		<!-- fnb 시작 -->
 		<ul class="inner">
 			<li>
-				<a href="/m/489/?pCode=489">타이거치과 소개</a>
+				<a href="${pageContext.request.contextPath}/m/menu01_01">타이거치과 소개</a>
 			</li>
 			<li>
-				<a href="/m-personal">개인정보취급방침</a>
+				<a href="${pageContext.request.contextPath}/m/personal">개인정보취급방침</a>
 			</li>
 			<li>
-				<a href="/m-agree">이용약관</a>
+				<a href="${pageContext.request.contextPath}/m/agree">이용약관</a>
 			</li>
 		</ul>
 		<!-- fnb 끝 -->
