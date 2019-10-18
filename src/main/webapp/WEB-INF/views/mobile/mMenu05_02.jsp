@@ -176,9 +176,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="예방·일반진료" data-menu-second="아프지 않은 스케일링">
+		<div id="sub-visual" data-menu="예방·일반진료" data-menu-second="OBD진단(치주질환 세균분석)">
 			<div class="inner">
-				<h2>아프지 않은 스케일링</h2>
+				<h2>OBD진단(치주질환 세균분석)</h2>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -197,7 +197,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</ul>
 				</li>
 				<li class="lnb">
-					<button>아프지 않은 스케일링</button>
+					<button>OBD진단(치주질환 세균분석)</button>
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/m/menu05_01">아프지 않은 스케일링</a></li>
 						<li><a href="${pageContext.request.contextPath}/m/menu05_02">OBD진단(치주질환 세균분석)</a></li>
@@ -210,33 +210,39 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		</div>
 		<!-- BreadCrumb 끝 -->
 		
-		<div class="pcode50901">
+		<div class="pcode51001">
 			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/509_img_01.png" alt="">
+				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/510_img_01.png" alt="">
 			</div>
 		</div>
 		
-		<div class="pcode50902">
+		<div class="pcode51002">
 			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/509_img_02.png" alt="">
+				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/510_img_02.png" alt="">
 			</div>
 		</div>
 		
-		<div class="pcode50903">
+		<div class="pcode51003">
 			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/509_img_03.png" alt="">
+				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/510_img_03.png" alt="">
 			</div>
 		</div>
 		
-		<div class="pcode50904">
+		<div class="pcode51004">
 			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/509_img_04.png" alt="">
+				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/510_img_04.png" alt="">
 			</div>
 		</div>
 		
-		<div class="pcode50905">
+		<div class="pcode51005">
 			<div class="automation">
-				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/509_img_05.png" alt="">
+				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/510_img_05.png" alt="">
+			</div>
+		</div>
+		
+		<div class="pcode51006">
+			<div class="automation">
+				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/510_img_06.png" alt="">
 			</div>
 		</div>
 		
