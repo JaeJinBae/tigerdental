@@ -176,9 +176,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="공지사항">
+		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="온라인 상담">
 			<div class="inner">
-				<h2>공지사항</h2>
+				<h2>온라인 상담</h2>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -197,7 +197,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</ul>
 				</li>
 				<li class="lnb">
-					<button>공지사항</button>
+					<button>온라인 상담</button>
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/m/menu06_01">공지사항</a></li>
 						<li><a href="${pageContext.request.contextPath}/m/menu06_02">언론보도</a></li>
@@ -212,92 +212,118 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		<!-- 타이틀 시작 -->
 		<div class="board-title">
-			<h5>공지사항</h5>
+			<h5>온라인 상담</h5>
 		</div>
 		<!-- 타이틀 끝 -->
 		
+		<div class="search-box">
+			<form name="board_search" method="post" action="" onsubmit="return inquire_search_it(this)">
+				<select name="select_key" id="select_key"><option value="i_title|i_content|i_name">전체</option><option value="i_title">제목</option><option value="i_content">내용</option><option value="i_name">작성자</option></select>		<input type="text" title="검색어" name="input_key" value="">
+				<button type="submit">검색</button>
+			</form>
+		</div>
 		
-		<div class="board-notice-list">
+		
+		<div class="board-counsel-list">
 			<ul class="full">
-				
 				<li>
 					<a href="">
-						<b>  타이거 청정 지역 (9월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-09-30</i>
-					</a>	
+						<b><!--<i class='board-bullet' data-cate='NEW'>NEW</i>-->미백이랑 충치상담 가능한가요?</b>
+						<i class="name">김서진</i><span class="line">|</span><i class="date">2019-10-21</i><span class="line">|</span><i class="date">비공개</i>
+					</a>
+					<div class="answer"><i class="state com">답변완료</i></div>
 				</li>
 			
 				<li>
 					<a href="">
-						<b>  타이거 청정 지역 (8월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-08-29</i>
-					</a>	
+						<b><!---->임플란트1개하고 충치할게 있는데 오늘 오후에 상담 가능한가요</b>
+						<i class="name">오지석</i><span class="line">|</span><i class="date">2019-10-18</i><span class="line">|</span><i class="date">비공개</i>
+					</a>
+					<div class="answer"><i class="state com">답변완료</i></div>
 				</li>
 			
 				<li>
 					<a href="">
-						<b>  타이거 청정 지역 (6월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-07-17</i>
-					</a>	
+						<b><!---->이가 깨진건지 충치인지 모르겠는데 오늘 상담가능한가요</b>
+						<i class="name">서지영</i><span class="line">|</span><i class="date">2019-10-17</i><span class="line">|</span><i class="date">비공개</i>
+					</a>
+					<div class="answer"><i class="state com">답변완료</i></div>
 				</li>
 			
 				<li>
 					<a href="">
-						<b>  타이거 청정 지역 (5월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-05-29</i>
-					</a>	
+						<b><!---->예전에 떼운게 떨어졌는데 비용이 어떻게되나요?</b>
+						<i class="name">김선미</i><span class="line">|</span><i class="date">2019-10-15</i><span class="line">|</span><i class="date">비공개</i>
+					</a>
+					<div class="answer"><i class="state com">답변완료</i></div>
 				</li>
 			
 				<li>
 					<a href="">
-						<b>  타이거치과 6월 휴진안내</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-05-28</i>
-					</a>	
+						<b><!---->앞니 한대가 부러졌는데 꼭 임플란트를 해야하나요?</b>
+						<i class="name">윤기태</i><span class="line">|</span><i class="date">2019-10-14</i><span class="line">|</span><i class="date">비공개</i>
+					</a>
+					<div class="answer"><i class="state com">답변완료</i></div>
 				</li>
 			
 				<li>
 					<a href="">
-						<b>  타이거 청정 지역 (4월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-05-03</i>
-					</a>	
+						<b><!---->사랑니쪽이 많이 부었는데 오늘 뺄수있나요?</b>
+						<i class="name">이서연</i><span class="line">|</span><i class="date">2019-10-10</i><span class="line">|</span><i class="date">비공개</i>
+					</a>
+					<div class="answer"><i class="state com">답변완료</i></div>
 				</li>
 			
 				<li>
 					<a href="">
-						<b>  타이거치과 5월 진료안내</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-05-03</i>
-					</a>	
+						<b><!---->오늘 전체 임플란트 상담가능한가요?</b>
+						<i class="name">김정미</i><span class="line">|</span><i class="date">2019-10-08</i><span class="line">|</span><i class="date">비공개</i>
+					</a>
+					<div class="answer"><i class="state com">답변완료</i></div>
 				</li>
 			
 				<li>
 					<a href="">
-						<b>  타이거 청정 지역 (3월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-03-22</i>
-					</a>	
+						<b><!---->이가 시리고 아픈데 신경치료해야하나요?</b>
+						<i class="name">임지연</i><span class="line">|</span><i class="date">2019-10-07</i><span class="line">|</span><i class="date">비공개</i>
+					</a>
+					<div class="answer"><i class="state com">답변완료</i></div>
 				</li>
 			
 				<li>
 					<a href="">
-						<b>  타이거 청정 지역 (2월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-02-28</i>
-					</a>	
+						<b><!---->앞니상담하고 싶은데 몇시에 가능한가요?</b>
+						<i class="name">서진희</i><span class="line">|</span><i class="date">2019-10-05</i><span class="line">|</span><i class="date">비공개</i>
+					</a>
+					<div class="answer"><i class="state com">답변완료</i></div>
 				</li>
 			
 				<li>
 					<a href="">
-						<b>  설연휴 휴진안내입니다.</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-01-31</i>
-					</a>	
+						<b><!---->입천장쪽으로 잇몸이 많이 부었는데요</b>
+						<i class="name">정세빈</i><span class="line">|</span><i class="date">2019-10-04</i><span class="line">|</span><i class="date">비공개</i>
+					</a>
+					<div class="answer"><i class="state com">답변완료</i></div>
 				</li>
 			</ul>
 		</div>
 		
 		
-		<!-- 페이징 시작 -->
-		<div id="board-pagenation">
-			<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?pCode=514&amp;select_key=&amp;input_key=&amp;backpage=/m/514/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=2 ">2</a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?pCode=514&amp;select_key=&amp;input_key=&amp;backpage=/m/514/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=2 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+		<!-- 게시판 버튼 시작 -->
+		<div class="btn-group-right">
+			<div class="inner">
+				<div class="brick">
+					<a href="" class="btn btn-list">글쓰기</a>
+				</div>
 			</div>
-		</div><!-- 페이징 끝 -->
+		</div>
+		<!-- 게시판 버튼 끝 -->
+		
+		
+		<div id="board-pagenation">
+			<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=2 ">2</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=3 ">3</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=4 "><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=30 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+			</div>
+		</div>
 		
 	</div> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 

@@ -176,9 +176,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="공지사항">
+		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="온라인 상담">
 			<div class="inner">
-				<h2>공지사항</h2>
+				<h2>온라인 상담</h2>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -197,7 +197,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</ul>
 				</li>
 				<li class="lnb">
-					<button>공지사항</button>
+					<button>온라인 상담</button>
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/m/menu06_01">공지사항</a></li>
 						<li><a href="${pageContext.request.contextPath}/m/menu06_02">언론보도</a></li>
@@ -210,94 +210,106 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		</div>
 		<!-- BreadCrumb 끝 -->
 		
-		<!-- 타이틀 시작 -->
-		<div class="board-title">
-			<h5>공지사항</h5>
-		</div>
-		<!-- 타이틀 끝 -->
-		
-		
-		<div class="board-notice-list">
-			<ul class="full">
-				
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (9월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-09-30</i>
-					</a>	
-				</li>
+		<form name="inquire" id="inquire" method="post" action="" enctype="multipart/form-data" onsubmit="return false" autocomplete="off">
+			<input type="hidden" name="fparam" value="pCode=516&amp;action=&amp;psseq=&amp;pagecode=&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;data_array=Y&amp;mode=modify&amp;im_id=&amp;seq=396&amp;nextmode=">
+			<input type="hidden" name="distinction" value="proc">
+			<input type="hidden" name="backpage" value="/m/index.html">
+			<input type="hidden" name="file_cnt" value="1">
 			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (8월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-08-29</i>
-					</a>	
-				</li>
 			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (6월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-07-17</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (5월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-05-29</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거치과 6월 휴진안내</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-05-28</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (4월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-05-03</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거치과 5월 진료안내</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-05-03</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (3월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-03-22</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (2월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-02-28</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  설연휴 휴진안내입니다.</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-01-31</i>
-					</a>	
-				</li>
-			</ul>
-		</div>
-		
-		
-		<!-- 페이징 시작 -->
-		<div id="board-pagenation">
-			<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?pCode=514&amp;select_key=&amp;input_key=&amp;backpage=/m/514/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=2 ">2</a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?pCode=514&amp;select_key=&amp;input_key=&amp;backpage=/m/514/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=2 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+			<!-- 타이틀 시작 -->
+			<div class="board-title">
+				<h5>온라인 상담</h5>
 			</div>
-		</div><!-- 페이징 끝 -->
+			<!-- 타이틀 끝 -->
+			
+			<div class="full">
+				<table class="board-cousel-form">
+					<caption>상담 게시판 상세</caption>
+					<tbody>
+						<tr>
+							<th>상담구분</th>
+							<td>
+								<select name="i_kind" id="i_kind" class="search_sel"><option value="임플란트" selected="">임플란트</option><option value="치아교정">치아교정</option><option value="심미치료">심미치료</option><option value="치아미백">치아미백</option><option value="스케일링">스케일링</option><option value="충치치료">충치치료</option><option value="신경치료">신경치료</option><option value="사랑니발치">사랑니발치</option><option value="예방진료">예방진료</option><option value="기타">기타</option></select>				</td>
+						</tr>
+						
+									<tr>
+										<th scope="row">이름</th>
+										<td><input type="text" name="i_name" id="i_name" class="default" valid="required" element-name="이름" value="김서진"></td>
+									</tr>
+														<tr>
+							<th>제목</th>
+							<td>
+								<input type="text" name="i_title" id="i_title" maxlength="200" valid="required" element-name="제목" value="미백이랑 충치상담 가능한가요?">
+							</td>
+						</tr>
+			
+						<tr>
+							<th>연락처</th>
+							<td>
+								<select name="i_phone1" id="i_phone1" class="small"><option value="010" selected="">010</option><option value="011">011</option><option value="016">016</option><option value="017">017</option><option value="018">018</option><option value="019">019</option></select> -
+								<input type="text" name="i_phone2" id="i_phone2" maxlength="4" valid="required,phone_tel34" element-name="연락처" value="3333" autocomplete="off"> -
+								<input type="text" name="i_phone3" id="i_phone3" maxlength="4" valid="required,phone_tel44" element-name="연락처" value="4444" autocomplete="off"><br><br>
+								 * 전화번호를 남겨주시면 답변 등록 시 문자드립니다.
+							</td>
+						</tr>
+						<tr>
+							<th>내용</th>
+							<td>
+								<textarea name="i_content" id="i_content" valid="required" element-name="내용">타이거치과</textarea>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="file_cnt">첨부파일</label></th>
+							<td>
+								<div class="form-file">
+								
+							<div class="addFile">
+								<label for="filename">파일첨부</label>
+								<input class="upload-name" value="파일선택" disabled="disabled">
+								<input type="file" name="upload[0]" id="filename" class="upload-hidden" tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;"><div class="jfilestyle jfilestyle-corner  jfilestyle-theme-default"><div name="filedrag" style="position: absolute; width: 100%; height: 35px; z-index: -1;"></div><input type="text" style="width:150px" placeholder="" disabled=""> <span class="focus-jfilestyle" tabindex="0"><label for="filename"><span>파일첨부</span></label></span></div>
+							</div>
+												</div>
+								<script>
+									$('.form-file input[type="file"]').jfilestyle({
+										//placeholder: '사진첨부',
+										text : '파일첨부'
+									})
+								</script>
+							</td>
+						</tr>
+						<input type="hidden" name="i_secret" id="i_secret" value="Y">
+					</tbody>
+				</table>
+			
+				<div class="private-agree">
+					<textarea name="b_mem_personal" id="b_mem_personal" cols="124" rows="10" class="full" element-name="개인정보수집동의" readonly="">개인정보취급방침
+			1.개인정보 수집이용에 대한 동의 ‘타이거치과의원’은 회원님의 개인정보를 중요시하며, “정보통신망 이용촉진 및 정보보호”에 관한 법률을 준수하고 있습니다. 회원님의 소중한 개인정보는 다음과 같은 정책에 따라 수집 및 이용되며, 회원님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다. 또한 개인정보취급방침을 개정하는 경우 웹사이트 공지사항을 통하여 공지할 것입니다.
+			
+			2.개인정보의 수집•이용 목적 회원님께서 요청하신 제휴 문의에 대한 질의에 더욱 정확한 답변을 위해 성함, 연락처, 상담내용 등의 정보가 수집됩니다. - 수집항목 : 성명, 연락처, 상담내용 - 이용목적 : 상담내용에 대한 답변, 상담 관련 마케팅 및 정보안내 고지에 활용
+			
+			3.보유이용 기간 원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 바로 파기합니다. 단, 다음의 정보에 대해서는 아래의 사유로 명시한
+			기간 동안 보존합니다. - 보존 이유 : 회원님의 동의를 통한 정보 유지 - 보존 기간 : 회원정보 삭제 요청 시까지</textarea>
+					<p>
+						<input type="checkbox" id="agree" valid="required" element-name="개인정보취급방침" name="agree" value="Y" checked="">
+						<label for="agree">개인정보취급방침에 동의합니다.</label>
+					</p>
+				</div>
+				
+			
+				<!-- 게시판 버튼 시작 -->
+				<div class="btn-group-center">
+					<div class="brick">
+						<button type="button" class="btn btn-submit" onclick="inquire_it('submit')">글쓰기</button>
+						<button type="button" class="btn btn-cancel" onclick="inquire_it('reset', '')">취소</button>
+					</div>
+				</div>
+				<!-- 게시판 버튼 끝 -->
+			
+				<script type="text/javascript" src="/lib/js/board.js"></script>
+			
+			</div>
+		</form>
 		
 	</div> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 

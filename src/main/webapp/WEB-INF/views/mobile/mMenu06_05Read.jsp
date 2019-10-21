@@ -176,9 +176,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="공지사항">
+		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="온라인 상담">
 			<div class="inner">
-				<h2>공지사항</h2>
+				<h2>온라인 상담</h2>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -197,7 +197,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</ul>
 				</li>
 				<li class="lnb">
-					<button>공지사항</button>
+					<button>온라인 상담</button>
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/m/menu06_01">공지사항</a></li>
 						<li><a href="${pageContext.request.contextPath}/m/menu06_02">언론보도</a></li>
@@ -212,92 +212,60 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		<!-- 타이틀 시작 -->
 		<div class="board-title">
-			<h5>공지사항</h5>
+			<h5>온라인 상담</h5>
 		</div>
 		<!-- 타이틀 끝 -->
 		
-		
-		<div class="board-notice-list">
+		<div class="board-counsel-view">
 			<ul class="full">
-				
+				<!-- privacy -->
+				<form name="inquire" id="inquire" method="post" action="" enctype="multipart/form-data" onsubmit="return false">
+				<input type="hidden" name="fparam" value="">
+				<input type="hidden" name="distinction" value="proc">
+				<input type="hidden" name="backpage" value="/m/index.html">
+				<input type="hidden" name="file_cnt" value="1">
+		
 				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (9월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-09-30</i>
-					</a>	
+					<div class="title">미백이랑 충치상담 가능한가요?</div>
+					<p class="info">
+						<i class="name">김서진</i><span class="line">|</span><i class="date">2019-10-21</i><span class="line">|</span><i class="date">비공개</i>
+						<span class="answer"><i class="state com">답변완료</i></span>
+					</p>
 				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (8월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-08-29</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (6월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-07-17</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (5월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-05-29</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거치과 6월 휴진안내</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-05-28</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (4월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-05-03</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거치과 5월 진료안내</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-05-03</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (3월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-03-22</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (2월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-02-28</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  설연휴 휴진안내입니다.</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-01-31</i>
-					</a>	
-				</li>
-			</ul>
+					
+				<!-- 게시글 상세 내용 -->
+				<li class="board-counsel-content">
+					타이거치과		</li>
+				<!-- // 게시글 상세 내용 -->
+			</form></ul>
 		</div>
 		
-		
-		<!-- 페이징 시작 -->
-		<div id="board-pagenation">
-			<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?pCode=514&amp;select_key=&amp;input_key=&amp;backpage=/m/514/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=2 ">2</a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?pCode=514&amp;select_key=&amp;input_key=&amp;backpage=/m/514/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=2 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+		<div class="full">
+			<div class="board-counsel-reply">
+				<div class="reply-title">
+					<i>답변</i> 온라인상담에 대한 답변입니다.
+				</div>
+				<div class="reply-txt">
+					타이거치과
+				</div>
+				
 			</div>
-		</div><!-- 페이징 끝 -->
+		</div>
+		
+		<!-- 게시판 버튼 시작 -->
+		<div class="btn-group-center">
+			<div class="brick">
+				<ul>
+					<li class="fl">
+						<a href="" class="btn btn-view-list">목록으로</a>
+					</li>
+					<li class="fr">
+						<a href="" class="btn btn-del">삭제</a>&nbsp;<a href="" class="btn btn-update">수정</a>&nbsp;
+					</li>
+				</ul>		
+			</div>
+		</div>
+		<!-- 게시판 버튼 끝 -->
 		
 	</div> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 

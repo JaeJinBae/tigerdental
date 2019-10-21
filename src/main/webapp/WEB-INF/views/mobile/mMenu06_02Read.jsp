@@ -176,9 +176,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="공지사항">
+		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="언론보도">
 			<div class="inner">
-				<h2>공지사항</h2>
+				<h2>언론보도</h2>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -197,7 +197,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</ul>
 				</li>
 				<li class="lnb">
-					<button>공지사항</button>
+					<button>언론보도</button>
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/m/menu06_01">공지사항</a></li>
 						<li><a href="${pageContext.request.contextPath}/m/menu06_02">언론보도</a></li>
@@ -212,92 +212,73 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		<!-- 타이틀 시작 -->
 		<div class="board-title">
-			<h5>공지사항</h5>
+			<h5>언론보도</h5>
 		</div>
 		<!-- 타이틀 끝 -->
 		
 		
-		<div class="board-notice-list">
+		<div class="board-notice-view">
 			<ul class="full">
-				
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (9월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-09-30</i>
-					</a>	
+				<li class="subject">	
+					<div class="title"> MBC 라디오 이윤석 신아영의 좋은주말에 서인석 원장님 출연</div>
+					<p class="info">
+						<!--i class='name'>타</i><span class='line'>|</span--><i class="date">2019-02-11</i><span class="line">|</span><i class="hit">조회수		532</i>
+					</p>
 				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (8월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-08-29</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (6월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-07-17</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (5월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-05-29</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거치과 6월 휴진안내</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-05-28</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (4월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-05-03</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거치과 5월 진료안내</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-05-03</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (3월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-03-22</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (2월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-02-28</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  설연휴 휴진안내입니다.</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-01-31</i>
-					</a>	
+				<li class="con">
+					<div style="text-align: center;">&nbsp;</div>
+		
+					<div style="text-align: center;">&nbsp;</div>
+					
+					<div style="text-align: center;"><img alt="" src="/filedata/ckeditor/20190212_976A7029D0BC6E59.jpg"></div>
+					
+					<div style="text-align: center;">&nbsp;</div>
+					
+					<div style="text-align: center;">타이거 치과 서인석 원장님게서</div>
+					
+					<div style="text-align: center;">MBC라디오 이윤석 신아영의 좋은주말에 출연하셨습니다.</div>
+					
+					<div style="text-align: center;">&nbsp;</div>
+					
+					<div style="text-align: center;">구강관리와 예방 및 치료법에 대해서 이야기해보았습니다.</div>
+					
+					<div style="text-align: center;">&nbsp;</div>
+					
+					<div style="text-align: center;"><a href="http://www.imbc.com/broad/radio/fm/goodweek/podcast/index.html" target="_blank">방송 다시듣기 클릭</a></div>
+					
+					<div style="text-align: center;">&nbsp;</div>
 				</li>
 			</ul>
 		</div>
 		
 		
-		<!-- 페이징 시작 -->
-		<div id="board-pagenation">
-			<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?pCode=514&amp;select_key=&amp;input_key=&amp;backpage=/m/514/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=2 ">2</a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?pCode=514&amp;select_key=&amp;input_key=&amp;backpage=/m/514/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=2 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+		<div class="prev-next-list">
+			<ul class="full">
+				<li>
+					<span>이전글</span><a href="">이전글이 없습니다</a>
+				</li>
+				<li>
+					<span>다음글</span><a href=""> &lt;매일경제TV&gt; 건강백세 스마일, 서인석 대표...</a>
+				</li>
+			</ul>
+		</div>
+		
+		
+		<!-- 게시판 버튼 시작 -->
+		<div class="btn-group-right">
+			<div class="inner">
+				<div class="brick">
+					<a href="" class="btn btn-list">목록으로</a>
+				</div>
 			</div>
-		</div><!-- 페이징 끝 -->
+		</div>
+		<!-- 게시판 버튼 끝 -->
+		
+		
+		
+		<form name="board" method="post" action="/html/board/board_proc.php">
+			<input type="hidden" name="fparam">
+		</form>
 		
 	</div> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 

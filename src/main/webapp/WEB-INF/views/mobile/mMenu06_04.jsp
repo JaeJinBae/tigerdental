@@ -176,9 +176,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="공지사항">
+		<div id="sub-visual" data-menu="커뮤니티" data-menu-second="치료후기">
 			<div class="inner">
-				<h2>공지사항</h2>
+				<h2>치료후기</h2>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -197,7 +197,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</ul>
 				</li>
 				<li class="lnb">
-					<button>공지사항</button>
+					<button>치료후기</button>
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/m/menu06_01">공지사항</a></li>
 						<li><a href="${pageContext.request.contextPath}/m/menu06_02">언론보도</a></li>
@@ -212,82 +212,80 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		<!-- 타이틀 시작 -->
 		<div class="board-title">
-			<h5>공지사항</h5>
+			<h5>치료후기</h5>
 		</div>
 		<!-- 타이틀 끝 -->
 		
-		
-		<div class="board-notice-list">
-			<ul class="full">
+		<div class="board-gallery">
+			<ul class="inner">
+				<li class="item">
+					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
+						<em></em>
+						<b> 53세 상하악 구치부 임플란트 크라운 치료후기</b>
+					</a>
+				</li>
 				
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (9월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-09-30</i>
-					</a>	
+				<li class="item">
+					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
+						<em></em>
+						<b> 62세여성 전악 임플란트환자의 타이거치과에 보내는 감사편지</b>
+					</a>
 				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (8월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-08-29</i>
-					</a>	
+				
+				<li class="item">
+					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
+						<em></em>
+						<b> 상악전치부 라미네이트, 구치부 임플란트, 크라운 치료후기(53세 여성)</b>
+					</a>
 				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (6월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-07-17</i>
-					</a>	
+				
+				<li class="item">
+					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
+						<em></em>
+						<b> 상악 전치부 라미네이트,구치부 크라운치료후기(45세 여성)</b>
+					</a>
 				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (5월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-05-29</i>
-					</a>	
+				
+				<li class="item">
+					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
+						<em></em>
+						<b> 상하악 구치부 크라운,인레이, 미백 치료후기(32세 여성)</b>
+					</a>
 				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거치과 6월 휴진안내</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-05-28</i>
-					</a>	
+				
+				<li class="item">
+					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
+						<em></em>
+						<b> 상하악 구치부 크라운.인레이 치료후기(33세 남성)</b>
+					</a>
 				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (4월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-05-03</i>
-					</a>	
+				
+				<li class="item">
+					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
+						<em></em>
+						<b> 상하악 구치부 인레이보철 치료사례 후기(37세 남성-중국에서 내원하신분)</b>
+					</a>
 				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거치과 5월 진료안내</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-05-03</i>
-					</a>	
+				
+				<li class="item">
+					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
+						<em></em>
+						<b> 상하악 크라운,인레이 치료후기(36세 여성)</b>
+					</a>
 				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (3월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-03-22</i>
-					</a>	
+				
+				<li class="item">
+					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
+						<em></em>
+						<b> 상하악 구치부 크라운인레이 치료후기(25세 여성)</b>
+					</a>
 				</li>
-			
-				<li>
-					<a href="">
-						<b>  타이거 청정 지역 (2월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</b>
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-02-28</i>
-					</a>	
-				</li>
-			
-				<li>
-					<a href="">
-						<b>  설연휴 휴진안내입니다.</b>
-						<!--i class='name'>t</i><span class='line'>|</span--><i class="date">2019-01-31</i>
-					</a>	
+				
+				<li class="item">
+					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
+						<em></em>
+						<b> 하악 인레이, 치주치료환자 치료후기(42세여성)</b>
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -295,7 +293,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		<!-- 페이징 시작 -->
 		<div id="board-pagenation">
-			<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?pCode=514&amp;select_key=&amp;input_key=&amp;backpage=/m/514/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=2 ">2</a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?pCode=514&amp;select_key=&amp;input_key=&amp;backpage=/m/514/&amp;Scod=BRD01&amp;delflag=Y&amp;sort=b_notice ASC, b_ref DESC, b_step ASC, seq DESC&amp;btap=&amp;page=2 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+			<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?pCode=530&amp;select_key=&amp;input_key=&amp;backpage=/m/530/&amp;Scod=BRD05&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=2 ">2</a><a href="?pCode=530&amp;select_key=&amp;input_key=&amp;backpage=/m/530/&amp;Scod=BRD05&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=3 ">3</a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?pCode=530&amp;select_key=&amp;input_key=&amp;backpage=/m/530/&amp;Scod=BRD05&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=3 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
 			</div>
 		</div><!-- 페이징 끝 -->
 		
