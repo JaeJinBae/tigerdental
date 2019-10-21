@@ -179,11 +179,25 @@ public class MobileController {
 		return "mobile/mMenu06_01";
 	}
 	
+	@RequestMapping(value = "/menu06_01read", method = RequestMethod.GET)
+	public String menu06_01read(Model model) {
+		logger.info("menu06_01read GET");
+		
+		return "mobile/mMenu06_01Read";
+	}
+	
 	@RequestMapping(value = "/menu06_02", method = RequestMethod.GET)
 	public String menu06_02(Model model) {
 		logger.info("menu06_02 GET");
 		
 		return "mobile/mMenu06_02";
+	}
+	
+	@RequestMapping(value = "/menu06_02read", method = RequestMethod.GET)
+	public String menu06_02read(Model model) {
+		logger.info("menu06_02read GET");
+		
+		return "mobile/mMenu06_02Read";
 	}
 	
 	@RequestMapping(value = "/menu06_03", method = RequestMethod.GET)
@@ -200,10 +214,45 @@ public class MobileController {
 		return "mobile/mMenu06_04";
 	}
 	
+	@RequestMapping(value = "/menu06_04read", method = RequestMethod.GET)
+	public String menu06_04read(Model model) {
+		logger.info("menu06_04read GET");
+		
+		return "mobile/mMenu06_04Read";
+	}
+	
 	@RequestMapping(value = "/menu06_05", method = RequestMethod.GET)
 	public String menu06_05(Model model) {
 		logger.info("menu06_05 GET");
 		
 		return "mobile/mMenu06_05";
+	}
+	
+	@RequestMapping(value = "/menu06_05read", method = RequestMethod.GET)
+	public String menu06_05read(Model model) {
+		logger.info("menu06_05read GET");
+		
+		return "mobile/mMenu06_05Read";
+	}
+	
+	@RequestMapping(value = "/menu06_05write", method = RequestMethod.GET)
+	public String menu06_05write(Model model) {
+		logger.info("menu06_05write GET");
+		
+		return "mobile/mMenu06_05Write";
+	}
+	
+	@RequestMapping(value = "/menu06_05update", method = RequestMethod.GET)
+	public String menu06_05update(Model model) {
+		logger.info("menu06_05update GET");
+		
+		return "mobile/mMenu06_05Update";
+	}
+	
+	@RequestMapping(value = "/menu06_05pwchk", method = RequestMethod.GET)
+	public String menu06_05pwchk(Model model) {
+		logger.info("menu06_05pwchk GET");
+		
+		return "mobile/mMenu06_05PwChk";
 	}
 }
