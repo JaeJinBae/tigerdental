@@ -48,6 +48,20 @@ public class HomeController {
 		}
 	}
 	
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String login(){
+		logger.info("login");
+		
+		return "pc/login";
+	}
+	
+	@RequestMapping(value="/join", method=RequestMethod.GET)
+	public String join(){
+		logger.info("join");
+		
+		return "pc/join";
+	}
+	
 	@RequestMapping(value="/menu01_01", method=RequestMethod.GET)
 	public String menu01_01Get(){
 		logger.info("menu01_01 get");
@@ -270,5 +284,12 @@ public class HomeController {
 		logger.info("menu06_05write get");
 		
 		return "pc/menu06_05Write";
+	}
+	
+	@RequestMapping(value="/menu06_05update", method=RequestMethod.GET)
+	public String menu06_05updateGet(){
+		logger.info("menu06_05update get");
+		
+		return "pc/menu06_05Update";
 	}
 }

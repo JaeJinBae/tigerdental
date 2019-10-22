@@ -16,7 +16,19 @@ public class MobileController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MobileController.class);
 	
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String login(){
+		logger.info("login");
+		
+		return "mobile/mLogin";
+	}
 	
+	@RequestMapping(value="/join", method=RequestMethod.GET)
+	public String join(){
+		logger.info("join");
+		
+		return "mobile/mJoin";
+	}
 	
 	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
 	public String menu01_01(Model model) {
