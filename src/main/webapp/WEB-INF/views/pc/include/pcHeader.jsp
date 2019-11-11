@@ -13,8 +13,8 @@
 
 		<ul class="header-group-member">
 			<li>
-				<img src="${pageContext.request.contextPath}/resources/img/common/theme/member_arrow.png" alt=""><a href="/login" class="login trn">LOGIN</a>
-				<img src="${pageContext.request.contextPath}/resources/img/common/theme/member_arrow.png" alt=""><a href="/join" class="join trn">JOIN</a>
+				<img src="${pageContext.request.contextPath}/resources/img/common/theme/member_arrow.png" alt=""><a href="${pageContext.request.contextPath}/login" class="login trn">LOGIN</a>
+				<img src="${pageContext.request.contextPath}/resources/img/common/theme/member_arrow.png" alt=""><a href="${pageContext.request.contextPath}/join" class="join trn">JOIN</a>
 				<a href="https://www.facebook.com/stigerdental/" target="_blank" data-menu="페이스북"><img src="${pageContext.request.contextPath}/resources/img/common/theme/sns01.png" alt=""></a>
 				<a href="https://www.instagram.com/tigerdental/" target="_blank" data-menu="인스타그램"><img src="${pageContext.request.contextPath}/resources/img/common/theme/sns03.png" alt=""></a>
 				<a href="https://blog.naver.com/tigerdental" target="_blank" data-menu="블로그"><img src="${pageContext.request.contextPath}/resources/img/common/theme/sns02.png" alt=""></a>

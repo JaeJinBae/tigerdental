@@ -180,7 +180,97 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<div id="sub-container">
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
+		<!-- 서브 비주얼 시작-->
+		<div id="sub-visual" data-menu="타이거치과" data-menu-second="내부시설">
+			<div class="inner">
+				<a href="/491/?pCode=491" class="prev-page"></a>
+				<h2>내부시설</h2>
+				<a href="/493/?pCode=493" class="next-page"></a>
+			</div>
+		</div>
+		<!-- 서브 비주얼 끝 -->
 		
+		<!-- BreadCrumb 시작 -->
+		<div id="breadcrumb">
+			<div class="inner">
+				<ul>
+					<!-- HOME -->
+					<li class="home">
+						<a href="/"></a>
+					</li>
+					<!-- 1차 -->
+					<li>
+						<button>타이거치과</button><i></i>
+					</li>
+					<!-- 2차 -->
+					<li>
+						<button>내부시설</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- BreadCrumb 끝 -->
+		
+		<!-- 병원 둘러보기(프리뷰) 시작 -->
+		<section id="preview">
+			<div class="inner">
+				<div class="preview-slider">
+					<li>
+						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger01.jpg'>
+						<span class='tit'>로비</span>
+					</li>
+					<li>
+						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger02.jpg'>
+						<span class='tit'>로비</span>
+					</li>
+					<li>
+						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger03.jpg'>
+						<span class='tit'>로비</span>
+					</li>
+					<li>
+						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger04.jpg'>
+						<span class='tit'>세렉</span>
+					</li>
+					<li>
+						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger05.jpg'>
+						<span class='tit'>상담실</span>
+					</li>
+					<li>
+						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger06.jpg'>
+						<span class='tit'>진료실</span>
+					</li>
+					<li>
+						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger07.jpg'>
+						<span class='tit'>진료실</span>
+					</li>
+					<li>
+						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger08.jpg'>
+						<span class='tit'>진료실</span>
+					</li>
+					<li>
+						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger09.jpg'>
+						<span class='tit'>진료실</span>
+					</li>
+					<li>
+						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger10.jpg'>
+						<span class='tit'>진료실</span>
+					</li>
+				</div>
+				<div class="preview-thumb">
+					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger01.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger02.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger03.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger04.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger05.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger06.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger07.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger08.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger09.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger10.jpg'></li>
+				</div>
+			</div>
+		</section>
+		<!-- 병원 둘러보기(프리뷰) 끝 -->
 
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
 		<jsp:include page="include/pcBottom.jsp"></jsp:include>

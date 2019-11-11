@@ -30,6 +30,13 @@ public class MobileController {
 		return "mobile/mJoin";
 	}
 	
+	@RequestMapping(value="/findIdPw", method=RequestMethod.GET)
+	public String findIdPw(){
+		logger.info("findIdPw");
+		
+		return "mobile/mFindIdPw";
+	}
+	
 	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
 	public String menu01_01(Model model) {
 		logger.info("menu01_01 GET");

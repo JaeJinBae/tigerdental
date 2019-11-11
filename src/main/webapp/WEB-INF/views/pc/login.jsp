@@ -238,11 +238,11 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 				<div class="member">
 					<div>
 						아이디나 비밀번호를 분실하셨나요?
-						<a href="/find-id">아이디/비밀번호 찾기</a>
+						<a href="${pageContext.request.contextPath}/findIdPw">아이디/비밀번호 찾기</a>
 					</div>
 					<div>
 						아직 회원이 아니신가요?
-						<a href="/join" class="btn-join">회원가입</a>
+						<a href="${pageContext.request.contextPath}/join" class="btn-join">회원가입</a>
 					</div>
 				</div>
 			</div>

@@ -62,6 +62,13 @@ public class HomeController {
 		return "pc/join";
 	}
 	
+	@RequestMapping(value="/findIdPw", method=RequestMethod.GET)
+	public String findIdPw(){
+		logger.info("findIdPw");
+		
+		return "pc/findIdPw";
+	}
+	
 	@RequestMapping(value="/menu01_01", method=RequestMethod.GET)
 	public String menu01_01Get(){
 		logger.info("menu01_01 get");

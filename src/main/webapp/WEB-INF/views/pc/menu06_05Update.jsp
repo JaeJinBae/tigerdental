@@ -164,7 +164,10 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 <!-- SkipNavigation 시작 -->
 <div id="skipnavigation">
 	<ul>
-		<li><a href="#sub-container">본문 바로가기 <svg class="svg-inline--fa fa-arrow-circle-right fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="arrow-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"></path></svg><!-- <i class="fas fa-arrow-circle-right"></i> --></a></li>
+		<li>
+			<a href="#sub-container">본문 바로가기 <svg class="svg-inline--fa fa-arrow-circle-right fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="arrow-circle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm-28.9 143.6l75.5 72.4H120c-13.3 0-24 10.7-24 24v16c0 13.3 10.7 24 24 24h182.6l-75.5 72.4c-9.7 9.3-9.9 24.8-.4 34.3l11 10.9c9.4 9.4 24.6 9.4 33.9 0L404.3 273c9.4-9.4 9.4-24.6 0-33.9L271.6 106.3c-9.4-9.4-24.6-9.4-33.9 0l-11 10.9c-9.5 9.6-9.3 25.1.4 34.4z"></path></svg><!-- <i class="fas fa-arrow-circle-right"></i> -->
+			</a>
+		</li>
 	</ul>
 </div>
 <!-- SkipNavigation 끝 -->
@@ -209,7 +212,19 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 						<tr>
 							<th>상담구분</th>
 							<td>
-								<select name="i_kind" id="i_kind" class="search_sel"><option value="임플란트" selected="">임플란트</option><option value="치아교정">치아교정</option><option value="심미치료">심미치료</option><option value="치아미백">치아미백</option><option value="스케일링">스케일링</option><option value="충치치료">충치치료</option><option value="신경치료">신경치료</option><option value="사랑니발치">사랑니발치</option><option value="예방진료">예방진료</option><option value="기타">기타</option></select>					</td>
+								<select name="i_kind" id="i_kind" class="search_sel">
+									<option value="임플란트" selected="">임플란트</option>
+									<option value="치아교정">치아교정</option>
+									<option value="심미치료">심미치료</option>
+									<option value="치아미백">치아미백</option>
+									<option value="스케일링">스케일링</option>
+									<option value="충치치료">충치치료</option>
+									<option value="신경치료">신경치료</option>
+									<option value="사랑니발치">사랑니발치</option>
+									<option value="예방진료">예방진료</option>
+									<option value="기타">기타</option>
+								</select>
+							</td>
 						</tr>
 						
 						<tr>
@@ -226,7 +241,14 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 						<tr>
 							<th>연락처</th>
 							<td>
-								<select name="i_phone1" id="i_phone1" class="small"><option value="010" selected="">010</option><option value="011">011</option><option value="016">016</option><option value="017">017</option><option value="018">018</option><option value="019">019</option></select> -
+								<select name="i_phone1" id="i_phone1" class="small">
+									<option value="010" selected="">010</option>
+									<option value="011">011</option>
+									<option value="016">016</option>
+									<option value="017">017</option>
+									<option value="018">018</option>
+									<option value="019">019</option>
+								</select> -
 								<input type="text" name="i_phone2" id="i_phone2" maxlength="4" valid="required,phone_tel34" element-name="연락처" value="3333" class="small" autocomplete="off"> -
 								<input type="text" name="i_phone3" id="i_phone3" maxlength="4" valid="required,phone_tel44" element-name="연락처" value="4444" class="small" autocomplete="off">
 								   * 전화번호를 남겨주시면 답변 등록 시 문자드립니다.
@@ -246,7 +268,12 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 									<div class="addFile">
 										<label for="filename">파일첨부</label>
 										<input class="upload-name" value="파일선택" disabled="disabled">
-										<input type="file" name="upload[0]" id="filename" class="upload-hidden" tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;"><div class="jfilestyle jfilestyle-corner  jfilestyle-theme-default"><div name="filedrag" style="position: absolute; width: 100%; height: 35px; z-index: -1;"></div><input type="text" style="width:150px" placeholder="" disabled=""> <span class="focus-jfilestyle" tabindex="0"><label for="filename"><span>파일첨부</span></label></span></div>
+										<input type="file" name="upload[0]" id="filename" class="upload-hidden" tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;">
+										<div class="jfilestyle jfilestyle-corner  jfilestyle-theme-default">
+											<div name="filedrag" style="position: absolute; width: 100%; height: 35px; z-index: -1;"></div>
+											<input type="text" style="width:150px" placeholder="" disabled=""> 
+											<span class="focus-jfilestyle" tabindex="0"><label for="filename"><span>파일첨부</span></label></span>
+										</div>
 									</div>
 								</div>
 								<script>
