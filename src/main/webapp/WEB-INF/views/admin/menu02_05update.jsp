@@ -30,7 +30,7 @@ $(function(){
 	$.ajaxSetup({cache:false});
 	
 	$(".left_menu > dl:nth-child(2) > dt > a").addClass("on");
-	$(".left_menu > dl:nth-child(2) > dd:nth-child(5) > a").addClass("on");
+	$(".left_menu > dl:nth-child(2) > dd:nth-child(6) > a").addClass("on");
 	
 	$( "#regdate" ).datepicker({
 		changeMonth: true, 
@@ -61,12 +61,12 @@ $(function(){
 		var no = $("input[name='no']").val();
 		
 		$.ajax({
-			url:"${pageContext.request.contextPath}/admin/menu02_04delete/"+no,
+			url:"${pageContext.request.contextPath}/admin/menu02_05delete/"+no,
 			type:"get",
 			dataType:"text",
 			async:false,
 			success:function(json){
-				location.href="${pageContext.request.contextPath}/admin/menu02_04";
+				location.href="${pageContext.request.contextPath}/admin/menu02_05";
 			} 
 		});
 		
@@ -87,19 +87,19 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>언론보도</h1>
+				<h1>치료후기</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>언론보도</li>
+					<li>치료후기</li>
 				</ul>
 			</div>
 			
 			<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
 			
 			<div class="main_bottom_area">
-				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu02_04update${pageMaker.makeSearch(pageMaker.cri.page)}">
+				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu02_05update${pageMaker.makeSearch(pageMaker.cri.page)}">
 					<input type="hidden" name="no" value="${item.no}">
 					<div class="write_area">
 						<div class="write_box">
@@ -118,19 +118,6 @@ $(function(){
 										<c:if test="${item.use_state == 'x'}">
 											<label><input type="radio" name="use_state" id="b_notice1" value="o"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
 											<label><input type="radio" name="use_state" id="b_notice2" value="x" checked="checked"><i></i>미사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
-										</c:if>
-									</td>
-								</tr>
-								<tr class="cont">
-									<td class="title">공지</td>
-									<td>
-										<c:if test="${item.top_state == 'o'}">
-											<label><input type="radio" name="top_state" id="b_notice1" value="o" checked="checked"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
-											<label><input type="radio" name="top_state" id="b_notice2" value="x"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;
-										</c:if>
-										<c:if test="${item.top_state == 'x'}">
-											<label><input type="radio" name="top_state" id="b_notice1" value="o"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
-											<label><input type="radio" name="top_state" id="b_notice2" value="x" checked="checked"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										</c:if>
 									</td>
 								</tr>
@@ -169,12 +156,12 @@ $(function(){
 				
 						<div class="btn_area">
 							<p class="btn_left">
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu02_04'">리스트</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu02_05'">리스트</button>
 							</p>
 							<p class="btn_right">
 								<input type="submit" class="btn_black" value="수정">&nbsp;
 								<button type="button" class="btn_red" id="delBtn">삭제</button>
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu02_04'">취소</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu02_05'">취소</button>
 							</p>
 						</div>
 				
@@ -183,7 +170,7 @@ $(function(){
 			</div>
 			
 			<script type="text/javascript">
-					CKEDITOR.replace('b_content',{filebrowserUploadUrl:"/admin/imgUpload/news", width:'100%', height:'500px'});
+					CKEDITOR.replace('b_content',{filebrowserUploadUrl:"/admin/imgUpload/review", width:'100%', height:'500px'});
 			</script>
 			
 		</div><!-- admin_right 끝 -->

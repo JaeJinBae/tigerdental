@@ -8,12 +8,11 @@ import com.webaid.domain.SearchCriteria;
 public interface NewsService {
 	public List<NewsVO> selectAll();
 	public NewsVO selectOne(int no);
-	public NewsVO selectFirst();
 	public NewsVO selectBefore(int no);
 	public NewsVO selectAfter(int no);
+	public List<NewsVO> selectTopNews(String use_state);
 	public void insert(NewsVO vo);
 	public void update(NewsVO vo);
-	public void updateUpload(NewsVO vo);
 	public void updateCnt(int no);
 	public void updateUseState(NewsVO vo);
 	public void delete(int no);

@@ -26,11 +26,6 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
-	public NewsVO selectFirst() {
-		return dao.selectFirst();
-	}
-
-	@Override
 	public NewsVO selectBefore(int no) {
 		return dao.selectBefore(no);
 	}
@@ -41,6 +36,11 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
+	public List<NewsVO> selectTopNews(String use_state) {
+		return dao.selectTopNews(use_state);
+	}
+
+	@Override
 	public void insert(NewsVO vo) {
 		dao.insert(vo);
 	}
@@ -48,11 +48,6 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public void update(NewsVO vo) {
 		dao.update(vo);
-	}
-
-	@Override
-	public void updateUpload(NewsVO vo) {
-		dao.updateUpload(vo);
 	}
 
 	@Override
@@ -74,7 +69,7 @@ public class NewsServiceImpl implements NewsService {
 	public List<NewsVO> listSearch(SearchCriteria cri) throws Exception {
 		return dao.listSearch(cri);
 	}
-
+	
 	@Override
 	public List<NewsVO> listSearchAll(SearchCriteria cri) throws Exception {
 		return dao.listSearchAll(cri);

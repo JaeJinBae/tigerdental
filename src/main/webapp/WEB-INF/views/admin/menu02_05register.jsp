@@ -20,56 +20,53 @@
 <script src="${pageContext.request.contextPath}/resources/admin/js/function.admin.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/admin/js/function.validate.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js" type="text/javascript"></script>
+
+<!-- <script type="text/javascript" src="http://siwonhang.com/lib/js/ckeditor/config.js?t=F7J9"></script>
+<link rel="stylesheet" type="text/css" href="http://siwonhang.com/lib/js/ckeditor/skins/moono/editor.css?t=F7J9">
+<script type="text/javascript" src="http://siwonhang.com/lib/js/ckeditor/lang/ko.js?t=F7J9"></script>
+<script type="text/javascript" src="http://siwonhang.com/lib/js/ckeditor/styles.js?t=F7J9"></script> -->
 <style>
+.cke{visibility:hidden;}
 .left_menu > dl:nth-child(2) > dd{
 	display: block !important;
 }
 </style>
 <script>
 $(function(){
-	$.ajaxSetup({cache:false});
-	
+	//$.ajaxSetup({cache:false});
 	$(".left_menu > dl:nth-child(2) > dt > a").addClass("on");
-	$(".left_menu > dl:nth-child(2) > dd:nth-child(5) > a").addClass("on");
+	$(".left_menu > dl:nth-child(2) > dd:nth-child(6) > a").addClass("on");
 	
-	$( "#regdate" ).datepicker({
+	var ndate = new Date();
+	var year = ndate.getFullYear();
+	var month = ndate.getMonth()+1;
+	var date = ndate.getDate();
+	
+	month = (month > 9) ? month+"":"0"+month;
+	date = (date > 9) ? date+"":"0"+date;
+	
+	$("#regdate").val(year+"-"+month+"-"+date);
+	
+	$("#regdate").datepicker({
 		changeMonth: true, 
 		changeYear: true,
 		dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
-		dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'],
-		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], 
+		monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'],
 		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
 		dateFormat: "yy-mm-dd"
     });
 	
-	$("#result").click(function(){
-		alert($("input[name='regdate']").val());
-	});
-	
 	//예외처리
 	$("#form1").submit(function(){
-		if($("input[name='writer']").val()==""||$("input[name='writer']").val()==null){
+		if($("input[name='writer']").val()==""){
 			alert("작성자를 입력해주세요.");
 			return false;
-		}else if($("input[name='title']").val()==""||$("input[name='title']").val()==null){
+		}
+		if($("input[name='title']").val()==""){
 			alert("제목을 입력해주세요.");
 			return false;
 		}
-	})
-	
-	$("#delBtn").click(function(){
-		var no = $("input[name='no']").val();
-		
-		$.ajax({
-			url:"${pageContext.request.contextPath}/admin/menu02_04delete/"+no,
-			type:"get",
-			dataType:"text",
-			async:false,
-			success:function(json){
-				location.href="${pageContext.request.contextPath}/admin/menu02_04";
-			} 
-		});
-		
 	});
 });
 </script>
@@ -87,20 +84,18 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>언론보도</h1>
+				<h1>치료후기</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>언론보도</li>
+					<li>치료후기</li>
 				</ul>
 			</div>
 			
-			<script type="text/javascript" src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js"></script>
-			
 			<div class="main_bottom_area">
-				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu02_04update${pageMaker.makeSearch(pageMaker.cri.page)}">
-					<input type="hidden" name="no" value="${item.no}">
+				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu02_05register${pageMaker.makeSearch(pageMaker.cri.page)}">
+					<input type="hidden" name="no" value="0">
 					<div class="write_area">
 						<div class="write_box">
 							<table class="write_table" cellpadding="0">
@@ -111,80 +106,60 @@ $(function(){
 								<tr class="cont">
 									<td class="title">사용유무</td>
 									<td>
-										<c:if test="${item.use_state == 'o'}">
-											<label><input type="radio" name="use_state" id="b_notice1" value="o" checked="checked"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
-											<label><input type="radio" name="use_state" id="b_notice2" value="x"><i></i>미사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
-										</c:if>
-										<c:if test="${item.use_state == 'x'}">
-											<label><input type="radio" name="use_state" id="b_notice1" value="o"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
-											<label><input type="radio" name="use_state" id="b_notice2" value="x" checked="checked"><i></i>미사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
-										</c:if>
-									</td>
-								</tr>
-								<tr class="cont">
-									<td class="title">공지</td>
-									<td>
-										<c:if test="${item.top_state == 'o'}">
-											<label><input type="radio" name="top_state" id="b_notice1" value="o" checked="checked"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
-											<label><input type="radio" name="top_state" id="b_notice2" value="x"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;
-										</c:if>
-										<c:if test="${item.top_state == 'x'}">
-											<label><input type="radio" name="top_state" id="b_notice1" value="o"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
-											<label><input type="radio" name="top_state" id="b_notice2" value="x" checked="checked"><i></i>일반</label>&nbsp;&nbsp;&nbsp;&nbsp;
-										</c:if>
+										<label><input type="radio" name="use_state" id="b_notice1" value="o" checked="checked"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										<label><input type="radio" name="use_state" id="b_notice2" value="x"><i></i>미사용</label>
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">작성자</td>
 									<td>
-										<input type="text" class="w_form_s" name="writer" value="${item.writer}">
+										<input type="text" class="w_form_s" name="writer" value="관리자">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">작성일</td>
 									<td>
-										<input type="text" id="regdate" class="w_form_s" name="regdate" value="${item.regdate}" autocomplete="off">
+										<input type="text" id="regdate" class="w_form_s" name="regdate" value="" autocomplete="off">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">조회수</td>
 									<td>
-										<input type="text" class="w_form_s" name="cnt" value="${item.cnt}">
+										<input type="text" class="w_form_s" name="cnt" value="0">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">제목</td>
 									<td>
-										<input type="text" class="w_form_l" name="title" value="${item.title}">
+										<input type="text" class="w_form_l" name="title" value="">
 									</td>
 								</tr>
 								<tr class="cont">
 									<td class="title">내용</td>
 									<td>
-										<textarea id="b_content" name="content">${item.content}</textarea>
+										<textarea id="b_content" name="content"></textarea>
+										<script type="text/javascript">
+											CKEDITOR.replace('content',{filebrowserUploadUrl:"${pageContext.request.contextPath}/admin/imgUpload/review",height:500});
+										</script>
 									</td>
 								</tr>
 							</table>
-						</div>
+						</div><!-- write_box end -->
 				
 						<div class="btn_area">
 							<p class="btn_left">
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu02_04'">리스트</button>
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu02_05'">리스트</button>
 							</p>
 							<p class="btn_right">
-								<input type="submit" class="btn_black" value="수정">&nbsp;
-								<button type="button" class="btn_red" id="delBtn">삭제</button>
-								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu02_04'">취소</button>
+								<input type="submit" class="btn_black" value="등록">&nbsp;
+								<button type="button" class="btn_gray" onclick="location.href='${pageContext.request.contextPath}/admin/menu02_05register'">취소</button>
 							</p>
-						</div>
-				
-					</div>
+						</div><!-- btn_area end -->
+					</div><!-- write_area end -->
 				</form>
-			</div>
+			</div><!-- main_bottom_area -->
 			
-			<script type="text/javascript">
-					CKEDITOR.replace('b_content',{filebrowserUploadUrl:"/admin/imgUpload/news", width:'100%', height:'500px'});
-			</script>
+			
 			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->

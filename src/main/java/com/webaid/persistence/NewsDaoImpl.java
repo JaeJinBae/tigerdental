@@ -28,11 +28,6 @@ public class NewsDaoImpl implements NewsDao {
 	}
 
 	@Override
-	public NewsVO selectFirst() {
-		return session.selectOne(namespace + ".selectFirst");
-	}
-
-	@Override
 	public NewsVO selectBefore(int no) {
 		return session.selectOne(namespace + ".selectBefore", no);
 	}
@@ -43,6 +38,11 @@ public class NewsDaoImpl implements NewsDao {
 	}
 
 	@Override
+	public List<NewsVO> selectTopNews(String use_state) {
+		return session.selectList(namespace + ".selectTopNews", use_state);
+	}
+
+	@Override
 	public void insert(NewsVO vo) {
 		session.insert(namespace + ".insert", vo);
 	}
@@ -50,11 +50,6 @@ public class NewsDaoImpl implements NewsDao {
 	@Override
 	public void update(NewsVO vo) {
 		session.update(namespace + ".update", vo);
-	}
-
-	@Override
-	public void updateUpload(NewsVO vo) {
-		session.update(namespace + ".updateUpload", vo);
 	}
 
 	@Override
@@ -76,7 +71,7 @@ public class NewsDaoImpl implements NewsDao {
 	public List<NewsVO> listSearch(SearchCriteria cri) throws Exception {
 		return session.selectList(namespace + ".listSearch", cri);
 	}
-
+	
 	@Override
 	public List<NewsVO> listSearchAll(SearchCriteria cri) throws Exception {
 		return session.selectList(namespace + ".listSearchAll", cri);
@@ -89,7 +84,7 @@ public class NewsDaoImpl implements NewsDao {
 
 	@Override
 	public int listSearchCountAll(SearchCriteria cri) throws Exception {
-		return session.selectOne(namespace + ".listSearchCountAll", cri);
+		return session.selectOne(namespace+".listSearchCountAll", cri);
 	}
 
 }

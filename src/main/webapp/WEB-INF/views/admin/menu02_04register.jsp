@@ -96,8 +96,6 @@ $(function(){
 			<div class="main_bottom_area">
 				<form id="form1" method="post" action="${pageContext.request.contextPath}/admin/menu02_04register${pageMaker.makeSearch(pageMaker.cri.page)}">
 					<input type="hidden" name="no" value="0">
-					<input type="hidden" name="upload_origin" value="">
-					<input type="hidden" name="upload_stored" value="">
 					<div class="write_area">
 						<div class="write_box">
 							<table class="write_table" cellpadding="0">
@@ -110,6 +108,13 @@ $(function(){
 									<td>
 										<label><input type="radio" name="use_state" id="b_notice1" value="o" checked="checked"><i></i>사용</label>&nbsp;&nbsp;&nbsp;&nbsp;
 										<label><input type="radio" name="use_state" id="b_notice2" value="x"><i></i>미사용</label>
+									</td>
+								</tr>
+								<tr class="cont">
+									<td class="title">공지</td>
+									<td>
+										<label><input type="radio" name="top_state" id="b_notice1" value="o"><i></i>공지</label>&nbsp;&nbsp;&nbsp;&nbsp;
+										<label><input type="radio" name="top_state" id="b_notice2" value="x" checked="checked"><i></i>일반</label>
 									</td>
 								</tr>
 								<tr class="cont">

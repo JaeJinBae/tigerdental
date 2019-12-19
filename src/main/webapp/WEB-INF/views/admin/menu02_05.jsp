@@ -37,14 +37,14 @@
 
 $(function(){
 	$(".left_menu > dl:nth-child(2) > dt > a").addClass("on");
-	$(".left_menu > dl:nth-child(2) > dd:nth-child(5) > a").addClass("on");
+	$(".left_menu > dl:nth-child(2) > dd:nth-child(6) > a").addClass("on");
 	//게시판 검색
     $("#searchBtn").click(function(){
     	var s=$("select[name='select_key']").val();
 		var searchType = encodeURIComponent(s);
 		var k=$("input[name='input_key']").val();
 		var keyword = encodeURIComponent(k);
-		location.href="${pageContext.request.contextPath}/admin/menu02_04${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+		location.href="${pageContext.request.contextPath}/admin/menu02_05${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
 	});
 });
 </script>
@@ -62,12 +62,12 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>언론보도</h1>
+				<h1>치료후기</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
 					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>언론보도</li>
+					<li>치료후기</li>
 				</ul>
 			</div>
 			
@@ -142,7 +142,7 @@ $(function(){
 			                                     </td>
 												<td><i class="ico notice">공지</i></td>
 												<td>
-													<a href="${pageContext.request.contextPath}/admin/menu02_04update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a>
+													<a href="${pageContext.request.contextPath}/admin/menu02_05update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a>
 												</td>
 												<td>${item.writer}</td>
 												<td>${item.regdate}</td>
@@ -171,7 +171,7 @@ $(function(){
 													</c:choose>
 													<td><img src="${pageContext.request.contextPath}/resources/admin/img/ck_img_none.png" class="cursor vimg" id="ismain_2036"></td>
 													<td><i class="ico notice">${num}</i></td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu02_04update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu02_05update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title"> ${item.title}</p></a></td>
 													<td>${item.writer}</td>
 													<td>${item.regdate}</td>
 													<td></td>
@@ -191,7 +191,7 @@ $(function(){
 							<button type="button" class="btn_gray">게시물이동</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu02_04register'">등록</button>
+							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu02_05register'">등록</button>
 						</p>
 					</div>
 			

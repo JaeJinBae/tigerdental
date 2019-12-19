@@ -49,6 +49,7 @@ import com.webaid.domain.HospitalImgVO;
 import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
+import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticSelectDateVO;
 import com.webaid.domain.StatisticVO;
@@ -236,8 +237,6 @@ public class AdminController {
 			innerUploadPath = "resources/uploadNews/";
 		}else if(btype.equals("review")){
 			innerUploadPath = "resources/uploadReview/";
-		}else if(btype.equals("event")){
-			innerUploadPath = "resources/uploadEvent/";
 		}else if(btype.equals("advice")){
 			innerUploadPath = "resources/uploadAdvice/";
 		}
@@ -779,6 +778,7 @@ public class AdminController {
 	public String menu02_04(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu02_04 GET");
 		
+		List<NewsVO> topList = newsService.selectTopNews("");
 		List<NewsVO> list = newsService.listSearchAll(cri);
 		
 		PageMaker pageMaker = new PageMaker();
@@ -787,6 +787,7 @@ public class AdminController {
 		pageMaker.setTotalCount(newsService.listSearchCountAll(cri));
 		pageMaker.setFinalPage(newsService.listSearchCountAll(cri));
 		
+		model.addAttribute("topList", topList);
 		model.addAttribute("list", list);
 		model.addAttribute("pageMaker", pageMaker);
 		
@@ -803,7 +804,7 @@ public class AdminController {
 	@RequestMapping(value = "/menu02_04register", method = RequestMethod.POST)
 	public String menu02_04registerPOST(NewsVO vo) {
 		logger.info("menu02_04register POST");
-		
+		System.out.println(vo);
 		newsService.insert(vo);
 		return "redirect:/admin/menu02_04";
 	}
@@ -846,11 +847,91 @@ public class AdminController {
 	
 	@RequestMapping(value="/menu02_04delete/{no}", method=RequestMethod.GET)
 	public String menu02_04delete(@PathVariable("no") int no){
-		logger.info("notice delete");
+		logger.info("News delete");
 		
 		newsService.delete(no);
 		
 		return "redirect:/admin/menu02_04";
+	}
+	
+	@RequestMapping(value = "/menu02_05", method = RequestMethod.GET)
+	public String menu02_05(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu02_05 GET");
+		
+		List<ReviewVO> list = rService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(rService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu02_05";
+	}
+	
+	@RequestMapping(value = "/menu02_05register", method = RequestMethod.GET)
+	public String menu02_05register(Model model) {
+		logger.info("menu02_05register GET");
+		
+		return "admin/menu02_05register";
+	}
+	
+	@RequestMapping(value = "/menu02_05register", method = RequestMethod.POST)
+	public String menu02_05registerPost(ReviewVO vo) throws IOException {
+		logger.info("menu02_05register POST");
+		
+		System.out.println(vo);
+		rService.insert(vo);
+		
+		return "redirect:/admin/menu02_05";
+	}
+	
+	@RequestMapping(value = "/menu02_05update", method = RequestMethod.GET)
+	public String menu02_05update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu02_05update GET");
+		
+		ReviewVO vo = rService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu02_05update";
+	}
+	
+	@RequestMapping(value = "/menu02_05update", method = RequestMethod.POST)
+	public String menu02_05updatePOST(ReviewVO vo, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu02_05update POST");
+		
+		rService.update(vo);
+
+		rtts.addAttribute("no", vo.getNo());
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(rService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+		
+		return "redirect:/admin/menu02_05update";
+	}
+	
+	@RequestMapping(value="/menu02_05delete/{no}", method=RequestMethod.GET)
+	public String menu02_05delete(@PathVariable("no") int no){
+		logger.info("menu02_05 delete");
+		
+		rService.delete(no);
+		
+		return "redirect:/admin/menu02_05";
 	}
 	
 	//=================== menu06 start

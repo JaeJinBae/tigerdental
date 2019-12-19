@@ -2,13 +2,12 @@ package com.webaid.domain;
 
 public class NewsVO {
 	private int no;
+	private String top_state;
 	private String writer;
 	private String regdate;
 	private int cnt;
 	private String title;
 	private String content;
-	private String upload_origin;
-	private String upload_stored;
 	private String use_state;
 
 	public NewsVO() {
@@ -21,6 +20,14 @@ public class NewsVO {
 
 	public void setNo(int no) {
 		this.no = no;
+	}
+
+	public String getTop_state() {
+		return top_state;
+	}
+
+	public void setTop_state(String top_state) {
+		this.top_state = top_state;
 	}
 
 	public String getWriter() {
@@ -63,22 +70,6 @@ public class NewsVO {
 		this.content = content;
 	}
 
-	public String getUpload_origin() {
-		return upload_origin;
-	}
-
-	public void setUpload_origin(String upload_origin) {
-		this.upload_origin = upload_origin;
-	}
-
-	public String getUpload_stored() {
-		return upload_stored;
-	}
-
-	public void setUpload_stored(String upload_stored) {
-		this.upload_stored = upload_stored;
-	}
-
 	public String getUse_state() {
 		return use_state;
 	}
@@ -89,9 +80,8 @@ public class NewsVO {
 
 	@Override
 	public String toString() {
-		return "NewsVO [no=" + no + ", writer=" + writer + ", regdate=" + regdate + ", cnt=" + cnt + ", title=" + title
-				+ ", content=" + content + ", upload_origin=" + upload_origin + ", upload_stored=" + upload_stored
-				+ ", use_state=" + use_state + "]";
+		return "NewsVO [no=" + no + ", top_state=" + top_state + ", writer=" + writer + ", regdate=" + regdate
+				+ ", cnt=" + cnt + ", title=" + title + ", content=" + content + ", use_state=" + use_state + "]";
 	}
 
 }

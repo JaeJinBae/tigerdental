@@ -33,7 +33,7 @@
 	</update>
 	
 	<update id="updateUseState">
-		update review set useState=#{use_state} where no=#{no}
+		update review set use_state=#{use_state} where no=#{no}
 	</update>
 	
 	<delete id="delete">
@@ -61,7 +61,7 @@
 	</sql>
 	
 	<select id="listSearchCount" resultType="int">
-		select count(no) from review where use_state='o' <include refid="search"></include>
+		select count(no) from review where no>0 and use_state='o' <include refid="search"></include>
 	</select>
 	
 	<select id="listSearchCountAll" resultType="int">

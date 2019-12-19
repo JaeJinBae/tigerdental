@@ -12,28 +12,24 @@
 		select * from news where no=#{no}
 	</select>
 	
-	<select id="selectFirst" resultType="NewsVO">
-		select * from news where use_state='o' order by no desc limit 1
-	</select> 
-	
 	<select id="selectBefore" resultType="NewsVO">
-		select * from news where no=(select min(no) from news where no<![CDATA[>]]>#{no}) and use_state='o'
+		select * from news where no=(select min(no) from news where no<![CDATA[>]]>#{no}) and top_state='x' and use_state='o'
 	</select>
 	
 	<select id="selectAfter" resultType="NewsVO">
-		select * from news where no=(select max(no) from news where no<![CDATA[<]]>#{no}) and use_state='o'
+		select * from news where no=(select max(no) from news where no<![CDATA[<]]>#{no}) and top_state='x' and use_state='o'
+	</select>
+	
+	<select id="selectTopNews" resultType="NewsVO">
+		select * from news where top_state ='o' and use_state like concat('%',#{use_state},'%') order by no desc;
 	</select>
 	
 	<insert id="insert">
-		insert into news values(0, #{writer}, #{regdate}, #{cnt}, #{title}, #{content}, #{upload_origin}, #{upload_stored}, #{use_state})
+		insert into news values(0, #{top_state}, #{writer}, #{regdate}, #{cnt}, #{title}, #{content}, #{use_state})
 	</insert>
 	
 	<update id="update">
-		update news set writer=#{writer}, regdate=#{regdate}, cnt=#{cnt}, title=#{title}, content=#{content}, upload_origin=#{upload_origin}, upload_stored=#{upload_stored}, use_state=#{use_state} where no=#{no}
-	</update>
-	
-	<update id="updateUpload">
-		update news set upload_origin=#{upload_origin}, upload_stored=#{upload_stored} where no=#{no}
+		update news set top_state=#{top_state}, writer=#{writer}, regdate=#{regdate}, cnt=#{cnt}, title=#{title}, content=#{content}, use_state=#{use_state} where no=#{no}
 	</update>
 	
 	<update id="updateCnt">
@@ -41,7 +37,7 @@
 	</update>
 	
 	<update id="updateUseState">
-		update news set use_state=#{use_state} where no=#{no}
+		update news set useState=#{use_state} where no=#{no}
 	</update>
 	
 	<delete id="delete">
@@ -49,11 +45,11 @@
 	</delete>
 	
 	<select id="listSearch" resultType="NewsVO">
-		select * from news where use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+		select * from news where top_state='x' and use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<select id="listSearchAll" resultType="NewsVO">
-		select * from news where no>0 <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+		select * from news where top_state='x' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<sql id="search">
@@ -69,11 +65,11 @@
 	</sql>
 	
 	<select id="listSearchCount" resultType="int">
-		select count(no) from news where no>0 and use_state='o' <include refid="search"></include>
+		select count(no) from news where top_state='x' and use_state='o' <include refid="search"></include>
 	</select>
 	
 	<select id="listSearchCountAll" resultType="int">
-		select count(no) from news where no>0 <include refid="search"></include>
+		select count(no) from news where top_state='x' <include refid="search"></include>
 	</select>
 	
 </mapper>
