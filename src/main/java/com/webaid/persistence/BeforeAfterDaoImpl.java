@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.SearchCriteria;
-import com.webaid.domain.SearchCriteria9;
 
 @Repository
 public class BeforeAfterDaoImpl implements BeforeAfterDao {
@@ -69,11 +68,6 @@ public class BeforeAfterDaoImpl implements BeforeAfterDao {
 	}
 
 	@Override
-	public List<BeforeAfterVO> listSearch9(SearchCriteria9 cri) throws Exception {
-		return session.selectList(namespace + ".listSearch9", cri);
-	}
-
-	@Override
 	public List<BeforeAfterVO> listSearchAll(SearchCriteria cri) throws Exception {
 		return session.selectList(namespace + ".listSearchAll", cri);
 	}
@@ -81,11 +75,6 @@ public class BeforeAfterDaoImpl implements BeforeAfterDao {
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return session.selectOne(namespace + ".listSearchCount", cri);
-	}
-
-	@Override
-	public int listSearchCount9(SearchCriteria9 cri) throws Exception {
-		return session.selectOne(namespace + ".listSearchCount9", cri);
 	}
 
 	@Override

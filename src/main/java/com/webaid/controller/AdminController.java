@@ -45,30 +45,16 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
-import com.webaid.domain.CautionVO;
-import com.webaid.domain.ClinicListVO;
-import com.webaid.domain.ClinicResListVO;
-import com.webaid.domain.EventVO;
-import com.webaid.domain.HospitalOffVO;
-import com.webaid.domain.HospitalTimeVO;
+import com.webaid.domain.HospitalImgVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
-import com.webaid.domain.RealStoryVO;
-import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticSelectDateVO;
 import com.webaid.domain.StatisticVO;
-import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
-import com.webaid.service.CautionService;
-import com.webaid.service.ClinicListService;
-import com.webaid.service.ClinicResListService;
-import com.webaid.service.EventService;
-import com.webaid.service.HospitalOffService;
-import com.webaid.service.HospitalTimeService;
+import com.webaid.service.HospitalImgService;
 import com.webaid.service.NoticeService;
-import com.webaid.service.RealStoryService;
 import com.webaid.service.ReviewService;
 import com.webaid.service.StatisticService;
 import com.webaid.service.UserService;
@@ -90,28 +76,10 @@ public class AdminController {
 	private BeforeAfterService baService;
 	
 	@Autowired
-	private RealStoryService rsService;
-	
-	@Autowired
-	private CautionService cService;
+	private HospitalImgService hiService;
 	
 	@Autowired
 	private ReviewService rService;
-	
-	@Autowired
-	private EventService eService;
-	
-	@Autowired
-	private ClinicResListService crlService;
-	
-	@Autowired
-	private ClinicListService clService;
-	
-	@Autowired
-	private HospitalTimeService htService;
-	
-	@Autowired
-	private HospitalOffService hoService;
 	
 	@Autowired
 	private UserService uService;
@@ -257,8 +225,8 @@ public class AdminController {
 			innerUploadPath = "resources/uploadNotice/";
 		}else if(btype.equals("beforeAfter")){
 			innerUploadPath = "resources/uploadBeforeAfter/";
-		}else if(btype.equals("realStory")){
-			innerUploadPath = "resources/uploadRealStory/";
+		}else if(btype.equals("hospitalImg")){
+			innerUploadPath = "resources/uploadHospitalImg/";
 		}else if(btype.equals("caution")){
 			innerUploadPath = "resources/uploadCaution/";
 		}else if(btype.equals("review")){
@@ -366,6 +334,443 @@ public class AdminController {
 		
 		return "redirect:/admin/menu02_01";
 	}
+	
+	@RequestMapping(value = "/menu02_02", method = RequestMethod.GET)
+	public String menu02_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu02_02 GET");
+		
+		List<BeforeAfterVO> list = baService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(baService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(baService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu02_02";
+	}
+	
+	@RequestMapping(value = "/menu02_02register", method = RequestMethod.GET)
+	public String menu02_02register(NoticeVO vo) {
+		logger.info("menu02_02register GET");
+
+		return "admin/menu02_02register";
+	}
+	
+	@RequestMapping(value = "/menu02_02register", method = RequestMethod.POST)
+	public String menu02_02registerPOST(MultipartHttpServletRequest mtfReq, Model model) {
+		logger.info("menu02_02register POST");
+		
+
+		List<String> imgNameList = new ArrayList<String>();
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadBeforeAfter/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			imgNameList.add(fileName);
+			imgNameList.add(storedFileName);
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}//이미지 업로드 끝
+		
+		BeforeAfterVO vo = new BeforeAfterVO();
+		
+		vo.setNo(0);
+		vo.setClinic_type(mtfReq.getParameter("clinic_type"));
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		vo.setImg_before_origin(imgNameList.get(0));
+		vo.setImg_before_stored(imgNameList.get(1));
+		vo.setImg_after_origin(imgNameList.get(2));
+		vo.setImg_after_stored(imgNameList.get(3));
+		
+		
+		baService.insert(vo);
+		
+		return "redirect:/admin/menu02_02";
+	}
+	
+	@RequestMapping(value = "/menu02_02update", method = RequestMethod.GET)
+	public String menu02_02update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu02_02update GET");
+		
+		BeforeAfterVO vo = baService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(baService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu02_02update";
+	}
+	
+	@RequestMapping(value = "/menu02_02update", method = RequestMethod.POST)
+	public String menu02_02updatePost(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu02_02update Post");
+		
+		List<String> imgNameList = new ArrayList<String>();
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadBeforeAfter/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			imgNameList.add(fileName);
+			imgNameList.add(storedFileName);
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		//이미지 업로드 끝
+		for(int i =0; i<imgNameList.size(); i++){
+			System.out.println(imgNameList.get(i));
+		}
+		String ImgBeforeChange = mtfReq.getParameter("imgBeforeChange");
+		String ImgAfterChange = mtfReq.getParameter("imgAfterChange");
+		
+		BeforeAfterVO vo = new BeforeAfterVO();
+		BeforeAfterVO prevVO = baService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setClinic_type(mtfReq.getParameter("clinic_type"));
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		if(ImgBeforeChange.equals("o") && ImgAfterChange.equals("o")){
+			vo.setImg_before_origin(imgNameList.get(0));
+			vo.setImg_before_stored(imgNameList.get(1));
+			vo.setImg_after_origin(imgNameList.get(2));
+			vo.setImg_after_stored(imgNameList.get(3));
+		}else if(ImgBeforeChange.equals("o")){
+			vo.setImg_before_origin(imgNameList.get(0));
+			vo.setImg_before_stored(imgNameList.get(1));
+			vo.setImg_after_origin(prevVO.getImg_after_origin());
+			vo.setImg_after_stored(prevVO.getImg_after_stored());
+		}else if(ImgAfterChange.equals("o")){
+			vo.setImg_before_origin(prevVO.getImg_before_origin());
+			vo.setImg_before_stored(prevVO.getImg_after_stored());
+			vo.setImg_after_origin(imgNameList.get(0));
+			vo.setImg_after_stored(imgNameList.get(1));
+		}else if(ImgBeforeChange.equals("x") && ImgAfterChange.equals("x")){
+			vo.setImg_before_origin(prevVO.getImg_before_origin());
+			vo.setImg_before_stored(prevVO.getImg_after_stored());
+			vo.setImg_after_origin(prevVO.getImg_after_origin());
+			vo.setImg_after_stored(prevVO.getImg_after_stored());
+		}
+		
+		baService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(baService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+
+		return "redirect:/admin/menu02_02update";
+	}
+	
+	@RequestMapping(value = "/menu02_02uploadImgDelete", method = RequestMethod.POST)
+	public ResponseEntity<String> menu02_02uploadImgDelete(HttpServletRequest req, @RequestBody Map<String, String> info) {
+		logger.info("menu02_02update POST");
+		ResponseEntity<String> entity = null;
+		
+		int no = Integer.parseInt(info.get("no"));
+		String type = info.get("type");
+		
+		String innerUploadPath = "resources/uploadBeforeAfter/";
+		String path = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		System.out.println(path);
+		BeforeAfterVO prevVO = baService.selectOne(no);
+		FileDelete fd = new FileDelete();
+		
+		BeforeAfterVO vo = new BeforeAfterVO();
+		vo.setNo(no);
+		
+		try {
+			if(type.equals("before")){
+				fd.fileDelete(path, prevVO.getImg_before_stored());
+				
+				vo.setImg_before_origin("");
+				vo.setImg_before_stored("");
+				baService.updateBeforeImg(vo);
+			}else{
+				fd.fileDelete(path, prevVO.getImg_after_stored());
+				
+				vo.setImg_after_origin("");
+				vo.setImg_after_stored("");
+				baService.updateAfterImg(vo);
+			}
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			e.printStackTrace();
+		}
+		
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/menu02_02delete/{no}", method=RequestMethod.GET)
+	public String menu02_02delete(@PathVariable("no") int no){
+		logger.info("beforeAfter delete");
+		
+		baService.delete(no);
+		
+		return "redirect:/admin/menu02_02";
+	}
+	
+	@RequestMapping(value = "/menu02_03", method = RequestMethod.GET)
+	public String menu02_03(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu02_03 GET");
+		
+		List<HospitalImgVO> list = hiService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(hiService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(hiService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu02_03";
+	}
+	
+	@RequestMapping(value = "/menu02_03register", method = RequestMethod.GET)
+	public String menu02_03register() {
+		logger.info("menu02_03register GET");
+
+		return "admin/menu02_03register";
+	}
+	
+	@RequestMapping(value = "/menu02_03register", method = RequestMethod.POST)
+	public String menu02_03registerPOST(MultipartHttpServletRequest mtfReq, Model model) {
+		logger.info("menu02_03register POST");
+		HospitalImgVO vo = new HospitalImgVO();
+		
+		vo.setNo(0);
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state("o");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadHospitalImg/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			vo.setUpload_origin(fileName);
+			vo.setUpload_stored(storedFileName);
+			
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}//이미지 업로드 끝
+		
+		hiService.insert(vo);
+		return "redirect:/admin/menu02_03";
+	}
+	
+	@RequestMapping(value = "/menu02_03update", method = RequestMethod.GET)
+	public String menu02_03update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu02_03update GET");
+		
+		HospitalImgVO vo = hiService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(hiService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu02_03update";
+	}
+	
+	@RequestMapping(value = "/menu02_03update", method = RequestMethod.POST)
+	public String menu02_03updatePost(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu02_03update Post");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadHospitalImg/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		//이미지 업로드 끝
+		
+		String thumbState = mtfReq.getParameter("uploadState");
+		
+		
+		HospitalImgVO vo = new HospitalImgVO();
+		HospitalImgVO prevVO = hiService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
+		
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setWriter(mtfReq.getParameter("writer"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setCnt(Integer.parseInt(mtfReq.getParameter("cnt")));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setUse_state(mtfReq.getParameter("use_state"));
+		
+		if(thumbState.equals("o")){
+			vo.setUpload_origin(fileName);
+			vo.setUpload_stored(storedFileName);
+		}else{
+			vo.setUpload_origin(prevVO.getUpload_origin());
+			vo.setUpload_stored(prevVO.getUpload_stored());
+		}
+		
+		hiService.update(vo);
+
+		rtts.addAttribute("no", vo.getNo());
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(hiService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+
+		return "redirect:/admin/menu02_03update";
+	}
+	
+	@RequestMapping(value = "/menu02_03uploadImgDelete", method = RequestMethod.POST)
+	public ResponseEntity<String> menu02_03uploadImgDelete(HttpServletRequest req, @RequestBody Map<String, String> info) {
+		logger.info("menu02_03update POST");
+		ResponseEntity<String> entity = null;
+		
+		int no = Integer.parseInt(info.get("no"));
+		
+		String innerUploadPath = "resources/uploadHospitalImg/";
+		String path = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		System.out.println(path);
+		HospitalImgVO prevVO = hiService.selectOne(no);
+		FileDelete fd = new FileDelete();
+		
+		HospitalImgVO vo = new HospitalImgVO();
+		vo.setNo(no);
+		
+		try {
+			
+			fd.fileDelete(path, prevVO.getUpload_stored());
+			
+			vo.setUpload_origin("");
+			vo.setUpload_stored("");
+			hiService.updateUpload(vo);
+			
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			e.printStackTrace();
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/menu02_03delete/{no}", method=RequestMethod.GET)
+	public String menu02_03delete(@PathVariable("no") int no){
+		logger.info("HospitalImg delete");
+		
+		hiService.delete(no);
+		
+		return "redirect:/admin/menu02_03";
+	}
+	
+	//=================== menu06 start
 	
 	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
 	public String menu06_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
