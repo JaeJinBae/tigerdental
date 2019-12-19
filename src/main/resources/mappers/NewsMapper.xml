@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webaid.mappers.NewsMapper">
+
+	<select id="selectAll" resultType="NewsVO">
+		select * from news order by no desc and use_state='o'
+	</select>
+	
+	<select id="selectOne" resultType="NewsVO">
+		select * from news where no=#{no}
+	</select>
+	
+	<select id="selectFirst" resultType="NewsVO">
+		select * from news where use_state='o' order by no desc limit 1
+	</select> 
+	
+	<select id="selectBefore" resultType="NewsVO">
+		select * from news where no=(select min(no) from news where no<![CDATA[>]]>#{no}) and use_state='o'
+	</select>
+	
+	<select id="selectAfter" resultType="NewsVO">
+		select * from news where no=(select max(no) from news where no<![CDATA[<]]>#{no}) and use_state='o'
+	</select>
+	
+	<insert id="insert">
+		insert into news values(0, #{writer}, #{regdate}, #{cnt}, #{title}, #{content}, #{upload_origin}, #{upload_stored}, #{use_state})
+	</insert>
+	
+	<update id="update">
+		update news set writer=#{writer}, regdate=#{regdate}, cnt=#{cnt}, title=#{title}, content=#{content}, upload_origin=#{upload_origin}, upload_stored=#{upload_stored}, use_state=#{use_state} where no=#{no}
+	</update>
+	
+	<update id="updateUpload">
+		update news set upload_origin=#{upload_origin}, upload_stored=#{upload_stored} where no=#{no}
+	</update>
+	
+	<update id="updateCnt">
+		update news set cnt=cnt+1 where no=#{no}
+	</update>
+	
+	<update id="updateUseState">
+		update news set use_state=#{use_state} where no=#{no}
+	</update>
+	
+	<delete id="delete">
+		delete from news where no=#{no}
+	</delete>
+	
+	<select id="listSearch" resultType="NewsVO">
+		select * from news where use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+	</select>
+	
+	<select id="listSearchAll" resultType="NewsVO">
+		select * from news where no>0 <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+	</select>
+	
+	<sql id="search">
+		<if test="searchType=='t'.toString()">
+			and title like concat('%',#{keyword},'%')
+		</if>
+		<if test="searchType=='c'.toString()">
+			and content like concat('%',#{keyword},'%') 
+		</if>
+		<if test="searchType=='w'.toString()">
+			and writer=#{keyword}
+		</if>
+	</sql>
+	
+	<select id="listSearchCount" resultType="int">
+		select count(no) from news where no>0 and use_state='o' <include refid="search"></include>
+	</select>
+	
+	<select id="listSearchCountAll" resultType="int">
+		select count(no) from news where no>0 <include refid="search"></include>
+	</select>
+	
+</mapper>

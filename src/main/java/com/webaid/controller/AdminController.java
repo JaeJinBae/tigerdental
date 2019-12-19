@@ -46,6 +46,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.HospitalImgVO;
+import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
@@ -54,6 +55,7 @@ import com.webaid.domain.StatisticVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.HospitalImgService;
+import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.ReviewService;
 import com.webaid.service.StatisticService;
@@ -77,6 +79,9 @@ public class AdminController {
 	
 	@Autowired
 	private HospitalImgService hiService;
+	
+	@Autowired
+	private NewsService newsService;
 	
 	@Autowired
 	private ReviewService rService;
@@ -227,8 +232,8 @@ public class AdminController {
 			innerUploadPath = "resources/uploadBeforeAfter/";
 		}else if(btype.equals("hospitalImg")){
 			innerUploadPath = "resources/uploadHospitalImg/";
-		}else if(btype.equals("caution")){
-			innerUploadPath = "resources/uploadCaution/";
+		}else if(btype.equals("news")){
+			innerUploadPath = "resources/uploadNews/";
 		}else if(btype.equals("review")){
 			innerUploadPath = "resources/uploadReview/";
 		}else if(btype.equals("event")){
@@ -768,6 +773,84 @@ public class AdminController {
 		hiService.delete(no);
 		
 		return "redirect:/admin/menu02_03";
+	}
+	
+	@RequestMapping(value = "/menu02_04", method = RequestMethod.GET)
+	public String menu02_04(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu02_04 GET");
+		
+		List<NewsVO> list = newsService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(newsService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu02_04";
+	}
+	
+	@RequestMapping(value = "/menu02_04register", method = RequestMethod.GET)
+	public String menu02_04register(NoticeVO vo) {
+		logger.info("menu02_04register GET");
+
+		return "admin/menu02_04register";
+	}
+	
+	@RequestMapping(value = "/menu02_04register", method = RequestMethod.POST)
+	public String menu02_04registerPOST(NewsVO vo) {
+		logger.info("menu02_04register POST");
+		
+		newsService.insert(vo);
+		return "redirect:/admin/menu02_04";
+	}
+	
+	@RequestMapping(value = "/menu02_04update", method = RequestMethod.GET)
+	public String menu02_04update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu02_04update GET");
+		
+		NewsVO vo = newsService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu02_04update";
+	}
+	
+	@RequestMapping(value = "/menu02_04update", method = RequestMethod.POST)
+	public String menu02_04updatePost(NewsVO vo, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu02_04update Post");
+		
+		newsService.update(vo);
+
+		rtts.addAttribute("no", vo.getNo());
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(newsService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+
+		return "redirect:/admin/menu02_04update";
+	}
+	
+	@RequestMapping(value="/menu02_04delete/{no}", method=RequestMethod.GET)
+	public String menu02_04delete(@PathVariable("no") int no){
+		logger.info("notice delete");
+		
+		newsService.delete(no);
+		
+		return "redirect:/admin/menu02_04";
 	}
 	
 	//=================== menu06 start
