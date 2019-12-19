@@ -182,7 +182,7 @@ function draw_os_chart(info){
 
 function sttGet(type, d1, d2){
 	$.ajax({
-		url:"${pageContext.request.contextPath}/admin/menu05_01InfoGet/"+type+"/"+d1+"/"+d2,
+		url:"${pageContext.request.contextPath}/admin/menu06_01InfoGet/"+type+"/"+d1+"/"+d2,
 		type:"get",
 		contentType : "application/json; charset=UTF-8",
 		dataType:"json",
@@ -213,6 +213,9 @@ function sttGet(type, d1, d2){
 
 $(function(){
 	google.setOnLoadCallback(draw_time_chart);
+	
+	$(".left_menu > dl:nth-child(6) > dt > a").addClass("on");
+	$(".left_menu > dl:nth-child(6) > dd:nth-child(2) > a").addClass("on");
 	
 	$(".search_t_box100").datepicker({
 		changeMonth: true, 

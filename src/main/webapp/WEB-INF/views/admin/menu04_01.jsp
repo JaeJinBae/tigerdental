@@ -19,19 +19,19 @@
 <script src="${pageContext.request.contextPath}/resources/admin/js/function.layer.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/admin/js/function.admin.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/admin/js/function.validate.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js" type="text/javascript"></script>
 <script>
 $(function(){
-	$(".left_menu > dl:nth-child(3) > dt > a").addClass("on");
-	$(".left_menu > dl:nth-child(3) > dd:nth-child(2) > a").addClass("on");
+	$(".left_menu > dl:nth-child(4) > dt > a").addClass("on");
+	$(".left_menu > dl:nth-child(4) > dd:nth-child(2) > a").addClass("on");
 	
-	$("#searchBtn").click(function(){
+	 $("#searchBtn").click(function(){
     	var s=$("select[name='select_key']").val();
 		var searchType = encodeURIComponent(s);
 		var k=$("input[name='input_key']").val();
 		var keyword = encodeURIComponent(k);
-		location.href="${pageContext.request.contextPath}/admin/menu03_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+		location.href="${pageContext.request.contextPath}/admin/menu04_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
 	});
-	
 });
 </script>
 </head>
@@ -48,17 +48,16 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>온라인상담</h1>
+				<h1>가입회원</h1>
 
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
-					<li>상담관리&nbsp;&gt;&nbsp;</li>
-					<li>온라인상담</li>
+					<li>회원 관리&nbsp;&gt;&nbsp;</li>
+					<li>가입회원</li>
 				</ul>
 			</div>
 			
 			<div class="main_bottom_area">
-				<div class=""><h2 style="font-size:20px;"></h2></div>
 				<div class="list_area">
 					<div class="list_box">
 						<div class="board_top">
@@ -67,11 +66,8 @@ $(function(){
 									<input type="hidden" name="search" value="Y">
 									<select name="select_key" id="select_key" class="search_sel">
 										<option value="">전체</option>
-										<option value="n" ${cri.searchType=='t'?'selected':''}>이름</option>
-										<option value="p" ${cri.searchType=='c'?'selected':''}>전화번호</option>
-										<option value="t" ${cri.searchType=='w'?'selected':''}>제목</option>
-										<option value="c" ${cri.searchType=='c'?'selected':''}>문의내용</option>
-										<option value="s" ${cri.searchType=='c'?'selected':''}>처리상태</option>
+										<option value="i" ${cri.searchType=='t'?'selected':''}>아이디</option>
+										<option value="n" ${cri.searchType=='c'?'selected':''}>이름</option>
 									</select>						
 									<input type="text" name="input_key" class="search_t_box" value="">
 									<input type="button" name="submit_btn" value="검색" class="search_btn cursor" id="searchBtn">
@@ -79,51 +75,44 @@ $(function(){
 							</form>
 						</div>
 			
-						<form name="inquire" id="inquire" method="post" action="">
+						<form name="member" id="member" method="post" action="">
 							<table class="list_table">
 								<colgroup>
-									<col width="4%">
-									<col width="4%">
-									<col width="10%">
-									<col width="7%">
-									<col width="9%">
-									<col width="8%">
-									<col width="13%">
-									<col width="9%">
 									<col width="5%">
+									<col width="7%">
+									<col width="*">
+									<col width="10%">
+									<col width="10%">
+									<col width="15%">
+									<col width="7%">
 									<col width="8%">
 								</colgroup>
 								<tr class="cont">
-									<th><input type="checkbox" id="selectall"></th>
+									<th class="no_print"><input type="checkbox" id="selectall"></th>
 									<th>번호</th>
-									<th>상담분야</th>
+									<th>아이디</th>
 									<th>이름</th>
-									<th>전화번호</th>
-									<th>등록일</th>
-									<th>처리상태</th>
-									<th>유입경로</th>
-									<th>답변일</th>
+									<th>연락처</th>
+									<th>이메일</th>
+									<th>접속</th>
+									<th>가입일</th>
 								</tr>
 								<c:choose>
 									<c:when test="${fn:length(list) ==0 }">
-										<tr><td colspan="9">등록된 게시물이 없습니다.</td></tr>
+										<tr><td colspan="8">등록된 게시물이 없습니다.</td></tr>
 									</c:when>
 									<c:otherwise>
 										<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
 									        <c:forEach var="item" items="${list}">
 												<tr class="cont">
-													<td><input type="checkbox" name="seq_list[]" value="${item.no}"></td>
-													<td>${num}</td>
-													<td>${item.advice_type}</td>
-													<td>
-														<a href="${pageContext.request.contextPath}/admin/menu03_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.name}</a>
-														<img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" class="vimg" alt="비밀글아이콘">
-													</td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu03_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.phone}</a></td>
+													<td><input type="checkbox" name="" value="${item.no}"></td>
+													<td><i class="ico notice">${num}</i></td>
+													<td><a href="${pageContext.request.contextPath}/admin/menu04_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}"><p class="title">${item.id}</p></a></td>
+													<td>${item.name}</td>
+													<td>${item.phone}</td>
+													<td>${item.email}</td>
+													<td>${item.login_cnt}</td>
 													<td>${item.regdate}</td>
-													<td><a href="${pageContext.request.contextPath}/admin/menu03_01update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.state}</a></td>
-													<td><a href="javascript:;" id="tooltip_2474" onclick="tooltip_it('2474')">보기</a></td>
-													<td>${item.reply_date}</td>
 												</tr>
 												<c:set var="num" value="${num-1}"></c:set>	
 											</c:forEach>
@@ -134,13 +123,14 @@ $(function(){
 					</div>
 			
 					<div class="btn_area">
-						<p class="btn_left" style="display:none;">
-							<button type="button" class="btn_gray" onclick="">전체 Excel저장</button>
+						<p class="btn_left">
+							<button type="button" class="btn_gray" onclick="">전체회원 Excel저장</button>
 							<button type="button" class="btn_gray" onclick="">Excel저장</button>
+							<button type="button" class="btn_gray" onclick="">탈퇴처리</button>
 							<button type="button" class="btn_gray" onclick="">선택삭제</button>
 						</p>
 						<p class="btn_right">
-							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu03_01register'">등록</button>
+							<button type="button" class="btn_black" onclick="location.href='${pageContext.request.contextPath}/admin/menu04_01register'">등록</button>
 						</p>
 					</div>
 			
@@ -163,8 +153,8 @@ $(function(){
 						</c:if>
 						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}" class="direction">&gt;&gt;</a>
 					</div>
-				</div><!-- list_area end -->
-			</div><!-- main_bottom_area end -->
+				</div>
+			</div>
 			
 		</div><!-- admin_right 끝 -->
     </div><!-- container 끝 -->

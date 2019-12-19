@@ -46,6 +46,16 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public void updatePw(UserVO vo) {
+		dao.updatePw(vo);
+	}
+
+	@Override
+	public void updatePwChangeState(UserVO vo) {
+		dao.updatePwChangeState(vo);
+	}
+
+	@Override
 	public void updateWithdraw(UserVO vo) {
 		dao.updateWithdraw(vo);
 	}
@@ -78,11 +88,6 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int listSearchWithdrawCountAll(SearchCriteria cri) {
 		return dao.listSearchWithdrawCountAll(cri);
-	}
-
-	@Override
-	public void updatePwChangeState(UserVO vo) {
-		dao.updatePwChangeState(vo);
 	}
 
 }

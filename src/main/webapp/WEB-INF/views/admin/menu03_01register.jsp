@@ -22,6 +22,9 @@
 <script src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js" type="text/javascript"></script>
 <script>
 $(function(){
+	$(".left_menu > dl:nth-child(3) > dt > a").addClass("on");
+	$(".left_menu > dl:nth-child(3) > dd:nth-child(2) > a").addClass("on");
+	
 	$("#mailcode").change(function(){
 		var codee = $(this).val();
 		$("#email2").val(codee);

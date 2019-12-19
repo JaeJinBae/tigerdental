@@ -22,7 +22,10 @@
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
 <script src="https://www.google.com/uds/?file=visualization&amp;v=1&amp;packages=corechart" type="text/javascript"></script>
 <script>
-
+$(function(){
+	$(".left_menu > dl:nth-child(6) > dt > a").addClass("on");
+	$(".left_menu > dl:nth-child(6) > dd:nth-child(3) > a").addClass("on");
+});
 </script>
 </head>
 <body>

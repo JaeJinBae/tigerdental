@@ -12,6 +12,7 @@ public interface UserDao {
 	public UserVO selectByIdNameEmail(UserVO vo);
 	public void insert(UserVO vo);
 	public void update(UserVO vo);
+	public void updatePw(UserVO vo);
 	public void updatePwChangeState(UserVO vo);
 	public void updateWithdraw(UserVO vo);
 	public void updateLoginCnt(int no);

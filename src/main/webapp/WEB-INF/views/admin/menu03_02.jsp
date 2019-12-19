@@ -21,7 +21,10 @@
 <script src="${pageContext.request.contextPath}/resources/admin/js/function.validate.js" type="text/javascript"></script>
 <script>
 $(function(){
-	 $("#searchBtn").click(function(){
+	$(".left_menu > dl:nth-child(3) > dt > a").addClass("on");
+	$(".left_menu > dl:nth-child(3) > dd:nth-child(3) > a").addClass("on");
+	
+	$("#searchBtn").click(function(){
     	var s=$("select[name='select_key']").val();
 		var searchType = encodeURIComponent(s);
 		var k=$("input[name='input_key']").val();

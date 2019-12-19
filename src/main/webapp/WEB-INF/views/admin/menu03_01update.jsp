@@ -27,6 +27,9 @@ textarea {
 </style>
 <script>
 $(function(){
+	$(".left_menu > dl:nth-child(3) > dt > a").addClass("on");
+	$(".left_menu > dl:nth-child(3) > dd:nth-child(2) > a").addClass("on");
+	
 	var getMail = "${item.email}".split("@");
 	$("#email1").val(getMail[0]);
 	$("#email2").val(getMail[1]);

@@ -49,15 +49,18 @@ import com.webaid.domain.HospitalImgVO;
 import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
+import com.webaid.domain.PopupVO;
 import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticSelectDateVO;
 import com.webaid.domain.StatisticVO;
+import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.HospitalImgService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
+import com.webaid.service.PopupService;
 import com.webaid.service.ReviewService;
 import com.webaid.service.StatisticService;
 import com.webaid.service.UserService;
@@ -92,6 +95,9 @@ public class AdminController {
 	
 	@Autowired
 	private AdviceService aService;
+	
+	@Autowired
+	private PopupService pService;
 	
 	@Autowired
 	private StatisticService sService;
@@ -1277,6 +1283,273 @@ public class AdminController {
 		return "redirect:/admin/menu03_02update";
 	}
 	
+	//=================== menu04 start
+	
+	@RequestMapping(value = "/menu04_01", method = RequestMethod.GET)
+	public String menu04_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu04_01 GET");
+		
+		List<UserVO> list = uService.listSearchAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(uService.listSearchCountAll(cri));
+		pageMaker.setFinalPage(uService.listSearchCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu04_01";
+	}
+	
+	@RequestMapping(value = "/menu04_01register", method = RequestMethod.GET)
+	public String menu04_01register() throws Exception {
+		logger.info("menu04_01register GET");
+		
+		
+		return "admin/menu04_01register";
+	}
+	
+	@RequestMapping(value = "/menu04_01register", method = RequestMethod.POST)
+	public String menu04_01registerPost(MultipartHttpServletRequest mtfReq, Model model) throws IOException {
+		logger.info("menu04_01register POST");
+		
+		UserVO vo = new UserVO();
+		
+		vo.setNo(0);
+		vo.setId(mtfReq.getParameter("id"));
+		vo.setName(mtfReq.getParameter("name"));
+		vo.setLv(mtfReq.getParameter("lv"));
+		vo.setPw(mtfReq.getParameter("pw"));
+		vo.setPhone(mtfReq.getParameter("phone"));
+		vo.setBirth(mtfReq.getParameter("birth"));
+		vo.setGender(mtfReq.getParameter("gender"));
+		vo.setEmail(mtfReq.getParameter("email"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setLogin_cnt(1);
+		
+		uService.insert(vo);
+		return "redirect:/admin/menu04_01";
+	}
+	
+	@RequestMapping(value = "/menu04_01update", method = RequestMethod.GET)
+	public String menu04_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu04_01update GET");
+		
+		UserVO vo = uService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(uService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu04_01update";
+	}
+	
+	@RequestMapping(value = "/menu04_01update", method = RequestMethod.POST)
+	public String menu04_01updatePOST(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts) throws Exception {
+		logger.info("menu04_01update POST");
+		
+		UserVO vo = new UserVO();
+		UserVO prevVO = uService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setNo(Integer.parseInt(mtfReq.getParameter("no")));
+		vo.setName(mtfReq.getParameter("name"));
+		if(mtfReq.getParameter("pw_change").equals("o")){
+			vo.setPw(mtfReq.getParameter("pw"));
+		}else{
+			vo.setPw(prevVO.getPw());
+		}
+		vo.setPhone(mtfReq.getParameter("phone"));
+		vo.setBirth(mtfReq.getParameter("birth"));
+		vo.setGender(mtfReq.getParameter("gender"));
+		vo.setEmail(mtfReq.getParameter("email"));
+		
+		uService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(uService.listSearchCountAll(cri));
+
+		rtts.addAttribute("page", page);
+		return "redirect:/admin/menu04_01update";
+	}
+	
+	@RequestMapping(value = "/menu04_01withdraw/{no}/{withdraw}", method = RequestMethod.GET)
+	public String menu04_01withdraw(@PathVariable("no") int no, @PathVariable("withdraw") String withdraw) throws Exception {
+		logger.info("menu04_01 GET");
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Calendar cal = Calendar.getInstance();
+		
+		String today = sdf.format(cal.getTime());
+		
+		UserVO vo = new UserVO();
+		vo.setNo(no);
+		vo.setWithdraw(withdraw);
+		vo.setReason("");
+		vo.setWithdraw_date(today);
+		uService.updateWithdraw(vo);
+		
+		return "redirect:/admin/menu04_01";
+	}
+	
+	@RequestMapping(value = "/menu04_01delete/{no}", method = RequestMethod.GET)
+	public String menu04_01delete(@PathVariable("no") int no) throws Exception {
+		logger.info("menu04_01 GET");
+
+		uService.delete(no);
+		
+		return "redirect:/admin/menu04_01";
+	}
+	
+	@RequestMapping(value = "/menu04_02", method = RequestMethod.GET)
+	public String menu04_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu04_02 GET");
+		
+		List<UserVO> list = uService.listSearchWithdrawAll(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(uService.listSearchWithdrawCountAll(cri));
+		pageMaker.setFinalPage(uService.listSearchWithdrawCountAll(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu04_02";
+	}
+	
+	@RequestMapping(value = "/menu04_02read", method = RequestMethod.GET)
+	public String menu04_02read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu04_02read GET");
+		
+		UserVO vo = uService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(uService.listSearchCountAll(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		return "admin/menu04_02read";
+	}
+	
+	@RequestMapping(value = "/menu04_02withdraw/{no}/{withdraw}", method = RequestMethod.GET)
+	public String menu04_02withdraw(@PathVariable("no") int no, @PathVariable("withdraw") String withdraw) throws Exception {
+		logger.info("menu04_02 GET");
+		ResponseEntity<String> entity = null;
+		UserVO vo = new UserVO();
+		vo.setNo(no);
+		vo.setWithdraw(withdraw);
+		vo.setReason("");
+		vo.setWithdraw_date("");
+		uService.updateWithdraw(vo);
+		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		
+		return "redirect:/admin/menu04_02";
+	}
+	
+	@RequestMapping(value = "/menu04_02delete/{no}", method = RequestMethod.GET)
+	public ResponseEntity<String> menu04_02delete(@PathVariable("no") int no) throws Exception {
+		logger.info("menu04_02 GET");
+		ResponseEntity<String> entity = null;
+		
+		uService.delete(no);
+		
+		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		return entity;
+	}
+	
+	//=================== menu05 start
+	
+	@RequestMapping(value = "/menu05_01", method = RequestMethod.GET)
+	public String menu05_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu05_01 GET");
+		
+		List<PopupVO> list = pService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(pService.listSearchCount(cri));
+		pageMaker.setFinalPage(pService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu05_01";
+	}
+	
+	@RequestMapping(value = "/menu05_01register", method = RequestMethod.GET)
+	public String menu05_01register(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu05_01register GET");
+		
+		return "admin/menu05_01register";
+	}
+	
+	@RequestMapping(value = "/menu05_01register", method = RequestMethod.POST)
+	public String menu05_01registerPost(PopupVO vo) throws Exception {
+		logger.info("menu05_01register POST");
+		
+		System.out.println(vo);
+		pService.insert(vo);
+		
+		return "redirect:/admin/menu05_01";
+	}
+	
+	@RequestMapping(value = "/menu05_01update", method = RequestMethod.GET)
+	public String menu05_01update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu05_01update GET");
+		
+		PopupVO vo = pService.selectOne(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(pService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu05_01update";
+	}
+	
+	@RequestMapping(value = "/menu05_01update", method = RequestMethod.POST)
+	public String menu05_01updatePost(PopupVO vo, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu05_01update POST");
+		
+		pService.update(vo);
+		
+		rtts.addAttribute("no", vo.getNo());
+		
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(pService.listSearchCount(cri));
+
+		rtts.addAttribute("page", page);
+		
+		return "redirect:/admin/menu05_01update";
+	}
+	
+	@RequestMapping(value="/menu05_01delete/{no}", method=RequestMethod.GET)
+	public String menu05_01delete(@PathVariable("no") int no){
+		logger.info("popup delete");
+		
+		pService.delete(no);
+		
+		return "redirect:/admin/menu05_01";
+	}
 	//=================== menu06 start
 	
 	@RequestMapping(value = "/menu06_01", method = RequestMethod.GET)
