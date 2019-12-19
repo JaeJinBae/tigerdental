@@ -27,9 +27,6 @@
 <script type="text/javascript" src="http://siwonhang.com/lib/js/ckeditor/styles.js?t=F7J9"></script> -->
 <style>
 .cke{visibility:hidden;}
-.left_menu > dl:nth-child(2) > dd{
-	display: block !important;
-}
 </style>
 <script>
 $(function(){

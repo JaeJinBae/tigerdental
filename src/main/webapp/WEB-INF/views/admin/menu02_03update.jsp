@@ -21,11 +21,6 @@
 <script src="${pageContext.request.contextPath}/resources/admin/js/function.validate.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js" type="text/javascript"></script>
 <link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css">
-<style>
-.left_menu > dl:nth-child(2) > dd{
-	display: block !important;
-}
-</style>
 <script>
 $(function(){
 	$.ajaxSetup({cache:false});

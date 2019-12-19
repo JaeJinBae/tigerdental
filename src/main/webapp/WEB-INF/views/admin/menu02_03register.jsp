@@ -20,12 +20,8 @@
 <script src="${pageContext.request.contextPath}/resources/admin/js/function.admin.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/admin/js/function.validate.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/resources/ckeditorFull/ckeditor.js" type="text/javascript"></script>
-
 <style>
 .cke{visibility:hidden;}
-.left_menu > dl:nth-child(2) > dd{
-	display: block !important;
-}
 </style>
 <script>
 $(function(){
