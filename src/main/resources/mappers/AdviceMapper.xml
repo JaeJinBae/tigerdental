@@ -9,15 +9,19 @@
 	</select>
 	
 	<select id="selectNonComplete" resultType="AdviceVO">
-		select * from advice where state!='상담완료' order by no desc
+		select * from advice where state!='상담완료' and quick_state='x' order by no desc
+	</select>
+	
+	<select id="selectNonCompleteQuick" resultType="AdviceVO">
+		select * from advice where state!='상담완료' and quick_state='o' order by no desc
 	</select>
 	
 	<insert id="insert">
-		insert into advice values(0, #{name}, #{phone}, #{regdate}, #{email}, #{state}, #{secret}, #{pw}, #{title}, #{content}, #{reply}, #{memo}, #{ip}, #{access_url}, #{reply_date}, #{upload_origin}, #{upload_stored}, #{quick_state})
+		insert into advice values(0, #{advice_type}, #{name}, #{phone}, #{regdate}, #{email}, #{state}, #{secret}, #{pw}, #{title}, #{content}, #{reply}, #{memo}, #{ip}, #{access_url}, #{reply_date}, #{upload_origin}, #{upload_stored}, #{quick_state})
 	</insert>
 	
 	<update id="update">
-		update advice set name=#{name}, phone=#{phone}, email=#{email}, state=#{state}, secret=#{secret}, title=#{title}, content=#{content}, reply=#{reply}, reply_date=#{reply_date}, memo=#{memo}, upload_origin=#{upload_origin}, upload_stored=#{upload_stored} where no=#{no}
+		update advice set advice_type=#{advice_type}, name=#{name}, phone=#{phone}, email=#{email}, state=#{state}, secret=#{secret}, title=#{title}, content=#{content}, reply=#{reply}, reply_date=#{reply_date}, memo=#{memo}, upload_origin=#{upload_origin}, upload_stored=#{upload_stored} where no=#{no}
 	</update>
 	
 	<update id="updateUpload">

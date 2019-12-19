@@ -28,6 +28,11 @@ public class AdviceDaoImpl implements AdviceDao {
 	}
 
 	@Override
+	public List<AdviceVO> selectNonCompleteQuick() {
+		return session.selectList(namespace + ".selectNonCompleteQuick");
+	}
+
+	@Override
 	public void insert(AdviceVO vo) {
 		session.insert(namespace + ".insert", vo);
 	}

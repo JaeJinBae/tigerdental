@@ -2,6 +2,7 @@ package com.webaid.domain;
 
 public class AdviceVO {
 	private int no;
+	private String advice_type;
 	private String name;
 	private String phone;
 	private String regdate;
@@ -30,6 +31,14 @@ public class AdviceVO {
 
 	public void setNo(int no) {
 		this.no = no;
+	}
+
+	public String getAdvice_type() {
+		return advice_type;
+	}
+
+	public void setAdvice_type(String advice_type) {
+		this.advice_type = advice_type;
 	}
 
 	public String getName() {
@@ -170,11 +179,11 @@ public class AdviceVO {
 
 	@Override
 	public String toString() {
-		return "AdviceVO [no=" + no + ", name=" + name + ", phone=" + phone + ", regdate=" + regdate + ", email="
-				+ email + ", state=" + state + ", secret=" + secret + ", pw=" + pw + ", title=" + title + ", content="
-				+ content + ", reply=" + reply + ", memo=" + memo + ", ip=" + ip + ", access_url=" + access_url
-				+ ", reply_date=" + reply_date + ", upload_origin=" + upload_origin + ", upload_stored=" + upload_stored
-				+ ", quick_state=" + quick_state + "]";
+		return "AdviceVO [no=" + no + ", advice_type=" + advice_type + ", name=" + name + ", phone=" + phone
+				+ ", regdate=" + regdate + ", email=" + email + ", state=" + state + ", secret=" + secret + ", pw=" + pw
+				+ ", title=" + title + ", content=" + content + ", reply=" + reply + ", memo=" + memo + ", ip=" + ip
+				+ ", access_url=" + access_url + ", reply_date=" + reply_date + ", upload_origin=" + upload_origin
+				+ ", upload_stored=" + upload_stored + ", quick_state=" + quick_state + "]";
 	}
 
 }

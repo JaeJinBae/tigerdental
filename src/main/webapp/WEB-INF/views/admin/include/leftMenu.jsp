@@ -27,8 +27,8 @@ $(function(){
 		</dl>
 		<dl>
 			<dt><a href="javascript:;">상담관리</a></dt>
-			<dd><a href="${pageContext.request.contextPath}/admin/menu03_01">전문의상담</a></dd>
-			<dd><a href="${pageContext.request.contextPath}/admin/menu03_02">진료예약</a></dd>
+			<dd><a href="${pageContext.request.contextPath}/admin/menu03_01">온라인상담</a></dd>
+			<dd><a href="${pageContext.request.contextPath}/admin/menu03_02">빠른상담</a></dd>
 		</dl>
 		<dl>
 			<dt><a href="javascript:;">회원관리</a></dt>
