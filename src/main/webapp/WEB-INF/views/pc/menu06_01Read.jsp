@@ -234,14 +234,14 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 						</tr>
 					</thead>
 					<tr>
-						<td>262</td>
-						<td class="subject"> 타이거 청정 지역 (9월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</td>
-						<td>2019-09-30</td>
-						<td>26</td>
+						<td>${item.no}</td>
+						<td class="subject"> ${item.title}</td>
+						<td>${item.regdate }</td>
+						<td>${item.cnt}</td>
 					</tr>
 					<tr>
 						<td colspan="4" class="con">
-							<div><img alt="" src="/filedata/ckeditor/20191005_E7103575A1F2D4E2.png" style="width: 660px; height: 780px;"></div>
+							${item.content}
 						</td>
 					</tr>
 				</table>
@@ -253,17 +253,35 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="prev-next-list">
 				<ul class="inner">
 					<li>
-						<span>이전글</span><a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;seq=227"> 타이거 청정 지역 (8월 수질검사서) - 세균 ZERO- ...</a>			</li>
+						<span>이전글</span>
+						<c:choose>
+							<c:when test="${beforeItem.no eq null}">
+								<a>이전글이 없습니다.</a>
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu06_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
 					<li>
-						<span>다음글</span><a href="javascript:alert('다음글이 없습니다');">다음글이 없습니다</a>			</li>
+						<span>다음글</span>
+						<c:choose>
+							<c:when test="${afterItem.no eq null}">
+								<a>존재하지 않습니다.</a>
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu06_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 			</div>
 		
 		
 			<!-- 게시판 버튼 시작 -->
-			<div class="btn-group-right">
+			<div class="btn-group">
 				<div class="inner">
-					<a href="/514/?pCode=514&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
+					<a href="${pageContext.request.contextPath}/menu06_01${pageMaker.makeSearch(pageMaker.cri.page)}" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->

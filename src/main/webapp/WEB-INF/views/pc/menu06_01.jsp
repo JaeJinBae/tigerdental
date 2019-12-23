@@ -91,7 +91,35 @@
 <script>
 $(function(){
 	$(".gnb:nth-child(6)").addClass("active");
-	$(".gnb:nth-child(6) .lnb:nth-child(1)").addClass("active"); 
+	$(".gnb:nth-child(6) .lnb:nth-child(1)").addClass("active");
+	
+	//게시판 검색
+    $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/menu06_01${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
+	
+    $(document).on("click", ".subject > a", function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
+    
+    $(document).on("click", "#board-pagenation > .inner > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		var browser =navigator.userAgent.toLowerCase();
+		if((navigator.appName == 'Netscape' && browser.indexOf('trident') != -1) || (browser.indexOf("msie") != -1)) {
+			location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	    }else{
+	    	location.href=link[0]+"keyword="+link[1];
+	    }
+	})
 });	
 </script>
 </head>
@@ -232,91 +260,74 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 							<th>조회수</th>
 						</tr>
 					</thead>
-					<tr>
-						<td class="">13</td>
-						<td class="subject">
-							<a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1&amp;seq=262"> 타이거 청정 지역 (9월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</a>
-						</td>
-						<td class="date">2019-09-30</td>
-						<td class="hit">26</td>
-					</tr>
-					<tr>
-						<td class="">12</td>
-						<td class="subject">
-							<a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1&amp;seq=227"> 타이거 청정 지역 (8월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</a>
-						</td>
-						<td class="date">2019-08-29</td>
-						<td class="hit">33</td>
-					</tr>
-					<tr>
-						<td class="">11</td>
-						<td class="subject">
-							<a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1&amp;seq=216"> 타이거 청정 지역 (6월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</a>
-						</td>
-						<td class="date">2019-07-17</td>
-						<td class="hit">47</td>
-					</tr>
-					<tr>
-						<td class="">10</td>
-						<td class="subject">
-							<a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1&amp;seq=185"> 타이거 청정 지역 (5월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</a>
-						</td>
-						<td class="date">2019-05-29</td>
-						<td class="hit">67</td>
-					</tr>
-					<tr>
-						<td class="">9</td>
-						<td class="subject">
-							<a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1&amp;seq=184"> 타이거치과 6월 휴진안내</a>
-						</td>
-						<td class="date">2019-05-28</td>
-						<td class="hit">56</td>
-					</tr>
-					<tr>
-						<td class="">8</td>
-						<td class="subject">
-							<a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1&amp;seq=180"> 타이거 청정 지역 (4월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</a>
-						</td>
-						<td class="date">2019-05-03</td>
-						<td class="hit">477</td>
-					</tr>
-					<tr>
-						<td class="">7</td>
-						<td class="subject">
-							<a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1&amp;seq=161"> 타이거치과 5월 진료안내</a>
-						</td>
-						<td class="date">2019-05-03</td>
-						<td class="hit">58</td>
-					</tr>
-					<tr>
-						<td class="">6</td>
-						<td class="subject">
-							<a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1&amp;seq=130"> 타이거 청정 지역 (3월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</a>
-						</td>
-						<td class="date">2019-03-22</td>
-						<td class="hit">103</td>
-					</tr>
-					<tr>
-						<td class="">5</td>
-						<td class="subject">
-							<a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1&amp;seq=129"> 타이거 청정 지역 (2월 수질검사서) - 세균 ZERO- 와우 치과 진료물에서 세균이 제로.......청정구역</a>
-						</td>
-						<td class="date">2019-02-28</td>
-						<td class="hit">113</td>
-					</tr>
-					<tr>
-						<td class="">4</td>
-						<td class="subject">
-							<a href="?pCode=514&amp;mode=view&amp;perm=Y&amp;select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=1&amp;seq=102"> 설연휴 휴진안내입니다.</a>
-						</td>
-						<td class="date">2019-01-31</td>
-						<td class="hit">84</td>
-					</tr>
+					
+					
+					<c:if test="${pageMaker.cri.page == 1}">
+					
+						<c:if test="${fn:length(topList) != 0}">
+							<c:forEach var="item" items="${topList}">
+								<tr class="noticeTop">
+									<td class=""><i class="ico notice">공지</i></td>
+									<td class="subject">
+										<a href="${pageContext.request.contextPath}/menu06_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a>
+									</td>
+									<td class="date">${item.regdate}</td>
+									<td class="hit">${item.cnt}</td>
+								</tr>	
+							</c:forEach>
+						</c:if>
+					</c:if>
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	<tr>
+				        		<td colspan="4" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+				        	</tr>
+					    </c:when>
+					    
+					    <c:otherwise>
+					    	<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+					        <c:forEach var="item" items="${list}">
+								<tr>
+									<td>${num}</td>
+									<td class="subject">
+										<a href="${pageContext.request.contextPath}/menu06_01read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a>
+									</td>
+									<td class="date">${item.regdate}</td>
+									<td class="hit">${item.cnt}</td>
+								</tr>
+								<c:set var="num" value="${num-1}"></c:set>	
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</table>
 				<!-- 공지사항 게시판 끝 -->
 		
 				<!-- 페이징 시작 -->
-				<div id="board-pagenation">	<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=2 ">2</a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?select_key=&amp;input_key=&amp;Scod=BRD01&amp;pCode=514&amp;btap=&amp;page=2 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>	</div></div>		<!-- 페이징 끝 -->
+				<div id="board-pagenation">
+					<div class="inner">
+						<a href="${pageMaker.makeSearch(1)}">
+							<svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> -->
+						</a>
+						<c:if test="${pageMaker.prev}">
+							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+						</c:if>
+						<c:if test="${!pageMaker.prev}">
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+						</c:if>
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+						</c:forEach>
+						<c:if test="${pageMaker.next}">
+							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+						</c:if>
+						<c:if test="${!pageMaker.next}">
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+						</c:if>
+						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}">
+							<svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> -->
+						</a>
+					</div>
+				</div>	<!-- 페이징 끝 -->
 		
 				<div class="search-box">
 					<form name="board_search" method="post" action="" onsubmit="return board_search_it(this)">

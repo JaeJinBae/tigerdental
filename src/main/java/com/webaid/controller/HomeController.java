@@ -1,15 +1,26 @@
 package com.webaid.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mobile.device.Device;
 import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.webaid.domain.NewsVO;
+import com.webaid.domain.NoticeVO;
+import com.webaid.domain.PageMaker;
+import com.webaid.domain.SearchCriteria;
+import com.webaid.service.NewsService;
+import com.webaid.service.NoticeService;
 
 /**
  * Handles requests for the application home page.
@@ -18,6 +29,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	@Autowired
+	private NoticeService nService;
+	
+	@Autowired
+	private NewsService newsService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
@@ -224,29 +241,89 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/menu06_01", method=RequestMethod.GET)
-	public String menu06_01Get(){
+	public String menu06_01Get(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		logger.info("menu06_01 get");
+		
+		List<NoticeVO> topList = nService.selectTopNotice("o");
+		List<NoticeVO> list = nService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		pageMaker.setFinalPage(nService.listSearchCount(cri));
+		
+		model.addAttribute("topList", topList);
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "pc/menu06_01";
 	}
 	
 	@RequestMapping(value="/menu06_01read", method=RequestMethod.GET)
-	public String menu06_01readGet(){
+	public String menu06_01readGet(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		logger.info("menu06_01read get");
+		
+		NoticeVO vo=nService.selectOne(no);
+		NoticeVO beforeVO = nService.selectBefore(no);
+		NoticeVO afterVO = nService.selectAfter(no);
+		
+		nService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(nService.listSearchCount(cri));
+		pageMaker.setFinalPage(nService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "pc/menu06_01Read";
 	}
 	
 	@RequestMapping(value="/menu06_02", method=RequestMethod.GET)
-	public String menu06_02Get(){
+	public String menu06_02Get(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		logger.info("menu06_02 get");
+		
+		List<NewsVO> topList = newsService.selectTopNews("o");
+		List<NewsVO> list = newsService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		pageMaker.setFinalPage(newsService.listSearchCount(cri));
+		
+		model.addAttribute("topList", topList);
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "pc/menu06_02";
 	}
 	
 	@RequestMapping(value="/menu06_02read", method=RequestMethod.GET)
-	public String menu06_02readGet(){
+	public String menu06_02readGet(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		logger.info("menu06_02read get");
+		
+		NewsVO vo=newsService.selectOne(no);
+		NewsVO beforeVO = newsService.selectBefore(no);
+		NewsVO afterVO = newsService.selectAfter(no);
+		
+		newsService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(newsService.listSearchCount(cri));
+		pageMaker.setFinalPage(newsService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "pc/menu06_02Read";
 	}

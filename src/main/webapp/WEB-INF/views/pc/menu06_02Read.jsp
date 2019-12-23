@@ -235,14 +235,14 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</thead>
 					<tbody>
 						<tr>
-							<td>160</td>
-							<td class="subject"> &lt;조세금융신문&gt; 단기간에 끝내는 퀵(Quick) 치아교정, 빠른만큼 바르게 진행돼야...</td>
-							<td>2019-04-23</td>
-							<td>62</td>
+							<td>${item.no}</td>
+							<td class="subject"> ${item.title}</td>
+							<td>${item.regdate }</td>
+							<td>${item.cnt}</td>
 						</tr>
 						<tr>
 							<td colspan="4" class="con">
-								<div><img alt="" src="/filedata/ckeditor/20190427_58D63A0C42AEFD65.png" style="width: 743px; height: 1125px;"></div>
+								${item.content}
 							</td>
 						</tr>
 					</tbody>
@@ -255,19 +255,35 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="prev-next-list">
 				<ul class="inner">
 					<li>
-						<span>이전글</span><a href=""> &lt;M Report - 칼럼&gt; "노인 위한 전악 임...</a>
+						<span>이전글</span>
+						<c:choose>
+							<c:when test="${beforeItem.no eq null}">
+								<a>이전글이 없습니다.</a>
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu06_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+							</c:otherwise>
+						</c:choose>
 					</li>
 					<li>
-						<span>다음글</span><a href="javascript:alert('다음글이 없습니다');">다음글이 없습니다</a>
+						<span>다음글</span>
+						<c:choose>
+							<c:when test="${afterItem.no eq null}">
+								<a>존재하지 않습니다.</a>
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu06_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+							</c:otherwise>
+						</c:choose>
 					</li>
 				</ul>
 			</div>
 		
 		
 			<!-- 게시판 버튼 시작 -->
-			<div class="btn-group-right">
+			<div class="btn-group">
 				<div class="inner">
-					<a href="" class="btn btn-list">목록으로</a>
+					<a href="${pageContext.request.contextPath}/menu06_02${pageMaker.makeSearch(pageMaker.cri.page)}" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->

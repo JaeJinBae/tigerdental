@@ -91,7 +91,35 @@
 <script>
 $(function(){
 	$(".gnb:nth-child(6)").addClass("active");
-	$(".gnb:nth-child(6) .lnb:nth-child(2)").addClass("active"); 
+	$(".gnb:nth-child(6) .lnb:nth-child(2)").addClass("active");
+	
+	//게시판 검색
+    $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/menu06_02${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
+	
+    $(document).on("click", ".subject > a", function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
+    
+    $(document).on("click", "#board-pagenation > .inner > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		var browser =navigator.userAgent.toLowerCase();
+		if((navigator.appName == 'Netscape' && browser.indexOf('trident') != -1) || (browser.indexOf("msie") != -1)) {
+			location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	    }else{
+	    	location.href=link[0]+"keyword="+link[1];
+	    }
+	})
 });	
 </script>
 </head>
@@ -232,86 +260,43 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 							<th>조회수</th>
 						</tr>
 					</thead>
-					<tr>
-						<td class="notice-item"><i class="notice">공지</i></td>
-						<td class="subject">
-							<a href=""> MBC 라디오 이윤석 신아영의 좋은주말에 서인석 원장님 출연</a>
-						</td>
-						<td class="date">2019-02-11</td>
-						<td class="hit">530</td>
-					</tr>
-					<tr>
-						<td class="notice-item"><i class="notice">공지</i></td>
-						<td class="subject">
-							<a href=""> &lt;매일경제TV&gt; 건강백세 스마일, 서인석 대표 원장님 출연</a>
-						</td>
-						<td class="date">2019-01-16</td>
-						<td class="hit">242</td>
-					</tr>
-					<tr>
-						<td class="">13</td>
-						<td class="subject">
-							<a href=""> &lt;조세금융신문&gt; 단기간에 끝내는 퀵(Quick) 치아교정, 빠른만큼 바르게 진행돼야...</a>
-						</td>
-						<td class="date">2019-04-23</td>
-						<td class="hit">61</td>
-					</tr>
-					<tr>
-						<td class="">12</td>
-						<td class="subject">
-							<a href=""> &lt;M Report - 칼럼&gt; "노인 위한 전악 임플란트, 환자 상태 파악 정확하고 사후관리 확실한 병원 찾을 것 "</a>
-						</td>
-						<td class="date">2019-04-17</td>
-						<td class="hit">47</td>
-					</tr>
-					<tr>
-						<td class="">11</td>
-						<td class="subject">
-							<a href=""> &lt;조세금융신문 - 기사&gt; 단기간에 교정효과 보는 치아성형, 잘 알아보고 선택해야</a>
-						</td>
-						<td class="date">2019-04-17</td>
-						<td class="hit">50</td>
-					</tr>
-					<tr>
-						<td class="">10</td>
-						<td class="subject">
-							<a href=""> &lt;정신의학신문 - 기사&gt;  틀니 단점 보완한 전악 임플란트, 무치악 환자에게 수요 늘어나</a>
-						</td>
-						<td class="date">2019-04-17</td>
-						<td class="hit">48</td>
-					</tr>
-					<tr>
-						<td class="">9</td>
-						<td class="subject">
-							<a href=""> &lt;공무원저널 - 기사&gt; 임플란트, 시술 전 전문의와 충분한 상담 필요</a>
-						</td>
-						<td class="date">2019-01-22</td>
-						<td class="hit">86</td>
-					</tr>
-					<tr>
-						<td class="">8</td>
-						<td class="subject">
-							<a href=""> &lt;정신의학신문 - 기사&gt; 임플란트, 식립만큼 사후관리 더 중요해</a>
-						</td>
-						<td class="date">2019-01-11</td>
-						<td class="hit">58</td>
-					</tr>
-					<tr>
-						<td class="">7</td>
-						<td class="subject">
-							<a href=""> &lt;금강일보 - 기사&gt; 임플란트도 쉽고 빠른 시대, 의료 기관 선택에 있어 현명해야...</a>
-						</td>
-						<td class="date">2018-12-28</td>
-						<td class="hit">92</td>
-					</tr>
-					<tr>
-						<td class="">6</td>
-						<td class="subject">
-							<a href=""> &lt;중앙일보 - 기사&gt; 하루면 끝나는 원데이 임플란트, 장비와 의료진 숙련도 중요해</a>
-						</td>
-						<td class="date">2018-12-19</td>
-						<td class="hit">98</td>
-					</tr>
+					<c:if test="${pageMaker.cri.page == 1}">
+					
+						<c:if test="${fn:length(topList) != 0}">
+							<c:forEach var="item" items="${topList}">
+								<tr class="noticeTop">
+									<td class=""><i class="ico notice">공지</i></td>
+									<td class="subject">
+										<a href="${pageContext.request.contextPath}/menu06_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a>
+									</td>
+									<td class="date">${item.regdate}</td>
+									<td class="hit">${item.cnt}</td>
+								</tr>	
+							</c:forEach>
+						</c:if>
+					</c:if>
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	<tr>
+				        		<td colspan="4" style=" text-align: center;">등록된 게시물이 없습니다.</td>
+				        	</tr>
+					    </c:when>
+					    
+					    <c:otherwise>
+					    	<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+					        <c:forEach var="item" items="${list}">
+								<tr>
+									<td>${num}</td>
+									<td class="subject">
+										<a href="${pageContext.request.contextPath}/menu06_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title}</a>
+									</td>
+									<td class="date">${item.regdate}</td>
+									<td class="hit">${item.cnt}</td>
+								</tr>
+								<c:set var="num" value="${num-1}"></c:set>	
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</table>
 				<!-- 공지사항 게시판 끝 -->
 		
