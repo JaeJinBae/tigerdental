@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.service.BeforeAfterService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
 
@@ -35,6 +37,9 @@ public class HomeController {
 	
 	@Autowired
 	private NewsService newsService;
+	
+	@Autowired
+	private BeforeAfterService baService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
@@ -329,8 +334,19 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/menu06_03", method=RequestMethod.GET)
-	public String menu06_03Get(){
+	public String menu06_03Get(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		logger.info("menu06_03 get");
+		
+		List<BeforeAfterVO> list = baService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(baService.listSearchCount(cri));
+		pageMaker.setFinalPage(baService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "pc/menu06_03";
 	}
