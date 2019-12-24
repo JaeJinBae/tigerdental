@@ -1,11 +1,14 @@
 package com.webaid.controller;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,11 +35,16 @@ import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.domain.StatisticVO;
+import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.ReviewService;
+import com.webaid.service.StatisticService;
+import com.webaid.service.UserService;
+import com.webaid.util.SendEmail;
 
 /**
  * Handles requests for the application home page.
@@ -60,6 +68,12 @@ public class HomeController {
 	
 	@Autowired
 	private AdviceService aService;
+	
+	@Autowired
+	private UserService uService;
+	
+	@Autowired
+	private StatisticService sService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
@@ -90,11 +104,72 @@ public class HomeController {
 		}
 	}
 	
+	@RequestMapping(value="/statisticRegister", method=RequestMethod.POST)
+	public ResponseEntity<String> statisticRegister(@RequestBody Map<String, String> info){
+		logger.info("statistic register");
+		ResponseEntity<String> entity = null;
+		
+		StatisticVO vo = new StatisticVO();
+		vo.setDate(info.get("date"));
+		vo.setDayofweek(info.get("dayofweek"));
+		vo.setHour(Integer.parseInt(info.get("hour")));
+		vo.setMinute(Integer.parseInt(info.get("minute")));
+		vo.setBrowser(info.get("browser"));
+		vo.setOs(info.get("os"));
+		vo.setPrev_url(info.get("prev_url"));
+		
+		sService.insert(vo);
+		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		return entity;
+	}
+	
+	@RequestMapping(value="/logout", method=RequestMethod.GET)
+	public String logout(HttpServletRequest req){
+		HttpSession session = req.getSession(false);
+		if(session != null){
+			session.invalidate();
+		}
+		return "redirect:/";
+	}
+	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String login(){
 		logger.info("login");
 		
 		return "pc/login";
+	}
+	
+	@RequestMapping(value = "/loginIdPwChk", method = RequestMethod.POST)
+	public ResponseEntity<String> login(@RequestBody Map<String, String> info, HttpSession session) {
+		logger.info("loginIdPwChk");
+		ResponseEntity<String> entity = null;
+		
+		UserVO vo = uService.selectById(info.get("id"));
+		UserVO newVO = new UserVO();
+		if(vo == null){
+			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
+		}else{
+			if(vo.getPw_change_state().equals("x")){
+				newVO.setNo(vo.getNo());
+				newVO.setPw(info.get("pw"));
+				newVO.setPw_change_state("o");
+				uService.updatePwChangeState(newVO);
+				session.setAttribute("id", vo.getId());
+				session.setAttribute("no", vo.getNo());
+				uService.updateLoginCnt(vo.getNo());
+				entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+			}else{
+				if(vo.getPw().equals(info.get("pw"))){
+					session.setAttribute("id", vo.getId());
+					session.setAttribute("no", vo.getNo());
+					uService.updateLoginCnt(vo.getNo());
+					entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+				}else{
+					entity = new ResponseEntity<String>("no", HttpStatus.OK);
+				}
+			}
+		}
+		return entity;
 	}
 	
 	@RequestMapping(value="/join", method=RequestMethod.GET)
@@ -104,11 +179,294 @@ public class HomeController {
 		return "pc/join";
 	}
 	
-	@RequestMapping(value="/findIdPw", method=RequestMethod.GET)
-	public String findIdPw(){
-		logger.info("findIdPw");
+	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	public ResponseEntity<String> joinPost(@RequestBody Map<String, String> info) {
+		logger.info("join POST");
+		ResponseEntity<String> entity = null;
+		System.out.println(info);
+		try {
+			UserVO vo = new UserVO();
+			vo.setId(info.get("id"));
+			vo.setName(info.get("name"));
+			vo.setLv("일반회원");
+			vo.setPw(info.get("pw"));
+			vo.setPhone(info.get("phone"));
+			vo.setBirth(info.get("birth"));
+			vo.setGender(info.get("gender"));
+			vo.setEmail(info.get("email"));
+			vo.setRegdate(info.get("regdate"));
+			vo.setLogin_cnt(0);
+			
+			uService.insert(vo);
+			
+			SendEmail se = new SendEmail();
+			String name = info.get("name");
+			String email = info.get("email");
+			String content = "<div style='width:750px; margin:0px auto;'><div>"
+			+ "<div style='width:700px; margin:0px auto; font-size:25px; padding:40px 0 30px 0; text-align:center; border-bottom:solid 2px #a6a6a6; margin-bottom:30px;'>타이거치과의원 웹사이트 <span style='color:#483865;'>회원으로 가입</span> 되었습니다.</div>"
+			+ "<div style='text-align:center; font-size:14px; margin-bottom:35px;'>"
+			+ "안녕하세요 "+info.get("name")+" 님<br><br>타이거치과의원 입니다.<br>타이거치과의원의 온라인 회원이 되신 것을 진심으로 축하 합니다.<br><br>"+info.get("regdate")+"에 "+info.get("id")+"아이디로<br>가입이 완료 되었습니다.</div>"
+			+ "<div style='text-align:center;margin-bottom:40px'>"
+			+ "<a href='http://www.tigerdental.com' style='display: block; margin: 0 auto; : 150px; padding: 10px 0; text-align: center; background: #00b0ff; color: #fff; text-decoration: none;' rel='noreferrer noopener' target='_blank'>"
+			+ "홈페이지 바로가기</a></div></div>"
+			+ "<div style='width:100%;height:200px;border-top:solid 1px #d5d8de; box-sizing:border-box; padding:18px 0 0 0;font-size:12px;background-image:url(http://tigerdental.co.kr/resources/images/mail/img_footer_logo.jpg); background-repeat:no-repeat; background-position:0 0'>"
+			+ "<p style='color:#444;margin-bottom:10px; margin-top: 15px; margin-left: 175px; font-size: 13px;'>본 메일은 발신 전용으로 회신하실 경우 답변 되지 않습니다.<br>문의사항이나 기타 이용안내는 고객센터 <span style='color: #00b0ff; font-weight: 800;text-decoration: underline;'>02-540-2080</span> 를 이용해주세요</p>"
+			+ "<p style='color:#777; margin-left: 175px;'>서울 강남구 도산대로 134 페이토빌딩 B1  |  대표자명 : 서인석  |  상호명 : 타이거치과의원<br>TEL : 02-540-2080  Copyright 2017 타이거치과의원 All rights reserved</p></div></div>";
+			
+			String title = info.get("name")+"님 온라인 회원가입이 완료되었습니다.";
+			
+			se.SendMail(name, email, content, title);
+			
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}	
+		return entity;
+	}
+	
+	@RequestMapping(value="/id_duplicate_chk/{id}", method=RequestMethod.POST)
+	public ResponseEntity<String> id_duplicate_chk(@PathVariable("id") String id){
+		ResponseEntity<String> entity = null;
 		
-		return "pc/findIdPw";
+		UserVO vo = uService.selectById(id);
+		System.out.println(vo);
+		if(vo == null){
+			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>("exist", HttpStatus.OK);
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value="/joinEnd", method=RequestMethod.GET)
+	public String joinEnd(){
+		logger.info("joinEnd");
+		
+		return "pc/joinEnd";
+	}
+	
+	@RequestMapping(value="/findId", method=RequestMethod.GET)
+	public String findId(){
+		logger.info("findId");
+		
+		return "pc/findId";
+	}
+	
+	@RequestMapping(value="/findId", method=RequestMethod.POST)
+	public ResponseEntity<String> findId(@RequestBody Map<String, String> info){
+		ResponseEntity<String> entity = null;
+		UserVO searchVO = new UserVO();
+		searchVO.setName(info.get("name"));
+		searchVO.setEmail(info.get("email"));
+		UserVO vo = uService.selectByNameEmail(searchVO);
+		if(vo == null){
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>(vo.getNo()+"", HttpStatus.OK);
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value="/findIdEnd", method=RequestMethod.POST)
+	public String findIdEnd(int no, Model model){
+		logger.info("findIdEnd");
+		
+		UserVO vo = uService.selectOne(no);
+		model.addAttribute("item", vo);
+		
+		return "pc/findIdEnd";
+	}
+	
+	@RequestMapping(value="/findPw", method=RequestMethod.GET)
+	public String findPw(HttpServletRequest req, Model model){
+		
+		return "pc/findPw";
+	}
+	
+	@RequestMapping(value="/findPw", method=RequestMethod.POST)
+	public ResponseEntity<String> findPw(@RequestBody Map<String, String> info){
+		ResponseEntity<String> entity = null;
+		
+		UserVO searchVO = new UserVO();
+		searchVO.setId(info.get("id"));
+		searchVO.setName(info.get("name"));
+		searchVO.setEmail(info.get("email"));
+		
+		UserVO vo = uService.selectByIdNameEmail(searchVO);
+		if(vo == null){
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>(vo.getNo()+"", HttpStatus.OK);
+			char[] charSet = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+			int idx = 0;
+			StringBuffer sb = new StringBuffer(); 
+			for (int i = 0; i < 8; i++) { 
+				idx = (int) (charSet.length * Math.random());
+				sb.append(charSet[idx]);
+			}
+			vo.setPw(sb+"");
+			uService.update(vo);
+			
+			String title = vo.getName()+"님 문의하신 비밀번호입니다.";
+			String content = "<div style='width:750px; margin:0px auto;'><div>"
+			+"<div style='width:700px; margin:0px auto; font-size:25px; padding:40px 0 30px 0; text-align:center; border-bottom:solid 2px #a6a6a6; margin-bottom:30px;'>"
+			+"타이거치과의원 웹사이트 <span style='color:#00b0ff;'>임시 비밀번호</span>를 안내해 드립니다.</div>"
+			+"<div style='text-align:center; font-size:14px; margin-bottom:35px;'>안녕하세요. <span style='color:#394496;'>"+vo.getName()+"</span> 회원님<br>요청하신 타이거치과의원의 웹사이트의 임시 비밀번호는 아래와 같습니다.</div>"
+			+"<div style='width:416px;margin:0px auto;background-color:#f4f4f4;box-sizing:border-box;padding:15px 84px; margin-bottom:30px'>"
+			+"<table cellspacing='0' border='0' cellpadding='2'><colgroup><col width='109px'><col width='*'></colgroup>"
+			+"<tbody><tr><td>임시비밀번호</td><td><span style='font-weight:bold; color:#00b0ff;'>"+sb+"</span></td></tr></tbody></table></div>"
+			+"<div style='text-align:center;font-size:13px;margin-bottom:25px;color: #575e6d;'>"
+			+"※ 발급된 비밀번호는 임시 비밀번호이므로 로그인 후 <span style='color:#ec008c;'>반드시 새로운 비밀번호로 변경</span>하시기 바랍니다.<br>"
+			+"<span style='color:#000;'>타이거치과의원 사이트 &gt; 마이페이지 &gt; 회원정보 수정</span>에서 변경 가능합니다.</div>"
+			+"<div style='text-align:center;margin-bottom:40px'>"
+			+"<a href='http://www.tigerdental.co.kr' style='display: block; margin: 0 auto; : 150px; padding: 10px 0; text-align: center; background: #00b0ff; color: #fff; text-decoration: none;' rel='noreferrer noopener' target='_blank'>"
+			+"홈페이지 바로가기</a></div></div>"
+			+"<div style='width:100%;height:200px;border-top:solid 1px #d5d8de; box-sizing:border-box; padding:18px 0 0 0;font-size:12px;background-image:url(http://tigerdental.co.kr/resources/images/mail/img_footer_logo.jpg); background-repeat:no-repeat; background-position:0 0'>"
+			+"<p style='color:#444;margin-bottom:10px; margin-top: 15px; margin-left: 175px; font-size: 13px;'>"
+			+"본 메일은 발신 전용으로 회신하실 경우 답변 되지 않습니다.<br>문의사항이나 기타 이용안내는 고객센터 <span style='color: #00b0ff; font-weight: 800;text-decoration: underline;'>02-540-2080</span> 를 이용해주세요</p>"
+			+"<p style='color:#777; margin-left: 175px;'>"
+			+"서울 강남구 도산대로 134 페이토빌딩 B1  |  대표자명 : 서인석  |  상호명 : 타이거치과의원<br>TEL : 02-540-2080  Copyright 2017 타이거치과의원 All rights reserved.</p></div></div>";
+			
+			SendEmail se = new SendEmail();
+			se.SendMail(vo.getName(), vo.getEmail(), content, title);
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value="/findPwEnd", method=RequestMethod.POST)
+	public String findPwEnd(HttpServletRequest req, Model model){
+		
+		return "pc/findPwEnd";
+	}
+	
+	@RequestMapping(value="/myInfo", method=RequestMethod.GET)
+	public String myInfo(Model model){
+		logger.info("myinfo get");
+		
+		return "pc/myInfo";
+	}
+	
+	@RequestMapping(value="/myInfo", method=RequestMethod.POST)
+	public ResponseEntity<String> myInfoPost(@RequestBody Map<String, String> info, Model model){
+		logger.info("myinfo POST");
+		ResponseEntity<String> entity = null;
+		UserVO vo = uService.selectById(info.get("id"));
+		
+		if(vo == null){
+			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
+		}else{
+			if(vo.getPw().equals(info.get("pw"))){
+				entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+				
+			}else{
+				entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			}
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value="/myInfoEdit", method=RequestMethod.GET)
+	public String myInfoEditGet(HttpServletRequest req, Model model){
+		logger.info("myinfoEdit get");
+		HttpSession session = req.getSession(false);
+		if(session == null){
+			return "redirect:/login";
+		}else{
+			System.out.println(session.getAttribute("no"));
+			int no = Integer.parseInt(session.getAttribute("no")+"");
+			UserVO vo = uService.selectOne(no);
+			model.addAttribute("item", vo);
+		}
+		
+		return "pc/myInfoEdit";
+	}
+	
+	@RequestMapping(value="/myInfoEdit", method=RequestMethod.POST)
+	public ResponseEntity<String> myInfoEditPost(@RequestBody Map<String, String> info, Model model){
+		logger.info("myinfoEdit POST");
+		ResponseEntity<String> entity = null;
+		try {
+			UserVO vo = new UserVO();
+			vo.setNo(Integer.parseInt(info.get("no")));
+			vo.setName(info.get("name"));
+			vo.setPhone(info.get("phone"));
+			vo.setBirth("");
+			vo.setGender(info.get("gender"));
+			vo.setEmail(info.get("email"));
+			if(info.get("new_pw").length() <2){
+				UserVO prevVO = uService.selectOne(Integer.parseInt(info.get("no")));
+				vo.setPw(prevVO.getPw());
+			}else{
+				vo.setPw(info.get("new_pw"));
+			}
+			
+			uService.update(vo);
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/withdraw", method=RequestMethod.GET)
+	public String withdraw(Model model){
+		logger.info("withdraw get");
+		
+		return "pc/withdraw";
+	}
+	
+	@RequestMapping(value="/withdraw", method=RequestMethod.POST)
+	public ResponseEntity<String> withdraw(@RequestBody Map<String, String> info, Model model){
+		logger.info("withdraw POST");
+		ResponseEntity<String> entity = null;
+		UserVO vo = uService.selectById(info.get("id"));
+		
+		if(vo == null){
+			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
+		}else{
+			if(vo.getPw().equals(info.get("pw"))){
+				entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+				
+			}else{
+				entity = new ResponseEntity<String>("no", HttpStatus.OK);
+			}
+		}
+		return entity;
+	}
+	
+	@RequestMapping(value="/withdrawReason", method=RequestMethod.GET)
+	public String withdrawReason(Model model){
+		logger.info("withdrawReason get");
+		
+		return "pc/withdrawReason";
+	}
+	
+	@RequestMapping(value="/withdrawReason", method=RequestMethod.POST)
+	public ResponseEntity<String> withdrawReasonPOST(@RequestBody Map<String, String> info, HttpSession session, Model model){
+		logger.info("withdrawReason POST ");
+		ResponseEntity<String> entity = null;
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Calendar cal = Calendar.getInstance();
+		
+		String today = sdf.format(cal.getTime());
+		
+		UserVO vo = new UserVO();
+		vo.setNo(Integer.parseInt(info.get("no")));
+		vo.setWithdraw("o");
+		vo.setReason(info.get("reason"));
+		vo.setWithdraw_date(today);
+		uService.updateWithdraw(vo);
+		
+		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		
+		session.invalidate();
+		
+		return entity;
 	}
 	
 	@RequestMapping(value="/menu01_01", method=RequestMethod.GET)

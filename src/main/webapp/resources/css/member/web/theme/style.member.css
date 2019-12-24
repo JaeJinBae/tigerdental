@@ -106,7 +106,7 @@
 #join-member .join-form button{float:left; display:inline-block; height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px; font-size:13px; color:#222;}
 
 #join-member .join-form button{border:0; background:#222; color:#fff; font-size:12px; cursor:pointer; padding:0 15px;}
-#join-member .join-form select{background:#fff url("../../../img/common/theme/btn_down.png") no-repeat 95% center; cursor:pointer;}
+#join-member .join-form select{background:#fff url("../../../../img/common/theme/btn_down.png") no-repeat 95% center; cursor:pointer;}
 
 #join-member .join-form input[data-name="기본주소"]{width:50%; margin-top:5px;}
 #join-member .join-form input[data-name="상세주소"]{width:calc(50% - 5px); margin-left:5px; margin-top:5px;}
