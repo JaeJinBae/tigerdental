@@ -234,14 +234,14 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 						</tr>
 					</thead>
 					<tr>
-						<td>246</td>
-						<td class="subject"> 상악전치부 라미네이트, 구치부 임플란트, 크라운 치료후기(53세 여성)</td>
-						<td>2019-09-03</td>
-						<td>6</td>
+						<td>${item.no}</td>
+						<td class="subject"> ${item.title}</td>
+						<td>${item.regdate}</td>
+						<td>${item.cnt}</td>
 					</tr>
 					<tr>
 						<td colspan="4" class="con">
-							<div><img alt="" src="/filedata/ckeditor/20190905_0E494F04D646D922.jpg" style="width: 900px; height: 1273px;"></div>
+							${item.content}
 						</td>
 					</tr>
 				</table>
@@ -253,17 +253,35 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="prev-next-list">
 				<ul class="inner">
 					<li>
-						<span>이전글</span><a href=""> 상악 전치부 라미네이트,구치부 크라운치료후기(45...</a></li>
+						<span>이전글</span>
+						<c:choose>
+							<c:when test="${beforeItem.no eq null}">
+								<a>이전글이 없습니다.</a>
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu06_04read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
 					<li>
-						<span>다음글</span><a href=""> 상하악 구치부 크라운,인레이, 미백 치료후기(32세...</a></li>
+						<span>다음글</span>
+						<c:choose>
+							<c:when test="${afterItem.no eq null}">
+								<a>존재하지 않습니다.</a>
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/menu06_04read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+							</c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 			</div>
 		
 		
 			<!-- 게시판 버튼 시작 -->
-			<div class="btn-group-right">
+			<div class="btn-group">
 				<div class="inner">
-					<a href="/528/?pCode=528&amp;select_key=&amp;input_key=&amp;Scod=BRD05&amp;pCode=528&amp;btap=&amp;page=1" class="btn btn-list">목록으로</a>
+					<a href="${pageContext.request.contextPath}/menu06_04${pageMaker.makeSearch(pageMaker.cri.page)}" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
 			<!-- 게시판 버튼 끝 -->

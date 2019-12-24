@@ -19,10 +19,12 @@ import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
+import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
+import com.webaid.service.ReviewService;
 
 /**
  * Handles requests for the application home page.
@@ -40,6 +42,9 @@ public class HomeController {
 	
 	@Autowired
 	private BeforeAfterService baService;
+	
+	@Autowired
+	private ReviewService rService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
@@ -352,15 +357,43 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/menu06_04", method=RequestMethod.GET)
-	public String menu06_04Get(){
+	public String menu06_04Get(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		logger.info("menu06_04 get");
+		
+		List<ReviewVO> list = rService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rService.listSearchCount(cri));
+		pageMaker.setFinalPage(rService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "pc/menu06_04";
 	}
 	
 	@RequestMapping(value="/menu06_04read", method=RequestMethod.GET)
-	public String menu06_04readGet(){
+	public String menu06_04readGet(int no, @ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		logger.info("menu06_04read get");
+		
+		ReviewVO vo=rService.selectOne(no);
+		ReviewVO beforeVO = rService.selectBefore(no);
+		ReviewVO afterVO = rService.selectAfter(no);
+		
+		newsService.updateCnt(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(rService.listSearchCount(cri));
+		pageMaker.setFinalPage(rService.listSearchCount(cri));
+		
+		model.addAttribute("item", vo);
+		model.addAttribute("beforeItem", beforeVO);
+		model.addAttribute("afterItem", afterVO);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "pc/menu06_04Read";
 	}

@@ -91,7 +91,49 @@
 <script>
 $(function(){
 	$(".gnb:nth-child(6)").addClass("active");
-	$(".gnb:nth-child(6) .lnb:nth-child(4)").addClass("active"); 
+	$(".gnb:nth-child(6) .lnb:nth-child(4)").addClass("active");
+	
+		
+	$(document).on("click", ".subject > a", function(e){
+		e.preventDefault();
+		if($("#session_id").val().length <= 1){
+			alert("의료법으로 인하여 로그인 후 확인하실 수 있습니다.");
+			location.href="${pageContext.request.contextPath}/login";
+		}else{
+			var link = $(this).prop("href").split("&");
+			var k = link[3].split("=");
+			var keyword = encodeURIComponent(k[1]);
+			location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+		}
+	});
+	
+	//게시판 검색
+    $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/menu06_04${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
+ 	
+    /* $(document).on("click", ".subject > a", function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	}); */
+    
+    $(document).on("click", "#board-pagenation > .inner > a",function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("keyword=");
+		var browser =navigator.userAgent.toLowerCase();
+		if((navigator.appName == 'Netscape' && browser.indexOf('trident') != -1) || (browser.indexOf("msie") != -1)) {
+			location.href=link[0]+"keyword="+encodeURIComponent(link[1]);
+	    }else{
+	    	location.href=link[0]+"keyword="+link[1];
+	    }
+	})
 });	
 </script>
 </head>
@@ -212,71 +254,55 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<!-- BreadCrumb 끝 -->
 		<div class="board-gallery">
 			<ul class="inner">
-				<li class="item">
-					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
-						<em></em>
-						<b> 53세 상하악 구치부 임플란트 크라운 치료후기</b>
-					</a>
-				</li>
-				<li class="item">
-					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
-						<em></em>
-						<b> 62세여성 전악 임플란트환자의 타이거치과에 보내는 감사편지</b>
-					</a>
-				</li>
-				<li class="item">
-					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
-						<em></em>
-						<b> 상악전치부 라미네이트, 구치부 임플란트, 크라운 치료후기(53세 여성)</b>
-					</a>
-				</li>
-				<li class="item">
-					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
-						<em></em>
-						<b> 상악 전치부 라미네이트,구치부 크라운치료후기(45세 여성)</b>
-					</a>
-				</li>
-				<li class="item">
-					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
-						<em></em>
-						<b> 상하악 구치부 크라운,인레이, 미백 치료후기(32세 여성)</b>
-					</a>
-				</li>
-				<li class="item">
-					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
-						<em></em>
-						<b> 상하악 구치부 크라운.인레이 치료후기(33세 남성)</b>
-					</a>
-				</li>
-				<li class="item">
-					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
-						<em></em>
-						<b> 상하악 구치부 인레이보철 치료사례 후기(37세 남성-중국에서 내원하신분)</b>
-					</a>
-				</li>
-				<li class="item">
-					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
-						<em></em>
-						<b> 상하악 크라운,인레이 치료후기(36세 여성)</b>
-					</a>
-				</li>
-				<li class="item">
-					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
-						<em></em>
-						<b> 상하악 구치부 크라운인레이 치료후기(25세 여성)</b>
-					</a>
-				</li>
-				<li class="item">
-					<a href="javascript:alert('로그인 후 이용하실 수 있습니다.');location.href='/login'">
-						<em></em>
-						<b> 하악 인레이, 치주치료환자 치료후기(42세여성)</b>
-					</a>
-				</li>
+				<c:choose>
+				    <c:when test="${fn:length(list) == 0}">
+			        	등록된 게시물이 없습니다.
+				    </c:when>
+				    
+				    <c:otherwise>
+				    	<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+				        <c:forEach var="item" items="${list}">
+							<li class="item">
+								<a href="${pageContext.request.contextPath}/menu06_04read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">
+									<em></em>
+									<b> ${item.title}</b>
+								</a>
+							</li>
+							<c:set var="num" value="${num-1}"></c:set>	
+						</c:forEach>
+				    </c:otherwise> 
+				</c:choose>
 			</ul>
 		</div>
 		
 		<div class="board-page-box">
-			<div class="paging-box"><div id="board-pagenation">	<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="select_key=&amp;input_key=&amp;Scod=BRD05&amp;pCode=528&amp;btap=&amp;page=2 pCode=528">2</a><a href="select_key=&amp;input_key=&amp;Scod=BRD05&amp;pCode=528&amp;btap=&amp;page=3 pCode=528">3</a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="select_key=&amp;input_key=&amp;Scod=BRD05&amp;pCode=528&amp;btap=&amp;page=3 pCode=528"><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>	</div></div></div>
+			<div class="paging-box">
+				<div id="board-pagenation">
+					<div class="inner">
+						<a href="${pageMaker.makeSearch(1)}">
+							<svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> -->
+						</a>
+						<c:if test="${pageMaker.prev}">
+							<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+						</c:if>
+						<c:if test="${!pageMaker.prev}">
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+						</c:if>
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+						</c:forEach>
+						<c:if test="${pageMaker.next}">
+							<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+						</c:if>
+						<c:if test="${!pageMaker.next}">
+							<a href="${pageMaker.makeSearch(pageMaker.cri.page)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+						</c:if>
+						<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}">
+							<svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> -->
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
