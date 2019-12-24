@@ -91,7 +91,15 @@
 <script>
 $(function(){
 	$(".gnb:nth-child(6)").addClass("active");
-	$(".gnb:nth-child(6) .lnb:nth-child(5)").addClass("active"); 
+	$(".gnb:nth-child(6) .lnb:nth-child(5)").addClass("active");
+	
+	$(".btn-group > .inner > ul > .fr > a:not(.btn-del)").click(function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
 });	
 </script>
 </head>
@@ -246,33 +254,33 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 							</tr>
 						</thead>
 						<tr>
-							<td>394</td>
+							<td>${item.no}</td>
 							<td class="subject" data-state="비공개">
-								<p>이가 깨진건지 충치인지 모르겠는데 오늘 상담가능한가요</p>
+								<p>${item.title}</p>
 							</td>
+							<c:if test="${item.state == '상담완료'}"><td><i class="state com">답변완료</i></td></c:if>
+							<c:if test="${item.state != '상담완료'}"><td><i class="state ready">답변대기</i></td></c:if>
 							<td>
-								<i class="state com">답변완료</i>
+								<c:set var="writer" value="${item.name}"></c:set>
+								<c:set var="writer2" value="${fn:substring(name,1,4)}"/>
+								${fn:replace(writer,writer2,"**") }
 							</td>
-							<td>서*영</td>
-							<td>2019-10-17</td>
+							<td>${item.regdate}</td>
 						</tr>
 					</table>
 				
 					<!-- 게시글 상세 내용 -->
-					<div class="board-counsel-content">타이거</div>
+					<div class="board-counsel-content">${item.content}</div>
 					<!-- // 게시글 상세 내용 -->
 					<!-- reply -->
 					
 				
-					<div class="board-counsel-reply">
-						<div class="reply-title">
-							<i>답변</i> 온라인상담에 대한 답변입니다.
+					<c:if test="${item.state == '상담완료'}">
+						<div class="board-counsel-reply">
+							<div class="reply-title"><i>답변</i> 온라인상담에 대한 답변입니다.</div>
+							<div class="reply-txt">${item.reply}</div>
 						</div>
-						<div class="reply-txt">
-							타이거
-						</div>
-						
-					</div><!-- reply end -->
+					</c:if><!-- reply end -->
 				</form>
 			</div>
 		
@@ -280,9 +288,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="btn-group-right">
 				<div class="inner">
 					<div class="brick">
-						<a href="javascript:inquire_it('delete', '')" class="btn btn-del">삭제</a>
-						<a href="" class="btn btn-update">수정</a>
-						<a href="" class="btn btn-list">목록으로</a>
+						<a href="${pageContext.request.contextPath}/menu06_05delete/${item.no}" class="btn btn-del">삭제</a>
+						<a href="${pageContext.request.contextPath}/menu06_05update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-update">수정</a>
+						<a href="${pageContext.request.contextPath}/menu06_05" class="btn btn-list">목록으로</a>
 					</div>
 				</div>
 			</div>

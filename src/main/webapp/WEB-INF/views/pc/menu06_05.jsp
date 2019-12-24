@@ -238,115 +238,33 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 							<th>작성일</th>
 						</tr>
 					</thead>
-					<tr>
-						<td>327</td>
-						<td class="subject" data-state="비공개">
-				
-							<a href="">이가 깨진건지 충치인지 모르겠는데 오늘 상담가능한가요 <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
-						</td>
-						<td><i class="state com">답변완료</i></td>
-						<td>서*영</td>
-						<td>2019-10-17</td>
-					</tr>
-				
-					<tr>
-						<td>326</td>
-						<td class="subject" data-state="비공개">
-				
-							<a href="">예전에 떼운게 떨어졌는데 비용이 어떻게되나요? <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
-						</td>
-						<td><i class="state com">답변완료</i></td>
-						<td>김*미</td>
-						<td>2019-10-15</td>
-					</tr>
-				
-					<tr>
-						<td>325</td>
-						<td class="subject" data-state="비공개">
-				
-							<a href="">앞니 한대가 부러졌는데 꼭 임플란트를 해야하나요? <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
-						</td>
-						<td><i class="state com">답변완료</i></td>
-						<td>윤*태</td>
-						<td>2019-10-14</td>
-					</tr>
-				
-					<tr>
-						<td>324</td>
-						<td class="subject" data-state="비공개">
-				
-							<a href="">사랑니쪽이 많이 부었는데 오늘 뺄수있나요? <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
-						</td>
-						<td><i class="state com">답변완료</i></td>
-						<td>이*연</td>
-						<td>2019-10-10</td>
-					</tr>
-				
-					<tr>
-						<td>323</td>
-						<td class="subject" data-state="비공개">
-				
-							<a href="">오늘 전체 임플란트 상담가능한가요? <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
-						</td>
-						<td><i class="state com">답변완료</i></td>
-						<td>김*미</td>
-						<td>2019-10-08</td>
-					</tr>
-				
-					<tr>
-						<td>322</td>
-						<td class="subject" data-state="비공개">
-				
-							<a href="">이가 시리고 아픈데 신경치료해야하나요? <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
-						</td>
-						<td><i class="state com">답변완료</i></td>
-						<td>임*연</td>
-						<td>2019-10-07</td>
-					</tr>
-				
-					<tr>
-						<td>321</td>
-						<td class="subject" data-state="비공개">
-				
-							<a href="">앞니상담하고 싶은데 몇시에 가능한가요? <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
-						</td>
-						<td><i class="state com">답변완료</i></td>
-						<td>서*희</td>
-						<td>2019-10-05</td>
-					</tr>
-				
-					<tr>
-						<td>320</td>
-						<td class="subject" data-state="비공개">
-				
-							<a href="">입천장쪽으로 잇몸이 많이 부었는데요 <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
-						</td>
-						<td><i class="state com">답변완료</i></td>
-						<td>정*빈</td>
-						<td>2019-10-04</td>
-					</tr>
-				
-					<tr>
-						<td>319</td>
-						<td class="subject" data-state="비공개">
-				
-							<a href="">부모님이 다른병원에서 임플란트한게 흔들리는데 상담가능한가요? <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
-						</td>
-						<td><i class="state com">답변완료</i></td>
-						<td>서*민</td>
-						<td>2019-10-02</td>
-					</tr>
-				
-					<tr>
-						<td>318</td>
-						<td class="subject" data-state="비공개">
-				
-							<a href="">예전에했던 라미네이트가 떨어졌는데 상담가능한가요? <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
-						</td>
-						<td><i class="state com">답변완료</i></td>
-						<td>이*민</td>
-						<td>2019-10-01</td>
-					</tr>
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	<tr>
+				        		<td colspan="5" style="text-align: center;">등록된 게시물이 없습니다.</td>
+				        	</tr>
+					    </c:when>
+					    <c:otherwise>
+					    	<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+					        <c:forEach var="item" items="${list}">
+								<tr>
+									<td>${num}</td>
+									<td class="subject" data-state="비공개">
+										<a href="${pageContext.request.contextPath}/menu06_05pwChk${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}">${item.title} <img src="${pageContext.request.contextPath}/resources/img/common/lock.gif" alt="비공개" class="secret"></a>
+									</td>
+									<c:if test="${item.state == '상담완료'}"><td><i class="state com">답변완료</i></td></c:if>
+									<c:if test="${item.state != '상담완료'}"><td><i class="state ready">답변대기</i></td></c:if>
+									<td>
+										<c:set var="writer" value="${item.name}"></c:set>
+										<c:set var="writer2" value="${fn:substring(name,1,4)}"/>
+										${fn:replace(writer,writer2,"**") }
+									</td>
+									<td>${item.regdate}</td>
+								</tr>
+								<c:set var="num" value="${num-1}"></c:set>	
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</table>
 			</div>
 		
@@ -354,7 +272,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="btn-group-right">
 				<div class="inner">
 					<div class="brick">
-						<a href="" class="btn btn-list">글쓰기</a>
+						<a href="${pageContext.request.contextPath}/menu06_05write" class="btn btn-list">글쓰기</a>
 					</div>
 				</div>
 			</div>
@@ -362,7 +280,31 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		
 			<!-- 페이징 시작 -->
-			<div id="board-pagenation">	<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=2 ">2</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=3 ">3</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=4 ">4</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=5 ">5</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=6 ">6</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=7 ">7</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=8 ">8</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=9 ">9</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=10 ">10</a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=11 "><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?pCode=516&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=33 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>	</div></div>	<!-- 페이징 끝 -->
+			<div id="board-pagenation">
+				<div class="inner">
+					<a href="${pageMaker.makeSearch(1)}">
+						<svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> -->
+					</a>
+					<c:if test="${pageMaker.prev}">
+						<a href="${pageMaker.makeSearch(pageMaker.startPage-1)}"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+					</c:if>
+					<c:if test="${!pageMaker.prev}">
+						<a href="${pageMaker.makeSearch(pageMaker.cri.page) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+					</c:if>
+					<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+						<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+					</c:forEach>
+					<c:if test="${pageMaker.next}">
+						<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+					</c:if>
+					<c:if test="${!pageMaker.next}">
+						<a href="${pageMaker.makeSearch(pageMaker.cri.page)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+					</c:if>
+					<a href="${pageMaker.makeSearch(pageMaker.finalPage+1)}">
+						<svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> -->
+					</a>
+				</div>
+			</div><!-- 페이징 끝 -->
 		
 			
 			<div class="search-box">

@@ -1,26 +1,38 @@
 package com.webaid.controller;
 
+import java.io.File;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mobile.device.Device;
 import org.springframework.mobile.device.DeviceUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
 import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
+import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
@@ -45,6 +57,9 @@ public class HomeController {
 	
 	@Autowired
 	private ReviewService rService;
+	
+	@Autowired
+	private AdviceService aService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
@@ -399,15 +414,67 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/menu06_05", method=RequestMethod.GET)
-	public String menu06_05Get(){
+	public String menu06_05Get(@ModelAttribute("cri") SearchCriteria cri, Model model){
 		logger.info("menu06_05 get");
+		
+		List<AdviceVO> list = aService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+		pageMaker.setFinalPage(aService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "pc/menu06_05";
 	}
 	
+	@RequestMapping(value="/menu06_05pwChk", method=RequestMethod.GET)
+	public String menu06_05pwChk(int no, @ModelAttribute("cri") SearchCriteria cri, Model model){
+		logger.info("menu06_05pwChk get");
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+
+		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("no", no);
+		
+		return "pc/menu06_05pwChk";
+	}
+	
+	@RequestMapping(value="/menu06_05pwChk", method=RequestMethod.POST)
+	public ResponseEntity<String> menu06_05pwChkPost(@RequestBody Map<String, String> info){
+		logger.info("menu06_05pwChk post");
+		
+		ResponseEntity<String> entity = null;
+		AdviceVO vo = aService.selectOne(Integer.parseInt(info.get("no")));
+		
+		if(vo.getPw().equals(info.get("pw"))){
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		}else{
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
+		
+		return entity;
+	}
+	
 	@RequestMapping(value="/menu06_05read", method=RequestMethod.GET)
-	public String menu06_05read(){
+	public String menu06_05read(int no, @ModelAttribute("cri") SearchCriteria cri, Model model){
 		logger.info("menu06_05read get");
+		
+		AdviceVO vo = aService.selectOne(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "pc/menu06_05Read";
 	}
@@ -419,10 +486,161 @@ public class HomeController {
 		return "pc/menu06_05Write";
 	}
 	
+	@RequestMapping(value="/menu06_05write", method=RequestMethod.POST)
+	public String menu06_05writePost(MultipartHttpServletRequest mtfReq, Model model){
+		logger.info("menu06_05write post");
+		
+		AdviceVO vo = new AdviceVO();
+		
+		vo.setAdvice_type(mtfReq.getParameter("advice_type"));
+		vo.setName(mtfReq.getParameter("name"));
+		vo.setPhone(mtfReq.getParameter("phone"));
+		vo.setRegdate(mtfReq.getParameter("regdate"));
+		vo.setEmail("");
+		vo.setState("상담예정");
+		vo.setSecret(mtfReq.getParameter("secret"));
+		vo.setPw(mtfReq.getParameter("m_pass"));
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setReply("");
+		vo.setMemo("");
+		vo.setIp(mtfReq.getParameter("ip"));
+		vo.setAccess_url(mtfReq.getParameter("access_url"));
+		vo.setReply_date("");
+		vo.setQuick_state("x");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadAdvice/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			vo.setUpload_origin(fileName);
+			vo.setUpload_stored(storedFileName);
+			
+			try {
+				mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}//이미지 업로드 끝
+		
+		aService.insert(vo);
+		
+		/*SmsSendUtil ssu = new SmsSendUtil();
+		ssu.sendSMS("온라인 상담", mtfReq.getParameter("name"), mtfReq.getParameter("phone"));*/
+		
+		return "redirect:/menu06_05";
+	}
+	
 	@RequestMapping(value="/menu06_05update", method=RequestMethod.GET)
-	public String menu06_05updateGet(){
+	public String menu06_05updateGet(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req){
 		logger.info("menu06_05update get");
 		
+		AdviceVO vo = aService.selectOne(no);
+
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "pc/menu06_05Update";
+	}
+	
+	@RequestMapping(value="/menu06_05update", method=RequestMethod.POST)
+	public String menu06_05updatePost(MultipartHttpServletRequest mtfReq, int page, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rtts){
+		logger.info("menu06_05update post");
+		
+		//이미지 업로드
+		String innerUploadPath = "resources/uploadAdvice/";
+		String path = (mtfReq.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
+		String fileName = "";
+		String storedFileName = "";
+		
+		Iterator<String> files = mtfReq.getFileNames();
+		mtfReq.getFileNames();
+		while(files.hasNext()){
+			String uploadFile = files.next();
+			
+			MultipartFile mFile = mtfReq.getFile(uploadFile);
+			fileName = mFile.getOriginalFilename();
+			if(fileName.length() == 0){
+				storedFileName = "";
+			}else{
+				storedFileName = System.currentTimeMillis()+"_"+fileName;
+			}
+			
+			try {
+				//mFile.transferTo(new File(path+storedFileName));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		//이미지 업로드 끝
+		
+		String uploadState = mtfReq.getParameter("uploadState");
+		
+		
+		AdviceVO vo = new AdviceVO();
+		AdviceVO prevVO = aService.selectOne(Integer.parseInt(mtfReq.getParameter("no")));
+		
+		vo.setNo(prevVO.getNo());
+		vo.setAdvice_type(mtfReq.getParameter("advice_type"));
+		vo.setName(mtfReq.getParameter("name"));
+		vo.setPhone(mtfReq.getParameter("phone"));
+		vo.setEmail(prevVO.getEmail());
+		vo.setState(prevVO.getState());
+		vo.setSecret(prevVO.getSecret());
+		vo.setTitle(mtfReq.getParameter("title"));
+		vo.setContent(mtfReq.getParameter("content"));
+		vo.setReply(prevVO.getReply());
+		vo.setReply_date(prevVO.getReply_date());
+		vo.setMemo(prevVO.getMemo());
+		
+		if(uploadState.equals("o")){
+			vo.setUpload_origin(fileName);
+			vo.setUpload_stored(storedFileName);
+		}else{
+			vo.setUpload_origin(prevVO.getUpload_origin());
+			vo.setUpload_stored(prevVO.getUpload_stored());
+		}
+		
+		aService.update(vo);
+		
+		rtts.addAttribute("no", mtfReq.getParameter("no"));
+
+		PageMaker pageMaker = new PageMaker();
+
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(page);
+		pageMaker.setTotalCount(aService.listSearchCount(cri));
+
+		rtts.addAttribute("page", page);
+		return "redirect:/menu06_05";
+	}
+	
+	@RequestMapping(value="/menu06_05delete/{no}", method=RequestMethod.GET)
+	public String menu06_05delete(@PathVariable("no") int no){
+		logger.info("menu06_05 delete");
+		
+		aService.delete(no);
+		
+		return "redirect:/menu06_05";
 	}
 }
