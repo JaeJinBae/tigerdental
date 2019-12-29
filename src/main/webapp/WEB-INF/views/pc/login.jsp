@@ -247,22 +247,22 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div id="login-form">
 			<div class="inner">
 				<form name="member" id="member" method="post" action="" onsubmit="return member_login_it(this)">
-				<input type="hidden" name="mode" value="login">
-				<input type="hidden" name="distinction" value="proc">
-				<input type="hidden" name="url" value="">
-				<input type="hidden" name="backpage" value="/login">
-				<!-- 입력 폼 -->
-				<div class="login">
-					<div>
-						<label for="m_id">아이디</label>
-						<input id="m_id" name="m_id" type="text" data-name="아이디" placeholder="아이디를 입력하세요" required="">
+					<input type="hidden" name="mode" value="login">
+					<input type="hidden" name="distinction" value="proc">
+					<input type="hidden" name="url" value="">
+					<input type="hidden" name="backpage" value="/login">
+					<!-- 입력 폼 -->
+					<div class="login">
+						<div>
+							<label for="m_id">아이디</label>
+							<input id="m_id" name="m_id" type="text" data-name="아이디" placeholder="아이디를 입력하세요" required="">
+						</div>
+						<div>
+							<label for="m_pass">비밀번호</label>
+							<input id="m_pass" name="m_pass" type="password" data-name="비밀번호" placeholder="비밀번호를 입력하세요" required="">
+						</div>
+						<button type="button" id="loginBtn">로그인</button>
 					</div>
-					<div>
-						<label for="m_pass">비밀번호</label>
-						<input id="m_pass" name="m_pass" type="password" data-name="비밀번호" placeholder="비밀번호를 입력하세요" required="">
-					</div>
-					<button type="button" id="loginBtn">로그인</button>
-				</div>
 				</form>
 				<!-- 계정 찾기 및 회원가입 버튼 -->
 				<div class="member">
