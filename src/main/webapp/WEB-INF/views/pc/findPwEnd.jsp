@@ -89,9 +89,9 @@
 <!-- ***********************************************************************************************	-->
 <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1em}.svg-inline--fa.fa-stack-2x{height:2em;width:2em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}</style>
 <script>
-function findId(info){
+function findPw(info){
 	$.ajax({
-		url:"${pageContext.request.contextPath}/findId",
+		url:"${pageContext.request.contextPath}/findPw",
 		type:"POST",
 		contentType : "application/json; charset=UTF-8",
 		dataType:"text",
@@ -103,6 +103,7 @@ function findId(info){
 				
 			}else{
 				$("#no").val(json);
+				//alert("타이거치과의원 웹사이트 가입 시 등록한 이메일로 임시비밀번호를 보내드립니다.\n이메일에서 임시비밀번호를 확인 후 로그인 하여 비밀번호를 변경해주시기 바랍니다.")
 				$("#f1").submit();
 				
 			}
@@ -118,6 +119,7 @@ $(function(){
 	$(".gnb:nth-child(1) .lnb:nth-child(1)").addClass("active");
 	
 	$("#btnSubmit").click(function(){
+		var id = $("#m_id").val();
 		var name = $("#m_name").val();
 		var email1 = $("#m_email1").val();
 		var email2 = $("#m_email2").val();
@@ -128,8 +130,8 @@ $(function(){
 		var birth3 = $("#birth_date").val();
 		birth3 = Number(birth3)<10 ? "0"+birth3 : birth3;
 		var birth = birth1+"-"+birth2+"-"+birth3;
-		var info = {"name":name, "email":email, "birth":birth};
-		findId(info);
+		var info = {"id":id, "name":name, "email":email, "birth":birth};
+		findPw(info);
 	});
 });	
 </script>
@@ -220,9 +222,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="멤버쉽" data-menu-second="아이디찾기">
+		<div id="sub-visual" data-menu="멤버쉽" data-menu-second="비밀번호찾기 결과">
 			<div class="inner">
-					<h2>아이디찾기</h2>
+					<h2>비밀번호찾기 결과</h2>
 				</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -241,7 +243,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 					</li>
 					<!-- 2차 -->
 					<li>
-						<button>아이디찾기</button>
+						<button>비밀번호찾기 결과</button>
 					</li>
 				</ul>
 			</div>
@@ -250,77 +252,35 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		<!-- 타이틀 -->
 		<div class="member-title">
-			아이디찾기</div>
+			비밀번호찾기 결과</div>
 		
 		<!-- 아이디 찾기 폼 시작 -->
-		<div id="find-account">
+		<div id="member-account">
 			<div class="inner">
-				<div class="find-account-nav">
-					<a href="${pageContext.request.contextPath}/findId" class="active">아이디 찾기</a>
-					<a href="${pageContext.request.contextPath}/findPw">비밀번호 찾기</a>
+				<div class="member-account-cap">
+					<div class="member-account-info">타이거치과의원 웹사이트 가입 시 등록한 이메일로 임시비밀번호를 보내드립니다.</div>
+					<p>
+						이메일에서 임시비밀번호를 확인 후 로그인 하여 비밀번호를 변경해주시기 바랍니다.
+					</p>
 				</div>
-				<form name="f1" id="f1" method="post" action="${pageContext.request.contextPath}/findIdEnd">
-					<input type="hidden" name="no" id="no">
-				</form>
-				<div class="find-account-form">
-					<div>
-						<label for="m_name">이름</label>
-						<input type="text" name="m_name" id="m_name" data-name="이름" required="">
-					</div>
-					<div>
-						<label for="birth_year">생년월일</label>
-						<select name="birth_year" id="birth_year" data-name="생년월일" required="">
-							<option value="" selected="">선택</option>
-							<c:set var="now" value="<%=new java.util.Date()%>" />
-							<fmt:formatDate value="${now}" pattern="yyyy" var="yearStart"/> 
-							<c:forEach begin="0" end="100" var="result" step="1">
-							<option value="<c:out value="${yearStart - result}" />" <c:if test="${(yearStart - result) == searchVO.bsnsYear}"> selected="selected"</c:if>><c:out value="${yearStart - result}" /></option>
-							</c:forEach>
-						</select><i>년</i>
-						<select name="birth_month" id="birth_month" data-name="생년월일" required="">
-							<option value="" selected="">선택</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
-						</select><i>월</i>
-						<select name="birth_date" id="birth_date" data-name="생년월일" required="">
-							<option value="" selected="">선택</option>
-							<c:forEach var="item" begin="1" end="31" step="1">
-									<option value="${item}">${item}</option>
-								</c:forEach>
-						</select><i>일</i>
-					</div>
-					<div>
-						<label for="m_email1">이메일</label>
-						<input type="text" name="m_email1" id="m_email1" data-name="이메일" required=""><i>@</i>
-						<input type="text" name="m_email2" id="m_email2" data-name="이메일" required="">
-						<select name="m_emailcode" id="m_emailcode" title="이메일의 계정">
-							<option value="">직접입력</option>
-							<option value="naver.com">naver.com</option>
-							<option value="daum.net">daum.net</option>
-							<option value="gmail.com">gmail.com</option>
-							<option value="yahoo.co.kr">yahoo.co.kr</option>
-							<option value="yahoo.com">yahoo.com</option>
-							<option value="nate.com">nate.com</option>
-							<option value="paran.com">paran.com</option>
-							<option value="google.com">google.com</option>
-							<option value="empas.com">empas.com</option>
-							<option value="hotmail.com">hotmail.com</option>
-							<option value="msn.com">msn.com</option>
-							<option value="korea.com">korea.com</option>
-							<option value="dreamwiz.com">dreamwiz.com</option>
-							<option value="hanafos.com">hanafos.com</option>
-							<option value="freechal.com">freechal.com</option>
-							<option value="chol.com">chol.com</option>
-							<option value="empal.com">empal.com</option>
-							<option value="lycos.com">lycos.com</option>
-							<option value="netian.com">netian.com</option>
-						</select>
-					</div>
-					<button type="button" id="btnSubmit">아이디 찾기</button>
-				</div>
-				
+				<table class="member-account-list">
+					<tr>
+						<th>이메일</th>
+						<td>${item.email}</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 		<!-- 아이디 찾기 폼 끝 -->
 		
+		<div class="btn-group-center">
+			<div class="inner">
+				<div class="brick">
+					<button type="button" class="btn btn-submit" onclick="location.href='${pageContext.request.contextPath}/'">메인으로</button>
+					<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/login'">로그인</button>
+				</div>
+			</div>
+		</div>
 		
 
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->

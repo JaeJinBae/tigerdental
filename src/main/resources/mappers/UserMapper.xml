@@ -17,7 +17,7 @@
 	</select>
 	
 	<select id="selectByIdNameEmail" resultType="UserVO">
-		select * from user where id=#{id} and name=#{name} and email=#{email}
+		select * from user where id=#{id} and name=#{name} and email=#{email} and birth=#{birth}
 	</select>
 	
 	<insert id="insert">

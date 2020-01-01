@@ -294,6 +294,7 @@ public class HomeController {
 		searchVO.setId(info.get("id"));
 		searchVO.setName(info.get("name"));
 		searchVO.setEmail(info.get("email"));
+		searchVO.setBirth(info.get("birth"));
 		
 		UserVO vo = uService.selectByIdNameEmail(searchVO);
 		if(vo == null){
@@ -337,8 +338,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/findPwEnd", method=RequestMethod.POST)
-	public String findPwEnd(HttpServletRequest req, Model model){
-		
+	public String findPwEnd(HttpServletRequest req, Model model, String no){
+		UserVO vo = uService.selectOne(Integer.parseInt(no));
+		model.addAttribute("item", vo);
 		return "pc/findPwEnd";
 	}
 	
