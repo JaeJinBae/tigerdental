@@ -8,7 +8,7 @@ import com.webaid.domain.UserVO;
 public interface UserDao {
 	public UserVO selectOne(int no);
 	public UserVO selectById(String id);
-	public UserVO selectByNameEmail(UserVO vo);
+	public UserVO selectByNameEmailBirth(UserVO vo);
 	public UserVO selectByIdNameEmail(UserVO vo);
 	public void insert(UserVO vo);
 	public void update(UserVO vo);

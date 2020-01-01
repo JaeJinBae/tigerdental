@@ -28,8 +28,8 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public UserVO selectByNameEmail(UserVO vo) {
-		return session.selectOne(namespace + ".selectByNameEmail", vo);
+	public UserVO selectByNameEmailBirth(UserVO vo) {
+		return session.selectOne(namespace + ".selectByNameEmailBirth", vo);
 	}
 
 	@Override

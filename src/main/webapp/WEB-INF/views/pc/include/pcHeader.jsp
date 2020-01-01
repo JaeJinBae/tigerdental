@@ -13,8 +13,15 @@
 
 		<ul class="header-group-member">
 			<li>
-				<img src="${pageContext.request.contextPath}/resources/img/common/theme/member_arrow.png" alt=""><a href="${pageContext.request.contextPath}/login" class="login trn">LOGIN</a>
-				<img src="${pageContext.request.contextPath}/resources/img/common/theme/member_arrow.png" alt=""><a href="${pageContext.request.contextPath}/join" class="join trn">JOIN</a>
+				<input id="session_id" type="hidden" value="${sessionScope.id}">
+				<c:if test="${empty sessionScope.id}">
+					<img src="${pageContext.request.contextPath}/resources/img/common/theme/member_arrow.png" alt=""><a href="${pageContext.request.contextPath}/login" class="login trn">LOGIN</a>
+					<img src="${pageContext.request.contextPath}/resources/img/common/theme/member_arrow.png" alt=""><a href="${pageContext.request.contextPath}/join" class="join trn">JOIN</a>
+				</c:if>
+				<c:if test="${!empty sessionScope.id}">
+					<img src="${pageContext.request.contextPath}/resources/img/common/theme/member_arrow.png" alt=""><a href="${pageContext.request.contextPath}/logout" class="logout trn">LOGOUT</a>
+					<img src="${pageContext.request.contextPath}/resources/img/common/theme/member_arrow.png" alt=""><a href="${pageContext.request.contextPath}/myInfo" class="mypage trn">MYPAGE</a>
+				</c:if>
 				<a href="https://www.facebook.com/stigerdental/" target="_blank" data-menu="페이스북"><img src="${pageContext.request.contextPath}/resources/img/common/theme/sns01.png" alt=""></a>
 				<a href="https://www.instagram.com/tigerdental/" target="_blank" data-menu="인스타그램"><img src="${pageContext.request.contextPath}/resources/img/common/theme/sns03.png" alt=""></a>
 				<a href="https://blog.naver.com/tigerdental" target="_blank" data-menu="블로그"><img src="${pageContext.request.contextPath}/resources/img/common/theme/sns02.png" alt=""></a>

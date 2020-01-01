@@ -12,8 +12,8 @@
 		select * from user where id=#{id}
 	</select>
 	
-	<select id="selectByNameEmail" resultType="UserVO">
-		select * from user where name=#{name} and email=#{email}
+	<select id="selectByNameEmailBirth" resultType="UserVO">
+		select * from user where name=#{name} and email=#{email} and birth=#{birth}
 	</select>
 	
 	<select id="selectByIdNameEmail" resultType="UserVO">

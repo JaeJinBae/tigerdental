@@ -256,10 +256,12 @@ public class HomeController {
 	@RequestMapping(value="/findId", method=RequestMethod.POST)
 	public ResponseEntity<String> findId(@RequestBody Map<String, String> info){
 		ResponseEntity<String> entity = null;
+		System.out.println(info);
 		UserVO searchVO = new UserVO();
 		searchVO.setName(info.get("name"));
 		searchVO.setEmail(info.get("email"));
-		UserVO vo = uService.selectByNameEmail(searchVO);
+		searchVO.setBirth(info.get("birth"));
+		UserVO vo = uService.selectByNameEmailBirth(searchVO);
 		if(vo == null){
 			entity = new ResponseEntity<String>("no", HttpStatus.OK);
 		}else{
