@@ -10,6 +10,7 @@ public class UserVO {
 	private String birth;
 	private String gender;
 	private String email;
+	private String addr;
 	private String regdate;
 	private int login_cnt;
 	private String withdraw;
@@ -93,6 +94,14 @@ public class UserVO {
 		this.email = email;
 	}
 
+	public String getAddr() {
+		return addr;
+	}
+
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+
 	public String getRegdate() {
 		return regdate;
 	}
@@ -144,9 +153,9 @@ public class UserVO {
 	@Override
 	public String toString() {
 		return "UserVO [no=" + no + ", id=" + id + ", name=" + name + ", lv=" + lv + ", pw=" + pw + ", phone=" + phone
-				+ ", birth=" + birth + ", gender=" + gender + ", email=" + email + ", regdate=" + regdate
-				+ ", login_cnt=" + login_cnt + ", withdraw=" + withdraw + ", pw_change_state=" + pw_change_state
-				+ ", reason=" + reason + ", withdraw_date=" + withdraw_date + "]";
+				+ ", birth=" + birth + ", gender=" + gender + ", email=" + email + ", addr=" + addr + ", regdate="
+				+ regdate + ", login_cnt=" + login_cnt + ", withdraw=" + withdraw + ", pw_change_state="
+				+ pw_change_state + ", reason=" + reason + ", withdraw_date=" + withdraw_date + "]";
 	}
 
 }

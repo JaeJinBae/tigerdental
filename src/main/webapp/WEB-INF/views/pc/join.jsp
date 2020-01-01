@@ -166,6 +166,10 @@ $(function(){
 		var email2 = $("#m_email2").val();
 		var email = email1+"@"+email2;
 		
+		var addr1 = $("#m_addr1").val();
+		var addr2 = $("#m_addr2").val();
+		var addr = addr1+addr2;
+		
 		if(agree == false){
 			alert("개인정보취급방침 항목은 필수입니다.");
 			return false;
@@ -219,7 +223,7 @@ $(function(){
 		d = (d>9?'':'0')+d;
 		var regdate = y+"-"+m+"-"+d;
 		
-		var info = {"name":name, "id":id, "pw":pw, "phone":phone, "gender":gender, "email":email, "regdate":regdate};
+		var info = {"name":name, "id":id, "pw":pw, "phone":phone, "gender":gender, "email":email, "addr":addr, "regdate":regdate};
 		userRegister(info);
 	});
 });	
@@ -422,7 +426,8 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 							<div class="join-form-list">
 								<label for="m_solar1">양력음력</label>
 								<div>
-									<input type="radio" name="m_solar" id="m_solar1" value="1" data-name="양력음력" required=""> <label for="m_solar1"><i></i>양력</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="m_solar" id="m_solar2" value="2" data-name="양력음력" required=""> <label for="m_solar2"><i></i>음력</label>&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="m_solar" id="m_solar1" value="1" data-name="양력음력" required=""> <label for="m_solar1"><i></i>양력</label>&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="m_solar" id="m_solar2" value="2" data-name="양력음력" required=""> <label for="m_solar2"><i></i>음력</label>&nbsp;&nbsp;&nbsp;
 								</div>
 							</div>
 							<div class="join-form-list">
@@ -441,7 +446,8 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 							<div class="join-form-list">
 								<label for="m_sex1">성별</label>
 								<div>
-									<input type="radio" name="m_sex" id="m_sex1" value="M" data-name="성별" required=""> <label for="m_sex1"><i></i>남자</label>&nbsp;&nbsp;&nbsp;<input type="radio" name="m_sex" id="m_sex2" value="F" data-name="성별" required=""> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="m_sex" id="m_sex1" value="M" data-name="성별" required=""> <label for="m_sex1"><i></i>남자</label>&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="m_sex" id="m_sex2" value="F" data-name="성별" required=""> <label for="m_sex2"><i></i>여자</label>&nbsp;&nbsp;&nbsp;
 								</div>
 							</div>
 							<div class="join-form-list">

@@ -21,7 +21,7 @@
 	</select>
 	
 	<insert id="insert">
-		insert into user values(0, #{id}, #{name}, #{lv}, #{pw}, #{phone}, #{birth}, #{gender}, #{email}, #{regdate}, #{login_cnt}, 'x', 'o', '', '')
+		insert into user values(0, #{id}, #{name}, #{lv}, #{pw}, #{phone}, #{birth}, #{gender}, #{email}, #{addr}, #{regdate}, #{login_cnt}, 'x', 'o', '', '')
 	</insert>
 	
 	<update id="update">
