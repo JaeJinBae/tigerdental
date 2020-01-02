@@ -244,19 +244,19 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div class="pcode50406">
 			<ul class="inner">
 				<li>
-					<a href="/505/?pCode=505"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_01.png" alt=""></a>
+					<a href="${pageContext.request.contextPath}/menu03_02"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_01.png" alt=""></a>
 					<span>자세히보기 +</span>
 				</li>
 				<li>
-					<a href="/506/?pCode=506"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_02.png" alt=""></a>
+					<a href="${pageContext.request.contextPath}/menu03_03"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_02.png" alt=""></a>
 					<span>자세히보기 +</span>
 				</li>
 				<li>
-					<a href="/507/?pCode=507"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_03.png" alt=""></a>
+					<a href="${pageContext.request.contextPath}/menu03_04"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_03.png" alt=""></a>
 					<span>자세히보기 +</span>
 				</li>
 				<li>
-					<a href="/508/?pCode=508"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_04.png" alt=""></a>
+					<a href="${pageContext.request.contextPath}/menu03_05"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_04.png" alt=""></a>
 					<span>자세히보기 +</span>
 				</li>
 			</ul>

@@ -214,7 +214,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="automation">
 				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_img_01.png" alt="" usemap="#pcode50401">
 				<map name="pcode50401">
-				  <area shape="rect" coords="255,200,693,455" href="javascript:void(0);" class="pop" rel="media-popup03">
+				  <area shape="rect" coords="352,276,950,624" href="javascript:void(0);" class="pop" rel="media-popup03">
 				</map>
 			</div>
 		</div>
@@ -234,9 +234,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		<div class="pcode50404">
 			<div class="full">
-				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_bg_04.png" alt="" usemap="pcode50404">
+				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_bg_04.png" alt="" usemap="#pcode50404">
 				<map name="pcode50404">
-				  <area shape="rect" coords="465,114,545,194" href="javascript:void(0);" class="pop" rel="media-popup02">
+				  <area shape="rect" coords="636,155,752,271" href="javascript:void(0);" class="pop" rel="media-popup02">
 				</map>
 			</div>
 		</div>
@@ -256,19 +256,19 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div class="pcode50406">
 			<ul class="inner">
 				<li>
-					<a href="/505/?pCode=505"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_01.png" alt=""></a>
+					<a href="${pageContext.request.contextPath}/menu03_02"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_01.png" alt=""></a>
 					<span>자세히보기 +</span>
 				</li>
 				<li>
-					<a href="/506/?pCode=506"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_02.png" alt=""></a>
+					<a href="${pageContext.request.contextPath}/menu03_03"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_02.png" alt=""></a>
 					<span>자세히보기 +</span>
 				</li>
 				<li>
-					<a href="/507/?pCode=507"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_03.png" alt=""></a>
+					<a href="${pageContext.request.contextPath}/menu03_04"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_03.png" alt=""></a>
 					<span>자세히보기 +</span>
 				</li>
 				<li>
-					<a href="/508/?pCode=508"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_04.png" alt=""></a>
+					<a href="${pageContext.request.contextPath}/menu03_05"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/504_icon_04.png" alt=""></a>
 					<span>자세히보기 +</span>
 				</li>
 			</ul>
