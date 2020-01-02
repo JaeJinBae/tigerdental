@@ -234,31 +234,31 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		</div>
 		
 		<map name="pcode49101">
-		  <area shape="rect" coords="652,272,1093,332" href="/516/?pCode=516">						<!-- 카카오톡상담 -->		
+		  <area shape="rect" coords="652,272,1093,332" href="${pageContext.request.contextPath}/menu06_05">						<!-- 카카오톡상담 -->		
 		</map>
 		
 		
 		<map name="pcode49102">
 			<!-- 임플란트 -->
-			<area shape="rect" coords="74,287,177,304" href="/494/?pCode=494" title="HERI 임플란트">
-			<area shape="rect" coords="74,316,180,334" href="/495/?pCode=495" title="1DAY 임플란트">
-			<area shape="rect" coords="73,345,192,366" href="/496/?pCode=496" title="자외선 임플란트">
-			<area shape="rect" coords="73,376,249,396" href="/497/?pCode=497" title="3D 네비게이션 임플란트">
+			<area shape="rect" coords="18,254,125,275" href="${pageContext.request.contextPath}/menu02_02" title="HERI 임플란트">
+			<area shape="rect" coords="18,285,128,306" href="${pageContext.request.contextPath}/menu02_05" title="1DAY 임플란트">
+			<area shape="rect" coords="20,315,140,338" href="${pageContext.request.contextPath}/menu02_04" title="자외선 임플란트">
+			<area shape="rect" coords="17,344,195,369" href="${pageContext.request.contextPath}/menu02_03" title="3D 네비게이션 임플란트">
 		
 			<!-- 치아교정 -->
-			<area shape="rect" coords="404,284,509,305" href="/html/?pCode=517" title="퀵 디지털 교정">
+			<area shape="rect" coords="354,252,464,279" href="${pageContext.request.contextPath}/menu04_02" title="퀵 디지털 교정">
 			
 			<!-- 심미치료 -->
-			<area shape="rect" coords="764,286,837,306" href="/505/?pCode=505" title="티라미 1.5">
-			<area shape="rect" coords="764,317,837,336" href="/506/?pCode=506" title="티세라 1.5">
-			<area shape="rect" coords="764,346,837,364" href="/507/?pCode=507" title="타지르 1.5">
-			<area shape="rect" coords="764,376,880,398" href="/508/?pCode=508" title="오스템 치아미백">
+			<area shape="rect" coords="713,252,791,276" href="${pageContext.request.contextPath}/menu03_02" title="티라미 1.5">
+			<area shape="rect" coords="713,285,788,306" href="${pageContext.request.contextPath}/menu03_03" title="티세라 1.5">
+			<area shape="rect" coords="716,315,789,336" href="${pageContext.request.contextPath}/menu03_04" title="타지르 1.5">
+			<area shape="rect" coords="713,344,836,367" href="${pageContext.request.contextPath}/menu03_05" title="오스템 치아미백">
 		
 			<!-- 예방 및 일반진료 -->
-			<area shape="rect" coords="1104,287,1229,326" href="/510/?pCode=510" title="OBD진단(치주질환세균분석)">
-			<area shape="rect" coords="1105,338,1217,379" href="/511/?pCode=511" title="OBT치료(박테리아 테라피)">
-			<area shape="rect" coords="1106,390,1171,409" href="/512/?pCode=512" title="충치치료">
-			<area shape="rect" coords="1106,420,1187,439" href="/513/?pCode=513" title="사랑니발치">
+			<area shape="rect" coords="1050,254,1181,299" href="${pageContext.request.contextPath}/menu05_02" title="OBD진단(치주질환세균분석)">
+			<area shape="rect" coords="1048,309,1174,351" href="${pageContext.request.contextPath}/menu05_03" title="OBT치료(박테리아 테라피)">
+			<area shape="rect" coords="1052,359,1123,379" href="${pageContext.request.contextPath}/menu05_04" title="충치치료">
+			<area shape="rect" coords="1048,389,1140,410" href="${pageContext.request.contextPath}/menu05_05" title="사랑니발치">
 		</map>
 
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
