@@ -75,6 +75,20 @@ public class HomeController {
 	@Autowired
 	private StatisticService sService;
 	
+	@RequestMapping(value = "/personal", method = RequestMethod.GET)
+	public String personal(Model model) {
+		logger.info("personal GET");
+		
+		return "pc/personal";
+	}
+	
+	@RequestMapping(value = "/agree", method = RequestMethod.GET)
+	public String agree(Model model) {
+		logger.info("agree GET");
+		
+		return "pc/agree";
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
 		logger.info("index GET");
