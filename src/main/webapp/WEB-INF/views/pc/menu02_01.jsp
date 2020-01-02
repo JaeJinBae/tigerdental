@@ -217,7 +217,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/483_bg_01.png" alt="" usemap="#pcode48301">
 			</div>
 			<map name="pcode48301">
-				<area shape="rect" coords="435,295,511,373" href="javascript:void(0);" class="pop" rel="media-popup06">
+				<area shape="rect" coords="592,406,707,512" href="javascript:void(0);" class="pop" rel="media-popup06">
 			</map>
 		</div>
 		
@@ -251,7 +251,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="full">
 				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/483_bg_05.png" alt="" usemap="#pcode48305">
 				<map name="pcode48305">
-				  <area shape="rect" coords="866,272,927,332" href="javascript:void(0);" class="pop" rel="media-popup03">
+				  <area shape="rect" coords="1188,370,1278,458" href="javascript:void(0);" class="pop" rel="media-popup03">
 				</map>
 			</div>
 		</div>
@@ -269,26 +269,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		</div>
 		
 		
-		<div class="pcode48306">
-			<ul class="inner">
-				<li>
-					<a href="/494/?pCode=494"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/483_icon_01.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/495/?pCode=495"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/483_icon_02.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/496/?pCode=496"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/483_icon_03.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-				<li>
-					<a href="/497/?pCode=497"><img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/483_icon_04.png" alt=""></a>
-					<span>자세히보기 +</span>
-				</li>
-			</ul>
-		</div>
+		<jsp:include page="include/pcBottomContent.jsp"></jsp:include>
 
 		<!-- 공통(진료시간, 고객센터, 오시는길) 끝 -->
 		<jsp:include page="include/pcBottom.jsp"></jsp:include>
