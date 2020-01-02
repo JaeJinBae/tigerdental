@@ -1,6 +1,8 @@
 package com.webaid.controller;
 
 import java.io.File;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Iterator;
@@ -45,6 +47,7 @@ import com.webaid.service.ReviewService;
 import com.webaid.service.StatisticService;
 import com.webaid.service.UserService;
 import com.webaid.util.SendEmail;
+import com.webaid.util.SmsSendUtil;
 
 /**
  * Handles requests for the application home page.
@@ -452,6 +455,54 @@ public class HomeController {
 		entity = new ResponseEntity<String>("ok", HttpStatus.OK);
 		
 		session.invalidate();
+		
+		return entity;
+	}
+	
+	@RequestMapping(value="/quickInquireRegister", method=RequestMethod.POST)
+	public ResponseEntity<String> quickInquireRegister(@RequestBody Map<String, String> info, Model model){
+		logger.info("quickInquireRegister POST");
+		ResponseEntity<String> entity = null;
+		InetAddress local;
+		String ip = "";
+		try {
+			local = InetAddress.getLocalHost();
+			ip = local.getHostAddress();
+			System.out.println("local ip : "+ip); 
+		} catch (UnknownHostException e1){ 
+			e1.printStackTrace();
+		}
+
+		try {
+			AdviceVO vo = new AdviceVO();
+			vo.setName(info.get("name"));
+			vo.setPhone(info.get("phone"));
+			vo.setAdvice_type(info.get("advice_type"));
+			vo.setRegdate(info.get("regdate"));
+			vo.setEmail(info.get("email"));
+			vo.setState("상담예정");
+			vo.setSecret("x");
+			vo.setPw("");
+			vo.setTitle("");
+			vo.setContent(info.get("content"));
+			vo.setReply("");
+			vo.setMemo("");
+			vo.setIp(ip);
+			vo.setAccess_url(info.get("access_url"));
+			vo.setReply_date("");
+			vo.setUpload_origin("");
+			vo.setUpload_stored("");
+			vo.setQuick_state("o");
+			
+			aService.insert(vo);
+			
+			/*SmsSendUtil ssu = new SmsSendUtil();
+			ssu.sendSMS("빠른상담", info.get("name"), info.get("phone"));*/
+			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>("no", HttpStatus.OK);
+		}
 		
 		return entity;
 	}

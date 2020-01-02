@@ -214,7 +214,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="automation">
 				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/519_img_01.png" alt="" usemap="#pcode51901">
 				<map name="pcode51901">
-				  <area shape="rect" coords="872,295,948,373" href="javascript:void(0);" class="pop" rel="media-popup07">
+				  <area shape="rect" coords="1196,374,1304,510" href="javascript:void(0);" class="pop" rel="media-popup07">
 				</map>
 			</div>
 		</div>
@@ -259,8 +259,8 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div class="pcode51907">
 			<div class="automation">
 				<img src="${pageContext.request.contextPath}/resources/img/web/sub/theme/519_img_07.png" alt="" usemap="#pcode51907">
-				<map name="#pcode51907">
-				  <area shape="rect" coords="1326,556,1553,612" href="/520/?pCode=520">
+				<map name="pcode51907">
+				  <area shape="rect" coords="1326,556,1550,610" href="${pageContext.request.contextPath}/menu04_02">
 				</map>
 			</div>
 		</div>
