@@ -194,6 +194,7 @@ public class HomeController {
 			vo.setBirth(info.get("birth"));
 			vo.setGender(info.get("gender"));
 			vo.setEmail(info.get("email"));
+			vo.setAddr(info.get("addr"));
 			vo.setRegdate(info.get("regdate"));
 			vo.setLogin_cnt(0);
 			
@@ -345,9 +346,11 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/myInfo", method=RequestMethod.GET)
-	public String myInfo(Model model){
+	public String myInfo(Model model, HttpSession session){
 		logger.info("myinfo get");
-		
+		int no = Integer.parseInt(session.getAttribute("no")+"");
+		UserVO vo = uService.selectOne(no);
+		model.addAttribute("item", vo);
 		return "pc/myInfo";
 	}
 	
@@ -355,49 +358,15 @@ public class HomeController {
 	public ResponseEntity<String> myInfoPost(@RequestBody Map<String, String> info, Model model){
 		logger.info("myinfo POST");
 		ResponseEntity<String> entity = null;
-		UserVO vo = uService.selectById(info.get("id"));
-		
-		if(vo == null){
-			entity = new ResponseEntity<String>("empty", HttpStatus.OK);
-		}else{
-			if(vo.getPw().equals(info.get("pw"))){
-				entity = new ResponseEntity<String>("ok", HttpStatus.OK);
-				
-			}else{
-				entity = new ResponseEntity<String>("no", HttpStatus.OK);
-			}
-		}
-		return entity;
-	}
-	
-	@RequestMapping(value="/myInfoEdit", method=RequestMethod.GET)
-	public String myInfoEditGet(HttpServletRequest req, Model model){
-		logger.info("myinfoEdit get");
-		HttpSession session = req.getSession(false);
-		if(session == null){
-			return "redirect:/login";
-		}else{
-			System.out.println(session.getAttribute("no"));
-			int no = Integer.parseInt(session.getAttribute("no")+"");
-			UserVO vo = uService.selectOne(no);
-			model.addAttribute("item", vo);
-		}
-		
-		return "pc/myInfoEdit";
-	}
-	
-	@RequestMapping(value="/myInfoEdit", method=RequestMethod.POST)
-	public ResponseEntity<String> myInfoEditPost(@RequestBody Map<String, String> info, Model model){
-		logger.info("myinfoEdit POST");
-		ResponseEntity<String> entity = null;
 		try {
 			UserVO vo = new UserVO();
 			vo.setNo(Integer.parseInt(info.get("no")));
 			vo.setName(info.get("name"));
 			vo.setPhone(info.get("phone"));
-			vo.setBirth("");
+			vo.setBirth(info.get("birth"));
 			vo.setGender(info.get("gender"));
 			vo.setEmail(info.get("email"));
+			vo.setAddr(info.get("addr"));
 			if(info.get("new_pw").length() <2){
 				UserVO prevVO = uService.selectOne(Integer.parseInt(info.get("no")));
 				vo.setPw(prevVO.getPw());
