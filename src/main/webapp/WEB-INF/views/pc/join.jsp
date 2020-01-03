@@ -555,7 +555,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="inner">
 				<div class="brick">
 					<button type="button" class="btn btn-submit" onclick="">회원가입</button>
-					<button type="button" class="btn btn-cancel" onclick="member_it('reset')">취소</button>
+					<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/join'">취소</button>
 				</div>
 			</div>
 		</div>

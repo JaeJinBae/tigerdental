@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <header id="header" class="trn">
 	<div class="inner">
 		<div class="header">
@@ -13,8 +16,15 @@
 				<button class="gnb-close"><img src="${pageContext.request.contextPath}/resources/img/common/theme/btn_close.png" alt=""></button>
 				<ul class="header-group-member">
 					<li>
-						<a href="${pageContext.request.contextPath}/m/login" class="login trn">▶ LOGIN</a>
-						<a href="${pageContext.request.contextPath}/m/join" class="join trn">▶ JOIN</a>
+						<input id="session_id" type="hidden" value="${sessionScope.id}">
+						<c:if test="${empty sessionScope.id}">
+							<a href="${pageContext.request.contextPath}/m/login" class="login trn">▶ LOGIN</a>
+							<a href="${pageContext.request.contextPath}/m/join" class="join trn">▶ JOIN</a>
+						</c:if>
+						<c:if test="${!empty sessionScope.id}">
+							<a href="${pageContext.request.contextPath}/logout" class="logout trn">LOGOUT</a>
+							<a href="${pageContext.request.contextPath}/myInfo" class="mypage trn">MYPAGE</a>
+						</c:if>
 					</li>
 				</ul>
 				<ul>

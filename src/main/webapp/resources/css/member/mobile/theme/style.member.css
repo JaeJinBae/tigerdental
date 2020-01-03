@@ -57,7 +57,7 @@
 .join-form li p.radio{display:inline-block;}
 .join-form li div.check{display:inline-block;}
 .join-form li > label{display:inline-block; width:130px; color:#222; font-weight:700; padding:0 15px; font-size:1em;}
-.join-form li select{width:25%; max-width:100px; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:#fff url(/assets/img/common/theme/btn_down.png) no-repeat 98% center;}
+.join-form li select{width:25%; max-width:100px; border:1px solid #cfd1d4; cursor:pointer; padding:0 10px; background:#fff url(../../../../img/common/theme/btn_down.png) no-repeat 98% center;}
 .join-form li button{height:35px; line-height:35px; background:#545869; color:#fff; padding:0 15px; font-weight:700;}
 .join-form li input[element-name="휴대전화"], .join-form li input[element-name="이메일"]{width:100px;}
 .join-form li input[element-name="우편번호"]{width:100px;}
