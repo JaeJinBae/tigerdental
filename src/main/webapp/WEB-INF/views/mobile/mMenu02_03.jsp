@@ -220,7 +220,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="automation">
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/497_img_02.png" alt="" usemap="#pcode49702">
 				<map name="pcode49702">
-				  <area shape="rect" coords="12,344,349,570" href="javascript:void(0);" class="pop" rel="media-popup06">
+				  <area shape="rect" coords="228,658,330,755" href="javascript:void(0);" class="pop" rel="media-popup06">
 				</map>
 			</div>
 		</div>
@@ -241,7 +241,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="automation">
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/496_img_07.png" alt="" usemap="#pcode49607">
 				<map name="pcode49607">
-				  <area shape="rect" coords="12,271,369,511" href="javascript:void(0);" class="pop" rel="media-popup03">
+				  <area shape="rect" coords="256,560,330,640" href="javascript:void(0);" class="pop" rel="media-popup03">
 				</map>
 			</div>
 		</div>
@@ -270,10 +270,10 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="automation">
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/483_img_06.png" alt="" usemap="#pcode48306">
 				<map name="pcode48306">
-				  <area shape="rect" coords="42,237,192,419" href="/m/494/?pCode=494">
-				  <area shape="rect" coords="221,237,371,419" href="/m/495/?pCode=495">
-				  <area shape="rect" coords="42,443,192,625" href="/m/496/?pCode=496">
-				  <area shape="rect" coords="221,443,371,625" href="/m/497/?pCode=497">
+				  <area shape="rect" coords="72,362,296,658" href="${pageContext.request.contextPath}/m/menu02_02">
+				  <area shape="rect" coords="336,364,580,654" href="${pageContext.request.contextPath}/m/menu02_05">
+				  <area shape="rect" coords="62,684,300,974" href="${pageContext.request.contextPath}/m/menu02_04">
+				  <area shape="rect" coords="336,686,576,972" href="${pageContext.request.contextPath}/m/menu02_03">
 				</map>
 			</div>
 		</div>
