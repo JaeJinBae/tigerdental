@@ -219,50 +219,51 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		<div id="before-and-after">
 			<ul class="inner">
-				<li>
-					<div class="twentytwenty-wrapper twentytwenty-horizontal">
-						<div class="before-and-after twentytwenty-container" style="height: 167px;">
-							<img src="${pageContext.request.contextPath}/resources/uploadAfterBefore/b.jpg" class="twentytwenty-before" style="clip: rect(0px, 177.5px, 167px, 0px);">
-							<img src="${pageContext.request.contextPath}/resources/uploadAfterBefore/a.jpg" class="twentytwenty-after" style="clip: rect(0px, 355px, 167px, 177.5px);">
-							<div class="twentytwenty-handle" style="left: 177.5px;"><span class="twentytwenty-left-arrow"></span><span class="twentytwenty-right-arrow"></span></div>
-						</div>
-					</div>
-	
-					<!--<a href="?&mode=view&perm=Y&pCode=515&select_key=&input_key=&backpage=/m/515/&Scod=BRD02&delflag=Y&sort=b_regdate DESC&btap=&page=1&seq=251">-->
-					<a>
-						<div class="subject">
-							<span> 구치부 임플란트, 크라운 치료사례(33세...</span>
-							<span>임플란트 치료사례</span>
-						</div>
-					</a>
-				</li>
-			
-				<li>
-					<div class="twentytwenty-wrapper twentytwenty-horizontal">
-						<div class="before-and-after twentytwenty-container" style="height: 167px;">
-							<img src="${pageContext.request.contextPath}/resources/uploadAfterBefore/b.jpg" class="twentytwenty-before" style="clip: rect(0px, 177.5px, 167px, 0px);">
-							<img src="${pageContext.request.contextPath}/resources/uploadAfterBefore/a.jpg" class="twentytwenty-after" style="clip: rect(0px, 355px, 167px, 177.5px);">
-							<div class="twentytwenty-handle" style="left: 177.5px;"><span class="twentytwenty-left-arrow"></span><span class="twentytwenty-right-arrow"></span></div>
-						</div>
-					</div>
-	
-					<!--<a href="?&mode=view&perm=Y&pCode=515&select_key=&input_key=&backpage=/m/515/&Scod=BRD02&delflag=Y&sort=b_regdate DESC&btap=&page=1&seq=251">-->
-					<a>
-						<div class="subject">
-							<span> 구치부 임플란트, 크라운 치료사례(33세...</span>
-							<span>임플란트 치료사례</span>
-						</div>
-					</a>
-				</li>
+				<c:choose>
+				    <c:when test="${fn:length(list) == 0}">
+			        	<li>등록된 게시물이 없습니다.</li>
+				    </c:when>
+				    
+				    <c:otherwise>
+				    	<c:set var="num" value="${pageMaker.totalCount - ((pageMaker.cri.page -1) *10)}"></c:set>
+				        <c:forEach var="item" items="${list}">
+							<li>
+								<div class="twentytwenty-wrapper twentytwenty-horizontal">
+									<div class="before-and-after twentytwenty-container" style="height: 280px;">
+										<img src="${pageContext.request.contextPath}/resources/uploadBeforeAfter/${item.img_before_stored}" class="twentytwenty-before" style="clip: rect(0px, 298px, 280px, 0px);">
+										<img src="${pageContext.request.contextPath}/resources/uploadBeforeAfter/${item.img_after_stored}" class="twentytwenty-after" style="clip: rect(0px, 596px, 280px, 298px);">
+										<div class="twentytwenty-handle" style="left: 298px;">
+											<span class="twentytwenty-left-arrow"></span>
+											<span class="twentytwenty-right-arrow"></span>
+										</div>
+									</div>
+								</div>
+								<a>
+									<div class="subject">
+										<span> ${item.title}</span>
+										<span>${item.content}</span>
+									</div>
+								</a>
+							</li>
+							<c:set var="num" value="${num-1}"></c:set>	
+						</c:forEach>
+				    </c:otherwise> 
+				</c:choose>
 			</ul>
 		</div>
 		
-		
-		
-		
 		<!-- 페이징 시작 -->
 		<div id="board-pagenation">
-			<div class="inner"><a href="javascript:;"><svg class="svg-inline--fa fa-angle-double-left fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"></path></svg><!-- <i class="fas fa-angle-double-left"></i> --></a><a href="javascript:;"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a><a href="javascript:;" class="on">1</a><a href="?pCode=515&amp;select_key=&amp;input_key=&amp;backpage=/m/515/&amp;Scod=BRD02&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=2 ">2</a><a href="?pCode=515&amp;select_key=&amp;input_key=&amp;backpage=/m/515/&amp;Scod=BRD02&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=3 ">3</a><a href="?pCode=515&amp;select_key=&amp;input_key=&amp;backpage=/m/515/&amp;Scod=BRD02&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=4 ">4</a><a href="?pCode=515&amp;select_key=&amp;input_key=&amp;backpage=/m/515/&amp;Scod=BRD02&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=5 ">5</a><a href="?pCode=515&amp;select_key=&amp;input_key=&amp;backpage=/m/515/&amp;Scod=BRD02&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=6 "><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a><a href="?pCode=515&amp;select_key=&amp;input_key=&amp;backpage=/m/515/&amp;Scod=BRD02&amp;delflag=Y&amp;sort=b_regdate DESC&amp;btap=&amp;page=17 "><svg class="svg-inline--fa fa-angle-double-right fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-double-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"></path></svg><!-- <i class="fas fa-angle-double-right"></i> --></a>
+			<div class="inner">
+				<c:if test="${pageMaker.prev}">
+					<a href="${pageMaker.makeSearch(pageMaker.startPage-1) }"><svg class="svg-inline--fa fa-angle-left fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg><!-- <i class="fas fa-angle-left"></i> --></a>
+				</c:if>
+				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+					<a href="${pageMaker.makeSearch(idx)}" ${pageMaker.cri.page == idx? 'class=on':''}>${idx}</a>
+				</c:forEach>
+				<c:if test="${pageMaker.next}">
+					<a href="${pageMaker.makeSearch(pageMaker.endPage+1)}"><svg class="svg-inline--fa fa-angle-right fa-w-8" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fas fa-angle-right"></i> --></a>
+				</c:if>
 			</div>
 		</div><!-- 페이징 끝 -->
 		

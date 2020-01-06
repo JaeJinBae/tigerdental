@@ -220,13 +220,13 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div class="board-notice-view">
 			<ul class="full">
 				<li class="subject">	
-					<div class="title"> 53세 상하악 구치부 임플란트 크라운 치료후기</div>
+					<div class="title"> ${item.title}</div>
 					<p class="info">
-						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">2019-09-18</i><span class="line">|</span><i class="hit">조회수		10</i>
+						<!--i class='name'>관</i><span class='line'>|</span--><i class="date">${item.regdate}</i><span class="line">|</span><i class="hit">조회수		${item.cnt}</i>
 					</p>
 				</li>
 				<li class="con">
-					<div><img alt="" src="/filedata/ckeditor/20190918_7EDCD7B2C16D2123.jpg" style="width: 900px; height: 1273px;"></div>
+					${item.content}
 				</li>
 			</ul>
 		</div>
@@ -235,10 +235,26 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div class="prev-next-list">
 			<ul class="full">
 				<li>
-					<span>이전글</span><a href="javascript:alert('이전글이 없습니다');">이전글이 없습니다</a>
+					<span>이전글</span>
+					<c:choose>
+						<c:when test="${beforeItem.no eq null}">
+							<a>이전글이 없습니다.</a>
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}/m/menu06_04read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+						</c:otherwise>
+					</c:choose>
 				</li>
 				<li>
-					<span>다음글</span><a href=""> 62세여성 전악 임플란트환자의 타이거치과에 보내...</a>
+					<span>다음글</span>
+					<c:choose>
+						<c:when test="${afterItem.no eq null}">
+							<a>존재하지 않습니다.</a>
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}/m/menu06_04read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+						</c:otherwise>
+					</c:choose>
 				</li>
 			</ul>
 		</div>
@@ -248,7 +264,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div class="btn-group-right">
 			<div class="inner">
 				<div class="brick">
-					<a href="" class="btn btn-list">목록으로</a>
+					<a href="${pageContext.request.contextPath}/m/menu06_04${pageMaker.makeSearch(pageMaker.cri.page)}" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
 		</div>
