@@ -228,7 +228,8 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 
 		<!-- 오시는길 맵 시작 -->
 		<map name="pcode49101">
-		  <area shape="rect" coords="36,461,346,500" href="/m/516/?pCode=516">					<!-- 카카오톡상담 -->
+		  <area shape="rect" coords="67,537,408,594" href="tel:02-540-2080">
+		  <area shape="rect" coords="72,705,345,770" href="${pageContext.request.contextPath}/m/menu06_05">
 		</map>
 		<!-- 오시는길 맵 끝 -->
 		

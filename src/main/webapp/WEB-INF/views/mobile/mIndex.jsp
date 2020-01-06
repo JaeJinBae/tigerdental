@@ -228,10 +228,10 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="full">
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/section01.png" alt="" usemap="#section01">
 				<map name="section01">
-				  <area shape="rect" coords="0,0,208,278" href="${pageContext.request.contextPath}/m/menu02_01">
-				  <area shape="rect" coords="207,0,412,278" href="${pageContext.request.contextPath}/m/menu03_01">
-				  <area shape="rect" coords="0,278,208,555" href="${pageContext.request.contextPath}/m/menu04_01">
-				  <area shape="rect" coords="207,278,412,554" href="${pageContext.request.contextPath}/m/menu05_02">
+				  <area shape="rect" coords="6,6,310,422" href="${pageContext.request.contextPath}/m/menu02_01">
+				  <area shape="rect" coords="324,4,634,422" href="${pageContext.request.contextPath}/m/menu03_01">
+				  <area shape="rect" coords="4,432,316,854" href="${pageContext.request.contextPath}/m/menu04_01">
+				  <area shape="rect" coords="330,430,634,854" href="${pageContext.request.contextPath}/m/menu05_02">
 				</map>
 			</div>
 		</div>
@@ -240,8 +240,8 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="full">
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/section02.png" alt="" usemap="#section02">
 				<map name="section02">
-				  <area shape="rect" coords="14,188,170,225" class="pop" rel="media-popup03" title="새창으로 세렉 밀링영상보기">
-				  <area shape="rect" coords="177,294,233,352" class="pop" rel="media-popup03" title="새창으로 세렉 밀링영상보기">
+				  <area shape="rect" coords="21,290,261,347" class="pop" rel="media-popup03" title="새창으로 세렉 밀링영상보기">
+				  <area shape="rect" coords="272,452,362,544" class="pop" rel="media-popup03" title="새창으로 세렉 밀링영상보기">
 				</map>
 			</div>
 		</div>
@@ -256,7 +256,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="full">
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/main/theme/section03.png" alt="" usemap="#section03">
 				<map name="section03">
-				  <area shape="rect" coords="77,64,336,161" href="${pageContext.request.contextPath}/m/menu01_01">
+				  <area shape="rect" coords="120,99,520,250" href="${pageContext.request.contextPath}/m/menu01_01">
 				</map>
 			</div>
 		</div>

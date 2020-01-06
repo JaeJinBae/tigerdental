@@ -310,8 +310,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 				<li class="lnb">
 					<button>로그인</button>
-					<ul>
-							</ul>
+					<ul></ul>
 				</li>
 			</ul>
 		</div>
@@ -322,7 +321,6 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<h5>회원정보수정</h5>
 		</div>
 		<!-- 타이틀 끝 -->
-		
 		
 		<!-- 로그인 폼 시작 -->
 		<div id="join-form">

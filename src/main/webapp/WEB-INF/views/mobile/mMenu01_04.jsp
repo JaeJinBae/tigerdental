@@ -216,57 +216,57 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="inner">
 				<div class="preview-slider">
 					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger01.jpg'>
+						<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger01.jpg'>
 						<span class='tit'>로비</span>
 					</li>
 					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger02.jpg'>
+						<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger02.jpg'>
 						<span class='tit'>로비</span>
 					</li>
 					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger03.jpg'>
+						<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger03.jpg'>
 						<span class='tit'>로비</span>
 					</li>
 					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger04.jpg'>
+						<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger04.jpg'>
 						<span class='tit'>세렉</span>
 					</li>
 					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger05.jpg'>
+						<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger05.jpg'>
 						<span class='tit'>상담실</span>
 					</li>
 					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger06.jpg'>
+						<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger06.jpg'>
 						<span class='tit'>진료실</span>
 					</li>
 					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger07.jpg'>
+						<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger07.jpg'>
 						<span class='tit'>진료실</span>
 					</li>
 					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger08.jpg'>
+						<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger08.jpg'>
 						<span class='tit'>진료실</span>
 					</li>
 					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger09.jpg'>
+						<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger09.jpg'>
 						<span class='tit'>진료실</span>
 					</li>
 					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger10.jpg'>
+						<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger10.jpg'>
 						<span class='tit'>진료실</span>
 					</li>
 				</div>
 				<div class="preview-thumb">
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger01.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger02.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger03.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger04.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger05.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger06.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger07.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger08.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger09.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger10.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger01.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger02.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger03.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger04.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger05.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger06.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger07.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger08.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger09.jpg'></li>
+					<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/tiger10.jpg'></li>
 				</div>
 			</div>
 		</section>

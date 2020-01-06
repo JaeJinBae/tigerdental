@@ -34,8 +34,8 @@ $(document).ready( function() {
 	  pauseOnHover:false,
 	  pauseOnDotsHover:false,
 	  draggable:false,
-	  prevArrow: '<button class="slick-prev" aria-label="Previous" type="button"><img src="${pageContext.request.contextPath}/resources/img/common/theme/btn_prev.png"/></button>',
-	  nextArrow: '<button class="slick-next" aria-label="Next" type="button"><img src="${pageContext.request.contextPath}/resources/img/common/theme/btn_next.png"/></button>',
+	  prevArrow: '<button class="slick-prev" aria-label="Previous" type="button"><img src="../resources/img/common/theme/btn_prev.png"/></button>',
+	  nextArrow: '<button class="slick-next" aria-label="Next" type="button"><img src="../resources/img/common/theme/btn_next.png"/></button>',
 	  asNavFor: '.preview-thumb'
 	});
 
