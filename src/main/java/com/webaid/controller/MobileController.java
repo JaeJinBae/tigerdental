@@ -90,14 +90,14 @@ public class MobileController {
 	public String joinEnd(){
 		logger.info("joinEnd");
 		
-		return "pc/joinEnd";
+		return "mobile/mJoinEnd";
 	}
 	
 	@RequestMapping(value="/findId", method=RequestMethod.GET)
 	public String findId(){
 		logger.info("findId");
 		
-		return "pc/findId";
+		return "mobile/mFindId";
 	}
 	
 	@RequestMapping(value="/findId", method=RequestMethod.POST)
@@ -124,13 +124,13 @@ public class MobileController {
 		UserVO vo = uService.selectOne(no);
 		model.addAttribute("item", vo);
 		
-		return "pc/findIdEnd";
+		return "mobile/mFindIdEnd";
 	}
 	
 	@RequestMapping(value="/findPw", method=RequestMethod.GET)
 	public String findPw(HttpServletRequest req, Model model){
 		
-		return "pc/findPw";
+		return "mobile/mFindPw";
 	}
 	
 	@RequestMapping(value="/findPw", method=RequestMethod.POST)
@@ -188,7 +188,7 @@ public class MobileController {
 	public String findPwEnd(HttpServletRequest req, Model model, String no){
 		UserVO vo = uService.selectOne(Integer.parseInt(no));
 		model.addAttribute("item", vo);
-		return "pc/findPwEnd";
+		return "mobile/mFindPwEnd";
 	}
 	
 	@RequestMapping(value="/myInfo", method=RequestMethod.GET)
@@ -197,7 +197,7 @@ public class MobileController {
 		int no = Integer.parseInt(session.getAttribute("no")+"");
 		UserVO vo = uService.selectOne(no);
 		model.addAttribute("item", vo);
-		return "pc/myInfo";
+		return "mobile/mMyInfo";
 	}
 	
 	@RequestMapping(value="/myInfo", method=RequestMethod.POST)
@@ -234,7 +234,7 @@ public class MobileController {
 	public String withdraw(Model model){
 		logger.info("withdraw get");
 		
-		return "pc/withdraw";
+		return "mobile/withdraw";
 	}
 	
 	@RequestMapping(value="/withdraw", method=RequestMethod.POST)
@@ -260,7 +260,7 @@ public class MobileController {
 	public String withdrawReason(Model model){
 		logger.info("withdrawReason get");
 		
-		return "pc/withdrawReason";
+		return "mobile/mWithdrawReason";
 	}
 	
 	@RequestMapping(value="/withdrawReason", method=RequestMethod.POST)

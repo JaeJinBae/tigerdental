@@ -118,7 +118,7 @@
 #find-account .find-account-inner .find-account-form td i{display:inline-block; width:20px; text-align:center;}
 #find-account .find-account-inner .find-account-form td input[type="text"]{width:25%; height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px;}
 #find-account .find-account-inner .find-account-form td input[element-name='이름'],#find-account .find-account-inner .find-account-form td input[element-name='아이디']{width:100%;}
-#find-account .find-account-inner .find-account-form td select{height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px; min-width:25%; background:#fff url(/assets/img/common/theme/btn_down.png) no-repeat 95% center;;}
+#find-account .find-account-inner .find-account-form td select{height:35px; line-height:35px; background:#fff; border:1px solid #ddd; box-sizing:border-box; padding:0 5px; min-width:25%; background:#fff url(../../../../img/common/theme/btn_down.png) no-repeat 95% center;;}
 #find-account .find-account-inner button{width:100%; height:50px; line-height:50px; background:#005b98; font-size:15px; color:#fff; font-weight:700;}
 
 /* --------------------------------------------------------------------------

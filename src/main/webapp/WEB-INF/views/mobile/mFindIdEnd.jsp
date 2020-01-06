@@ -88,20 +88,22 @@
 <!-- ***********************************************************************************************	-->
 <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1em}.svg-inline--fa.fa-stack-2x{height:2em;width:2em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}</style>
 <script>
-function userIdPwChk(info){
+function findId(info){
 	$.ajax({
-		url:"${pageContext.request.contextPath}/loginIdPwChk",
+		url:"${pageContext.request.contextPath}/findId",
 		type:"POST",
 		contentType : "application/json; charset=UTF-8",
 		dataType:"text",
 		data: JSON.stringify(info),
 		async:false,
 		success:function(json){
-			if(json == "empty" || json =="no"){
+			if(json =="no"){
 				alert("일치하는 정보가 없습니다.");
 				
-			}else if(json == "ok"){
-				location.href="${pageContext.request.contextPath}/";
+			}else{
+				$("#no").val(json);
+				$("#f1").submit();
+				
 			}
 		},
 		error:function(request,status,error){
@@ -111,14 +113,22 @@ function userIdPwChk(info){
 }
 
 $(function(){
-	$("#loginBtn").click(function(){
-		var id = $("#m_id").val();
-		var pw = $("#m_pass").val();
-		var info = {"id":id, "pw":pw};
-		
-		userIdPwChk(info);
+	$("#btnSubmit").click(function(){
+		var name = $("#m_name").val();
+		var email1 = $("#m_email1").val();
+		var email2 = $("#m_email2").val();
+		var email = email1+"@"+email2;
+		var birth1 = $("#birth_year").val();
+		var birth2 = $("#birth_month").val();
+		birth2 = Number(birth2)<10 ? "0"+birth2 : birth2;
+		var birth3 = $("#birth_date").val();
+		birth3 = Number(birth3)<10 ? "0"+birth3 : birth3;
+		var birth = birth1+"-"+birth2+"-"+birth3;
+		var info = {"name":name, "birth":birth, "email":email};
+		findId(info);
 	});
-});	
+	
+});
 </script>
 </head>
 <body>
@@ -207,9 +217,9 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<div id="sub-container">	
 	
 		<!-- 서브 비주얼 시작-->
-		<div id="sub-visual" data-menu="멤버쉽" data-menu-second="로그인">
+		<div id="sub-visual" data-menu="멤버쉽" data-menu-second="아이디찾기">
 			<div class="inner">
-				<h2>로그인</h2>
+				<h2>아이디찾기 결과</h2>
 			</div>
 		</div>
 		<!-- 서브 비주얼 끝 -->
@@ -234,9 +244,8 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 				</li>
 		
 				<li class="lnb">
-					<button>로그인</button>
-					<ul>
-							</ul>
+					<button>아이디찾기 결과</button>
+					<ul></ul>
 				</li>
 			</ul>
 		</div>
@@ -244,32 +253,31 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		
 		<!-- 타이틀 시작 -->
 		<div class="member-title">
-			<h5>로그인</h5>
+			<h5>아이디/비밀번호찾기</h5>
 		</div>
 		<!-- 타이틀 끝 -->
 		
-		
-		<!-- 로그인 폼 시작 -->
-		<div id="login-form">
-			<ul class="login-inner">
-				<form name="member" id="member" method="post" action="" onsubmit="return member_login_it(this)">
-				<input type="hidden" name="mode" value="login">
-				<input type="hidden" name="distinction" value="proc">
-				<input type="hidden" name="backpage" value="/m-login">
-				<li class="login">
+		<!-- 아이디 찾기 폼 시작 -->
+		<div id="find-account-check">
+			<ul class="inner">
+				<li class="join-finish-cap">
 					<p>
-						<label for="m_id">아이디</label>
-						<input id="m_id" name="m_id" type="text" valid="required" element-name="아이디" placeholder="아이디를 입력하세요">
+						타이거치과의원 웹사이트 가입 시 등록한 아이디는 다음과 같습니다.<br>
+						아래의 정보를 확인하신 후, 해당 정보로 로그인하시기 바랍니다.
 					</p>
-					<p>
-						<label for="m_pass">비밀번호</label>
-						<input id="m_pass" name="m_pass" type="password" valid="required" element-name="비밀번호" placeholder="비밀번호를 입력하세요">
-					</p>
-					<button type="button" id="loginBtn">로그인</button>
 				</li>
-				
-				</form>
-		
+				<li class="join-finish-info">
+					<table class="join-finish-form">
+						<tbody>
+						<tr>
+							<th>아이디</th>
+							<td>
+								<span class="fc_cyan">${item.id}</span>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</li>
 				<li class="member">
 					<p>
 						아이디나 비밀번호를 분실하셨나요?
@@ -282,7 +290,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 				</li>
 			</ul>
 		</div>
-		<!-- 로그인 폼 끝 -->
+		<!-- 아이디 찾기 폼 끝 -->
 		
 	</div> <!-- #main-container , #sub-container 닫기 [위치 : include_web_top.html ] -->
 
