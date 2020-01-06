@@ -246,10 +246,10 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 				<img src="${pageContext.request.contextPath}/resources/img/mobile/sub/theme/522_img_06.png" alt="" usemap="#pcode52206">
 			</div>
 			<map name="pcode52206">
-				<area shape="rect" coords="40,226,190,412" href="/m/523/?pCode=523" title="타라미1.5">
-				<area shape="rect" coords="225,226,375,413" href="/m/524/?pCode=524" title="타세라1.5">
-				<area shape="rect" coords="40,447,190,633" href="/m/525/?pCode=525" title="타지르1.5">
-				<area shape="rect" coords="225,448,375,633" href="/m/526/?pCode=526" title="치아미백">
+				<area shape="rect" coords="64,366,296,662" href="${pageContext.request.contextPath}/m/menu03_02" title="타라미1.5">
+				<area shape="rect" coords="334,368,572,662" href="${pageContext.request.contextPath}/m/menu03_03" title="타세라1.5">
+				<area shape="rect" coords="66,686,298,976" href="${pageContext.request.contextPath}/m/menu03_04" title="타지르1.5">
+				<area shape="rect" coords="334,696,576,974" href="${pageContext.request.contextPath}/m/menu03_05" title="치아미백">
 			</map>
 		</div>
 		
