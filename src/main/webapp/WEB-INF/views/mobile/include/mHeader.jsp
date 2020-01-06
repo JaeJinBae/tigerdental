@@ -23,7 +23,7 @@
 						</c:if>
 						<c:if test="${!empty sessionScope.id}">
 							<a href="${pageContext.request.contextPath}/logout" class="logout trn">LOGOUT</a>
-							<a href="${pageContext.request.contextPath}/myInfo" class="mypage trn">MYPAGE</a>
+							<a href="${pageContext.request.contextPath}/m/myInfo" class="mypage trn">MYPAGE</a>
 						</c:if>
 					</li>
 				</ul>
