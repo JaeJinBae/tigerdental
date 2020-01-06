@@ -220,33 +220,13 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div class="board-notice-view">
 			<ul class="full">
 				<li class="subject">	
-					<div class="title"> MBC 라디오 이윤석 신아영의 좋은주말에 서인석 원장님 출연</div>
+					<div class="title"> ${item.title}</div>
 					<p class="info">
-						<!--i class='name'>타</i><span class='line'>|</span--><i class="date">2019-02-11</i><span class="line">|</span><i class="hit">조회수		532</i>
+						<!--i class='name'>타</i><span class='line'>|</span--><i class="date">${item.regdate}</i><span class="line">|</span><i class="hit">조회수		${item.cnt}</i>
 					</p>
 				</li>
 				<li class="con">
-					<div style="text-align: center;">&nbsp;</div>
-		
-					<div style="text-align: center;">&nbsp;</div>
-					
-					<div style="text-align: center;"><img alt="" src="/filedata/ckeditor/20190212_976A7029D0BC6E59.jpg"></div>
-					
-					<div style="text-align: center;">&nbsp;</div>
-					
-					<div style="text-align: center;">타이거 치과 서인석 원장님게서</div>
-					
-					<div style="text-align: center;">MBC라디오 이윤석 신아영의 좋은주말에 출연하셨습니다.</div>
-					
-					<div style="text-align: center;">&nbsp;</div>
-					
-					<div style="text-align: center;">구강관리와 예방 및 치료법에 대해서 이야기해보았습니다.</div>
-					
-					<div style="text-align: center;">&nbsp;</div>
-					
-					<div style="text-align: center;"><a href="http://www.imbc.com/broad/radio/fm/goodweek/podcast/index.html" target="_blank">방송 다시듣기 클릭</a></div>
-					
-					<div style="text-align: center;">&nbsp;</div>
+					${item.content}
 				</li>
 			</ul>
 		</div>
@@ -255,10 +235,26 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div class="prev-next-list">
 			<ul class="full">
 				<li>
-					<span>이전글</span><a href="">이전글이 없습니다</a>
+					<span>이전글</span>
+					<c:choose>
+						<c:when test="${beforeItem.no eq null}">
+							<a>이전글이 없습니다.</a>
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}/m/menu06_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${beforeItem.no}">${beforeItem.title}</a>
+						</c:otherwise>
+					</c:choose>
 				</li>
 				<li>
-					<span>다음글</span><a href=""> &lt;매일경제TV&gt; 건강백세 스마일, 서인석 대표...</a>
+					<span>다음글</span>
+					<c:choose>
+						<c:when test="${afterItem.no eq null}">
+							<a>존재하지 않습니다.</a>
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}/m/menu06_02read${pageMaker.makeSearch(pageMaker.cri.page)}&no=${afterItem.no}">${afterItem.title}</a>
+						</c:otherwise>
+					</c:choose>
 				</li>
 			</ul>
 		</div>
@@ -268,7 +264,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<div class="btn-group-right">
 			<div class="inner">
 				<div class="brick">
-					<a href="" class="btn btn-list">목록으로</a>
+					<a href="${pageContext.request.contextPath}/m/menu06_02${pageMaker.makeSearch(pageMaker.cri.page)}" class="btn btn-list">목록으로</a>
 				</div>
 			</div>
 		</div>
