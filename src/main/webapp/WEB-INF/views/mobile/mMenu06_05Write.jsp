@@ -86,7 +86,36 @@
 <script src="${pageContext.request.contextPath}/resources/js/function.layer.js"></script><!-- # JS 필수 -->
 <script src="${pageContext.request.contextPath}/resources/js/mobile/jquery.common.js"></script><!-- # JS 공통 -->
 <!-- ***********************************************************************************************	-->
+<script type="text/javascript" src="http://jsgetip.appspot.com"></script>
 <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.33333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1em}.svg-inline--fa.fa-stack-2x{height:2em;width:2em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}</style>
+<script>
+$(function(){
+	$("#ip").val(ip());
+	var oldURL = document.referrer;
+	$("#access_url").val(oldURL);
+	
+	$("#form1").submit(function(){
+		var ndate = new Date();
+		var year = ndate.getFullYear();
+		var month = ndate.getMonth()+1;
+		var date = ndate.getDate();
+		
+		month = (month > 9) ? month+"":"0"+month;
+		date = (date > 9) ? date+"":"0"+date;
+		
+		$("#regdate").val(year+"-"+month+"-"+date);
+		
+		var phone1 = $("#phone1").val();
+		var phone2 = $("#phone2").val();
+		var phone3 = $("#phone3").val();
+		$("#phone").val(phone1+"-"+phone2+"-"+phone3);
+		
+		
+		//$("#access_url").val(oldURL);
+		
+	});
+});	
+</script>
 </head>
 <body>
 
@@ -210,11 +239,12 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		</div>
 		<!-- BreadCrumb 끝 -->
 		
-		<form name="inquire" id="inquire" method="post" action="" enctype="multipart/form-data" onsubmit="return false" autocomplete="off">
-			<input type="hidden" name="fparam" value="pCode=516&amp;action=&amp;psseq=&amp;pagecode=&amp;select_key=&amp;input_key=&amp;nextmode=&amp;backpage=/m/516/&amp;i_cate=CN01&amp;kind=&amp;m_id=&amp;delflag=1&amp;page=1&amp;data_array=Y&amp;mode=insert&amp;im_id=&amp;seq=&amp;nextmode=">
-			<input type="hidden" name="distinction" value="proc">
-			<input type="hidden" name="backpage" value="/m/index.html">
-			<input type="hidden" name="file_cnt" value="1">
+		<form name="inquire" id="form1" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/m/menu06_05write" autocomplete="off">
+			<input type="hidden" name="secret" id="secret" value="o">
+			<input type="hidden" name="regdate" id="regdate">
+			<input type="hidden" name="ip" id="ip">
+			<input type="hidden" name="access_url" id="access_url">
+			<input type="hidden" name="phone" id="phone">
 			
 			
 			<!-- 타이틀 시작 -->
@@ -230,46 +260,68 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 						<tr>
 							<th>상담구분</th>
 							<td>
-								<select name="i_kind" id="i_kind" class="search_sel"><option value="임플란트">임플란트</option><option value="치아교정">치아교정</option><option value="심미치료">심미치료</option><option value="치아미백">치아미백</option><option value="스케일링">스케일링</option><option value="충치치료">충치치료</option><option value="신경치료">신경치료</option><option value="사랑니발치">사랑니발치</option><option value="예방진료">예방진료</option><option value="기타">기타</option></select>				</td>
-						</tr>
-						
-									<tr>
-										<th scope="row">이름</th>
-										<td><input type="text" name="i_name" id="i_name" class="default" valid="required" element-name="이름" value="관리자"></td>
-									</tr>
-														<tr>
-							<th>제목</th>
-							<td>
-								<input type="text" name="i_title" id="i_title" maxlength="200" valid="required" element-name="제목" value="">
+								<select name="advice_type" id="i_kind" class="search_sel">
+									<option value="임플란트">임플란트</option>
+									<option value="치아교정">치아교정</option>
+									<option value="심미치료">심미치료</option>
+									<option value="치아미백">치아미백</option>
+									<option value="스케일링">스케일링</option>
+									<option value="충치치료">충치치료</option>
+									<option value="신경치료">신경치료</option>
+									<option value="사랑니발치">사랑니발치</option>
+									<option value="예방진료">예방진료</option>
+									<option value="기타">기타</option>
+								</select>
 							</td>
 						</tr>
-			
+						<tr>
+							<th scope="row">이름</th>
+							<td><input type="text" name="name" id="name" class="default" valid="required" element-name="이름" value=""></td>
+						</tr>
+						<tr>
+							<th scope="row">비밀번호</th>
+							<td><input type="password" name="m_pass" id="m_pass" class="default" valid="required,max-4" element-name="비밀번호" autocomplete="off"></td>
+						</tr>
+						<tr>
+							<th>제목</th>
+							<td>
+								<input type="text" name="title" id="title" maxlength="200" valid="required" element-name="제목" value="">
+							</td>
+						</tr>
 						<tr>
 							<th>연락처</th>
 							<td>
-								<select name="i_phone1" id="i_phone1" class="small"><option value="010">010</option><option value="011">011</option><option value="016">016</option><option value="017">017</option><option value="018">018</option><option value="019">019</option></select> -
-								<input type="text" name="i_phone2" id="i_phone2" maxlength="4" valid="required,phone_tel34" element-name="연락처" value="" autocomplete="off"> -
-								<input type="text" name="i_phone3" id="i_phone3" maxlength="4" valid="required,phone_tel44" element-name="연락처" value="" autocomplete="off"><br><br>
+								<select name="i_phone1" id="phone1" class="small">
+									<option value="010">010</option>
+									<option value="011">011</option>
+									<option value="016">016</option>
+									<option value="017">017</option>
+									<option value="018">018</option>
+									<option value="019">019</option>
+								</select> -
+								<input type="text" name="i_phone2" id="phone2" maxlength="4" valid="required,phone_tel34" element-name="연락처" value="" autocomplete="off"> -
+								<input type="text" name="i_phone3" id="phone3" maxlength="4" valid="required,phone_tel44" element-name="연락처" value="" autocomplete="off"><br><br>
 								 * 전화번호를 남겨주시면 답변 등록 시 문자드립니다.
 							</td>
 						</tr>
 						<tr>
 							<th>내용</th>
 							<td>
-								<textarea name="i_content" id="i_content" valid="required" element-name="내용"></textarea>
+								<textarea name="content" id="content" valid="required" element-name="내용"></textarea>
 							</td>
 						</tr>
 						<tr>
 							<th><label for="file_cnt">첨부파일</label></th>
 							<td>
 								<div class="form-file">
-								
-							<div class="addFile">
-								<label for="filename">파일첨부</label>
-								<input class="upload-name" value="파일선택" disabled="disabled">
-								<input type="file" name="upload[0]" id="filename" class="upload-hidden" tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;"><div class="jfilestyle jfilestyle-corner  jfilestyle-theme-default"><div name="filedrag" style="position: absolute; width: 100%; height: 35px; z-index: -1;"></div><input type="text" style="width:150px" placeholder="" disabled=""> <span class="focus-jfilestyle" tabindex="0"><label for="filename"><span>파일첨부</span></label></span></div>
-							</div>
-												</div>
+										
+									<div class="addFile">
+										<label for="filename">파일첨부</label>
+										<input class="upload-name" value="파일선택" disabled="disabled">
+										<input type="file" name="upload[0]" id="filename" class="upload-hidden" tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;">
+										
+									</div>
+								</div>
 								<script>
 									$('.form-file input[type="file"]').jfilestyle({
 										//placeholder: '사진첨부',
@@ -300,8 +352,8 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 				<!-- 게시판 버튼 시작 -->
 				<div class="btn-group-center">
 					<div class="brick">
-						<button type="button" class="btn btn-submit" onclick="inquire_it('submit')">글쓰기</button>
-						<button type="button" class="btn btn-cancel" onclick="inquire_it('reset', '')">취소</button>
+						<button type="submit" class="btn btn-submit">글쓰기</button>
+						<button type="button" class="btn btn-cancel" onclick="location.href='${pageContext.request.contextPath}/m/menu06_05'">취소</button>
 					</div>
 				</div>
 				<!-- 게시판 버튼 끝 -->

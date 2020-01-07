@@ -635,7 +635,7 @@ public class MobileController {
 		model.addAttribute("pageMaker", pageMaker);
 		model.addAttribute("no", no);
 		
-		return "mobile/mMenu06_05pwChk";
+		return "mobile/mMenu06_05PwChk";
 	}
 	
 	@RequestMapping(value="/menu06_05pwChk", method=RequestMethod.POST)

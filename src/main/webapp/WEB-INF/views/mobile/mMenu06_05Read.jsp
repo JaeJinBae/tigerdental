@@ -220,36 +220,31 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<ul class="full">
 				<!-- privacy -->
 				<form name="inquire" id="inquire" method="post" action="" enctype="multipart/form-data" onsubmit="return false">
-				<input type="hidden" name="fparam" value="">
-				<input type="hidden" name="distinction" value="proc">
-				<input type="hidden" name="backpage" value="/m/index.html">
-				<input type="hidden" name="file_cnt" value="1">
 		
 				<li>
-					<div class="title">미백이랑 충치상담 가능한가요?</div>
+					<div class="title">${item.title}</div>
 					<p class="info">
-						<i class="name">김서진</i><span class="line">|</span><i class="date">2019-10-21</i><span class="line">|</span><i class="date">비공개</i>
-						<span class="answer"><i class="state com">답변완료</i></span>
+						<i class="name">${item.name}</i><span class="line">|</span><i class="date">${item.regdate}</i><span class="line">|</span><i class="date">비공개</i>
+						
+						<c:if test="${item.state == '상담완료'}"><span class="answer"><i class="state com">답변완료</i></span></c:if>
+						<c:if test="${item.state != '상담완료'}"><span class="answer"><i class="state ready">답변대기</i></span></c:if>
 					</p>
 				</li>
 					
 				<!-- 게시글 상세 내용 -->
-				<li class="board-counsel-content">
-					타이거치과		</li>
+				<li class="board-counsel-content">${item.content}</li>
 				<!-- // 게시글 상세 내용 -->
-			</form></ul>
+				</form>
+			</ul>
 		</div>
 		
 		<div class="full">
-			<div class="board-counsel-reply">
-				<div class="reply-title">
-					<i>답변</i> 온라인상담에 대한 답변입니다.
+			<c:if test="${item.state == '상담완료'}">
+				<div class="board-counsel-reply">
+					<div class="reply-title"><i>답변</i> 온라인상담에 대한 답변입니다.</div>
+					<div class="reply-txt">${item.reply}</div>
 				</div>
-				<div class="reply-txt">
-					타이거치과
-				</div>
-				
-			</div>
+			</c:if><!-- reply end -->
 		</div>
 		
 		<!-- 게시판 버튼 시작 -->
@@ -257,10 +252,11 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 			<div class="brick">
 				<ul>
 					<li class="fl">
-						<a href="" class="btn btn-view-list">목록으로</a>
+						<a href="${pageContext.request.contextPath}/m/menu06_05${pageMaker.makeSearch(pageMaker.cri.page)}" class="btn btn-view-list">목록으로</a>
 					</li>
 					<li class="fr">
-						<a href="" class="btn btn-del">삭제</a>&nbsp;<a href="" class="btn btn-update">수정</a>&nbsp;
+						<a href="${pageContext.request.contextPath}/m/menu06_05delete/${item.no}" class="btn btn-del">삭제</a>&nbsp;
+						<a href="${pageContext.request.contextPath}/m/menu06_05update${pageMaker.makeSearch(pageMaker.cri.page)}&no=${item.no}" class="btn btn-update">수정</a>&nbsp;
 					</li>
 				</ul>		
 			</div>

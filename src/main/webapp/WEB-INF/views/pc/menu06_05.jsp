@@ -91,7 +91,24 @@
 <script>
 $(function(){
 	$(".gnb:nth-child(6)").addClass("active");
-	$(".gnb:nth-child(6) .lnb:nth-child(5)").addClass("active"); 
+	$(".gnb:nth-child(6) .lnb:nth-child(5)").addClass("active");
+
+	//게시판 검색
+    $("#searchBtn").click(function(){
+    	var s=$("select[name='select_key']").val();
+		var searchType = encodeURIComponent(s);
+		var k=$("input[name='input_key']").val();
+		var keyword = encodeURIComponent(k);
+		location.href="${pageContext.request.contextPath}/menu06_05${pageMaker.makeQuery(1)}&searchType="+searchType+"&keyword="+keyword;
+	});
+	
+	$(document).on("click", ".subject > a", function(e){
+		e.preventDefault();
+		var link = $(this).prop("href").split("&");
+		var k = link[3].split("=");
+		var keyword = encodeURIComponent(k[1]);
+		location.href=link[0]+"&"+link[1]+"&"+link[2]+"&keyword="+keyword+"&"+link[4];
+	});
 });	
 </script>
 </head>

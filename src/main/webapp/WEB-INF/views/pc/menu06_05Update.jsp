@@ -288,7 +288,7 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 							<th>연락처</th>
 							<td>
 								<select name="i_phone1" id="phone1" class="small">
-									<option value="010" selected="">010</option>
+									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="016">016</option>
 									<option value="017">017</option>

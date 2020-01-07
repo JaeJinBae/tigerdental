@@ -290,9 +290,12 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 								<th>연락처</th>
 								<td>
 									<select name="i_phone1" id="phone1" class="small">
-										<option value="010">010</option><option value="011">011</option>
-										<option value="016">016</option><option value="017">017</option>
-										<option value="018">018</option><option value="019">019</option>
+										<option value="010">010</option>
+										<option value="011">011</option>
+										<option value="016">016</option>
+										<option value="017">017</option>
+										<option value="018">018</option>
+										<option value="019">019</option>
 									</select> -
 									<input type="text" name="i_phone2" id="phone2" maxlength="4" valid="required,phone_tel34" element-name="연락처" value="" class="small" autocomplete="off"> -
 									<input type="text" name="i_phone3" id="phone3" maxlength="4" valid="required,phone_tel44" element-name="연락처" value="" class="small" autocomplete="off">
@@ -310,11 +313,11 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 								<th><label for="file_cnt">첨부파일</label></th>
 								<td>
 									<div class="form-file">
-											<div>
-												<input type="file" name="upload" style="width: 450px; position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;" id="jfilestyle-0" tabindex="-1">
-												<br>
-											</div>	
-										</div>
+										<div>
+											<input type="file" name="upload" style="width: 450px; position: absolute; clip: rect(0px, 0px, 0px, 0px); display: none;" id="jfilestyle-0" tabindex="-1">
+											<br>
+										</div>	
+									</div>
 									<script>
 										$('.form-file input[type="file"]').jfilestyle({
 											//placeholder: '사진첨부',
