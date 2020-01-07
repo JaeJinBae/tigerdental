@@ -77,14 +77,14 @@ public class MobileController {
 	public String personal(Model model) {
 		logger.info("personal GET");
 		
-		return "mobile/personal";
+		return "mobile/mPersonal";
 	}
 	
 	@RequestMapping(value = "/agree", method = RequestMethod.GET)
 	public String agree(Model model) {
 		logger.info("agree GET");
 		
-		return "mobile/agree";
+		return "mobile/mAgree";
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
