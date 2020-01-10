@@ -14,9 +14,9 @@
 	<!-- 호스팅용 -->	
 	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/danielps0911"/>
-		<property name="username" value="danielps0911"/>
-		<property name="password" value="daniel12!"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/tigerdental"/>
+		<property name="username" value="tigerdental"/>
+		<property name="password" value="tigerdental12!"/>
 	</bean> -->
 	
 	<!-- 호스팅 테스트 -->	

@@ -38,6 +38,7 @@ $(function(){
 		<dl>
 			<dt><a href="javascript:;">기타관리</a></dt>
 			<dd><a href="${pageContext.request.contextPath}/admin/menu05_01">팝업관리</a></dd>
+			<dd><a href="${pageContext.request.contextPath}/admin/menu05_02">메일관리</a></dd>
 		</dl>
 	
 		<dl>

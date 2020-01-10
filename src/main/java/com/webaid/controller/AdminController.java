@@ -46,6 +46,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
 import com.webaid.domain.HospitalImgVO;
+import com.webaid.domain.MailRecordVO;
 import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
@@ -58,6 +59,7 @@ import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
 import com.webaid.service.HospitalImgService;
+import com.webaid.service.MailRecordService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.PopupService;
@@ -98,6 +100,9 @@ public class AdminController {
 	
 	@Autowired
 	private PopupService pService;
+	
+	@Autowired
+	private MailRecordService mrService;
 	
 	@Autowired
 	private StatisticService sService;
@@ -1549,6 +1554,41 @@ public class AdminController {
 		pService.delete(no);
 		
 		return "redirect:/admin/menu05_01";
+	}
+	
+	@RequestMapping(value = "/menu05_02", method = RequestMethod.GET)
+	public String menu05_02(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		logger.info("menu05_02 GET");
+		
+		List<MailRecordVO> list = mrService.listSearch(cri);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(mrService.listSearchCount(cri));
+		pageMaker.setFinalPage(mrService.listSearchCount(cri));
+		
+		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu05_02";
+	}
+	
+	@RequestMapping(value = "/menu05_02update", method = RequestMethod.GET)
+	public String menu05_02update(int no, @ModelAttribute("cri") SearchCriteria cri, Model model, HttpServletRequest req) throws Exception {
+		logger.info("menu05_02update GET");
+		
+		MailRecordVO vo = mrService.selectOne(no);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.makeSearch(cri.getPage());
+		pageMaker.setTotalCount(mrService.listSearchCount(cri));
+
+		model.addAttribute("item", vo);
+		model.addAttribute("pageMaker", pageMaker);
+		
+		return "admin/menu05_02update";
 	}
 	//=================== menu06 start
 	
