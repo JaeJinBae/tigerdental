@@ -27,6 +27,7 @@ public class SendAdviceEmail {
 							+"<p style='color:#777; margin-left: 175px;'>서울 강남구 도산대로 134 페이토빌딩 B1  |  대표자명 : 서인석<br>TEL : 02-540-2080  Copyright 2017 타이거치과의원 All rights reserved</p></div></div>";
 		
 		SendEmail se = new SendEmail();
+		
 		for(int i=0; i<3; i++){
 			se.SendMail("", receiverArr[i], mailContent, mailTitle);
 		}

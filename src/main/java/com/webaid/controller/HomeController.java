@@ -46,8 +46,8 @@ import com.webaid.service.NoticeService;
 import com.webaid.service.ReviewService;
 import com.webaid.service.StatisticService;
 import com.webaid.service.UserService;
+import com.webaid.util.SendAdviceEmail;
 import com.webaid.util.SendEmail;
-import com.webaid.util.SmsSendUtil;
 
 /**
  * Handles requests for the application home page.
@@ -936,8 +936,8 @@ public class HomeController {
 		
 		aService.insert(vo);
 		
-		/*SmsSendUtil ssu = new SmsSendUtil();
-		ssu.sendSMS("온라인 상담", mtfReq.getParameter("name"), mtfReq.getParameter("phone"));*/
+		SendAdviceEmail sae = new SendAdviceEmail();
+		sae.sendAdviceResultEmail(mtfReq.getParameter("name"), mtfReq.getParameter("phone"), mtfReq.getParameter("content"));
 		
 		return "redirect:/menu06_05";
 	}
