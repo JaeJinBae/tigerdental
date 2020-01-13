@@ -32,6 +32,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
+import com.webaid.domain.MailRecordVO;
 import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
@@ -41,6 +42,7 @@ import com.webaid.domain.StatisticVO;
 import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
+import com.webaid.service.MailRecordService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.ReviewService;
@@ -74,6 +76,9 @@ public class HomeController {
 	
 	@Autowired
 	private UserService uService;
+	
+	@Autowired
+	private MailRecordService mrService;
 	
 	@Autowired
 	private StatisticService sService;
@@ -496,8 +501,21 @@ public class HomeController {
 			
 			aService.insert(vo);
 			
-			/*SmsSendUtil ssu = new SmsSendUtil();
-			ssu.sendSMS("빠른상담", info.get("name"), info.get("phone"));*/
+			SendAdviceEmail sae = new SendAdviceEmail();
+			String mailContent = sae.sendAdviceResultEmail(info.get("name"), info.get("phone"), info.get("content"));
+			/*String [] receiverArr = {"isseo21@naver.com", "nugunaga02@naver.com", "hj_son1127@naver.com"};*/
+			String [] receiverArr = {"bjj7425@naver.com", "bjj7425@naver.com", "bjj7425@naver.com"};
+			for(int i=0; i<3; i++){
+				MailRecordVO mrvo = new MailRecordVO();
+				mrvo.setNo(0);
+				mrvo.setReceiver(receiverArr[i]);
+				mrvo.setTitle(info.get("title"));
+				mrvo.setContent(mailContent);
+				mrvo.setRegdate(info.get("regdate"));
+				mrService.insert(mrvo);
+			}
+			
+			
 			entity = new ResponseEntity<String>("ok", HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -937,7 +955,19 @@ public class HomeController {
 		aService.insert(vo);
 		
 		SendAdviceEmail sae = new SendAdviceEmail();
-		sae.sendAdviceResultEmail(mtfReq.getParameter("name"), mtfReq.getParameter("phone"), mtfReq.getParameter("content"));
+		String mailContent = sae.sendAdviceResultEmail(mtfReq.getParameter("name"), mtfReq.getParameter("phone"), mtfReq.getParameter("content"));
+		
+		/*String [] receiverArr = {"isseo21@naver.com", "nugunaga02@naver.com", "hj_son1127@naver.com"};*/
+		String [] receiverArr = {"bjj7425@naver.com", "bjj7425@naver.com", "bjj7425@naver.com"};
+		for(int i=0; i<3; i++){
+			MailRecordVO mrvo = new MailRecordVO();
+			mrvo.setNo(0);
+			mrvo.setReceiver(receiverArr[i]);
+			mrvo.setTitle(mtfReq.getParameter("title"));
+			mrvo.setContent(mailContent);
+			mrvo.setRegdate(mtfReq.getParameter("regdate"));
+			mrService.insert(mrvo);
+		}
 		
 		return "redirect:/menu06_05";
 	}

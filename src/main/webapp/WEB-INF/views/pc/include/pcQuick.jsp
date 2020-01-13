@@ -18,6 +18,7 @@ function quickInquireRegister(info){
 				
 			}else if(json == "ok"){
 				alert("상담신청이 완료되었습니다.\n고객님의 소중한 정보는 상담에만 이용됩니다.\n빠른시일내에 답변드리겠습니다. 감사합니다");
+				location.reload();
 			}
 		},
 		error:function(request,status,error){

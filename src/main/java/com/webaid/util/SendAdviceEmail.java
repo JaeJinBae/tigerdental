@@ -1,7 +1,7 @@
 package com.webaid.util;
 
 public class SendAdviceEmail {
-	public void sendAdviceResultEmail(String name, String phone, String content){
+	public String sendAdviceResultEmail(String name, String phone, String content){
 		/*String [] receiverArr = {"isseo21@naver.com", "nugunaga02@naver.com", "hj_son1127@naver.com"};*/
 		String [] receiverArr = {"bjj7425@naver.com", "bjj7425@naver.com", "bjj7425@naver.com"};
 		String mailTitle = "타이거치과의원 웹사이트 상담요청이 등록되었습니다.";
@@ -32,5 +32,6 @@ public class SendAdviceEmail {
 			se.SendMail("", receiverArr[i], mailContent, mailTitle);
 		}
 		
+		return mailContent;
 	}
 }
