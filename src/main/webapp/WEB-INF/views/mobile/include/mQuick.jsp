@@ -1,6 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!-- 개인정보 취급방침 팝업 시작 -->
+<script>
+function quickInquireRegister(info){
+	$.ajax({
+		url:"${pageContext.request.contextPath}/quickInquireRegister",
+		type:"POST",
+		contentType : "application/json; charset=UTF-8",
+		dataType:"text",
+		data: JSON.stringify(info),
+		async:false,
+		success:function(json){
+			if(json =="no"){
+				alert("빠른상담 신청에 실패하였습니다. 관리자에게 문의하십시오.");
+				
+			}else if(json == "ok"){
+				alert("상담신청이 완료되었습니다.\n고객님의 소중한 정보는 상담에만 이용됩니다.\n빠른시일내에 답변드리겠습니다. 감사합니다");
+				location.reload();
+			}
+		},
+		error:function(request,status,error){
+			console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		}
+	});
+}
+$(function(){
+	$("#quickRegisterBtn").click(function(){
+		if(!$('#agree').is(':checked')) {
+			alert("개인정보취급방침에 동의해 주시길 바랍니다.");
+			return false;
+		}
+		
+		var name = $("#i_name").val();
+		var phone1 = $("#i_tel1").val();
+		var phone2 = $("#i_tel2").val();
+		var phone3 = $("#i_tel3").val();
+		var phone = phone1+"-"+phone2+"-"+phone3;
+		var advice_type = $("#i_kind").val();
+		var content = $("#i_content").val();
+		var access_url = document.referrer;
+		var nd = new Date();
+		var ny = nd.getFullYear();
+		var nm = nd.getMonth()+1;
+		nm = (nm>9?'':'0')+nm;
+		var ndd = nd.getDate();
+		ndd = (ndd>9?'':'0')+ndd;
+		var regdate = ny+"-"+nm+"-"+ndd;
+		
+		var info = {"name":name, "phone":phone, "advice_type":advice_type, "content":content, "regdate":regdate, "access_url":access_url};
+		quickInquireRegister(info);
+	});
+	
+});
+</script>
 <div class="pop-private">
 	<div class="pop-inner">
 		<h3><svg class="svg-inline--fa fa-lock fa-w-14" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="lock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path></svg><!-- <i class="fas fa-lock"></i> --> 개인정보 취급방침</h3>
@@ -78,7 +130,7 @@
 			</li>
 			<li>
 				<p>
-					<button type="button" onclick="land_it('insert')" element-name="빠른상담신청">빠른상담접수</button>
+					<button type="button" id="quickRegisterBtn" element-name="빠른상담신청">빠른상담접수</button>
 				</p>
 			</li>
 		</ul>
