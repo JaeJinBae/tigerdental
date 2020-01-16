@@ -28,6 +28,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.webaid.domain.AdviceVO;
 import com.webaid.domain.BeforeAfterVO;
+import com.webaid.domain.HospitalImgVO;
 import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
@@ -36,6 +37,7 @@ import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.UserVO;
 import com.webaid.service.AdviceService;
 import com.webaid.service.BeforeAfterService;
+import com.webaid.service.HospitalImgService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
 import com.webaid.service.ReviewService;
@@ -51,6 +53,9 @@ import com.webaid.util.SendEmail;
 public class MobileController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MobileController.class);
+	
+	@Autowired
+	private HospitalImgService hiService;
 	
 	@Autowired
 	private NoticeService nService;
@@ -325,9 +330,14 @@ public class MobileController {
 	}
 	
 	@RequestMapping(value = "/menu01_04", method = RequestMethod.GET)
-	public String menu01_04(Model model) {
+	public String menu01_04(Model model) throws Exception {
 		logger.info("menu01_04 GET");
 		
+		SearchCriteria cri = new SearchCriteria();
+		
+		List<HospitalImgVO> list = hiService.listSearch(cri);
+		
+		model.addAttribute("list", list);
 		return "mobile/mMenu01_04";
 	}
 	

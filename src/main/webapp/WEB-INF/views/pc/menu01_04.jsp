@@ -215,58 +215,33 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 		<section id="preview">
 			<div class="inner">
 				<div class="preview-slider">
-					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger01.jpg'>
-						<span class='tit'>로비</span>
-					</li>
-					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger02.jpg'>
-						<span class='tit'>로비</span>
-					</li>
-					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger03.jpg'>
-						<span class='tit'>로비</span>
-					</li>
-					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger04.jpg'>
-						<span class='tit'>세렉</span>
-					</li>
-					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger05.jpg'>
-						<span class='tit'>상담실</span>
-					</li>
-					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger06.jpg'>
-						<span class='tit'>진료실</span>
-					</li>
-					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger07.jpg'>
-						<span class='tit'>진료실</span>
-					</li>
-					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger08.jpg'>
-						<span class='tit'>진료실</span>
-					</li>
-					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger09.jpg'>
-						<span class='tit'>진료실</span>
-					</li>
-					<li>
-						<img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger10.jpg'>
-						<span class='tit'>진료실</span>
-					</li>
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	<li>등록된 게시물이 없습니다.</li>
+					    </c:when>
+					    
+					    <c:otherwise>
+					        <c:forEach var="item" items="${list}">
+								<li>
+									<img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/${item.upload_stored}'>
+									<span class='tit'>${item.title}</span>
+								</li>
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</div>
-				<div class="preview-thumb">
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger01.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger02.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger03.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger04.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger05.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger06.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger07.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger08.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger09.jpg'></li>
-					<li><img src='${pageContext.request.contextPath}/resources/uploadInterior/tiger10.jpg'></li>
+				 <div class="preview-thumb">
+					<c:choose>
+					    <c:when test="${fn:length(list) == 0}">
+				        	
+					    </c:when>
+					    
+					    <c:otherwise>
+							<c:forEach var="item" items="${list}">
+								<li><img src='${pageContext.request.contextPath}/resources/uploadHospitalImg/${item.upload_stored}'></li>
+							</c:forEach>
+					    </c:otherwise> 
+					</c:choose>
 				</div>
 			</div>
 		</section>

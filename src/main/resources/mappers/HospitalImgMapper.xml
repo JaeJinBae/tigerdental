@@ -37,7 +37,7 @@
 	</delete>
 	
 	<select id="listSearch" resultType="HospitalImgVO">
-		select * from hospital_img where use_state='o' <include refid="search"></include> order by no desc, regdate desc limit #{pageStart},#{perPageNum}  
+		select * from hospital_img where use_state='o' <include refid="search"></include> order by no asc, regdate desc limit #{pageStart},#{perPageNum}  
 	</select>
 	
 	<select id="listSearchAll" resultType="HospitalImgVO">
