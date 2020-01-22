@@ -37,6 +37,7 @@ import com.webaid.domain.MailRecordVO;
 import com.webaid.domain.NewsVO;
 import com.webaid.domain.NoticeVO;
 import com.webaid.domain.PageMaker;
+import com.webaid.domain.PopupVO;
 import com.webaid.domain.ReviewVO;
 import com.webaid.domain.SearchCriteria;
 import com.webaid.domain.StatisticVO;
@@ -47,6 +48,7 @@ import com.webaid.service.HospitalImgService;
 import com.webaid.service.MailRecordService;
 import com.webaid.service.NewsService;
 import com.webaid.service.NoticeService;
+import com.webaid.service.PopupService;
 import com.webaid.service.ReviewService;
 import com.webaid.service.StatisticService;
 import com.webaid.service.UserService;
@@ -88,6 +90,9 @@ public class HomeController {
 	@Autowired
 	private StatisticService sService;
 	
+	@Autowired
+	private PopupService pService;
+	
 	@RequestMapping(value = "/personal", method = RequestMethod.GET)
 	public String personal(Model model) {
 		logger.info("personal GET");
@@ -105,6 +110,18 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req, Model model) {
 		logger.info("index GET");
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Calendar cal = Calendar.getInstance();
+		
+		String today = sdf.format(cal.getTime());
+		
+		List<PopupVO> popupListPc = pService.selectByDatePc(today);
+		List<PopupVO> popupListMobile = pService.selectByDateMobile(today);
+		
+		model.addAttribute("popupListPc", popupListPc);
+		model.addAttribute("popupListMobile", popupListMobile);
 		
 		Device device=DeviceUtils.getCurrentDevice(req);
 		String deviceType="unknown";

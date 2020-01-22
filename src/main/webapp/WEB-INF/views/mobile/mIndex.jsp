@@ -193,6 +193,48 @@ visual_media05 : 1:30 세렉, 드릴(브릿지처럼 이빨을 여러개 깍는 
 	<div id="main-container">
 	<!--  닫기 [위치 : include_web_footer.html ]  -->
 	
+		<c:forEach var="item" items="${popupListMobile}">
+			<div id="popup_layer_${item.no}" class="popup-wrap-box ui-draggable ui-draggable-handle" style="position: absolute; z-index: 9000; top: 0px; left: 0px;">
+			<!-- 레이어 팝업 시작 -->
+				
+				<div id="pop-wrap">
+					<div class="pop-inner">
+						<div class="pop-container">
+							<div>${item.content}</div>
+						</div>
+						<div class="pop-controller">
+							
+							<a href="javascript:;" onclick="Layer_Close('', 'popup_layer_${item.no}')">
+								<svg class="svg-inline--fa fa-times-circle fa-w-16" aria-hidden="true" data-fa-processed="" data-prefix="fas" data-icon="times-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"></path></svg><!-- <i class="fas fa-times-circle"></i> -->
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- 레이어 팝업 끝 -->
+				
+				<script>
+					function close_popup(id, PIdx, expire, user){
+						expire = (expire == "") ? 1 : expire;
+				
+						if(user == "Y")		set_cookie(id, "done", 24 * expire);
+				
+						if(id)	Layer_Close('', id);
+						else	Layer_Close();
+					}
+				
+					function set_cookie(name, value, expire) {
+						var today = new Date();
+						today.setTime(today.getTime() + (60 * 60 * 1000 * expire)); // hours
+						//today.setDate(today.getDate() + expire); // days
+				
+						if (expire == null) var expires_str = "";
+						else var expires_str = "; expires=" + today.toGMTString() + ";";
+						document.cookie = name + "=" + escape(value) + "; path=/" + expires_str;
+					}
+				</script>
+			</div>
+		</c:forEach>
+		
 		<!-- 메인 비주얼 슬라이드 시작-->
 		<div id="visual-slider">
 			<div class="full">
