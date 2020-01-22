@@ -273,6 +273,13 @@ public class AdminController {
 		return map;
 	}
 	
+	@RequestMapping(value = "/menu01_01", method = RequestMethod.GET)
+	public String menu01_01() {
+		logger.info("menu01_01 GET");
+
+		return "admin/menu01_01";
+	}
+	
 	@RequestMapping(value = "/menu02_01", method = RequestMethod.GET)
 	public String menu02_01(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		logger.info("menu02_01 GET");
