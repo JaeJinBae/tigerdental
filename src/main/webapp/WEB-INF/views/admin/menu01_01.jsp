@@ -49,12 +49,11 @@ $(function(){
 			<jsp:include page="include/rightTop.jsp"></jsp:include><!-- 오른쪽 상단 -->
 
 			<div class="naviText_area">
-				<h1>공지사항</h1>
-
+				<h1>기본환경설정</h1>
 				<ul class="navi_area">
 					<li>관리자메인&nbsp;&gt;&nbsp;</li>
-					<li>게시판관리&nbsp;&gt;&nbsp;</li>
-					<li>공지사항</li>
+					<li>설정관리&nbsp;&gt;&nbsp;</li>
+					<li>기본환경설정</li>
 				</ul>
 			</div>
 			

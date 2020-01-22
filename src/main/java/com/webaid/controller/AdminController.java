@@ -253,6 +253,8 @@ public class AdminController {
 			innerUploadPath = "resources/uploadReview/";
 		}else if(btype.equals("advice")){
 			innerUploadPath = "resources/uploadAdvice/";
+		}else if(btype.equals("popup")){
+			innerUploadPath = "resources/uploadPopup/";
 		}
 		
 		String uploadPath = (req.getSession().getServletContext().getRealPath("/")) + innerUploadPath;
